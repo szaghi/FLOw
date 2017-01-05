@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Fortran fLuid Object">
+    
+    <meta name="author" content="Stefano Zaghi" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>penf_b_size &ndash; FLOw</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FLOw </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+				
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>penf_b_size 
+    <small>Module</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+	  data-placement="bottom" data-html="true"
+	  title=" 2.8% of total for modules and submodules.">90 statements</a>
+     </li> 
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/penf_b_size.F90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li><a href='../sourcefile/penf_b_size.f90.html'>penf_b_size.F90</a></li>
+  
+     <li class="active">penf_b_size</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-0">Interfaces</a></h3></div>
+  <div id="inters-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#interface-bit_size%7E2">bit_size</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#interface-byte_size">byte_size</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
+  <div id="funcs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-bit_size_r16p">bit_size_R16P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-bit_size_r8p">bit_size_R8P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-bit_size_r4p">bit_size_R4P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-bit_size_chr">bit_size_chr</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_i8p">byte_size_I8P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_i4p">byte_size_I4P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_i2p">byte_size_I2P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_i1p">byte_size_I1P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_r16p">byte_size_R16P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_r8p">byte_size_R8P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_r4p">byte_size_R4P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_chr">byte_size_chr</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+  <hr>
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allmods-0">All Modules</a></h3></div>
+  <div id="allmods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/flow.html">flow</a>
+      
+      <a class="list-group-item" href="../module/flow_field_object.html">flow_field_object</a>
+      
+      <a class="list-group-item" href="../module/flow_field_objects.html">flow_field_objects</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_object.html">flow_primitive_object</a>
+      
+      <a class="list-group-item" href="../module/penf.html">penf</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html">penf_b_size</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html">penf_global_parameters_variables</a>
+      
+      <a class="list-group-item" href="../module/penf_stringify.html">penf_stringify</a>
+      
+      <a class="list-group-item" href="../module/vecfor.html">VecFor</a>
+      
+    </div>
+  </div>
+</div>
+
+
+</div>  
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      
+    
+  
+    <ul class="list-inline">
+      <li><h4>Uses:</h4></li>
+      
+      <li><a href='../module/penf_global_parameters_variables.html'>penf_global_parameters_variables</a></li>
+      
+    </ul>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+ -->
+<!-- Title: module~~penf_b_size~~UsesGraph Pages: 1 -->
+<svg id="modulepenf_b_sizeUsesGraph" width="292pt" height="34pt"
+ viewBox="0.00 0.00 292.00 34.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~penf_b_size~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 30)">
+<title>module~~penf_b_size~~UsesGraph</title>
+<polygon fill="white" stroke="white" points="-4,5 -4,-30 289,-30 289,5 -4,5"/>
+<!-- module~penf_b_size -->
+<g id="node1" class="node"><title>module~penf_b_size</title>
+<polygon fill="none" stroke="black" points="284,-26 214,-26 214,-1.24345e-14 284,-3.55271e-15 284,-26"/>
+<text text-anchor="middle" x="249" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50">penf_b_size</text>
+</g>
+<!-- module~penf_global_parameters_variables -->
+<g id="node2" class="node"><title>module~penf_global_parameters_variables</title>
+<a xlink:href="../module/penf_global_parameters_variables.html" xlink:title="penf_global_parameters_variables">
+<polygon fill="#337ab7" stroke="#337ab7" points="178,-26 8.52651e-14,-26 0,-1.24345e-14 178,-3.55271e-15 178,-26"/>
+<text text-anchor="middle" x="89" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_global_parameters_variables</text>
+</a>
+</g>
+<!-- module~penf_global_parameters_variables&#45;&gt;module~penf_b_size -->
+<g id="edge2" class="edge"><title>module~penf_global_parameters_variables&#45;&gt;module~penf_b_size</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M178.356,-13C187.116,-13 195.724,-13 203.752,-13"/>
+<polygon fill="#000000" stroke="#000000" points="203.937,-16.5001 213.937,-13 203.937,-9.5001 203.937,-16.5001"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="486pt" height="34pt"
+ viewBox="0.00 0.00 486.00 34.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 30)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="white" points="-4,5 -4,-30 483,-30 483,5 -4,5"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-26 2.13163e-14,-26 0,-1.24345e-14 54,-3.55271e-15 54,-26"/>
+<text text-anchor="middle" x="27" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="138,-26 72,-26 72,-1.24345e-14 138,-3.55271e-15 138,-26"/>
+<text text-anchor="middle" x="105" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="220,-26 156,-26 156,-1.24345e-14 220,-3.55271e-15 220,-26"/>
+<text text-anchor="middle" x="188" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="292,-26 238,-26 238,-1.24345e-14 292,-3.55271e-15 292,-26"/>
+<text text-anchor="middle" x="265" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="364,-26 310,-26 310,-1.24345e-14 364,-3.55271e-15 364,-26"/>
+<text text-anchor="middle" x="337" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="478,-26 382,-26 382,-1.24345e-14 478,-3.55271e-15 478,-26"/>
+<text text-anchor="middle" x="430" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a parent (sub)module to the submodule which is
+    descended from it. Dashed arrows point from a module being used to the
+    module or program unit using it.
+    </p>
+    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    
+
+    
+    <p>PENF bit/byte size functions.</p>
+    
+    
+    <h3>Used By</h3>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+ -->
+<!-- Title: module~~penf_b_size~~UsedByGraph Pages: 1 -->
+<svg id="modulepenf_b_sizeUsedByGraph" width="641pt" height="229pt"
+ viewBox="0.00 0.00 641.00 229.31" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~penf_b_size~~UsedByGraph" class="graph" transform="scale(0.670502 0.670502) rotate(0) translate(4 338)">
+<title>module~~penf_b_size~~UsedByGraph</title>
+<polygon fill="white" stroke="white" points="-4,5 -4,-338 953,-338 953,5 -4,5"/>
+<!-- module~penf_b_size -->
+<g id="node1" class="node"><title>module~penf_b_size</title>
+<polygon fill="none" stroke="black" points="70,-158 3.55271e-14,-158 0,-132 70,-132 70,-158"/>
+<text text-anchor="middle" x="35" y="-142.55" font-family="Helvetica,sans-Serif" font-size="10.50">penf_b_size</text>
+</g>
+<!-- module~penf -->
+<g id="node2" class="node"><title>module~penf</title>
+<a xlink:href="../module/penf.html" xlink:title="penf">
+<polygon fill="#337ab7" stroke="#337ab7" points="272,-158 218,-158 218,-132 272,-132 272,-158"/>
+<text text-anchor="middle" x="245" y="-142.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf</text>
+</a>
+</g>
+<!-- module~penf_b_size&#45;&gt;module~penf -->
+<g id="edge42" class="edge"><title>module~penf_b_size&#45;&gt;module~penf</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M70.0254,-146.182C81.4891,-146.517 94.2864,-146.835 106,-147 139.774,-147.476 148.226,-147.536 182,-147 190.323,-146.868 199.263,-146.638 207.718,-146.379"/>
+<polygon fill="#000000" stroke="#000000" points="207.835,-149.878 217.716,-146.055 207.608,-142.881 207.835,-149.878"/>
+</g>
+<!-- module~penf_stringify -->
+<g id="node3" class="node"><title>module~penf_stringify</title>
+<a xlink:href="../module/penf_stringify.html" xlink:title="penf_stringify">
+<polygon fill="#337ab7" stroke="#337ab7" points="182,-138 106,-138 106,-112 182,-112 182,-138"/>
+<text text-anchor="middle" x="144" y="-122.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_stringify</text>
+</a>
+</g>
+<!-- module~penf_b_size&#45;&gt;module~penf_stringify -->
+<g id="edge44" class="edge"><title>module~penf_b_size&#45;&gt;module~penf_stringify</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M70.0883,-138.562C78.3188,-137.052 87.2288,-135.417 95.918,-133.822"/>
+<polygon fill="#000000" stroke="#000000" points="96.7591,-137.227 105.963,-131.979 95.4957,-130.342 96.7591,-137.227"/>
+</g>
+<!-- module~flow_primitive_object -->
+<g id="node4" class="node"><title>module~flow_primitive_object</title>
+<a xlink:href="../module/flow_primitive_object.html" xlink:title="flow_primitive_object">
+<polygon fill="#337ab7" stroke="#337ab7" points="682,-180 570,-180 570,-154 682,-154 682,-180"/>
+<text text-anchor="middle" x="626" y="-164.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_primitive_object</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;module~flow_primitive_object -->
+<g id="edge28" class="edge"><title>module~penf&#45;&gt;module~flow_primitive_object</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M354,-208C411.235,-218.677 426.929,-212.199 485,-208"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M485,-208C519.913,-205.475 557.939,-193.864 585.693,-183.639"/>
+<polygon fill="#000000" stroke="#000000" points="586.944,-186.908 595.06,-180.098 584.468,-180.36 586.944,-186.908"/>
+</g>
+<!-- program~compact_real -->
+<g id="node5" class="node"><title>program~compact_real</title>
+<a xlink:href="../program/compact_real.html" xlink:title="compact_real">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="392,-136 316,-136 316,-110 392,-110 392,-136"/>
+<text text-anchor="middle" x="354" y="-120.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">compact_real</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;program~compact_real -->
+<g id="edge30" class="edge"><title>module~penf&#45;&gt;program~compact_real</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M272.224,-139.505C282.271,-137.477 293.984,-135.113 305.353,-132.819"/>
+<polygon fill="#000000" stroke="#000000" points="306.095,-136.24 315.205,-130.83 304.71,-129.378 306.095,-136.24"/>
+</g>
+<!-- module~flow -->
+<g id="node6" class="node"><title>module~flow</title>
+<a xlink:href="../module/flow.html" xlink:title="flow">
+<polygon fill="#337ab7" stroke="#337ab7" points="772,-180 718,-180 718,-154 772,-154 772,-180"/>
+<text text-anchor="middle" x="745" y="-164.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;module~flow -->
+<g id="edge32" class="edge"><title>module~penf&#45;&gt;module~flow</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M485,-208C572.733,-201.656 596.083,-207.857 682,-189 690.621,-187.108 699.691,-184.393 708.179,-181.514"/>
+<polygon fill="#000000" stroke="#000000" points="709.558,-184.738 717.813,-178.096 707.218,-178.141 709.558,-184.738"/>
+</g>
+<!-- program~test_all -->
+<g id="node7" class="node"><title>program~test_all</title>
+<a xlink:href="../program/test_all.html" xlink:title="test_all">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="381,-92 327,-92 327,-66 381,-66 381,-92"/>
+<text text-anchor="middle" x="354" y="-76.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_all</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;program~test_all -->
+<g id="edge34" class="edge"><title>module~penf&#45;&gt;program~test_all</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M262.145,-131.88C274.536,-122.685 291.865,-110.408 308,-101 311.169,-99.1523 314.517,-97.3263 317.904,-95.5635"/>
+<polygon fill="#000000" stroke="#000000" points="319.49,-98.6837 326.86,-91.073 316.352,-92.4261 319.49,-98.6837"/>
+</g>
+<!-- module~flow_field_object -->
+<g id="node8" class="node"><title>module~flow_field_object</title>
+<a xlink:href="../module/flow_field_object.html" xlink:title="flow_field_object">
+<polygon fill="#337ab7" stroke="#337ab7" points="399,-180 309,-180 309,-154 399,-154 399,-180"/>
+<text text-anchor="middle" x="354" y="-164.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_field_object</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;module~flow_field_object -->
+<g id="edge36" class="edge"><title>module~penf&#45;&gt;module~flow_field_object</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M272.224,-150.495C280.282,-152.121 289.411,-153.964 298.575,-155.813"/>
+<polygon fill="#000000" stroke="#000000" points="297.989,-159.265 308.483,-157.813 299.374,-152.404 297.989,-159.265"/>
+</g>
+<!-- module~flow_field_objects -->
+<g id="node9" class="node"><title>module~flow_field_objects</title>
+<a xlink:href="../module/flow_field_objects.html" xlink:title="flow_field_objects">
+<polygon fill="#337ab7" stroke="#337ab7" points="533,-180 437,-180 437,-154 533,-154 533,-180"/>
+<text text-anchor="middle" x="485" y="-164.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_field_objects</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;module~flow_field_objects -->
+<g id="edge38" class="edge"><title>module~penf&#45;&gt;module~flow_field_objects</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M259.878,-158.104C279.694,-174.428 316.614,-201.026 354,-208"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M354,-208C371.568,-211.277 413.517,-196.641 445.248,-183.957"/>
+<polygon fill="#000000" stroke="#000000" points="446.782,-187.111 454.729,-180.105 444.147,-180.626 446.782,-187.111"/>
+</g>
+<!-- module~penf_stringify&#45;&gt;module~penf -->
+<g id="edge40" class="edge"><title>module~penf_stringify&#45;&gt;module~penf</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M182.184,-132.561C190.603,-134.228 199.509,-135.992 207.886,-137.651"/>
+<polygon fill="#000000" stroke="#000000" points="207.282,-141.099 217.772,-139.608 208.642,-134.232 207.282,-141.099"/>
+</g>
+<!-- module~flow_primitive_object&#45;&gt;module~flow -->
+<g id="edge2" class="edge"><title>module~flow_primitive_object&#45;&gt;module~flow</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M682.015,-167C690.65,-167 699.383,-167 707.483,-167"/>
+<polygon fill="#000000" stroke="#000000" points="707.706,-170.5 717.706,-167 707.706,-163.5 707.706,-170.5"/>
+</g>
+<!-- program~flow_test_primitive_div -->
+<g id="node11" class="node"><title>program~flow_test_primitive_div</title>
+<a xlink:href="../program/flow_test_primitive_div.html" xlink:title="flow_test_primitive_div">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="938,-334 818,-334 818,-308 938,-308 938,-334"/>
+<text text-anchor="middle" x="878" y="-318.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_div</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_div -->
+<g id="edge4" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_div</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M747.658,-180.383C753.628,-206.941 770.611,-266.536 808,-299 809.515,-300.315 811.109,-301.552 812.765,-302.715"/>
+<polygon fill="#000000" stroke="#000000" points="811.124,-305.812 821.504,-307.936 814.714,-299.802 811.124,-305.812"/>
+</g>
+<!-- program~flow_test_primitive_sub -->
+<g id="node12" class="node"><title>program~flow_test_primitive_sub</title>
+<a xlink:href="../program/flow_test_primitive_sub.html" xlink:title="flow_test_primitive_sub">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="940,-290 816,-290 816,-264 940,-264 940,-290"/>
+<text text-anchor="middle" x="878" y="-274.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_sub</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_sub -->
+<g id="edge6" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_sub</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M750.962,-180.096C760.37,-199.318 780.46,-235.047 808,-255 810.121,-256.537 812.353,-257.969 814.665,-259.303"/>
+<polygon fill="#000000" stroke="#000000" points="813.403,-262.587 823.907,-263.976 816.562,-256.34 813.403,-262.587"/>
+</g>
+<!-- program~flow_test_primitive_add~2 -->
+<g id="node13" class="node"><title>program~flow_test_primitive_add~2</title>
+<a xlink:href="../program/flow_test_primitive_add%7E2.html" xlink:title="flow_test_primitive_add">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="940,-246 816,-246 816,-220 940,-220 940,-246"/>
+<text text-anchor="middle" x="878" y="-230.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_add</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_add~2 -->
+<g id="edge8" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_add~2</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M760.726,-180.028C772.982,-189.659 790.761,-202.522 808,-211 811.965,-212.95 816.141,-214.776 820.398,-216.475"/>
+<polygon fill="#000000" stroke="#000000" points="819.202,-219.764 829.794,-219.991 821.655,-213.208 819.202,-219.764"/>
+</g>
+<!-- program~flow_test_primitive_eq -->
+<g id="node14" class="node"><title>program~flow_test_primitive_eq</title>
+<a xlink:href="../program/flow_test_primitive_eq.html" xlink:title="flow_test_primitive_eq">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="937,-202 819,-202 819,-176 937,-176 937,-202"/>
+<text text-anchor="middle" x="878" y="-186.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_eq</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_eq -->
+<g id="edge10" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M772.235,-171.505C783.015,-173.288 795.94,-175.426 808.993,-177.585"/>
+<polygon fill="#000000" stroke="#000000" points="808.53,-181.056 818.967,-179.235 809.672,-174.15 808.53,-181.056"/>
+</g>
+<!-- program~flow_test_primitive_mul -->
+<g id="node15" class="node"><title>program~flow_test_primitive_mul</title>
+<a xlink:href="../program/flow_test_primitive_mul.html" xlink:title="flow_test_primitive_mul">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="940,-158 816,-158 816,-132 940,-132 940,-158"/>
+<text text-anchor="middle" x="878" y="-142.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_mul</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_mul -->
+<g id="edge12" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_mul</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M772.235,-162.495C782.151,-160.855 793.881,-158.914 805.856,-156.934"/>
+<polygon fill="#000000" stroke="#000000" points="806.644,-160.351 815.939,-155.266 805.502,-153.445 806.644,-160.351"/>
+</g>
+<!-- program~flow_test_primitive_add -->
+<g id="node16" class="node"><title>program~flow_test_primitive_add</title>
+<a xlink:href="../program/flow_test_primitive_add.html" xlink:title="flow_test_primitive_add">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="940,-114 816,-114 816,-88 940,-88 940,-114"/>
+<text text-anchor="middle" x="878" y="-98.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_add</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_add -->
+<g id="edge14" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_add</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M760.726,-153.972C772.982,-144.341 790.761,-131.478 808,-123 811.965,-121.05 816.141,-119.224 820.398,-117.525"/>
+<polygon fill="#000000" stroke="#000000" points="821.655,-120.792 829.794,-114.009 819.202,-114.236 821.655,-120.792"/>
+</g>
+<!-- program~flow_test_primitive_assign -->
+<g id="node17" class="node"><title>program~flow_test_primitive_assign</title>
+<a xlink:href="../program/flow_test_primitive_assign.html" xlink:title="flow_test_primitive_assign">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="946,-70 810,-70 810,-44 946,-44 946,-70"/>
+<text text-anchor="middle" x="878" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_assign</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_assign -->
+<g id="edge16" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_assign</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M750.962,-153.904C760.37,-134.682 780.46,-98.9533 808,-79 810.121,-77.4632 812.353,-76.0313 814.665,-74.6974"/>
+<polygon fill="#000000" stroke="#000000" points="816.562,-77.6598 823.907,-70.0236 813.403,-71.4131 816.562,-77.6598"/>
+</g>
+<!-- program~flow_test_primitive_not_eq -->
+<g id="node18" class="node"><title>program~flow_test_primitive_not_eq</title>
+<a xlink:href="../program/flow_test_primitive_not_eq.html" xlink:title="flow_test_primitive_not_eq">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="947,-26 809,-26 809,-1.24345e-14 947,-3.55271e-15 947,-26"/>
+<text text-anchor="middle" x="878" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_not_eq</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_not_eq -->
+<g id="edge18" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_not_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M747.658,-153.617C753.628,-127.059 770.611,-67.4638 808,-35 809.515,-33.6846 811.109,-32.4478 812.765,-31.2848"/>
+<polygon fill="#000000" stroke="#000000" points="814.714,-34.1977 821.504,-26.0642 811.124,-28.1884 814.714,-34.1977"/>
+</g>
+<!-- module~flow_field_object&#45;&gt;module~flow -->
+<g id="edge20" class="edge"><title>module~flow_field_object&#45;&gt;module~flow</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M397.157,-153.914C450.648,-139.219 544.696,-118.359 626,-126"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M626,-126C655.359,-128.249 686.781,-139.49 709.96,-149.633"/>
+<polygon fill="#000000" stroke="#000000" points="708.806,-152.952 719.36,-153.884 711.69,-146.574 708.806,-152.952"/>
+</g>
+<!-- module~flow_field_object&#45;&gt;module~flow_field_objects -->
+<g id="edge22" class="edge"><title>module~flow_field_object&#45;&gt;module~flow_field_objects</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M399.817,-167C408.302,-167 417.273,-167 426.083,-167"/>
+<polygon fill="#000000" stroke="#000000" points="426.314,-170.5 436.314,-167 426.313,-163.5 426.314,-170.5"/>
+</g>
+<!-- module~flow_field_objects&#45;&gt;module~flow_primitive_object -->
+<g id="edge26" class="edge"><title>module~flow_field_objects&#45;&gt;module~flow_primitive_object</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M533.524,-167C541.884,-167 550.701,-167 559.438,-167"/>
+<polygon fill="#000000" stroke="#000000" points="559.624,-170.5 569.624,-167 559.624,-163.5 559.624,-170.5"/>
+</g>
+<!-- module~flow_field_objects&#45;&gt;module~flow -->
+<g id="edge24" class="edge"><title>module~flow_field_objects&#45;&gt;module~flow</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M509.405,-153.892C537.089,-140.455 583.867,-122.04 626,-126"/>
+</g>
+</g>
+</svg>
+</div>
+                <script>var panmodulepenf_b_sizeUsedByGraph = svgPanZoom('#modulepenf_b_sizeUsedByGraph', {
+                    zoomEnabled: true,
+                    controlIconsEnabled: true,
+                    fit: true,
+                    center: true,});
+                    </script>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="486pt" height="34pt"
+ viewBox="0.00 0.00 486.00 34.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 30)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="white" points="-4,5 -4,-30 483,-30 483,5 -4,5"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-26 2.13163e-14,-26 0,-1.24345e-14 54,-3.55271e-15 54,-26"/>
+<text text-anchor="middle" x="27" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="138,-26 72,-26 72,-1.24345e-14 138,-3.55271e-15 138,-26"/>
+<text text-anchor="middle" x="105" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="220,-26 156,-26 156,-1.24345e-14 220,-3.55271e-15 220,-26"/>
+<text text-anchor="middle" x="188" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="292,-26 238,-26 238,-1.24345e-14 292,-3.55271e-15 292,-26"/>
+<text text-anchor="middle" x="265" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="364,-26 310,-26 310,-1.24345e-14 364,-3.55271e-15 364,-26"/>
+<text text-anchor="middle" x="337" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="478,-26 382,-26 382,-1.24345e-14 478,-3.55271e-15 478,-26"/>
+<text text-anchor="middle" x="430" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a parent (sub)module to the submodule which is
+    descended from it. Dashed arrows point from a module being used to the
+    module or program unit using it.
+    </p>
+    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    <br>
+    
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-1">Interfaces</a></h3></div>
+  <div id="inters-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#interface-bit_size%7E2">bit_size</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#interface-byte_size">byte_size</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
+  <div id="funcs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-bit_size_r16p">bit_size_R16P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-bit_size_r8p">bit_size_R8P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-bit_size_r4p">bit_size_R4P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-bit_size_chr">bit_size_chr</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_i8p">byte_size_I8P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_i4p">byte_size_I4P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_i2p">byte_size_I2P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_i1p">byte_size_I1P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_r16p">byte_size_R16P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_r8p">byte_size_R8P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_r4p">byte_size_R4P</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html#proc-byte_size_chr">byte_size_chr</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+    <section>
+	 <h2>Interfaces</h2>
+	 
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-bit_size%7E2"></span><h3>public interface <a href='../interface/bit_size%7E2.html'>bit_size</a>
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+    <p>Overloading of the intrinsic <em>bit_size</em> function for computing the number of bits of (also) real and character variables.</p>
+  </div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private elemental function <a href='../proc/bit_size_r8p.html'>bit_size_R8P</a>(i) result(bits)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p>Compute the number of bits of a real variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Real variable whose number of bits must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bits of r.</p>
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private elemental function <a href='../proc/bit_size_r4p.html'>bit_size_R4P</a>(i) result(bits)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p>Compute the number of bits of a real variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R4P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Real variable whose number of bits must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bits of r.</p>
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private elemental function <a href='../proc/bit_size_chr.html'>bit_size_chr</a>(i) result(bits)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p>Compute the number of bits of a character variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Character variable whose number of bits must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I4P)
+  </small></h4>
+  <p>Number of bits of c.</p>
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-byte_size"></span><h3>public interface <a href='../interface/byte_size.html'>byte_size</a>
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+    <p>Compute the number of bytes of a variable.</p>
+  </div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private elemental function <a href='../proc/byte_size_i8p.html'>byte_size_I8P</a>(i) result(bytes)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of an integer variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I8P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Integer variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bytes of i.</p>
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private elemental function <a href='../proc/byte_size_i4p.html'>byte_size_I4P</a>(i) result(bytes)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of an integer variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I4P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Integer variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bytes of i.</p>
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private elemental function <a href='../proc/byte_size_i2p.html'>byte_size_I2P</a>(i) result(bytes)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of an integer variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I2P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Integer variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bytes of i.</p>
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private elemental function <a href='../proc/byte_size_i1p.html'>byte_size_I1P</a>(i) result(bytes)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of an integer variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I1P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Integer variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bytes of i.</p>
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private elemental function <a href='../proc/byte_size_r8p.html'>byte_size_R8P</a>(i) result(bytes)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of a real variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Real variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bytes of r.</p>
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private elemental function <a href='../proc/byte_size_r4p.html'>byte_size_R4P</a>(i) result(bytes)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of a real variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R4P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Real variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bytes of r.</p>
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private elemental function <a href='../proc/byte_size_chr.html'>byte_size_chr</a>(i) result(bytes)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of a character variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Character variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I4P)
+  </small></h4>
+  <p>Number of bytes of c.</p>
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+    </section>
+	<br>
+    
+
+    
+    
+    
+    
+     
+    <section>
+    <h2>Functions</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-bit_size_r16p"></span><h3>
+private elemental function <a href='../proc/bit_size_r16p.html'>bit_size_R16P</a>(i) result(bits)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Compute the number of bits of a real variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R16P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Real variable whose number of bits must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I2P)
+  </small></h4>
+  <p>Number of bits of r.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-bit_size_r8p"></span><h3>
+private elemental function <a href='../proc/bit_size_r8p.html'>bit_size_R8P</a>(i) result(bits)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Compute the number of bits of a real variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Real variable whose number of bits must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bits of r.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-bit_size_r4p"></span><h3>
+private elemental function <a href='../proc/bit_size_r4p.html'>bit_size_R4P</a>(i) result(bits)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Compute the number of bits of a real variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R4P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Real variable whose number of bits must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bits of r.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-bit_size_chr"></span><h3>
+private elemental function <a href='../proc/bit_size_chr.html'>bit_size_chr</a>(i) result(bits)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Compute the number of bits of a character variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Character variable whose number of bits must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I4P)
+  </small></h4>
+  <p>Number of bits of c.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-byte_size_i8p"></span><h3>
+private elemental function <a href='../proc/byte_size_i8p.html'>byte_size_I8P</a>(i) result(bytes)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of an integer variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I8P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Integer variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bytes of i.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-byte_size_i4p"></span><h3>
+private elemental function <a href='../proc/byte_size_i4p.html'>byte_size_I4P</a>(i) result(bytes)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of an integer variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I4P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Integer variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bytes of i.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-byte_size_i2p"></span><h3>
+private elemental function <a href='../proc/byte_size_i2p.html'>byte_size_I2P</a>(i) result(bytes)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of an integer variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I2P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Integer variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bytes of i.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-byte_size_i1p"></span><h3>
+private elemental function <a href='../proc/byte_size_i1p.html'>byte_size_I1P</a>(i) result(bytes)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of an integer variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I1P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Integer variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bytes of i.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-byte_size_r16p"></span><h3>
+private elemental function <a href='../proc/byte_size_r16p.html'>byte_size_R16P</a>(i) result(bytes)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of a real variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R16P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Real variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bytes of r.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-byte_size_r8p"></span><h3>
+private elemental function <a href='../proc/byte_size_r8p.html'>byte_size_R8P</a>(i) result(bytes)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of a real variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Real variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bytes of r.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-byte_size_r4p"></span><h3>
+private elemental function <a href='../proc/byte_size_r4p.html'>byte_size_R4P</a>(i) result(bytes)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of a real variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R4P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Real variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I1P)
+  </small></h4>
+  <p>Number of bytes of r.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-byte_size_chr"></span><h3>
+private elemental function <a href='../proc/byte_size_chr.html'>byte_size_chr</a>(i) result(bytes)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Compute the number of bytes of a character variable.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td><p>Character variable whose number of bytes must be computed.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=I4P)
+  </small></h4>
+  <p>Number of bytes of c.</p>
+    
+
+  </div>
+  </div>
+
+    
+    </section>
+    <br>
+    
+
+    
+    
+    
+    </div>
+  </div>
+
+  <section class="visible-xs visible-sm hidden-md">
+    <hr>
+    
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allmods-1">All Modules</a></h3></div>
+  <div id="allmods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/flow.html">flow</a>
+      
+      <a class="list-group-item" href="../module/flow_field_object.html">flow_field_object</a>
+      
+      <a class="list-group-item" href="../module/flow_field_objects.html">flow_field_objects</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_object.html">flow_primitive_object</a>
+      
+      <a class="list-group-item" href="../module/penf.html">penf</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html">penf_b_size</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html">penf_global_parameters_variables</a>
+      
+      <a class="list-group-item" href="../module/penf_stringify.html">penf_stringify</a>
+      
+      <a class="list-group-item" href="../module/vecfor.html">VecFor</a>
+      
+    </div>
+  </div>
+</div>
+
+
+  </section>
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2017 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>

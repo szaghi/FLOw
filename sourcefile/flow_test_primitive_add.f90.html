@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Fortran fLuid Object">
+    
+    <meta name="author" content="Stefano Zaghi" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>flow_test_primitive_add.f90 &ndash; FLOw</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FLOw </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+				
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>flow_test_primitive_add.f90
+    <small>Source File</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+	  data-placement="bottom" data-html="true"
+	  title=" 0.5% of total for source files.">21 statements</a>
+     </li> 
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/flow_test_primitive_add.f90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li class="active">flow_test_primitive_add.f90</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#progs-0">Programs</a></h3></div>
+  <div id="progs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/flow_test_primitive_add.html">flow_test_primitive_add</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/flow_test_primitive_add.f90.html#src">flow_test_primitive_add.f90</a>
+  </div>
+</div>
+
+
+  <hr>
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allfiles-0">All Source Files</a></h3></div>
+  <div id="allfiles-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../sourcefile/compact_real.f90.html">compact_real.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow.f90.html">flow.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_field_object.f90.html">flow_field_object.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_field_objects.f90.html">flow_field_objects.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_primitive_object.f90.html">flow_primitive_object.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_add.f90.html">flow_test_primitive_add.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_assign.f90.html">flow_test_primitive_assign.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_div.f90.html">flow_test_primitive_div.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_eq.f90.html">flow_test_primitive_eq.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_mul.f90.html">flow_test_primitive_mul.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_not_eq.f90.html">flow_test_primitive_not_eq.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_pow.f90.html">flow_test_primitive_pow.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_sub.f90.html">flow_test_primitive_sub.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/kinds.f90.html">kinds.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/penf.f90.html">penf.F90</a>
+      
+      <a class="list-group-item" href="../sourcefile/penf_b_size.f90.html">penf_b_size.F90</a>
+      
+      <a class="list-group-item" href="../sourcefile/penf_global_parameters_variables.f90.html">penf_global_parameters_variables.F90</a>
+      
+      <a class="list-group-item" href="../sourcefile/penf_stringify.f90.html">penf_stringify.F90</a>
+      
+      <a class="list-group-item" href="../sourcefile/simple.f90.html">simple.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/test_all.f90.html">test_all.F90</a>
+      
+      <a class="list-group-item" href="../sourcefile/vecfor.f90.html">vecfor.F90</a>
+      
+    </div>
+  </div>
+</div>
+
+
+</div>  
+
+    </div>
+    <div class="col-md-9" id='text'>
+    <p>FLOw test.</p>
+    
+    <h3>This File Depends On</h3>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+ -->
+<!-- Title: sourcefile~~flow_test_primitive_add.f90~~EfferentGraph Pages: 1 -->
+<svg id="sourcefileflow_test_primitive_addf90EfferentGraph" width="641pt" height="55pt"
+ viewBox="0.00 0.00 641.00 54.75" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~flow_test_primitive_add.f90~~EfferentGraph" class="graph" transform="scale(0.495363 0.495363) rotate(0) translate(4 106.531)">
+<title>sourcefile~~flow_test_primitive_add.f90~~EfferentGraph</title>
+<polygon fill="white" stroke="white" points="-4,5 -4,-106.531 1291,-106.531 1291,5 -4,5"/>
+<!-- sourcefile~flow_test_primitive_add.f90 -->
+<g id="node1" class="node"><title>sourcefile~flow_test_primitive_add.f90</title>
+<polygon fill="none" stroke="black" points="1286,-70 1144,-70 1144,-44 1286,-44 1286,-70"/>
+<text text-anchor="middle" x="1215" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50">flow_test_primitive_add.f90</text>
+</g>
+<!-- sourcefile~flow.f90 -->
+<g id="node2" class="node"><title>sourcefile~flow.f90</title>
+<a xlink:href="../sourcefile/flow.f90.html" xlink:title="flow.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1108,-70 1054,-70 1054,-44 1108,-44 1108,-70"/>
+<text text-anchor="middle" x="1081" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow.f90</text>
+</a>
+</g>
+<!-- sourcefile~flow.f90&#45;&gt;sourcefile~flow_test_primitive_add.f90 -->
+<g id="edge34" class="edge"><title>sourcefile~flow.f90&#45;&gt;sourcefile~flow_test_primitive_add.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1108.12,-57C1115.81,-57 1124.61,-57 1133.78,-57"/>
+<polygon fill="#000000" stroke="#000000" points="1133.84,-60.5001 1143.84,-57 1133.84,-53.5001 1133.84,-60.5001"/>
+</g>
+<!-- sourcefile~flow_field_objects.f90 -->
+<g id="node3" class="node"><title>sourcefile~flow_field_objects.f90</title>
+<a xlink:href="../sourcefile/flow_field_objects.f90.html" xlink:title="flow_field_objects.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="851,-70 737,-70 737,-44 851,-44 851,-70"/>
+<text text-anchor="middle" x="794" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_field_objects.f90</text>
+</a>
+</g>
+<!-- sourcefile~flow_field_objects.f90&#45;&gt;sourcefile~flow.f90 -->
+<g id="edge26" class="edge"><title>sourcefile~flow_field_objects.f90&#45;&gt;sourcefile~flow.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M821.381,-43.8906C852.691,-30.3313 905.732,-11.6923 953,-16"/>
+</g>
+<!-- sourcefile~flow_primitive_object.f90 -->
+<g id="node6" class="node"><title>sourcefile~flow_primitive_object.f90</title>
+<a xlink:href="../sourcefile/flow_primitive_object.f90.html" xlink:title="flow_primitive_object.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1018,-70 888,-70 888,-44 1018,-44 1018,-70"/>
+<text text-anchor="middle" x="953" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_primitive_object.f90</text>
+</a>
+</g>
+<!-- sourcefile~flow_field_objects.f90&#45;&gt;sourcefile~flow_primitive_object.f90 -->
+<g id="edge22" class="edge"><title>sourcefile~flow_field_objects.f90&#45;&gt;sourcefile~flow_primitive_object.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M851.852,-57C860.277,-57 869.052,-57 877.759,-57"/>
+<polygon fill="#000000" stroke="#000000" points="877.924,-60.5001 887.924,-57 877.924,-53.5001 877.924,-60.5001"/>
+</g>
+<!-- sourcefile~flow_field_object.f90 -->
+<g id="node4" class="node"><title>sourcefile~flow_field_object.f90</title>
+<a xlink:href="../sourcefile/flow_field_object.f90.html" xlink:title="flow_field_object.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="699,-26 591,-26 591,-1.24345e-14 699,-3.55271e-15 699,-26"/>
+<text text-anchor="middle" x="645" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_field_object.f90</text>
+</a>
+</g>
+<!-- sourcefile~flow_field_object.f90&#45;&gt;sourcefile~flow.f90 -->
+<g id="edge28" class="edge"><title>sourcefile~flow_field_object.f90&#45;&gt;sourcefile~flow.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M699.658,-10.8645C761.337,-9.07402 864.598,-7.94373 953,-16"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M953,-16C984.77,-19.1935 1019.15,-30.687 1044.27,-40.6952"/>
+<polygon fill="#000000" stroke="#000000" points="1043.17,-44.0292 1053.75,-44.5793 1045.83,-37.5512 1043.17,-44.0292"/>
+</g>
+<!-- sourcefile~flow_field_object.f90&#45;&gt;sourcefile~flow_field_objects.f90 -->
+<g id="edge4" class="edge"><title>sourcefile~flow_field_object.f90&#45;&gt;sourcefile~flow_field_objects.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M689.301,-26.0823C705.293,-30.8046 723.518,-36.1867 740.232,-41.1221"/>
+<polygon fill="#000000" stroke="#000000" points="739.287,-44.4926 749.869,-43.9681 741.27,-37.7792 739.287,-44.4926"/>
+</g>
+<!-- sourcefile~penf.f90 -->
+<g id="node5" class="node"><title>sourcefile~penf.f90</title>
+<a xlink:href="../sourcefile/penf.f90.html" xlink:title="penf.F90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="553,-68 499,-68 499,-42 553,-42 553,-68"/>
+<text text-anchor="middle" x="526" y="-52.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf.F90</text>
+</a>
+</g>
+<!-- sourcefile~penf.f90&#45;&gt;sourcefile~flow.f90 -->
+<g id="edge30" class="edge"><title>sourcefile~penf.f90&#45;&gt;sourcefile~flow.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M794,-98C893.708,-91.5988 920.288,-99.8565 1018,-79 1026.63,-77.1575 1035.71,-74.4631 1044.19,-71.5872"/>
+<polygon fill="#000000" stroke="#000000" points="1045.58,-74.8111 1053.83,-68.1677 1043.23,-68.2142 1045.58,-74.8111"/>
+</g>
+<!-- sourcefile~penf.f90&#45;&gt;sourcefile~flow_field_objects.f90 -->
+<g id="edge2" class="edge"><title>sourcefile~penf.f90&#45;&gt;sourcefile~flow_field_objects.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M551.141,-68.1316C574.657,-79.4204 611.139,-94.4311 645,-98"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M645,-98C685.327,-102.25 729.974,-87.1904 759.782,-74.1402"/>
+<polygon fill="#000000" stroke="#000000" points="761.251,-77.3171 768.914,-70.0008 758.361,-70.9415 761.251,-77.3171"/>
+</g>
+<!-- sourcefile~penf.f90&#45;&gt;sourcefile~flow_field_object.f90 -->
+<g id="edge8" class="edge"><title>sourcefile~penf.f90&#45;&gt;sourcefile~flow_field_object.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M553.6,-45.2588C566.892,-40.5675 583.2,-34.8118 598.342,-29.4674"/>
+<polygon fill="#000000" stroke="#000000" points="599.816,-32.6589 608.081,-26.0301 597.487,-26.0579 599.816,-32.6589"/>
+</g>
+<!-- sourcefile~penf.f90&#45;&gt;sourcefile~flow_primitive_object.f90 -->
+<g id="edge24" class="edge"><title>sourcefile~penf.f90&#45;&gt;sourcefile~flow_primitive_object.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M645,-98C710.857,-104.941 727.914,-102.243 794,-98"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M794,-98C833.532,-95.462 876.996,-83.5987 908.476,-73.2818"/>
+<polygon fill="#000000" stroke="#000000" points="909.888,-76.4998 918.255,-70.0003 907.661,-69.8635 909.888,-76.4998"/>
+</g>
+<!-- sourcefile~flow_primitive_object.f90&#45;&gt;sourcefile~flow.f90 -->
+<g id="edge32" class="edge"><title>sourcefile~flow_primitive_object.f90&#45;&gt;sourcefile~flow.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1018.12,-57C1026.89,-57 1035.62,-57 1043.66,-57"/>
+<polygon fill="#000000" stroke="#000000" points="1043.79,-60.5001 1053.79,-57 1043.79,-53.5001 1043.79,-60.5001"/>
+</g>
+<!-- sourcefile~vecfor.f90 -->
+<g id="node7" class="node"><title>sourcefile~vecfor.f90</title>
+<a xlink:href="../sourcefile/vecfor.f90.html" xlink:title="vecfor.F90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="677,-70 613,-70 613,-44 677,-44 677,-70"/>
+<text text-anchor="middle" x="645" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">vecfor.F90</text>
+</a>
+</g>
+<!-- sourcefile~vecfor.f90&#45;&gt;sourcefile~flow_field_objects.f90 -->
+<g id="edge6" class="edge"><title>sourcefile~vecfor.f90&#45;&gt;sourcefile~flow_field_objects.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M677.331,-57C691.648,-57 709.064,-57 726.026,-57"/>
+<polygon fill="#000000" stroke="#000000" points="726.496,-60.5001 736.496,-57 726.496,-53.5001 726.496,-60.5001"/>
+</g>
+<!-- sourcefile~penf_global_parameters_variables.f90 -->
+<g id="node12" class="node"><title>sourcefile~penf_global_parameters_variables.f90</title>
+<a xlink:href="../sourcefile/penf_global_parameters_variables.f90.html" xlink:title="penf_global_parameters_variables.F90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="199,-48 1,-48 1,-22 199,-22 199,-48"/>
+<text text-anchor="middle" x="100" y="-32.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_global_parameters_variables.F90</text>
+</a>
+</g>
+<!-- sourcefile~penf_global_parameters_variables.f90&#45;&gt;sourcefile~penf.f90 -->
+<g id="edge16" class="edge"><title>sourcefile~penf_global_parameters_variables.f90&#45;&gt;sourcefile~penf.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M159.704,-48.0361C222.465,-60.511 324.226,-77.2658 413,-76"/>
+</g>
+<!-- sourcefile~penf_b_size.f90 -->
+<g id="node13" class="node"><title>sourcefile~penf_b_size.f90</title>
+<a xlink:href="../sourcefile/penf_b_size.f90.html" xlink:title="penf_b_size.F90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="328,-48 236,-48 236,-22 328,-22 328,-48"/>
+<text text-anchor="middle" x="282" y="-32.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_b_size.F90</text>
+</a>
+</g>
+<!-- sourcefile~penf_global_parameters_variables.f90&#45;&gt;sourcefile~penf_b_size.f90 -->
+<g id="edge10" class="edge"><title>sourcefile~penf_global_parameters_variables.f90&#45;&gt;sourcefile~penf_b_size.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M199.52,-35C208.389,-35 217.15,-35 225.46,-35"/>
+<polygon fill="#000000" stroke="#000000" points="225.721,-38.5001 235.721,-35 225.721,-31.5001 225.721,-38.5001"/>
+</g>
+<!-- sourcefile~penf_stringify.f90 -->
+<g id="node14" class="node"><title>sourcefile~penf_stringify.f90</title>
+<a xlink:href="../sourcefile/penf_stringify.f90.html" xlink:title="penf_stringify.F90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="462,-48 364,-48 364,-22 462,-22 462,-48"/>
+<text text-anchor="middle" x="413" y="-32.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_stringify.F90</text>
+</a>
+</g>
+<!-- sourcefile~penf_global_parameters_variables.f90&#45;&gt;sourcefile~penf_stringify.f90 -->
+<g id="edge12" class="edge"><title>sourcefile~penf_global_parameters_variables.f90&#45;&gt;sourcefile~penf_stringify.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M159.638,-21.985C205.702,-13.6875 270.997,-5.74265 328,-13 338.883,-14.3855 350.364,-16.7307 361.248,-19.3865"/>
+<polygon fill="#000000" stroke="#000000" points="360.485,-22.8041 371.041,-21.8943 362.221,-16.0229 360.485,-22.8041"/>
+</g>
+<!-- sourcefile~penf_b_size.f90&#45;&gt;sourcefile~penf.f90 -->
+<g id="edge18" class="edge"><title>sourcefile~penf_b_size.f90&#45;&gt;sourcefile~penf.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M307.365,-48.202C333.234,-60.3921 374.874,-76.5436 413,-76"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M413,-76C438.492,-75.6365 466.685,-70.4051 488.534,-65.2552"/>
+<polygon fill="#000000" stroke="#000000" points="489.523,-68.6164 498.401,-62.8343 487.855,-61.818 489.523,-68.6164"/>
+</g>
+<!-- sourcefile~penf_b_size.f90&#45;&gt;sourcefile~penf_stringify.f90 -->
+<g id="edge14" class="edge"><title>sourcefile~penf_b_size.f90&#45;&gt;sourcefile~penf_stringify.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M328.186,-35C336.355,-35 344.965,-35 353.442,-35"/>
+<polygon fill="#000000" stroke="#000000" points="353.676,-38.5001 363.676,-35 353.676,-31.5001 353.676,-38.5001"/>
+</g>
+<!-- sourcefile~penf_stringify.f90&#45;&gt;sourcefile~penf.f90 -->
+<g id="edge20" class="edge"><title>sourcefile~penf_stringify.f90&#45;&gt;sourcefile~penf.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M462.235,-43.7141C471.03,-45.2707 480.063,-46.8696 488.464,-48.3565"/>
+<polygon fill="#000000" stroke="#000000" points="487.882,-51.8078 498.339,-50.1042 489.102,-44.9149 487.882,-51.8078"/>
+</g>
+</g>
+</svg>
+</div>
+                <script>var pansourcefileflow_test_primitive_addf90EfferentGraph = svgPanZoom('#sourcefileflow_test_primitive_addf90EfferentGraph', {
+                    zoomEnabled: true,
+                    controlIconsEnabled: true,
+                    fit: true,
+                    center: true,});
+                    </script>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="188pt" height="34pt"
+ viewBox="0.00 0.00 188.00 34.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 30)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="white" points="-4,5 -4,-30 185,-30 185,5 -4,5"/>
+<!-- Source File -->
+<g id="node1" class="node"><title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="66,-26 2.84217e-14,-26 0,-1.24345e-14 66,-3.55271e-15 66,-26"/>
+<text text-anchor="middle" x="33" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="180,-26 84,-26 84,-1.24345e-14 180,-3.55271e-15 180,-26"/>
+<text text-anchor="middle" x="132" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a file to a file which depends upon it. A file 
+    is dependent upon another if the latter must be compiled before the former
+    can be.
+    </p>
+    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    
+      
+      <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#progs-1">Programs</a></h3></div>
+  <div id="progs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/flow_test_primitive_add.html">flow_test_primitive_add</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/flow_test_primitive_add.f90.html#src">flow_test_primitive_add.f90</a>
+  </div>
+</div>
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+      <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="c">!&lt; FLOw test.</span>
+<a name="ln-2"></a><span class="k">program </span><span class="n">flow_test_primitive_add</span>
+<a name="ln-3"></a><span class="c">!&lt; FLOw test.</span>
+<a name="ln-4"></a><span class="k">use </span><span class="n">flow</span>
+<a name="ln-5"></a>
+<a name="ln-6"></a><span class="k">implicit none</span>
+<a name="ln-7"></a><span class="k">type</span><span class="p">(</span><span class="n">primitive_object</span><span class="p">)</span> <span class="kd">::</span> <span class="n">primitive1</span>     <span class="c">!&lt; A primitive object.</span>
+<a name="ln-8"></a><span class="k">type</span><span class="p">(</span><span class="n">primitive_object</span><span class="p">)</span> <span class="kd">::</span> <span class="n">primitive2</span>     <span class="c">!&lt; A primitive object.</span>
+<a name="ln-9"></a><span class="k">type</span><span class="p">(</span><span class="n">primitive_object</span><span class="p">)</span> <span class="kd">::</span> <span class="n">primitive3</span>     <span class="c">!&lt; A primitive object.</span>
+<a name="ln-10"></a><span class="kt">logical</span>                <span class="kd">::</span> <span class="n">test_passed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c">!&lt; List of passed tests.</span>
+<a name="ln-11"></a>
+<a name="ln-12"></a><span class="n">test_passed</span> <span class="o">=</span> <span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<a name="ln-13"></a>
+<a name="ln-14"></a><span class="n">primitive1</span><span class="p">%</span><span class="n">density</span> <span class="o">=</span> <span class="mf">0.125_R_P</span> <span class="p">;</span> <span class="n">primitive1</span><span class="p">%</span><span class="n">velocity</span> <span class="o">=</span> <span class="mf">1._R_P</span> <span class="p">;</span> <span class="n">primitive1</span><span class="p">%</span><span class="n">pressure</span> <span class="o">=</span> <span class="mf">1._R_P</span>
+<a name="ln-15"></a><span class="n">primitive2</span><span class="p">%</span><span class="n">density</span> <span class="o">=</span> <span class="mf">1._R_P</span>    <span class="p">;</span> <span class="n">primitive2</span><span class="p">%</span><span class="n">velocity</span> <span class="o">=</span> <span class="mf">2._R_P</span> <span class="p">;</span> <span class="n">primitive2</span><span class="p">%</span><span class="n">pressure</span> <span class="o">=</span> <span class="mf">1._R_P</span>
+<a name="ln-16"></a><span class="n">primitive3</span> <span class="o">=</span> <span class="n">primitive1</span> <span class="o">+</span> <span class="n">primitive2</span>
+<a name="ln-17"></a><span class="k">print</span> <span class="s2">&quot;(A,F6.3)&quot;</span><span class="p">,</span>       <span class="s1">&#39;density  =&gt; 0.125 + 1 = &#39;</span><span class="p">,</span> <span class="n">primitive3</span><span class="p">%</span><span class="n">density</span><span class="p">%</span><span class="n">field</span>
+<a name="ln-18"></a><span class="k">print</span> <span class="s2">&quot;(A,3(F6.3,1X))&quot;</span><span class="p">,</span> <span class="s1">&#39;velocity =&gt; 1     + 2 = &#39;</span><span class="p">,</span> <span class="n">primitive3</span><span class="p">%</span><span class="n">velocity</span><span class="p">%</span><span class="n">field</span>
+<a name="ln-19"></a><span class="k">print</span> <span class="s2">&quot;(A,F6.3)&quot;</span><span class="p">,</span>       <span class="s1">&#39;pressure =&gt; 1     + 1 = &#39;</span><span class="p">,</span> <span class="n">primitive3</span><span class="p">%</span><span class="n">pressure</span><span class="p">%</span><span class="n">field</span>
+<a name="ln-20"></a>
+<a name="ln-21"></a><span class="n">test_passed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">primitive3</span> <span class="o">==</span> <span class="p">(</span><span class="n">primitive1</span> <span class="o">+</span> <span class="n">primitive2</span><span class="p">)</span>
+<a name="ln-22"></a>
+<a name="ln-23"></a><span class="k">print</span> <span class="s2">&quot;(A,L1)&quot;</span><span class="p">,</span> <span class="nb">new_line</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;Are all tests passed? &#39;</span><span class="p">,</span> <span class="k">all</span><span class="p">(</span><span class="n">test_passed</span><span class="p">)</span>
+<a name="ln-24"></a><span class="n">endprogram</span> <span class="n">flow_test_primitive_add</span>
+</pre></div>
+
+    </section>
+    </div>
+  </div>
+
+  <section class="visible-xs visible-sm hidden-md">
+    <hr>
+    
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allfiles-1">All Source Files</a></h3></div>
+  <div id="allfiles-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../sourcefile/compact_real.f90.html">compact_real.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow.f90.html">flow.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_field_object.f90.html">flow_field_object.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_field_objects.f90.html">flow_field_objects.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_primitive_object.f90.html">flow_primitive_object.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_add.f90.html">flow_test_primitive_add.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_assign.f90.html">flow_test_primitive_assign.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_div.f90.html">flow_test_primitive_div.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_eq.f90.html">flow_test_primitive_eq.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_mul.f90.html">flow_test_primitive_mul.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_not_eq.f90.html">flow_test_primitive_not_eq.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_pow.f90.html">flow_test_primitive_pow.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/flow_test_primitive_sub.f90.html">flow_test_primitive_sub.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/kinds.f90.html">kinds.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/penf.f90.html">penf.F90</a>
+      
+      <a class="list-group-item" href="../sourcefile/penf_b_size.f90.html">penf_b_size.F90</a>
+      
+      <a class="list-group-item" href="../sourcefile/penf_global_parameters_variables.f90.html">penf_global_parameters_variables.F90</a>
+      
+      <a class="list-group-item" href="../sourcefile/penf_stringify.f90.html">penf_stringify.F90</a>
+      
+      <a class="list-group-item" href="../sourcefile/simple.f90.html">simple.f90</a>
+      
+      <a class="list-group-item" href="../sourcefile/test_all.f90.html">test_all.F90</a>
+      
+      <a class="list-group-item" href="../sourcefile/vecfor.f90.html">vecfor.F90</a>
+      
+    </div>
+  </div>
+</div>
+
+
+  </section>
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2017 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>

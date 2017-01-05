@@ -1,0 +1,2246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Fortran fLuid Object">
+    
+    <meta name="author" content="Stefano Zaghi" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>penf_global_parameters_variables &ndash; FLOw</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FLOw </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+				
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>penf_global_parameters_variables 
+    <small>Module</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+	  data-placement="bottom" data-html="true"
+	  title=" 2.7% of total for modules and submodules.">89 statements</a>
+     </li> 
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/penf_global_parameters_variables.F90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li><a href='../sourcefile/penf_global_parameters_variables.f90.html'>penf_global_parameters_variables.F90</a></li>
+  
+     <li class="active">penf_global_parameters_variables</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-is_initialized">is_initialized</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-endianl">endianL</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-endianb">endianB</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-endian">endian</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-r16p">R16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-r8p">R8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-r4p">R4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-r_p">R_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-i8p">I8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-i4p">I4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-i2p">I2P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-i1p">I1P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-i_p">I_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fr16p">FR16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fr8p">FR8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fr4p">FR4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fr_p">FR_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi8p">FI8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi8pzp">FI8PZP</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi4p">FI4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi4pzp">FI4PZP</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi2p">FI2P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi2pzp">FI2PZP</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi1p">FI1P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi1pzp">FI1PZP</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi_p">FI_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi_pzp">FI_PZP</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-dr16p">DR16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-dr8p">DR8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-dr4p">DR4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-dr_p">DR_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-di8p">DI8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-di4p">DI4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-di2p">DI2P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-di1p">DI1P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-di_p">DI_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-real_kinds_list">REAL_KINDS_LIST</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-real_formats_list">REAL_FORMATS_LIST</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-integer_kinds_list">INTEGER_KINDS_LIST</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-integer_formats_list">INTEGER_FORMATS_LIST</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-minr16p">MinR16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxr16p">MaxR16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-minr8p">MinR8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxr8p">MaxR8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-minr4p">MinR4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxr4p">MaxR4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-minr_p">MinR_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxr_p">MaxR_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-mini8p">MinI8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-mini4p">MinI4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-mini2p">MinI2P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-mini1p">MinI1P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-mini_p">MinI_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxi8p">MaxI8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxi4p">MaxI4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxi2p">MaxI2P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxi1p">MaxI1P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxi_p">MaxI_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-smallr16p">smallR16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-smallr8p">smallR8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-smallr4p">smallR4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-smallr_p">smallR_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-zeror16">ZeroR16</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-zeror8">ZeroR8</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-zeror4">ZeroR4</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-zero">Zero</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bir16p">BIR16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bir8p">BIR8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bir4p">BIR4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bir_p">BIR_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byr16p">BYR16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byr8p">BYR8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byr4p">BYR4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byr_p">BYR_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bii8p">BII8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bii4p">BII4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bii2p">BII2P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bii1p">BII1P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bii_p">BII_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byi8p">BYI8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byi4p">BYI4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byi2p">BYI2P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byi1p">BYI1P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byi_p">BYI_P</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <hr>
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allmods-0">All Modules</a></h3></div>
+  <div id="allmods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/flow.html">flow</a>
+      
+      <a class="list-group-item" href="../module/flow_field_object.html">flow_field_object</a>
+      
+      <a class="list-group-item" href="../module/flow_field_objects.html">flow_field_objects</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_object.html">flow_primitive_object</a>
+      
+      <a class="list-group-item" href="../module/penf.html">penf</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html">penf_b_size</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html">penf_global_parameters_variables</a>
+      
+      <a class="list-group-item" href="../module/penf_stringify.html">penf_stringify</a>
+      
+      <a class="list-group-item" href="../module/vecfor.html">VecFor</a>
+      
+    </div>
+  </div>
+</div>
+
+
+</div>  
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      
+    
+  
+
+    
+    <p>PENF global (exposed) parameters and variables.</p>
+<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>All module defined entities are public.</p></div>
+    
+    
+    <h3>Used By</h3>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+ -->
+<!-- Title: module~~penf_global_parameters_variables~~UsedByGraph Pages: 1 -->
+<svg id="modulepenf_global_parameters_variablesUsedByGraph" width="641pt" height="187pt"
+ viewBox="0.00 0.00 641.00 187.37" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~penf_global_parameters_variables~~UsedByGraph" class="graph" transform="scale(0.547863 0.547863) rotate(0) translate(4 338)">
+<title>module~~penf_global_parameters_variables~~UsedByGraph</title>
+<polygon fill="white" stroke="white" points="-4,5 -4,-338 1167,-338 1167,5 -4,5"/>
+<!-- module~penf_global_parameters_variables -->
+<g id="node1" class="node"><title>module~penf_global_parameters_variables</title>
+<polygon fill="none" stroke="black" points="178,-138 8.52651e-14,-138 0,-112 178,-112 178,-138"/>
+<text text-anchor="middle" x="89" y="-122.55" font-family="Helvetica,sans-Serif" font-size="10.50">penf_global_parameters_variables</text>
+</g>
+<!-- module~penf -->
+<g id="node2" class="node"><title>module~penf</title>
+<a xlink:href="../module/penf.html" xlink:title="penf">
+<polygon fill="#337ab7" stroke="#337ab7" points="486,-158 432,-158 432,-132 486,-132 486,-158"/>
+<text text-anchor="middle" x="459" y="-142.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf</text>
+</a>
+</g>
+<!-- module~penf_global_parameters_variables&#45;&gt;module~penf -->
+<g id="edge46" class="edge"><title>module~penf_global_parameters_variables&#45;&gt;module~penf</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.218,-138.048C195.158,-150.323 281.946,-166.726 358,-166"/>
+</g>
+<!-- module~penf_b_size -->
+<g id="node3" class="node"><title>module~penf_b_size</title>
+<a xlink:href="../module/penf_b_size.html" xlink:title="penf_b_size">
+<polygon fill="#337ab7" stroke="#337ab7" points="284,-138 214,-138 214,-112 284,-112 284,-138"/>
+<text text-anchor="middle" x="249" y="-122.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_b_size</text>
+</a>
+</g>
+<!-- module~penf_global_parameters_variables&#45;&gt;module~penf_b_size -->
+<g id="edge48" class="edge"><title>module~penf_global_parameters_variables&#45;&gt;module~penf_b_size</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M178.356,-125C187.116,-125 195.724,-125 203.752,-125"/>
+<polygon fill="#000000" stroke="#000000" points="203.937,-128.5 213.937,-125 203.937,-121.5 203.937,-128.5"/>
+</g>
+<!-- module~penf_stringify -->
+<g id="node4" class="node"><title>module~penf_stringify</title>
+<a xlink:href="../module/penf_stringify.html" xlink:title="penf_stringify">
+<polygon fill="#337ab7" stroke="#337ab7" points="396,-138 320,-138 320,-112 396,-112 396,-138"/>
+<text text-anchor="middle" x="358" y="-122.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_stringify</text>
+</a>
+</g>
+<!-- module~penf_global_parameters_variables&#45;&gt;module~penf_stringify -->
+<g id="edge50" class="edge"><title>module~penf_global_parameters_variables&#45;&gt;module~penf_stringify</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M140.437,-111.996C179.821,-103.78 235.452,-95.9362 284,-103 293.156,-104.332 302.755,-106.546 311.892,-109.068"/>
+<polygon fill="#000000" stroke="#000000" points="311.002,-112.454 321.582,-111.9 312.965,-105.735 311.002,-112.454"/>
+</g>
+<!-- module~flow_primitive_object -->
+<g id="node5" class="node"><title>module~flow_primitive_object</title>
+<a xlink:href="../module/flow_primitive_object.html" xlink:title="flow_primitive_object">
+<polygon fill="#337ab7" stroke="#337ab7" points="896,-180 784,-180 784,-154 896,-154 896,-180"/>
+<text text-anchor="middle" x="840" y="-164.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_primitive_object</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;module~flow_primitive_object -->
+<g id="edge28" class="edge"><title>module~penf&#45;&gt;module~flow_primitive_object</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M568,-208C625.235,-218.677 640.929,-212.199 699,-208"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M699,-208C733.913,-205.475 771.939,-193.864 799.693,-183.639"/>
+<polygon fill="#000000" stroke="#000000" points="800.944,-186.908 809.06,-180.098 798.468,-180.36 800.944,-186.908"/>
+</g>
+<!-- program~compact_real -->
+<g id="node6" class="node"><title>program~compact_real</title>
+<a xlink:href="../program/compact_real.html" xlink:title="compact_real">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="606,-136 530,-136 530,-110 606,-110 606,-136"/>
+<text text-anchor="middle" x="568" y="-120.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">compact_real</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;program~compact_real -->
+<g id="edge30" class="edge"><title>module~penf&#45;&gt;program~compact_real</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M486.224,-139.505C496.271,-137.477 507.984,-135.113 519.353,-132.819"/>
+<polygon fill="#000000" stroke="#000000" points="520.095,-136.24 529.205,-130.83 518.71,-129.378 520.095,-136.24"/>
+</g>
+<!-- module~flow -->
+<g id="node7" class="node"><title>module~flow</title>
+<a xlink:href="../module/flow.html" xlink:title="flow">
+<polygon fill="#337ab7" stroke="#337ab7" points="986,-180 932,-180 932,-154 986,-154 986,-180"/>
+<text text-anchor="middle" x="959" y="-164.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;module~flow -->
+<g id="edge32" class="edge"><title>module~penf&#45;&gt;module~flow</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M699,-208C786.733,-201.656 810.083,-207.857 896,-189 904.621,-187.108 913.691,-184.393 922.179,-181.514"/>
+<polygon fill="#000000" stroke="#000000" points="923.558,-184.738 931.813,-178.096 921.218,-178.141 923.558,-184.738"/>
+</g>
+<!-- program~test_all -->
+<g id="node8" class="node"><title>program~test_all</title>
+<a xlink:href="../program/test_all.html" xlink:title="test_all">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="595,-92 541,-92 541,-66 595,-66 595,-92"/>
+<text text-anchor="middle" x="568" y="-76.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_all</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;program~test_all -->
+<g id="edge34" class="edge"><title>module~penf&#45;&gt;program~test_all</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M476.145,-131.88C488.536,-122.685 505.865,-110.408 522,-101 525.169,-99.1523 528.517,-97.3263 531.904,-95.5635"/>
+<polygon fill="#000000" stroke="#000000" points="533.49,-98.6837 540.86,-91.073 530.352,-92.4261 533.49,-98.6837"/>
+</g>
+<!-- module~flow_field_object -->
+<g id="node9" class="node"><title>module~flow_field_object</title>
+<a xlink:href="../module/flow_field_object.html" xlink:title="flow_field_object">
+<polygon fill="#337ab7" stroke="#337ab7" points="613,-180 523,-180 523,-154 613,-154 613,-180"/>
+<text text-anchor="middle" x="568" y="-164.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_field_object</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;module~flow_field_object -->
+<g id="edge36" class="edge"><title>module~penf&#45;&gt;module~flow_field_object</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M486.224,-150.495C494.282,-152.121 503.411,-153.964 512.575,-155.813"/>
+<polygon fill="#000000" stroke="#000000" points="511.989,-159.265 522.483,-157.813 513.374,-152.404 511.989,-159.265"/>
+</g>
+<!-- module~flow_field_objects -->
+<g id="node10" class="node"><title>module~flow_field_objects</title>
+<a xlink:href="../module/flow_field_objects.html" xlink:title="flow_field_objects">
+<polygon fill="#337ab7" stroke="#337ab7" points="747,-180 651,-180 651,-154 747,-154 747,-180"/>
+<text text-anchor="middle" x="699" y="-164.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_field_objects</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;module~flow_field_objects -->
+<g id="edge38" class="edge"><title>module~penf&#45;&gt;module~flow_field_objects</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M473.878,-158.104C493.694,-174.428 530.614,-201.026 568,-208"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M568,-208C585.568,-211.277 627.517,-196.641 659.248,-183.957"/>
+<polygon fill="#000000" stroke="#000000" points="660.782,-187.111 668.729,-180.105 658.147,-180.626 660.782,-187.111"/>
+</g>
+<!-- module~penf_b_size&#45;&gt;module~penf -->
+<g id="edge40" class="edge"><title>module~penf_b_size&#45;&gt;module~penf</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M269.842,-138.103C291.161,-150.216 325.653,-166.309 358,-166"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M358,-166C379.556,-165.794 403.17,-161.139 422.141,-156.265"/>
+<polygon fill="#000000" stroke="#000000" points="423.136,-159.621 431.881,-153.64 421.315,-152.863 423.136,-159.621"/>
+</g>
+<!-- module~penf_b_size&#45;&gt;module~penf_stringify -->
+<g id="edge42" class="edge"><title>module~penf_b_size&#45;&gt;module~penf_stringify</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M284.088,-125C292.319,-125 301.229,-125 309.918,-125"/>
+<polygon fill="#000000" stroke="#000000" points="309.963,-128.5 319.963,-125 309.963,-121.5 309.963,-128.5"/>
+</g>
+<!-- module~penf_stringify&#45;&gt;module~penf -->
+<g id="edge44" class="edge"><title>module~penf_stringify&#45;&gt;module~penf</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M396.184,-132.561C404.603,-134.228 413.509,-135.992 421.886,-137.651"/>
+<polygon fill="#000000" stroke="#000000" points="421.282,-141.099 431.772,-139.608 422.642,-134.232 421.282,-141.099"/>
+</g>
+<!-- module~flow_primitive_object&#45;&gt;module~flow -->
+<g id="edge2" class="edge"><title>module~flow_primitive_object&#45;&gt;module~flow</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M896.015,-167C904.65,-167 913.383,-167 921.483,-167"/>
+<polygon fill="#000000" stroke="#000000" points="921.706,-170.5 931.706,-167 921.706,-163.5 921.706,-170.5"/>
+</g>
+<!-- program~flow_test_primitive_div -->
+<g id="node12" class="node"><title>program~flow_test_primitive_div</title>
+<a xlink:href="../program/flow_test_primitive_div.html" xlink:title="flow_test_primitive_div">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1152,-334 1032,-334 1032,-308 1152,-308 1152,-334"/>
+<text text-anchor="middle" x="1092" y="-318.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_div</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_div -->
+<g id="edge4" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_div</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M961.658,-180.383C967.628,-206.941 984.611,-266.536 1022,-299 1023.51,-300.315 1025.11,-301.552 1026.77,-302.715"/>
+<polygon fill="#000000" stroke="#000000" points="1025.12,-305.812 1035.5,-307.936 1028.71,-299.802 1025.12,-305.812"/>
+</g>
+<!-- program~flow_test_primitive_sub -->
+<g id="node13" class="node"><title>program~flow_test_primitive_sub</title>
+<a xlink:href="../program/flow_test_primitive_sub.html" xlink:title="flow_test_primitive_sub">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1154,-290 1030,-290 1030,-264 1154,-264 1154,-290"/>
+<text text-anchor="middle" x="1092" y="-274.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_sub</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_sub -->
+<g id="edge6" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_sub</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M964.962,-180.096C974.37,-199.318 994.46,-235.047 1022,-255 1024.12,-256.537 1026.35,-257.969 1028.66,-259.303"/>
+<polygon fill="#000000" stroke="#000000" points="1027.4,-262.587 1037.91,-263.976 1030.56,-256.34 1027.4,-262.587"/>
+</g>
+<!-- program~flow_test_primitive_add~2 -->
+<g id="node14" class="node"><title>program~flow_test_primitive_add~2</title>
+<a xlink:href="../program/flow_test_primitive_add%7E2.html" xlink:title="flow_test_primitive_add">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1154,-246 1030,-246 1030,-220 1154,-220 1154,-246"/>
+<text text-anchor="middle" x="1092" y="-230.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_add</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_add~2 -->
+<g id="edge8" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_add~2</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M974.726,-180.028C986.982,-189.659 1004.76,-202.522 1022,-211 1025.97,-212.95 1030.14,-214.776 1034.4,-216.475"/>
+<polygon fill="#000000" stroke="#000000" points="1033.2,-219.764 1043.79,-219.991 1035.66,-213.208 1033.2,-219.764"/>
+</g>
+<!-- program~flow_test_primitive_eq -->
+<g id="node15" class="node"><title>program~flow_test_primitive_eq</title>
+<a xlink:href="../program/flow_test_primitive_eq.html" xlink:title="flow_test_primitive_eq">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1151,-202 1033,-202 1033,-176 1151,-176 1151,-202"/>
+<text text-anchor="middle" x="1092" y="-186.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_eq</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_eq -->
+<g id="edge10" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M986.235,-171.505C997.015,-173.288 1009.94,-175.426 1022.99,-177.585"/>
+<polygon fill="#000000" stroke="#000000" points="1022.53,-181.056 1032.97,-179.235 1023.67,-174.15 1022.53,-181.056"/>
+</g>
+<!-- program~flow_test_primitive_mul -->
+<g id="node16" class="node"><title>program~flow_test_primitive_mul</title>
+<a xlink:href="../program/flow_test_primitive_mul.html" xlink:title="flow_test_primitive_mul">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1154,-158 1030,-158 1030,-132 1154,-132 1154,-158"/>
+<text text-anchor="middle" x="1092" y="-142.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_mul</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_mul -->
+<g id="edge12" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_mul</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M986.235,-162.495C996.151,-160.855 1007.88,-158.914 1019.86,-156.934"/>
+<polygon fill="#000000" stroke="#000000" points="1020.64,-160.351 1029.94,-155.266 1019.5,-153.445 1020.64,-160.351"/>
+</g>
+<!-- program~flow_test_primitive_add -->
+<g id="node17" class="node"><title>program~flow_test_primitive_add</title>
+<a xlink:href="../program/flow_test_primitive_add.html" xlink:title="flow_test_primitive_add">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1154,-114 1030,-114 1030,-88 1154,-88 1154,-114"/>
+<text text-anchor="middle" x="1092" y="-98.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_add</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_add -->
+<g id="edge14" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_add</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M974.726,-153.972C986.982,-144.341 1004.76,-131.478 1022,-123 1025.97,-121.05 1030.14,-119.224 1034.4,-117.525"/>
+<polygon fill="#000000" stroke="#000000" points="1035.66,-120.792 1043.79,-114.009 1033.2,-114.236 1035.66,-120.792"/>
+</g>
+<!-- program~flow_test_primitive_assign -->
+<g id="node18" class="node"><title>program~flow_test_primitive_assign</title>
+<a xlink:href="../program/flow_test_primitive_assign.html" xlink:title="flow_test_primitive_assign">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1160,-70 1024,-70 1024,-44 1160,-44 1160,-70"/>
+<text text-anchor="middle" x="1092" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_assign</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_assign -->
+<g id="edge16" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_assign</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M964.962,-153.904C974.37,-134.682 994.46,-98.9533 1022,-79 1024.12,-77.4632 1026.35,-76.0313 1028.66,-74.6974"/>
+<polygon fill="#000000" stroke="#000000" points="1030.56,-77.6598 1037.91,-70.0236 1027.4,-71.4131 1030.56,-77.6598"/>
+</g>
+<!-- program~flow_test_primitive_not_eq -->
+<g id="node19" class="node"><title>program~flow_test_primitive_not_eq</title>
+<a xlink:href="../program/flow_test_primitive_not_eq.html" xlink:title="flow_test_primitive_not_eq">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1161,-26 1023,-26 1023,-1.24345e-14 1161,-3.55271e-15 1161,-26"/>
+<text text-anchor="middle" x="1092" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_not_eq</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_not_eq -->
+<g id="edge18" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_not_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M961.658,-153.617C967.628,-127.059 984.611,-67.4638 1022,-35 1023.51,-33.6846 1025.11,-32.4478 1026.77,-31.2848"/>
+<polygon fill="#000000" stroke="#000000" points="1028.71,-34.1977 1035.5,-26.0642 1025.12,-28.1884 1028.71,-34.1977"/>
+</g>
+<!-- module~flow_field_object&#45;&gt;module~flow -->
+<g id="edge20" class="edge"><title>module~flow_field_object&#45;&gt;module~flow</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M611.157,-153.914C664.648,-139.219 758.696,-118.359 840,-126"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M840,-126C869.355,-128.299 900.777,-139.537 923.958,-149.667"/>
+<polygon fill="#000000" stroke="#000000" points="922.803,-152.986 933.357,-153.912 925.684,-146.606 922.803,-152.986"/>
+</g>
+<!-- module~flow_field_object&#45;&gt;module~flow_field_objects -->
+<g id="edge22" class="edge"><title>module~flow_field_object&#45;&gt;module~flow_field_objects</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M613.817,-167C622.302,-167 631.273,-167 640.083,-167"/>
+<polygon fill="#000000" stroke="#000000" points="640.314,-170.5 650.314,-167 640.313,-163.5 640.314,-170.5"/>
+</g>
+<!-- module~flow_field_objects&#45;&gt;module~flow_primitive_object -->
+<g id="edge26" class="edge"><title>module~flow_field_objects&#45;&gt;module~flow_primitive_object</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M747.524,-167C755.884,-167 764.701,-167 773.438,-167"/>
+<polygon fill="#000000" stroke="#000000" points="773.624,-170.5 783.624,-167 773.624,-163.5 773.624,-170.5"/>
+</g>
+<!-- module~flow_field_objects&#45;&gt;module~flow -->
+<g id="edge24" class="edge"><title>module~flow_field_objects&#45;&gt;module~flow</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M723.405,-153.892C751.089,-140.455 797.867,-122.04 840,-126"/>
+</g>
+</g>
+</svg>
+</div>
+                <script>var panmodulepenf_global_parameters_variablesUsedByGraph = svgPanZoom('#modulepenf_global_parameters_variablesUsedByGraph', {
+                    zoomEnabled: true,
+                    controlIconsEnabled: true,
+                    fit: true,
+                    center: true,});
+                    </script>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="486pt" height="34pt"
+ viewBox="0.00 0.00 486.00 34.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 30)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="white" points="-4,5 -4,-30 483,-30 483,5 -4,5"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-26 2.13163e-14,-26 0,-1.24345e-14 54,-3.55271e-15 54,-26"/>
+<text text-anchor="middle" x="27" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="138,-26 72,-26 72,-1.24345e-14 138,-3.55271e-15 138,-26"/>
+<text text-anchor="middle" x="105" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="220,-26 156,-26 156,-1.24345e-14 220,-3.55271e-15 220,-26"/>
+<text text-anchor="middle" x="188" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="292,-26 238,-26 238,-1.24345e-14 292,-3.55271e-15 292,-26"/>
+<text text-anchor="middle" x="265" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="364,-26 310,-26 310,-1.24345e-14 364,-3.55271e-15 364,-26"/>
+<text text-anchor="middle" x="337" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="478,-26 382,-26 382,-1.24345e-14 478,-3.55271e-15 478,-26"/>
+<text text-anchor="middle" x="430" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a parent (sub)module to the submodule which is
+    descended from it. Dashed arrows point from a module being used to the
+    module or program unit using it.
+    </p>
+    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    <br>
+    
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-is_initialized">is_initialized</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-endianl">endianL</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-endianb">endianB</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-endian">endian</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-r16p">R16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-r8p">R8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-r4p">R4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-r_p">R_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-i8p">I8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-i4p">I4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-i2p">I2P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-i1p">I1P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-i_p">I_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fr16p">FR16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fr8p">FR8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fr4p">FR4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fr_p">FR_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi8p">FI8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi8pzp">FI8PZP</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi4p">FI4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi4pzp">FI4PZP</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi2p">FI2P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi2pzp">FI2PZP</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi1p">FI1P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi1pzp">FI1PZP</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi_p">FI_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-fi_pzp">FI_PZP</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-dr16p">DR16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-dr8p">DR8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-dr4p">DR4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-dr_p">DR_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-di8p">DI8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-di4p">DI4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-di2p">DI2P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-di1p">DI1P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-di_p">DI_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-real_kinds_list">REAL_KINDS_LIST</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-real_formats_list">REAL_FORMATS_LIST</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-integer_kinds_list">INTEGER_KINDS_LIST</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-integer_formats_list">INTEGER_FORMATS_LIST</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-minr16p">MinR16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxr16p">MaxR16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-minr8p">MinR8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxr8p">MaxR8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-minr4p">MinR4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxr4p">MaxR4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-minr_p">MinR_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxr_p">MaxR_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-mini8p">MinI8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-mini4p">MinI4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-mini2p">MinI2P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-mini1p">MinI1P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-mini_p">MinI_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxi8p">MaxI8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxi4p">MaxI4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxi2p">MaxI2P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxi1p">MaxI1P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-maxi_p">MaxI_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-smallr16p">smallR16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-smallr8p">smallR8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-smallr4p">smallR4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-smallr_p">smallR_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-zeror16">ZeroR16</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-zeror8">ZeroR8</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-zeror4">ZeroR4</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-zero">Zero</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bir16p">BIR16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bir8p">BIR8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bir4p">BIR4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bir_p">BIR_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byr16p">BYR16P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byr8p">BYR8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byr4p">BYR4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byr_p">BYR_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bii8p">BII8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bii4p">BII4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bii2p">BII2P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bii1p">BII1P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-bii_p">BII_P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byi8p">BYI8P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byi4p">BYI4P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byi2p">BYI2P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byi1p">BYI1P</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html#variable-byi_p">BYI_P</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    <section>
+    <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-is_initialized"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>is_initialized</strong></td><td> =</td><td>.false.</td><td><p>Check the initialization of some variables that must be initialized.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-endianl"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>endianL</strong></td><td> =</td><td>1</td><td><p>Little endian parameter.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-endianb"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>endianB</strong></td><td> =</td><td>0</td><td><p>Big endian parameter.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-endian"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>endian</strong></td><td> =</td><td>endianL</td><td><p>Bit ordering: Little endian (endianL), or Big endian (endianB).</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-r16p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>R16P</strong></td><td> =</td><td>selected_real_kind(15, 307)</td><td><p>Defined as R8P; 64 bits.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-r8p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>R8P</strong></td><td> =</td><td>selected_real_kind(15, 307)</td><td><p>15 digits, range \([10^{-307} , 10^{+307}  - 1]\); 64 bits.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-r4p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>R4P</strong></td><td> =</td><td>selected_real_kind(6, 37)</td><td><p>6  digits, range \([10^{-37}  , 10^{+37}   - 1]\); 32 bits.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-r_p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>R_P</strong></td><td> =</td><td>R8P</td><td><p>Default real precision.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i8p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>I8P</strong></td><td> =</td><td>selected_int_kind(18)</td><td><p>Range \([-2^{63},+2^{63} - 1]\), 19 digits plus sign; 64 bits.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i4p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>I4P</strong></td><td> =</td><td>selected_int_kind(9)</td><td><p>Range \([-2^{31},+2^{31} - 1]\), 10 digits plus sign; 32 bits.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i2p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>I2P</strong></td><td> =</td><td>selected_int_kind(4)</td><td><p>Range \([-2^{15},+2^{15} - 1]\), 5  digits plus sign; 16 bits.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i1p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>I1P</strong></td><td> =</td><td>selected_int_kind(2)</td><td><p>Range \([-2^{7} ,+2^{7}  - 1]\), 3  digits plus sign; 8  bits.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i_p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>I_P</strong></td><td> =</td><td>I4P</td><td><p>Default integer precision.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fr16p"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>FR16P</strong></td><td> =</td><td>'(E23.15E3)'</td><td><p>Output format for kind=R16P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fr8p"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>FR8P</strong></td><td> =</td><td>'(E23.15E3)'</td><td><p>Output format for kind=R8P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fr4p"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>FR4P</strong></td><td> =</td><td>'(E13.6E2)'</td><td><p>Output format for kind=R4P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fr_p"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>FR_P</strong></td><td> =</td><td>FR8P</td><td><p>Output format for kind=R_P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fi8p"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>FI8P</strong></td><td> =</td><td>'(I20)'</td><td><p>Output format for kind=I8P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fi8pzp"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>FI8PZP</strong></td><td> =</td><td>'(I20.19)'</td><td><p>Output format for kind=I8P integer with zero prefixing.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fi4p"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>FI4P</strong></td><td> =</td><td>'(I11)'</td><td><p>Output format for kind=I4P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fi4pzp"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>FI4PZP</strong></td><td> =</td><td>'(I11.10)'</td><td><p>Output format for kind=I4P integer with zero prefixing.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fi2p"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>FI2P</strong></td><td> =</td><td>'(I6)'</td><td><p>Output format for kind=I2P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fi2pzp"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>FI2PZP</strong></td><td> =</td><td>'(I6.5)'</td><td><p>Output format for kind=I2P integer with zero prefixing.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fi1p"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>FI1P</strong></td><td> =</td><td>'(I4)'</td><td><p>Output format for kind=I1P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fi1pzp"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>FI1PZP</strong></td><td> =</td><td>'(I4.3)'</td><td><p>Output format for kind=I1P integer with zero prefixing.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fi_p"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>FI_P</strong></td><td> =</td><td>FI4P</td><td><p>Output format for kind=I_P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fi_pzp"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>FI_PZP</strong></td><td> =</td><td>FI4PZP</td><td><p>Output format for kind=I_P integer with zero prefixing.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dr16p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>DR16P</strong></td><td> =</td><td>23</td><td><p>Number of digits of output format FR16P.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dr8p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>DR8P</strong></td><td> =</td><td>23</td><td><p>Number of digits of output format FR8P.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dr4p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>DR4P</strong></td><td> =</td><td>13</td><td><p>Number of digits of output format FR4P.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dr_p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>DR_P</strong></td><td> =</td><td>DR8P</td><td><p>Number of digits of output format FR_P.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-di8p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>DI8P</strong></td><td> =</td><td>20</td><td><p>Number of digits of output format I8P.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-di4p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>DI4P</strong></td><td> =</td><td>11</td><td><p>Number of digits of output format I4P.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-di2p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>DI2P</strong></td><td> =</td><td>6</td><td><p>Number of digits of output format I2P.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-di1p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>DI1P</strong></td><td> =</td><td>4</td><td><p>Number of digits of output format I1P.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-di_p"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>DI_P</strong></td><td> =</td><td>DI4P</td><td><p>Number of digits of output format I_P.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-real_kinds_list"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>REAL_KINDS_LIST</strong>(1:4)</td><td> =</td><td>[R16P, R8P, R4P, R_P]</td><td><p>List of real kinds.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-real_formats_list"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>REAL_FORMATS_LIST</strong>(1:4)</td><td> =</td><td>[FR16P, FR8P, FR4P//' ', FR_P]</td><td><p>List of real formats.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-integer_kinds_list"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>INTEGER_KINDS_LIST</strong>(1:5)</td><td> =</td><td>[I8P, I4P, I2P, I1P, I_P]</td><td><p>List of integer kinds.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-integer_formats_list"></span>character(len=*),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>INTEGER_FORMATS_LIST</strong>(1:5)</td><td> =</td><td>[FI8P, FI4P, FI2P//' ', FI1P//' ', FI_P]</td><td><p>List of integer formats.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-minr16p"></span>real(kind=R16P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MinR16P</strong></td><td> =</td><td>-huge(1._R16P)</td><td><p>Minimum value of kind=R16P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-maxr16p"></span>real(kind=R16P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MaxR16P</strong></td><td> =</td><td>huge(1._R16P)</td><td><p>Maximum value of kind=R16P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-minr8p"></span>real(kind=R8P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MinR8P</strong></td><td> =</td><td>-huge(1._R8P)</td><td><p>Minimum value of kind=R8P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-maxr8p"></span>real(kind=R8P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MaxR8P</strong></td><td> =</td><td>huge(1._R8P)</td><td><p>Maximum value of kind=R8P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-minr4p"></span>real(kind=R4P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MinR4P</strong></td><td> =</td><td>-huge(1._R4P)</td><td><p>Minimum value of kind=R4P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-maxr4p"></span>real(kind=R4P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MaxR4P</strong></td><td> =</td><td>huge(1._R4P)</td><td><p>Maximum value of kind=R4P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-minr_p"></span>real(kind=R_P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MinR_P</strong></td><td> =</td><td>MinR8P</td><td><p>Minimum value of kind=R_P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-maxr_p"></span>real(kind=R_P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MaxR_P</strong></td><td> =</td><td>MaxR8P</td><td><p>Maximum value of kind=R_P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mini8p"></span>integer(kind=I8P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MinI8P</strong></td><td> =</td><td>-huge(1_I8P)</td><td><p>Minimum value of kind=I8P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mini4p"></span>integer(kind=I4P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MinI4P</strong></td><td> =</td><td>-huge(1_I4P)</td><td><p>Minimum value of kind=I4P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mini2p"></span>integer(kind=I2P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MinI2P</strong></td><td> =</td><td>-huge(1_I2P)</td><td><p>Minimum value of kind=I2P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mini1p"></span>integer(kind=I1P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MinI1P</strong></td><td> =</td><td>-huge(1_I1P)</td><td><p>Minimum value of kind=I1P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mini_p"></span>integer(kind=I_P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MinI_P</strong></td><td> =</td><td>MinI4P</td><td><p>Minimum value of kind=I_P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-maxi8p"></span>integer(kind=I8P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MaxI8P</strong></td><td> =</td><td>huge(1_I8P)</td><td><p>Maximum value of kind=I8P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-maxi4p"></span>integer(kind=I4P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MaxI4P</strong></td><td> =</td><td>huge(1_I4P)</td><td><p>Maximum value of kind=I4P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-maxi2p"></span>integer(kind=I2P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MaxI2P</strong></td><td> =</td><td>huge(1_I2P)</td><td><p>Maximum value of kind=I2P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-maxi1p"></span>integer(kind=I1P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MaxI1P</strong></td><td> =</td><td>huge(1_I1P)</td><td><p>Maximum value of kind=I1P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-maxi_p"></span>integer(kind=I_P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MaxI_P</strong></td><td> =</td><td>MaxI4P</td><td><p>Maximum value of kind=I_P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-smallr16p"></span>real(kind=R16P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>smallR16P</strong></td><td> =</td><td>tiny(1._R16P)</td><td><p>Smallest representable value of kind=R16P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-smallr8p"></span>real(kind=R8P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>smallR8P</strong></td><td> =</td><td>tiny(1._R8P)</td><td><p>Smallest representable value of kind=R8P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-smallr4p"></span>real(kind=R4P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>smallR4P</strong></td><td> =</td><td>tiny(1._R4P)</td><td><p>Smallest representable value of kind=R4P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-smallr_p"></span>real(kind=R_P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>smallR_P</strong></td><td> =</td><td>smallR8P</td><td><p>Smallest representable value of kind=R_P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-zeror16"></span>real(kind=R16P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>ZeroR16</strong></td><td> =</td><td>nearest(1._R16P, 1._R16P)-nearest(1._R16P, -1._R16P)</td><td><p>Smallest representable difference of kind=R16P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-zeror8"></span>real(kind=R8P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>ZeroR8</strong></td><td> =</td><td>nearest(1._R8P, 1._R8P)-nearest(1._R8P, -1._R8P)</td><td><p>Smallest representable difference of kind=R8P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-zeror4"></span>real(kind=R4P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>ZeroR4</strong></td><td> =</td><td>nearest(1._R4P, 1._R4P)-nearest(1._R4P, -1._R4P)</td><td><p>Smallest representable difference of kind=R4P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-zero"></span>real(kind=R_P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>Zero</strong></td><td> =</td><td>ZeroR8</td><td><p>Smallest representable difference of kind=R_P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bir16p"></span>integer(kind=I2P),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>BIR16P</strong></td><td></td><td></td><td><p>Number of bits of kind=R16P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bir8p"></span>integer(kind=I1P),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>BIR8P</strong></td><td></td><td></td><td><p>Number of bits of kind=R8P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bir4p"></span>integer(kind=I1P),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>BIR4P</strong></td><td></td><td></td><td><p>Number of bits of kind=R4P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bir_p"></span>integer(kind=I1P),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>BIR_P</strong></td><td></td><td></td><td><p>Number of bits of kind=R_P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-byr16p"></span>integer(kind=I2P),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>BYR16P</strong></td><td></td><td></td><td><p>Number of bytes of kind=R16P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-byr8p"></span>integer(kind=I1P),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>BYR8P</strong></td><td></td><td></td><td><p>Number of bytes of kind=R8P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-byr4p"></span>integer(kind=I1P),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>BYR4P</strong></td><td></td><td></td><td><p>Number of bytes of kind=R4P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-byr_p"></span>integer(kind=I1P),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>BYR_P</strong></td><td></td><td></td><td><p>Number of bytes of kind=R_P real.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bii8p"></span>integer(kind=I8P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>BII8P</strong></td><td> =</td><td>bit_size(MaxI8P)</td><td><p>Number of bits of kind=I8P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bii4p"></span>integer(kind=I4P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>BII4P</strong></td><td> =</td><td>bit_size(MaxI4P)</td><td><p>Number of bits of kind=I4P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bii2p"></span>integer(kind=I2P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>BII2P</strong></td><td> =</td><td>bit_size(MaxI2P)</td><td><p>Number of bits of kind=I2P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bii1p"></span>integer(kind=I1P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>BII1P</strong></td><td> =</td><td>bit_size(MaxI1P)</td><td><p>Number of bits of kind=I1P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bii_p"></span>integer(kind=I_P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>BII_P</strong></td><td> =</td><td>bit_size(MaxI_P)</td><td><p>Number of bits of kind=I_P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-byi8p"></span>integer(kind=I8P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>BYI8P</strong></td><td> =</td><td>bit_size(MaxI8P)/8_I8P</td><td><p>Number of bytes of kind=I8P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-byi4p"></span>integer(kind=I4P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>BYI4P</strong></td><td> =</td><td>bit_size(MaxI4P)/8_I4P</td><td><p>Number of bytes of kind=I4P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-byi2p"></span>integer(kind=I2P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>BYI2P</strong></td><td> =</td><td>bit_size(MaxI2P)/8_I2P</td><td><p>Number of bytes of kind=I2P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-byi1p"></span>integer(kind=I1P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>BYI1P</strong></td><td> =</td><td>bit_size(MaxI1P)/8_I1P</td><td><p>Number of bytes of kind=I1P integer.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-byi_p"></span>integer(kind=I_P),</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>BYI_P</strong></td><td> =</td><td>bit_size(MaxI_P)/8_I_P</td><td><p>Number of bytes of kind=I_P integer.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    </div>
+  </div>
+
+  <section class="visible-xs visible-sm hidden-md">
+    <hr>
+    
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allmods-1">All Modules</a></h3></div>
+  <div id="allmods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/flow.html">flow</a>
+      
+      <a class="list-group-item" href="../module/flow_field_object.html">flow_field_object</a>
+      
+      <a class="list-group-item" href="../module/flow_field_objects.html">flow_field_objects</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_object.html">flow_primitive_object</a>
+      
+      <a class="list-group-item" href="../module/penf.html">penf</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html">penf_b_size</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html">penf_global_parameters_variables</a>
+      
+      <a class="list-group-item" href="../module/penf_stringify.html">penf_stringify</a>
+      
+      <a class="list-group-item" href="../module/vecfor.html">VecFor</a>
+      
+    </div>
+  </div>
+</div>
+
+
+  </section>
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2017 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>
