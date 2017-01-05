@@ -19,20 +19,23 @@ type :: primitive_object
   type(field_object_scalar)    :: pressure !< Pressure field.
   contains
     ! public operators
-    generic :: assignment(=) => assign_primitive, assign_real !< Assignment overloading.
-    generic :: operator(+) => add                             !< Operator `+` overloading.
-    generic :: operator(/) => div, div_real                   !< Operator `/` overloading.
-    generic :: operator(*) => mul, mul_real, real_mul         !< Operator `*` overloading.
-    generic :: operator(-) => sub                             !< Operator `-` overloading.
-    generic :: operator(==) => eq                             !< Operator `==` overloading.
-    generic :: operator(/=) => not_eq                         !< Operator `/=` overloading.
+    generic :: assignment(=) => assign_primitive, assign_real                   !< Assignment overloading.
+    generic :: operator(+) => add                                               !< Operator `+` overloading.
+    generic :: operator(/) => div, div_integer, div_real                        !< Operator `/` overloading.
+    generic :: operator(*) => mul, mul_integer, integer_mul, mul_real, real_mul !< Operator `*` overloading.
+    generic :: operator(-) => sub                                               !< Operator `-` overloading.
+    generic :: operator(==) => eq                                               !< Operator `==` overloading.
+    generic :: operator(/=) => not_eq                                           !< Operator `/=` overloading.
     ! private methods
     procedure, pass(lhs), private :: assign_primitive !< Assign primitives.
     procedure, pass(lhs), private :: assign_real      !< Assign real to primitive.
     procedure, pass(lhs), private :: add              !< Add primitives.
     procedure, pass(lhs), private :: div              !< Divide primitives.
+    procedure, pass(lhs), private :: div_integer      !< Divide primitive by integer.
     procedure, pass(lhs), private :: div_real         !< Divide primitive by real.
     procedure, pass(lhs), private :: mul              !< Multiply primitives.
+    procedure, pass(lhs), private :: mul_integer      !< Multiply primitive for integer.
+    procedure, pass(rhs), private :: integer_mul      !< Multiply integer for primitive.
     procedure, pass(lhs), private :: mul_real         !< Multiply primitive for real.
     procedure, pass(rhs), private :: real_mul         !< Multiply real for primitive.
     procedure, pass(lhs), private :: sub              !< Subtract primitives.
@@ -83,6 +86,17 @@ contains
   opr%pressure = lhs%pressure / rhs%pressure
   endfunction div
 
+  function div_integer(lhs, rhs) result(opr)
+  !< Divide primitive by integer.
+  class(primitive_object), intent(in) :: lhs !< Left hand side.
+  integer(I_P),            intent(in) :: rhs !< Right hand side.
+  type(primitive_object)              :: opr !< Operator result.
+
+  opr%density = lhs%density / rhs
+  opr%velocity = lhs%velocity / rhs
+  opr%pressure = lhs%pressure / rhs
+  endfunction div_integer
+
   function div_real(lhs, rhs) result(opr)
   !< Divide primitive by real.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
@@ -104,6 +118,28 @@ contains
   opr%velocity = lhs%velocity * rhs%velocity
   opr%pressure = lhs%pressure * rhs%pressure
   endfunction mul
+
+  function mul_integer(lhs, rhs) result(opr)
+  !< Multiply primitive for integer.
+  class(primitive_object), intent(in) :: lhs !< Left hand side.
+  integer(I_P),            intent(in) :: rhs !< Right hand side.
+  type(primitive_object)              :: opr !< Operator result.
+
+  opr%density = lhs%density * rhs
+  opr%velocity = lhs%velocity * rhs
+  opr%pressure = lhs%pressure * rhs
+  endfunction mul_integer
+
+  function integer_mul(lhs, rhs) result(opr)
+  !< Multiply integer for primitive.
+  integer(I_P),            intent(in) :: lhs !< Left hand side.
+  class(primitive_object), intent(in) :: rhs !< Right hand side.
+  type(primitive_object)              :: opr !< Operator result.
+
+  opr%density = lhs * rhs%density
+  opr%velocity = lhs * rhs%velocity
+  opr%pressure = lhs * rhs%pressure
+  endfunction integer_mul
 
   function mul_real(lhs, rhs) result(opr)
   !< Multiply primitive for real.

@@ -19,8 +19,11 @@ type, extends(field_object) :: field_object_scalar
     procedure, pass(lhs) :: assign_real  => assign_real_scalar  !< Assign real to field.
     procedure, pass(lhs) :: add          => scalar_add_scalar   !< Add fields.
     procedure, pass(lhs) :: div          => scalar_div_scalar   !< Divide fields.
+    procedure, pass(lhs) :: div_integer  => scalar_div_integer  !< Divide field by integer.
     procedure, pass(lhs) :: div_real     => scalar_div_real     !< Divide field by real.
     procedure, pass(lhs) :: mul          => scalar_mul_object   !< Multiply fields.
+    procedure, pass(lhs) :: mul_integer  => scalar_mul_integer  !< Multiply field for integer.
+    procedure, pass(rhs) :: integer_mul  => integer_mul_scalar  !< Multiply scalar or field.
     procedure, pass(lhs) :: mul_real     => scalar_mul_real     !< Multiply field for real.
     procedure, pass(rhs) :: real_mul     => real_mul_scalar     !< Multiply real for field.
     procedure, pass(lhs) :: sub          => scalar_sub_scalar   !< Subtract fields.
@@ -39,8 +42,11 @@ type, extends(field_object) :: field_object_vectorial
     procedure, pass(lhs) :: assign_real  => assign_real_vectorial   !< Assign real to field.
     procedure, pass(lhs) :: add          => vectorial_add_vectorial !< Add fields.
     procedure, pass(lhs) :: div          => vectorial_div_object    !< Divide fields.
+    procedure, pass(lhs) :: div_integer  => vectorial_div_integer   !< Divide field by integer.
     procedure, pass(lhs) :: div_real     => vectorial_div_real      !< Divide field by real.
     procedure, pass(lhs) :: mul          => vectorial_mul_object    !< Multiply fields.
+    procedure, pass(lhs) :: mul_integer  => vectorial_mul_integer   !< Multiply field for integer.
+    procedure, pass(rhs) :: integer_mul  => integer_mul_vectorial   !< Multiply integer for field.
     procedure, pass(lhs) :: mul_real     => vectorial_mul_real      !< Multiply field for real.
     procedure, pass(rhs) :: real_mul     => real_mul_vectorial      !< Multiply real for field.
     procedure, pass(lhs) :: sub          => vectorial_sub_vectorial !< Subtract fields.
@@ -105,6 +111,19 @@ contains
   endselect
   endfunction scalar_div_scalar
 
+  function scalar_div_integer(lhs, rhs) result(opr)
+  !< Divide field by integer.
+  class(field_object_scalar), intent(in) :: lhs !< Left hand side.
+  integer(I_P),               intent(in) :: rhs !< Right hand side.
+  class(field_object), allocatable       :: opr !< Operator result.
+
+  allocate(field_object_scalar :: opr)
+  select type(opr)
+  class is(field_object_scalar)
+    opr%field = lhs%field / rhs
+  endselect
+  endfunction scalar_div_integer
+
   function scalar_div_real(lhs, rhs) result(opr)
   !< Divide field by real.
   class(field_object_scalar), intent(in) :: lhs !< Left hand side.
@@ -143,6 +162,32 @@ contains
     endselect
   endselect
   endfunction scalar_mul_object
+
+  function scalar_mul_integer(lhs, rhs) result(opr)
+  !< Multiply field for integer.
+  class(field_object_scalar), intent(in) :: lhs !< Left hand side.
+  integer(I_P),               intent(in) :: rhs !< Right hand side.
+  class(field_object), allocatable       :: opr !< Operator result.
+
+  allocate(field_object_scalar :: opr)
+  select type(opr)
+  class is(field_object_scalar)
+    opr%field = lhs%field * rhs
+  endselect
+  endfunction scalar_mul_integer
+
+  function integer_mul_scalar(lhs, rhs) result(opr)
+  !< Multiply integer for field.
+  integer(I_P),               intent(in) :: lhs !< Left hand side.
+  class(field_object_scalar), intent(in) :: rhs !< Right hand side.
+  class(field_object), allocatable       :: opr !< Operator result.
+
+  allocate(field_object_scalar :: opr)
+  select type(opr)
+  class is(field_object_scalar)
+    opr%field = lhs * rhs%field
+  endselect
+  endfunction integer_mul_scalar
 
   function scalar_mul_real(lhs, rhs) result(opr)
   !< Multiply field for real.
@@ -296,6 +341,19 @@ contains
   endselect
   endfunction vectorial_div_object
 
+  function vectorial_div_integer(lhs, rhs) result(opr)
+  !< Divide field by integer.
+  class(field_object_vectorial), intent(in) :: lhs !< Left hand side.
+  integer(I_P),                  intent(in) :: rhs !< Right hand side.
+  class(field_object), allocatable          :: opr !< Operator result.
+
+  allocate(field_object_vectorial :: opr)
+  select type(opr)
+  class is(field_object_vectorial)
+    opr%field = lhs%field / rhs
+  endselect
+  endfunction vectorial_div_integer
+
   function vectorial_div_real(lhs, rhs) result(opr)
   !< Divide field by real.
   class(field_object_vectorial), intent(in) :: lhs !< Left hand side.
@@ -330,6 +388,32 @@ contains
     endselect
   endselect
   endfunction vectorial_mul_object
+
+  function vectorial_mul_integer(lhs, rhs) result(opr)
+  !< Multiply field for integer.
+  class(field_object_vectorial), intent(in) :: lhs !< Left hand side.
+  integer(I_P),                  intent(in) :: rhs !< Right hand side.
+  class(field_object), allocatable          :: opr !< Operator result.
+
+  allocate(field_object_vectorial :: opr)
+  select type(opr)
+  class is(field_object_vectorial)
+    opr%field = lhs%field * rhs
+  endselect
+  endfunction vectorial_mul_integer
+
+  function integer_mul_vectorial(lhs, rhs) result(opr)
+  !< Multiply integer for field.
+  integer(I_P),                  intent(in) :: lhs !< Left hand side.
+  class(field_object_vectorial), intent(in) :: rhs !< Right hand side.
+  class(field_object), allocatable          :: opr !< Operator result.
+
+  allocate(field_object_vectorial :: opr)
+  select type(opr)
+  class is(field_object_vectorial)
+    opr%field = lhs * rhs%field
+  endselect
+  endfunction integer_mul_vectorial
 
   function vectorial_mul_real(lhs, rhs) result(opr)
   !< Multiply field for real.

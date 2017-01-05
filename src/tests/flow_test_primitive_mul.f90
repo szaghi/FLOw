@@ -7,7 +7,7 @@ implicit none
 type(primitive_object) :: primitive1     !< A primitive object.
 type(primitive_object) :: primitive2     !< A primitive object.
 type(primitive_object) :: primitive3     !< A primitive object.
-logical                :: test_passed(5) !< List of passed tests.
+logical                :: test_passed(7) !< List of passed tests.
 
 test_passed = .false.
 
@@ -23,18 +23,18 @@ call print_error(test='primitive3 = primitive1 * primitive2', is_test_passed=tes
 primitive3 = 2._R_P * primitive1
 test_passed(2) = primitive3 == (2._R_P * primitive1)
 print "(A)", ''
-print "(A,F6.3)",       'density  => 2 * 0.125 = ', primitive3%density%field
-print "(A,3(F6.3,1X))", 'velocity => 2 * 1     = ', primitive3%velocity%field
-print "(A,F6.3)",       'pressure => 2 * 1     = ', primitive3%pressure%field
-call print_error(test='primitive3 = 2 * primitive1', is_test_passed=test_passed(2))
+print "(A,F6.3)",       'density  => 2.0 * 0.125 = ', primitive3%density%field
+print "(A,3(F6.3,1X))", 'velocity => 2.0 * 1     = ', primitive3%velocity%field
+print "(A,F6.3)",       'pressure => 2.0 * 1     = ', primitive3%pressure%field
+call print_error(test='primitive3 = 2.0 * primitive1', is_test_passed=test_passed(2))
 
 primitive3 = primitive1 * 2._R_P
 test_passed(3) = primitive3 == (primitive1 * 2._R_P)
 print "(A)", ''
-print "(A,F6.3)",       'density  => 0.125 * 2 = ', primitive3%density%field
-print "(A,3(F6.3,1X))", 'velocity => 1     * 2 = ', primitive3%velocity%field
-print "(A,F6.3)",       'pressure => 1     * 2 = ', primitive3%pressure%field
-call print_error(test='primitive3 = primitive1 * 2', is_test_passed=test_passed(3))
+print "(A,F6.3)",       'density  => 0.125 * 2.0 = ', primitive3%density%field
+print "(A,3(F6.3,1X))", 'velocity => 1     * 2.0 = ', primitive3%velocity%field
+print "(A,F6.3)",       'pressure => 1     * 2.0 = ', primitive3%pressure%field
+call print_error(test='primitive3 = primitive1 * 2.0', is_test_passed=test_passed(3))
 
 primitive3%velocity = primitive1%density * primitive2%velocity
 test_passed(4) = primitive3%velocity == (primitive2%velocity * 0.125_R_P)
@@ -47,6 +47,22 @@ test_passed(5) = primitive3%velocity == (primitive2%velocity * 0.125_R_P)
 print "(A)", ''
 print "(A,3(F6.3,1X))", 'velocity * density => 2 * 0.125 = ', primitive3%velocity%field
 call print_error(test='primitive3%velocity = primitive2%velocity * primitive1%density', is_test_passed=test_passed(5))
+
+primitive3 = 2_I_P * primitive1
+test_passed(6) = primitive3 == (2_I_P * primitive1)
+print "(A)", ''
+print "(A,F6.3)",       'density  => 2 * 0.125 = ', primitive3%density%field
+print "(A,3(F6.3,1X))", 'velocity => 2 * 1     = ', primitive3%velocity%field
+print "(A,F6.3)",       'pressure => 2 * 1     = ', primitive3%pressure%field
+call print_error(test='primitive3 = 2 * primitive1', is_test_passed=test_passed(6))
+
+primitive3 = primitive1 * 2_I_P
+test_passed(7) = primitive3 == (primitive1 * 2_I_P)
+print "(A)", ''
+print "(A,F6.3)",       'density  => 0.125 * 2 = ', primitive3%density%field
+print "(A,3(F6.3,1X))", 'velocity => 1     * 2 = ', primitive3%velocity%field
+print "(A,F6.3)",       'pressure => 1     * 2 = ', primitive3%pressure%field
+call print_error(test='primitive3 = primitive1 * 2', is_test_passed=test_passed(7))
 
 print "(A,L1)", new_line('a')//'Are all tests passed? ', all(test_passed)
 contains
