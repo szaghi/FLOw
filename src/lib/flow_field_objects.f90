@@ -24,6 +24,8 @@ type, extends(field_object) :: field_object_scalar
     procedure, pass(lhs) :: mul_real     => scalar_mul_real     !< Multiply field for real.
     procedure, pass(rhs) :: real_mul     => real_mul_scalar     !< Multiply real for field.
     procedure, pass(lhs) :: sub          => scalar_sub_scalar   !< Subtract fields.
+    procedure, pass(lhs) :: pow_integer  => scalar_pow_integer  !< Power field by integer.
+    procedure, pass(lhs) :: pow_real     => scalar_pow_real     !< Power field by real.
     procedure, pass(lhs) :: eq           => eq_scalar           !< Compare (`==') fields.
     procedure, pass(lhs) :: not_eq       => not_eq_scalar       !< Compare (`/=') fields.
 endtype field_object_scalar
@@ -42,6 +44,8 @@ type, extends(field_object) :: field_object_vectorial
     procedure, pass(lhs) :: mul_real     => vectorial_mul_real      !< Multiply field for real.
     procedure, pass(rhs) :: real_mul     => real_mul_vectorial      !< Multiply real for field.
     procedure, pass(lhs) :: sub          => vectorial_sub_vectorial !< Subtract fields.
+    procedure, pass(lhs) :: pow_integer  => vectorial_pow_integer   !< Power field by integer.
+    procedure, pass(lhs) :: pow_real     => vectorial_pow_real      !< Power field by real.
     procedure, pass(lhs) :: eq           => eq_vectorial            !< Compare (`==') fields.
     procedure, pass(lhs) :: not_eq       => not_eq_vectorial        !< Compare (`/=') fields.
 endtype field_object_vectorial
@@ -181,6 +185,32 @@ contains
     endselect
   endselect
   endfunction scalar_sub_scalar
+
+  function scalar_pow_integer(lhs, rhs) result(opr)
+  !< Power field by integer.
+  class(field_object_scalar), intent(in) :: lhs !< Left hand side.
+  integer(I_P),               intent(in) :: rhs !< Right hand side.
+  class(field_object), allocatable       :: opr !< Operator result.
+
+  allocate(field_object_scalar :: opr)
+  select type(opr)
+  class is(field_object_scalar)
+    opr%field = lhs%field ** rhs
+  endselect
+  endfunction scalar_pow_integer
+
+  function scalar_pow_real(lhs, rhs) result(opr)
+  !< Power field by real.
+  class(field_object_scalar), intent(in) :: lhs !< Left hand side.
+  real(R_P),                  intent(in) :: rhs !< Right hand side.
+  class(field_object), allocatable       :: opr !< Operator result.
+
+  allocate(field_object_scalar :: opr)
+  select type(opr)
+  class is(field_object_scalar)
+    opr%field = lhs%field ** rhs
+  endselect
+  endfunction scalar_pow_real
 
   function eq_scalar(lhs, rhs) result(opr)
   !< Compare (`==`) fields.
@@ -342,6 +372,36 @@ contains
     endselect
   endselect
   endfunction vectorial_sub_vectorial
+
+  function vectorial_pow_integer(lhs, rhs) result(opr)
+  !< Power field by integer.
+  class(field_object_vectorial), intent(in) :: lhs !< Left hand side.
+  integer(I_P),                  intent(in) :: rhs !< Right hand side.
+  class(field_object), allocatable          :: opr !< Operator result.
+
+  allocate(field_object_vectorial :: opr)
+  select type(opr)
+  class is(field_object_vectorial)
+    opr%field%x = lhs%field%x ** rhs
+    opr%field%y = lhs%field%y ** rhs
+    opr%field%z = lhs%field%z ** rhs
+  endselect
+  endfunction vectorial_pow_integer
+
+  function vectorial_pow_real(lhs, rhs) result(opr)
+  !< Power field by real.
+  class(field_object_vectorial), intent(in) :: lhs !< Left hand side.
+  real(R_P),                     intent(in) :: rhs !< Right hand side.
+  class(field_object), allocatable          :: opr !< Operator result.
+
+  allocate(field_object_vectorial :: opr)
+  select type(opr)
+  class is(field_object_vectorial)
+    opr%field%x = lhs%field%x ** rhs
+    opr%field%y = lhs%field%y ** rhs
+    opr%field%z = lhs%field%z ** rhs
+  endselect
+  endfunction vectorial_pow_real
 
   function eq_vectorial(lhs, rhs) result(opr)
   !< Compare (`==`) fields.

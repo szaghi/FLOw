@@ -20,6 +20,8 @@ type, abstract :: field_object
     procedure(abstract_field_op_real),      pass(lhs), deferred :: mul_real     !< Multiply field for real.
     procedure(abstract_real_op_field),      pass(rhs), deferred :: real_mul     !< Multiply real for field.
     procedure(abstract_simmetric_operator), pass(lhs), deferred :: sub          !< Subtract fields.
+    procedure(abstract_field_op_integer),   pass(lhs), deferred :: pow_integer  !< Power field by integer.
+    procedure(abstract_field_op_real),      pass(lhs), deferred :: pow_real     !< Power field by real.
     procedure(abstract_compare),            pass(lhs), deferred :: eq           !< Compare (`==') fields.
     procedure(abstract_compare),            pass(lhs), deferred :: not_eq       !< Compare (`/=') fields.
     ! public operators
@@ -28,6 +30,7 @@ type, abstract :: field_object
     generic :: operator(/) => div, div_real               !< Operator `/` overloading.
     generic :: operator(*) => mul, real_mul, mul_real     !< Operator `*` overloading.
     generic :: operator(-) => sub                         !< Operator `-` overloading.
+    generic :: operator(**) => pow_integer, pow_real      !< Operator `**` overloading.
     generic :: operator(==) => eq                         !< Operator `/=` overloading.
     generic :: operator(/=) => not_eq                     !< Operator `/=` overloading.
 endtype field_object
@@ -59,6 +62,17 @@ abstract interface
   class(field_object), intent(in)  :: rhs !< Right hand side.
   class(field_object), allocatable :: opr !< Operator result.
   endfunction abstract_simmetric_operator
+endinterface
+
+abstract interface
+  !< Non symmetric operator field.op.integer.
+  function abstract_field_op_integer(lhs, rhs) result(opr)
+  !< Non symmetric operator field.op.integer.
+  import :: field_object, I_P
+  class(field_object), intent(in)  :: lhs !< Left hand side.
+  integer(I_P),        intent(in)  :: rhs !< Right hand side.
+  class(field_object), allocatable :: opr !< Operator result.
+  endfunction abstract_field_op_integer
 endinterface
 
 abstract interface
