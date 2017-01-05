@@ -15,21 +15,21 @@ type, abstract :: field_object
     procedure(abstract_assign_real),        pass(lhs), deferred :: assign_real  !< Assign real to field.
     procedure(abstract_simmetric_operator), pass(lhs), deferred :: add          !< Add fields.
     procedure(abstract_simmetric_operator), pass(lhs), deferred :: div          !< Divide fields.
-    procedure(abstract_field_op_real),      pass(lhs), deferred :: divreal      !< Divide field by real.
+    procedure(abstract_field_op_real),      pass(lhs), deferred :: div_real     !< Divide field by real.
     procedure(abstract_simmetric_operator), pass(lhs), deferred :: mul          !< Multiply fields.
-    procedure(abstract_field_op_real),      pass(lhs), deferred :: mulreal      !< Multiply field for real.
-    procedure(abstract_real_op_field),      pass(rhs), deferred :: realmul      !< Multiply real for field.
+    procedure(abstract_field_op_real),      pass(lhs), deferred :: mul_real     !< Multiply field for real.
+    procedure(abstract_real_op_field),      pass(rhs), deferred :: real_mul     !< Multiply real for field.
     procedure(abstract_simmetric_operator), pass(lhs), deferred :: sub          !< Subtract fields.
-    procedure(abstract_compare),            pass(lhs), deferred :: not_eq       !< Compare (`/=') fields.
     procedure(abstract_compare),            pass(lhs), deferred :: eq           !< Compare (`==') fields.
+    procedure(abstract_compare),            pass(lhs), deferred :: not_eq       !< Compare (`/=') fields.
     ! public operators
     generic :: assignment(=) => assign_field, assign_real !< Assignment overloading.
     generic :: operator(+) => add                         !< Operator `+` overloading.
-    generic :: operator(/) => div, divreal                !< Operator `/` overloading.
-    generic :: operator(*) => mul, realmul, mulreal       !< Operator `*` overloading.
+    generic :: operator(/) => div, div_real               !< Operator `/` overloading.
+    generic :: operator(*) => mul, real_mul, mul_real     !< Operator `*` overloading.
     generic :: operator(-) => sub                         !< Operator `-` overloading.
-    generic :: operator(/=) => not_eq                     !< Operator `/=` overloading.
     generic :: operator(==) => eq                         !< Operator `/=` overloading.
+    generic :: operator(/=) => not_eq                     !< Operator `/=` overloading.
 endtype field_object
 
 ! deferred public methods interfaces

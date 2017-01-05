@@ -1,8 +1,7 @@
 !< FLOw, Fortran fLuid Object
 module flow
 use flow_field_object
-use flow_field_object_scalar
-use flow_field_object_vectorial
+use flow_field_objects
 use flow_primitive_object
 use penf
 
