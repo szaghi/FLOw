@@ -10,7 +10,7 @@
     <meta name="author" content="Stefano Zaghi" >
     <link rel="icon" href="../favicon.png">
 
-    <title>assign_ScalI4P &ndash; FLOw</title>
+    <title>compatible &ndash; FLOw</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -116,8 +116,8 @@
     
   
   <div class="row">
-    <h1>assign_ScalI4P
-      <small>Subroutine</small>
+    <h1>compatible
+      <small>Function</small>
     
     </h1>
     
@@ -134,20 +134,20 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title=" 0.3% of total for procedures.">8 statements</a>
+	  title=" 0.2% of total for procedures.">7 statements</a>
      </li> 
      
      
-    <li><i class="fa fa-code"></i><a href="../src/vecfor.F90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/flow_primitive_object.f90"> Source File</a></li>
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
-     <li><a href='../sourcefile/vecfor.f90.html'>vecfor.F90</a></li>
+     <li><a href='../sourcefile/flow_primitive_object.f90.html'>flow_primitive_object.f90</a></li>
   
-     <li><a href='../module/vecfor.html'>VecFor</a></li>
+     <li><a href='../module/flow_primitive_object.html'>flow_primitive_object</a></li>
   
-     <li class="active">assign_ScalI4P</li>
+     <li class="active">compatible</li>
   </ol>
 </div>
 </div>
@@ -188,7 +188,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/assign_scali4p.html#src">assign_ScalI4P</a>
+    <a class="list-group-item" href="../proc/compatible.html#src">compatible</a>
   </div>
 </div>
 
@@ -810,7 +810,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private elemental subroutine assign_ScalI4P(self, scal)
+private pure function compatible(lhs, rhs) result(opr)
     
     
 	 
@@ -820,7 +820,7 @@ private elemental subroutine assign_ScalI4P(self, scal)
 
 
     
-    <p>Assignment between a scalar (integer I4P) and self.</p>
+    <p>Check primitives compatibility (size of partial densities).</p>
     
 
     <h3>Arguments</h3>
@@ -841,12 +841,12 @@ private elemental subroutine assign_ScalI4P(self, scal)
   
 <tr>
   
-  <td><span class="anchor" id="variable-self%7E140"></span>class(<a href='../type/vector.html'>Vector</a>),</td>
-  <td>intent(inout)</td>
+  <td><span class="anchor" id="variable-lhs%7E53"></span>class(<a href='../type/primitive_object.html'>primitive_object</a>),</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>self</strong></td><td></td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
   
 </tr>
 
@@ -856,12 +856,12 @@ private elemental subroutine assign_ScalI4P(self, scal)
   
 <tr>
   
-  <td><span class="anchor" id="variable-scal%7E138"></span>integer(kind=I4P),</td>
+  <td><span class="anchor" id="variable-rhs%7E53"></span>type(<a href='../type/primitive_object.html'>primitive_object</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>scal</strong></td><td></td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
   
 </tr>
 
@@ -869,6 +869,15 @@ private elemental subroutine assign_ScalI4P(self, scal)
 </table>
 
     
+    
+    
+    
+    
+    
+    
+	 <h3>Return Value <small><span class="anchor" id="variable-opr%7E47"></span>logical
+  </small></h3>
+    <p>Operator result.</p>
     
     
      
@@ -899,7 +908,7 @@ private elemental subroutine assign_ScalI4P(self, scal)
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/assign_scali4p.html#src">assign_ScalI4P</a>
+    <a class="list-group-item" href="../proc/compatible.html#src">compatible</a>
   </div>
 </div>
 
@@ -927,21 +936,15 @@ private elemental subroutine assign_ScalI4P(self, scal)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>  <span class="k">elemental subroutine </span><span class="n">assign_ScalI4P</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">scal</span><span class="p">)</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
-  <span class="c">!&lt; Assignment between a scalar (integer I4P) and self.</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
-  <span class="k">class</span><span class="p">(</span><span class="n">Vector</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">INOUT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self</span>
-  <span class="kt">integer</span><span class="p">(</span><span class="n">I4P</span><span class="p">),</span>  <span class="k">intent</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">scal</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
+    <div class="highlight"><pre><span></span>  <span class="k">pure function </span><span class="n">compatible</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">opr</span><span class="p">)</span>
+  <span class="c">!&lt; Check primitives compatibility (size of partial densities).</span>
+  <span class="k">class</span><span class="p">(</span><span class="n">primitive_object</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lhs</span> <span class="c">!&lt; Left hand side.</span>
+  <span class="k">type</span><span class="p">(</span><span class="n">primitive_object</span><span class="p">),</span>  <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">rhs</span> <span class="c">!&lt; Right hand side.</span>
+  <span class="kt">logical</span>                             <span class="kd">::</span> <span class="n">opr</span> <span class="c">!&lt; Operator result.</span>
 
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
-  <span class="n">self</span><span class="p">%</span><span class="n">x</span> <span class="o">=</span> <span class="kt">real</span><span class="p">(</span><span class="n">scal</span><span class="p">,</span> <span class="n">R8P</span><span class="p">)</span>
-  <span class="n">self</span><span class="p">%</span><span class="n">y</span> <span class="o">=</span> <span class="kt">real</span><span class="p">(</span><span class="n">scal</span><span class="p">,</span> <span class="n">R8P</span><span class="p">)</span>
-  <span class="n">self</span><span class="p">%</span><span class="n">z</span> <span class="o">=</span> <span class="kt">real</span><span class="p">(</span><span class="n">scal</span><span class="p">,</span> <span class="n">R8P</span><span class="p">)</span>
-  <span class="k">return</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
-  <span class="n">endsubroutine</span> <span class="n">assign_ScalI4P</span>
+  <span class="n">opr</span> <span class="o">=</span> <span class="nb">allocated</span><span class="p">(</span><span class="n">lhs</span><span class="p">%</span><span class="n">partial_densities</span><span class="p">).</span><span class="nb">and</span><span class="p">.</span><span class="nb">allocated</span><span class="p">(</span><span class="n">rhs</span><span class="p">%</span><span class="n">partial_densities</span><span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">opr</span><span class="p">)</span> <span class="n">opr</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">lhs</span><span class="p">%</span><span class="n">partial_densities</span><span class="p">,</span> <span class="nb">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">size</span><span class="p">(</span><span class="n">rhs</span><span class="p">%</span><span class="n">partial_densities</span><span class="p">,</span> <span class="nb">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">endfunction</span> <span class="n">compatible</span>
 </pre></div>
 
     </section>

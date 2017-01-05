@@ -41,14 +41,14 @@ endtype field_object
 ! deferred public methods interfaces
 abstract interface
   !< Assignment overloading.
-  subroutine abstract_assign(lhs, rhs)
+  pure subroutine abstract_assign(lhs, rhs)
   !< Assign fields.
   import :: field_object
   class(field_object), intent(inout) :: lhs !< Left hand side.
   class(field_object), intent(in)    :: rhs !< Right hand side.
   endsubroutine abstract_assign
 
-  subroutine abstract_assign_real(lhs, rhs)
+  pure subroutine abstract_assign_real(lhs, rhs)
   !< Assign real to field.
   import :: field_object, R_P
   class(field_object), intent(inout) :: lhs !< Left hand side.
@@ -58,7 +58,7 @@ endinterface
 
 abstract interface
   !< Symmetric operator field.op.field.
-  function abstract_simmetric_operator(lhs, rhs) result(opr)
+  pure function abstract_simmetric_operator(lhs, rhs) result(opr)
   !< Symmetric operator field.op.field.
   import :: field_object
   class(field_object), intent(in)  :: lhs !< Left hand side.
@@ -69,7 +69,7 @@ endinterface
 
 abstract interface
   !< Non symmetric operator integer.op.field.
-  function abstract_integer_op_field(lhs, rhs) result(opr)
+  pure function abstract_integer_op_field(lhs, rhs) result(opr)
   !< Non symmetric operator integer.op.field.
   import :: field_object, I_P
   integer(I_P),        intent(in)  :: lhs !< Left hand side.
@@ -80,7 +80,7 @@ endinterface
 
 abstract interface
   !< Non symmetric operator field.op.integer.
-  function abstract_field_op_integer(lhs, rhs) result(opr)
+  pure function abstract_field_op_integer(lhs, rhs) result(opr)
   !< Non symmetric operator field.op.integer.
   import :: field_object, I_P
   class(field_object), intent(in)  :: lhs !< Left hand side.
@@ -91,7 +91,7 @@ endinterface
 
 abstract interface
   !< Non symmetric operator field.op.real.
-  function abstract_field_op_real(lhs, rhs) result(opr)
+  pure function abstract_field_op_real(lhs, rhs) result(opr)
   !< Non symmetric operator field.op.real.
   import :: field_object, R_P
   class(field_object), intent(in)  :: lhs !< Left hand side.
@@ -102,7 +102,7 @@ endinterface
 
 abstract interface
   !< Non symmetric operator real.op.field.
-  function abstract_real_op_field(lhs, rhs) result(opr)
+  pure function abstract_real_op_field(lhs, rhs) result(opr)
   !< Non symmetric operator real.op.field.
   import :: field_object, R_P
   real(R_P),           intent(in)  :: lhs !< Left hand side.
@@ -113,7 +113,7 @@ endinterface
 
 abstract interface
   !< Compare overloading.
-  function abstract_compare(lhs, rhs) result(opr)
+  pure function abstract_compare(lhs, rhs) result(opr)
   !< Compare overloading.
   import :: field_object
   class(field_object), intent(in) :: lhs !< Left hand side.

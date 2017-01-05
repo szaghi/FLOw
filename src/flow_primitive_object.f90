@@ -14,9 +14,10 @@ public :: primitive_object
 
 type :: primitive_object
   !< FLOw **primitive** class definition.
-  type(field_object_scalar)    :: density  !< Density field.
-  type(field_object_vectorial) :: velocity !< Velocity field.
-  type(field_object_scalar)    :: pressure !< Pressure field.
+  type(field_object_scalar)              :: density              !< Density field.
+  type(field_object_vectorial)           :: velocity             !< Velocity field.
+  type(field_object_scalar)              :: pressure             !< Pressure field.
+  type(field_object_scalar), allocatable :: partial_densities(:) !< Partial densities fields.
   contains
     ! public operators
     generic :: assignment(=) => assign_primitive, assign_real                   !< Assignment overloading.
@@ -26,6 +27,7 @@ type :: primitive_object
     generic :: operator(-) => sub                                               !< Operator `-` overloading.
     generic :: operator(==) => eq                                               !< Operator `==` overloading.
     generic :: operator(/=) => not_eq                                           !< Operator `/=` overloading.
+    generic :: operator(.compatible.) => compatible                             !< Operator `.compatible.` overloading.
     ! private methods
     procedure, pass(lhs), private :: assign_primitive !< Assign primitives.
     procedure, pass(lhs), private :: assign_real      !< Assign real to primitive.
@@ -41,10 +43,11 @@ type :: primitive_object
     procedure, pass(lhs), private :: sub              !< Subtract primitives.
     procedure, pass(lhs), private :: eq               !< Compare (`==') primitives.
     procedure, pass(lhs), private :: not_eq           !< Compare (`/=') primitives.
+    procedure, pass(lhs), private :: compatible       !< Compare (`.compatible.`) primitives.
 endtype primitive_object
 contains
   ! private methods
-  subroutine assign_primitive(lhs, rhs)
+  pure subroutine assign_primitive(lhs, rhs)
   !< Assign primitives.
   class(primitive_object), intent(inout) :: lhs !< Left hand side.
   type(primitive_object),  intent(in)    :: rhs !< Right hand side.
@@ -52,147 +55,246 @@ contains
   lhs%density = rhs%density
   lhs%velocity = rhs%velocity
   lhs%pressure = rhs%pressure
+  if (allocated(rhs%partial_densities)) lhs%partial_densities = rhs%partial_densities
   endsubroutine assign_primitive
 
-  subroutine assign_real(lhs, rhs)
+  pure subroutine assign_real(lhs, rhs)
   !< Assign real to primitive.
   class(primitive_object), intent(inout) :: lhs !< Left hand side.
   real(R_P),               intent(in)    :: rhs !< Right hand side.
+  integer(I_P)                           :: d   !< Counter.
 
   lhs%density = rhs
   lhs%velocity = rhs
   lhs%pressure = rhs
+  if (allocated(lhs%partial_densities)) then
+    do d=1, size(lhs%partial_densities, dim=1)
+      lhs%partial_densities(d) = rhs
+    enddo
+  endif
   endsubroutine assign_real
 
-  function add(lhs, rhs) result(opr)
+  elemental function add(lhs, rhs) result(opr)
   !< Add primitives.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   type(primitive_object),  intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
+  integer(I_P)                        :: d   !< Counter.
 
   opr%density = lhs%density + rhs%density
   opr%velocity = lhs%velocity + rhs%velocity
   opr%pressure = lhs%pressure + rhs%pressure
+  if (lhs.compatible.rhs) then
+    allocate(opr%partial_densities(1:size(lhs%partial_densities, dim=1)))
+    do d=1, size(lhs%partial_densities, dim=1)
+      opr%partial_densities(d) = lhs%partial_densities(d) + rhs%partial_densities(d)
+    enddo
+  endif
   endfunction add
 
-  function div(lhs, rhs) result(opr)
+  elemental function div(lhs, rhs) result(opr)
   !< Divide primitives.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   type(primitive_object),  intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
+  integer(I_P)                        :: d   !< Counter.
 
   opr%density = lhs%density / rhs%density
   opr%velocity = lhs%velocity / rhs%velocity
   opr%pressure = lhs%pressure / rhs%pressure
+  if (lhs.compatible.rhs) then
+    allocate(opr%partial_densities(1:size(lhs%partial_densities, dim=1)))
+    do d=1, size(lhs%partial_densities, dim=1)
+      opr%partial_densities(d) = lhs%partial_densities(d) / rhs%partial_densities(d)
+    enddo
+  endif
   endfunction div
 
-  function div_integer(lhs, rhs) result(opr)
+  elemental function div_integer(lhs, rhs) result(opr)
   !< Divide primitive by integer.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   integer(I_P),            intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
+  integer(I_P)                        :: d   !< Counter.
 
   opr%density = lhs%density / rhs
   opr%velocity = lhs%velocity / rhs
   opr%pressure = lhs%pressure / rhs
+  if (allocated(lhs%partial_densities)) then
+    allocate(opr%partial_densities(1:size(lhs%partial_densities, dim=1)))
+    do d=1, size(lhs%partial_densities, dim=1)
+      opr%partial_densities(d) = lhs%partial_densities(d) / rhs
+    enddo
+  endif
   endfunction div_integer
 
-  function div_real(lhs, rhs) result(opr)
+  elemental function div_real(lhs, rhs) result(opr)
   !< Divide primitive by real.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   real(R_P),               intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
+  integer(I_P)                        :: d   !< Counter.
 
   opr%density = lhs%density / rhs
   opr%velocity = lhs%velocity / rhs
   opr%pressure = lhs%pressure / rhs
+  if (allocated(lhs%partial_densities)) then
+    allocate(opr%partial_densities(1:size(lhs%partial_densities, dim=1)))
+    do d=1, size(lhs%partial_densities, dim=1)
+      opr%partial_densities(d) = lhs%partial_densities(d) / rhs
+    enddo
+  endif
   endfunction div_real
 
-  function mul(lhs, rhs) result(opr)
+  elemental function mul(lhs, rhs) result(opr)
   !< Multiply primitives.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   type(primitive_object),  intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
+  integer(I_P)                        :: d   !< Counter.
 
   opr%density = lhs%density * rhs%density
   opr%velocity = lhs%velocity * rhs%velocity
   opr%pressure = lhs%pressure * rhs%pressure
+  if (lhs.compatible.rhs) then
+    allocate(opr%partial_densities(1:size(lhs%partial_densities, dim=1)))
+    do d=1, size(lhs%partial_densities, dim=1)
+      opr%partial_densities(d) = lhs%partial_densities(d) * rhs%partial_densities(d)
+    enddo
+  endif
   endfunction mul
 
-  function mul_integer(lhs, rhs) result(opr)
+  elemental function mul_integer(lhs, rhs) result(opr)
   !< Multiply primitive for integer.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   integer(I_P),            intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
+  integer(I_P)                        :: d   !< Counter.
 
   opr%density = lhs%density * rhs
   opr%velocity = lhs%velocity * rhs
   opr%pressure = lhs%pressure * rhs
+  if (allocated(lhs%partial_densities)) then
+    allocate(opr%partial_densities(1:size(lhs%partial_densities, dim=1)))
+    do d=1, size(lhs%partial_densities, dim=1)
+      opr%partial_densities(d) = lhs%partial_densities(d) * rhs
+    enddo
+  endif
   endfunction mul_integer
 
-  function integer_mul(lhs, rhs) result(opr)
+  elemental function integer_mul(lhs, rhs) result(opr)
   !< Multiply integer for primitive.
   integer(I_P),            intent(in) :: lhs !< Left hand side.
   class(primitive_object), intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
+  integer(I_P)                        :: d   !< Counter.
 
   opr%density = lhs * rhs%density
   opr%velocity = lhs * rhs%velocity
   opr%pressure = lhs * rhs%pressure
+  if (allocated(rhs%partial_densities)) then
+    allocate(opr%partial_densities(1:size(rhs%partial_densities, dim=1)))
+    do d=1, size(rhs%partial_densities, dim=1)
+      opr%partial_densities(d) = lhs * rhs%partial_densities(d)
+    enddo
+  endif
   endfunction integer_mul
 
-  function mul_real(lhs, rhs) result(opr)
+  elemental function mul_real(lhs, rhs) result(opr)
   !< Multiply primitive for real.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   real(R_P),               intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
+  integer(I_P)                        :: d   !< Counter.
 
   opr%density = lhs%density * rhs
   opr%velocity = lhs%velocity * rhs
   opr%pressure = lhs%pressure * rhs
+  if (allocated(lhs%partial_densities)) then
+    allocate(opr%partial_densities(1:size(lhs%partial_densities, dim=1)))
+    do d=1, size(lhs%partial_densities, dim=1)
+      opr%partial_densities(d) = lhs%partial_densities(d) * rhs
+    enddo
+  endif
   endfunction mul_real
 
-  function real_mul(lhs, rhs) result(opr)
+  elemental function real_mul(lhs, rhs) result(opr)
   !< Multiply real for primitive.
   real(R_P),               intent(in) :: lhs !< Left hand side.
   class(primitive_object), intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
+  integer(I_P)                        :: d   !< Counter.
 
   opr%density = lhs * rhs%density
   opr%velocity = lhs * rhs%velocity
   opr%pressure = lhs * rhs%pressure
+  if (allocated(rhs%partial_densities)) then
+    allocate(opr%partial_densities(1:size(rhs%partial_densities, dim=1)))
+    do d=1, size(rhs%partial_densities, dim=1)
+      opr%partial_densities(d) = lhs * rhs%partial_densities(d)
+    enddo
+  endif
   endfunction real_mul
 
-  function sub(lhs, rhs) result(opr)
+  elemental function sub(lhs, rhs) result(opr)
   !< Subtract primitives.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   type(primitive_object),  intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
+  integer(I_P)                        :: d   !< Counter.
 
   opr%density = lhs%density - rhs%density
   opr%velocity = lhs%velocity - rhs%velocity
   opr%pressure = lhs%pressure - rhs%pressure
+  if (lhs.compatible.rhs) then
+    allocate(opr%partial_densities(1:size(lhs%partial_densities, dim=1)))
+    do d=1, size(lhs%partial_densities, dim=1)
+      opr%partial_densities(d) = lhs%partial_densities(d) - rhs%partial_densities(d)
+    enddo
+  endif
   endfunction sub
 
-  function eq(lhs, rhs) result(opr)
+  pure function eq(lhs, rhs) result(opr)
   !< Compare (`==`) primitives.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   type(primitive_object),  intent(in) :: rhs !< Right hand side.
   logical                             :: opr !< Operator result.
+  integer(I_P)                        :: d   !< Counter.
 
   opr = lhs%density == rhs%density
   if (opr) opr = lhs%velocity == rhs%velocity
   if (opr) opr = lhs%pressure == rhs%pressure
+  if (opr.and.allocated(lhs%partial_densities).and.allocated(rhs%partial_densities)) then
+    if (opr) opr = lhs.compatible.rhs
+    if (opr) then
+      do d=1, size(lhs%partial_densities, dim=1)
+        opr = lhs%partial_densities(d) == rhs%partial_densities(d)
+        if (.not.opr) exit
+      enddo
+    endif
+  elseif (opr.and.allocated(lhs%partial_densities).and.(.not.allocated(rhs%partial_densities))) then
+    opr = .false.
+  elseif (opr.and.(.not.allocated(lhs%partial_densities)).and.allocated(rhs%partial_densities)) then
+    opr = .false.
+  endif
   endfunction eq
 
-  function not_eq(lhs, rhs) result(opr)
+  pure function not_eq(lhs, rhs) result(opr)
   !< Compare (`/=`) primitives.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   type(primitive_object),  intent(in) :: rhs !< Right hand side.
   logical                             :: opr !< Operator result.
 
-  opr = lhs%density /= rhs%density
-  if (.not.opr) opr = lhs%velocity /= rhs%velocity
-  if (.not.opr) opr = lhs%pressure /= rhs%pressure
+  opr = .not.(lhs%eq(rhs=rhs))
   endfunction not_eq
+
+  pure function compatible(lhs, rhs) result(opr)
+  !< Check primitives compatibility (size of partial densities).
+  class(primitive_object), intent(in) :: lhs !< Left hand side.
+  type(primitive_object),  intent(in) :: rhs !< Right hand side.
+  logical                             :: opr !< Operator result.
+
+  opr = allocated(lhs%partial_densities).and.allocated(rhs%partial_densities)
+  if (opr) opr = size(lhs%partial_densities, dim=1) == size(rhs%partial_densities, dim=1)
+  endfunction compatible
 endmodule flow_primitive_object

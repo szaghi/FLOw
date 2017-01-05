@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title=" 0.3% of total for procedures.">8 statements</a>
+	  title=" 0.5% of total for procedures.">15 statements</a>
      </li> 
      
      
@@ -296,6 +296,8 @@
       <a class="list-group-item" href="../proc/check_endian.html">check_endian</a>
       
       <a class="list-group-item" href="../proc/compact_real_string.html">compact_real_string</a>
+      
+      <a class="list-group-item" href="../proc/compatible.html">compatible</a>
       
       <a class="list-group-item" href="../proc/crossproduct.html">crossproduct</a>
       
@@ -808,7 +810,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private function div_real(lhs, rhs) result(opr)
+private elemental function div_real(lhs, rhs) result(opr)
     
     
 	 
@@ -934,15 +936,22 @@ private function div_real(lhs, rhs) result(opr)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>  <span class="k">function </span><span class="n">div_real</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">opr</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>  <span class="k">elemental function </span><span class="n">div_real</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">opr</span><span class="p">)</span>
   <span class="c">!&lt; Divide primitive by real.</span>
   <span class="k">class</span><span class="p">(</span><span class="n">primitive_object</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lhs</span> <span class="c">!&lt; Left hand side.</span>
   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">rhs</span> <span class="c">!&lt; Right hand side.</span>
   <span class="k">type</span><span class="p">(</span><span class="n">primitive_object</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">opr</span> <span class="c">!&lt; Operator result.</span>
+  <span class="kt">integer</span><span class="p">(</span><span class="n">I_P</span><span class="p">)</span>                        <span class="kd">::</span> <span class="n">d</span>   <span class="c">!&lt; Counter.</span>
 
   <span class="n">opr</span><span class="p">%</span><span class="n">density</span> <span class="o">=</span> <span class="n">lhs</span><span class="p">%</span><span class="n">density</span> <span class="o">/</span> <span class="n">rhs</span>
   <span class="n">opr</span><span class="p">%</span><span class="n">velocity</span> <span class="o">=</span> <span class="n">lhs</span><span class="p">%</span><span class="n">velocity</span> <span class="o">/</span> <span class="n">rhs</span>
   <span class="n">opr</span><span class="p">%</span><span class="n">pressure</span> <span class="o">=</span> <span class="n">lhs</span><span class="p">%</span><span class="n">pressure</span> <span class="o">/</span> <span class="n">rhs</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">lhs</span><span class="p">%</span><span class="n">partial_densities</span><span class="p">))</span> <span class="k">then</span>
+<span class="k">    allocate</span><span class="p">(</span><span class="n">opr</span><span class="p">%</span><span class="n">partial_densities</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">lhs</span><span class="p">%</span><span class="n">partial_densities</span><span class="p">,</span> <span class="nb">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)))</span>
+    <span class="k">do </span><span class="n">d</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">(</span><span class="n">lhs</span><span class="p">%</span><span class="n">partial_densities</span><span class="p">,</span> <span class="nb">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+      <span class="n">opr</span><span class="p">%</span><span class="n">partial_densities</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">=</span> <span class="n">lhs</span><span class="p">%</span><span class="n">partial_densities</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">/</span> <span class="n">rhs</span>
+    <span class="n">enddo</span>
+  <span class="n">endif</span>
   <span class="n">endfunction</span> <span class="n">div_real</span>
 </pre></div>
 
@@ -1057,6 +1066,8 @@ private function div_real(lhs, rhs) result(opr)
       <a class="list-group-item" href="../proc/check_endian.html">check_endian</a>
       
       <a class="list-group-item" href="../proc/compact_real_string.html">compact_real_string</a>
+      
+      <a class="list-group-item" href="../proc/compatible.html">compatible</a>
       
       <a class="list-group-item" href="../proc/crossproduct.html">crossproduct</a>
       

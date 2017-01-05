@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title=" 0.3% of total for procedures.">7 statements</a>
+	  title=" 0.5% of total for procedures.">13 statements</a>
      </li> 
      
      
@@ -296,6 +296,8 @@
       <a class="list-group-item" href="../proc/check_endian.html">check_endian</a>
       
       <a class="list-group-item" href="../proc/compact_real_string.html">compact_real_string</a>
+      
+      <a class="list-group-item" href="../proc/compatible.html">compatible</a>
       
       <a class="list-group-item" href="../proc/crossproduct.html">crossproduct</a>
       
@@ -808,7 +810,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine assign_real(lhs, rhs)
+private pure subroutine assign_real(lhs, rhs)
     
     
 	 
@@ -839,7 +841,7 @@ private subroutine assign_real(lhs, rhs)
   
 <tr>
   
-  <td><span class="anchor" id="variable-lhs%7E54"></span>class(<a href='../type/primitive_object.html'>primitive_object</a>),</td>
+  <td><span class="anchor" id="variable-lhs%7E55"></span>class(<a href='../type/primitive_object.html'>primitive_object</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
@@ -854,7 +856,7 @@ private subroutine assign_real(lhs, rhs)
   
 <tr>
   
-  <td><span class="anchor" id="variable-rhs%7E54"></span>real(kind=R_P),</td>
+  <td><span class="anchor" id="variable-rhs%7E55"></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -925,14 +927,20 @@ private subroutine assign_real(lhs, rhs)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>  <span class="k">subroutine </span><span class="n">assign_real</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>  <span class="k">pure subroutine </span><span class="n">assign_real</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span>
   <span class="c">!&lt; Assign real to primitive.</span>
   <span class="k">class</span><span class="p">(</span><span class="n">primitive_object</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lhs</span> <span class="c">!&lt; Left hand side.</span>
   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">rhs</span> <span class="c">!&lt; Right hand side.</span>
+  <span class="kt">integer</span><span class="p">(</span><span class="n">I_P</span><span class="p">)</span>                           <span class="kd">::</span> <span class="n">d</span>   <span class="c">!&lt; Counter.</span>
 
   <span class="n">lhs</span><span class="p">%</span><span class="n">density</span> <span class="o">=</span> <span class="n">rhs</span>
   <span class="n">lhs</span><span class="p">%</span><span class="n">velocity</span> <span class="o">=</span> <span class="n">rhs</span>
   <span class="n">lhs</span><span class="p">%</span><span class="n">pressure</span> <span class="o">=</span> <span class="n">rhs</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">lhs</span><span class="p">%</span><span class="n">partial_densities</span><span class="p">))</span> <span class="k">then</span>
+<span class="k">    do </span><span class="n">d</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">(</span><span class="n">lhs</span><span class="p">%</span><span class="n">partial_densities</span><span class="p">,</span> <span class="nb">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+      <span class="n">lhs</span><span class="p">%</span><span class="n">partial_densities</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">=</span> <span class="n">rhs</span>
+    <span class="n">enddo</span>
+  <span class="n">endif</span>
   <span class="n">endsubroutine</span> <span class="n">assign_real</span>
 </pre></div>
 
@@ -1047,6 +1055,8 @@ private subroutine assign_real(lhs, rhs)
       <a class="list-group-item" href="../proc/check_endian.html">check_endian</a>
       
       <a class="list-group-item" href="../proc/compact_real_string.html">compact_real_string</a>
+      
+      <a class="list-group-item" href="../proc/compatible.html">compatible</a>
       
       <a class="list-group-item" href="../proc/crossproduct.html">crossproduct</a>
       

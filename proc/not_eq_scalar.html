@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title=" 0.4% of total for procedures.">10 statements</a>
+	  title=" 0.3% of total for procedures.">10 statements</a>
      </li> 
      
      
@@ -296,6 +296,8 @@
       <a class="list-group-item" href="../proc/check_endian.html">check_endian</a>
       
       <a class="list-group-item" href="../proc/compact_real_string.html">compact_real_string</a>
+      
+      <a class="list-group-item" href="../proc/compatible.html">compatible</a>
       
       <a class="list-group-item" href="../proc/crossproduct.html">crossproduct</a>
       
@@ -808,7 +810,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private function not_eq_scalar(lhs, rhs) result(opr)
+private pure function not_eq_scalar(lhs, rhs) result(opr)
     
     
 	 
@@ -934,7 +936,7 @@ private function not_eq_scalar(lhs, rhs) result(opr)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>  <span class="k">function </span><span class="n">not_eq_scalar</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">opr</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>  <span class="k">pure function </span><span class="n">not_eq_scalar</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">opr</span><span class="p">)</span>
   <span class="c">!&lt; Compare (`/=`) fields.</span>
   <span class="k">class</span><span class="p">(</span><span class="n">field_object_scalar</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lhs</span> <span class="c">!&lt; Left hand side.</span>
   <span class="k">class</span><span class="p">(</span><span class="n">field_object</span><span class="p">),</span>        <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">rhs</span> <span class="c">!&lt; Right hand side.</span>
@@ -1059,6 +1061,8 @@ private function not_eq_scalar(lhs, rhs) result(opr)
       <a class="list-group-item" href="../proc/check_endian.html">check_endian</a>
       
       <a class="list-group-item" href="../proc/compact_real_string.html">compact_real_string</a>
+      
+      <a class="list-group-item" href="../proc/compatible.html">compatible</a>
       
       <a class="list-group-item" href="../proc/crossproduct.html">crossproduct</a>
       

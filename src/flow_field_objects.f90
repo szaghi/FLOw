@@ -60,7 +60,7 @@ contains
   ! deferred public methods
 
   ! scalar field
-  subroutine assign_field_scalar(lhs, rhs)
+  pure subroutine assign_field_scalar(lhs, rhs)
   !< Assign fields.
   class(field_object_scalar), intent(inout) :: lhs !< Left hand side.
   class(field_object),        intent(in)    :: rhs !< Right hand side.
@@ -71,7 +71,7 @@ contains
   endselect
   endsubroutine assign_field_scalar
 
-  subroutine assign_real_scalar(lhs, rhs)
+  pure subroutine assign_real_scalar(lhs, rhs)
   !< Assign real to field.
   class(field_object_scalar), intent(inout) :: lhs !< Left hand side.
   real(R_P),                  intent(in)    :: rhs !< Right hand side.
@@ -79,7 +79,7 @@ contains
   lhs%field = rhs
   endsubroutine assign_real_scalar
 
-  function scalar_add_scalar(lhs, rhs) result(opr)
+  pure function scalar_add_scalar(lhs, rhs) result(opr)
   !< Add fields.
   class(field_object_scalar), intent(in) :: lhs !< Left hand side.
   class(field_object),        intent(in) :: rhs !< Right hand side.
@@ -95,7 +95,7 @@ contains
   endselect
   endfunction scalar_add_scalar
 
-  function scalar_div_scalar(lhs, rhs) result(opr)
+  pure function scalar_div_scalar(lhs, rhs) result(opr)
   !< Divide fields.
   class(field_object_scalar), intent(in) :: lhs !< Left hand side.
   class(field_object),        intent(in) :: rhs !< Right hand side.
@@ -111,7 +111,7 @@ contains
   endselect
   endfunction scalar_div_scalar
 
-  function scalar_div_integer(lhs, rhs) result(opr)
+  pure function scalar_div_integer(lhs, rhs) result(opr)
   !< Divide field by integer.
   class(field_object_scalar), intent(in) :: lhs !< Left hand side.
   integer(I_P),               intent(in) :: rhs !< Right hand side.
@@ -124,7 +124,7 @@ contains
   endselect
   endfunction scalar_div_integer
 
-  function scalar_div_real(lhs, rhs) result(opr)
+  pure function scalar_div_real(lhs, rhs) result(opr)
   !< Divide field by real.
   class(field_object_scalar), intent(in) :: lhs !< Left hand side.
   real(R_P),                  intent(in) :: rhs !< Right hand side.
@@ -137,7 +137,7 @@ contains
   endselect
   endfunction scalar_div_real
 
-  function scalar_mul_object(lhs, rhs) result(opr)
+  pure function scalar_mul_object(lhs, rhs) result(opr)
   !< Multiply fields.
   !<
   !< @note The combinations accepted are:
@@ -163,7 +163,7 @@ contains
   endselect
   endfunction scalar_mul_object
 
-  function scalar_mul_integer(lhs, rhs) result(opr)
+  pure function scalar_mul_integer(lhs, rhs) result(opr)
   !< Multiply field for integer.
   class(field_object_scalar), intent(in) :: lhs !< Left hand side.
   integer(I_P),               intent(in) :: rhs !< Right hand side.
@@ -176,7 +176,7 @@ contains
   endselect
   endfunction scalar_mul_integer
 
-  function integer_mul_scalar(lhs, rhs) result(opr)
+  pure function integer_mul_scalar(lhs, rhs) result(opr)
   !< Multiply integer for field.
   integer(I_P),               intent(in) :: lhs !< Left hand side.
   class(field_object_scalar), intent(in) :: rhs !< Right hand side.
@@ -189,7 +189,7 @@ contains
   endselect
   endfunction integer_mul_scalar
 
-  function scalar_mul_real(lhs, rhs) result(opr)
+  pure function scalar_mul_real(lhs, rhs) result(opr)
   !< Multiply field for real.
   class(field_object_scalar), intent(in) :: lhs !< Left hand side.
   real(R_P),                  intent(in) :: rhs !< Right hand side.
@@ -202,7 +202,7 @@ contains
   endselect
   endfunction scalar_mul_real
 
-  function real_mul_scalar(lhs, rhs) result(opr)
+  pure function real_mul_scalar(lhs, rhs) result(opr)
   !< Multiply real for field.
   real(R_P),                  intent(in) :: lhs !< Left hand side.
   class(field_object_scalar), intent(in) :: rhs !< Right hand side.
@@ -215,7 +215,7 @@ contains
   endselect
   endfunction real_mul_scalar
 
-  function scalar_sub_scalar(lhs, rhs) result(opr)
+  pure function scalar_sub_scalar(lhs, rhs) result(opr)
   !< Subtract fields.
   class(field_object_scalar), intent(in) :: lhs !< Left hand side.
   class(field_object),        intent(in) :: rhs !< Right hand side.
@@ -231,7 +231,7 @@ contains
   endselect
   endfunction scalar_sub_scalar
 
-  function scalar_pow_integer(lhs, rhs) result(opr)
+  pure function scalar_pow_integer(lhs, rhs) result(opr)
   !< Power field by integer.
   class(field_object_scalar), intent(in) :: lhs !< Left hand side.
   integer(I_P),               intent(in) :: rhs !< Right hand side.
@@ -244,7 +244,7 @@ contains
   endselect
   endfunction scalar_pow_integer
 
-  function scalar_pow_real(lhs, rhs) result(opr)
+  pure function scalar_pow_real(lhs, rhs) result(opr)
   !< Power field by real.
   class(field_object_scalar), intent(in) :: lhs !< Left hand side.
   real(R_P),                  intent(in) :: rhs !< Right hand side.
@@ -257,7 +257,7 @@ contains
   endselect
   endfunction scalar_pow_real
 
-  function eq_scalar(lhs, rhs) result(opr)
+  pure function eq_scalar(lhs, rhs) result(opr)
   !< Compare (`==`) fields.
   class(field_object_scalar), intent(in) :: lhs !< Left hand side.
   class(field_object),        intent(in) :: rhs !< Right hand side.
@@ -270,7 +270,7 @@ contains
   endselect
   endfunction eq_scalar
 
-  function not_eq_scalar(lhs, rhs) result(opr)
+  pure function not_eq_scalar(lhs, rhs) result(opr)
   !< Compare (`/=`) fields.
   class(field_object_scalar), intent(in) :: lhs !< Left hand side.
   class(field_object),        intent(in) :: rhs !< Right hand side.
@@ -284,7 +284,7 @@ contains
   endfunction not_eq_scalar
 
   ! vectorial field
-  subroutine assign_field_vectorial(lhs, rhs)
+  pure subroutine assign_field_vectorial(lhs, rhs)
   !< Assign fields.
   class(field_object_vectorial), intent(inout) :: lhs !< Left hand side.
   class(field_object),           intent(in)    :: rhs !< Right hand side.
@@ -295,7 +295,7 @@ contains
   endselect
   endsubroutine assign_field_vectorial
 
-  subroutine assign_real_vectorial(lhs, rhs)
+  pure subroutine assign_real_vectorial(lhs, rhs)
   !< Assign real to field.
   class(field_object_vectorial), intent(inout) :: lhs !< Left hand side.
   real(R_P),                     intent(in)    :: rhs !< Right hand side.
@@ -303,7 +303,7 @@ contains
   lhs%field = rhs
   endsubroutine assign_real_vectorial
 
-  function vectorial_add_vectorial(lhs, rhs) result(opr)
+  pure function vectorial_add_vectorial(lhs, rhs) result(opr)
   !< Add fields.
   class(field_object_vectorial), intent(in)  :: lhs !< Left hand side.
   class(field_object),           intent(in)  :: rhs !< Right hand side.
@@ -319,7 +319,7 @@ contains
   endselect
   endfunction vectorial_add_vectorial
 
-  function vectorial_div_object(lhs, rhs) result(opr)
+  pure function vectorial_div_object(lhs, rhs) result(opr)
   !< Divide fields.
   !<
   !< @note The combinations accepted are:
@@ -341,7 +341,7 @@ contains
   endselect
   endfunction vectorial_div_object
 
-  function vectorial_div_integer(lhs, rhs) result(opr)
+  pure function vectorial_div_integer(lhs, rhs) result(opr)
   !< Divide field by integer.
   class(field_object_vectorial), intent(in) :: lhs !< Left hand side.
   integer(I_P),                  intent(in) :: rhs !< Right hand side.
@@ -354,7 +354,7 @@ contains
   endselect
   endfunction vectorial_div_integer
 
-  function vectorial_div_real(lhs, rhs) result(opr)
+  pure function vectorial_div_real(lhs, rhs) result(opr)
   !< Divide field by real.
   class(field_object_vectorial), intent(in) :: lhs !< Left hand side.
   real(R_P),                     intent(in) :: rhs !< Right hand side.
@@ -367,7 +367,7 @@ contains
   endselect
   endfunction vectorial_div_real
 
-  function vectorial_mul_object(lhs, rhs) result(opr)
+  pure function vectorial_mul_object(lhs, rhs) result(opr)
   !< Multiply fields.
   !<
   !< @note The combinations accepted are:
@@ -389,7 +389,7 @@ contains
   endselect
   endfunction vectorial_mul_object
 
-  function vectorial_mul_integer(lhs, rhs) result(opr)
+  pure function vectorial_mul_integer(lhs, rhs) result(opr)
   !< Multiply field for integer.
   class(field_object_vectorial), intent(in) :: lhs !< Left hand side.
   integer(I_P),                  intent(in) :: rhs !< Right hand side.
@@ -402,7 +402,7 @@ contains
   endselect
   endfunction vectorial_mul_integer
 
-  function integer_mul_vectorial(lhs, rhs) result(opr)
+  pure function integer_mul_vectorial(lhs, rhs) result(opr)
   !< Multiply integer for field.
   integer(I_P),                  intent(in) :: lhs !< Left hand side.
   class(field_object_vectorial), intent(in) :: rhs !< Right hand side.
@@ -415,7 +415,7 @@ contains
   endselect
   endfunction integer_mul_vectorial
 
-  function vectorial_mul_real(lhs, rhs) result(opr)
+  pure function vectorial_mul_real(lhs, rhs) result(opr)
   !< Multiply field for real.
   class(field_object_vectorial), intent(in) :: lhs !< Left hand side.
   real(R_P),                     intent(in) :: rhs !< Right hand side.
@@ -428,7 +428,7 @@ contains
   endselect
   endfunction vectorial_mul_real
 
-  function real_mul_vectorial(lhs, rhs) result(opr)
+  pure function real_mul_vectorial(lhs, rhs) result(opr)
   !< Multiply real for field.
   real(R_P),                     intent(in) :: lhs !< Left hand side.
   class(field_object_vectorial), intent(in) :: rhs !< Right hand side.
@@ -441,7 +441,7 @@ contains
   endselect
   endfunction real_mul_vectorial
 
-  function vectorial_sub_vectorial(lhs, rhs) result(opr)
+  pure function vectorial_sub_vectorial(lhs, rhs) result(opr)
   !< Subtract fields.
   class(field_object_vectorial), intent(in) :: lhs !< Left hand side.
   class(field_object),           intent(in) :: rhs !< Right hand side.
@@ -457,7 +457,7 @@ contains
   endselect
   endfunction vectorial_sub_vectorial
 
-  function vectorial_pow_integer(lhs, rhs) result(opr)
+  pure function vectorial_pow_integer(lhs, rhs) result(opr)
   !< Power field by integer.
   class(field_object_vectorial), intent(in) :: lhs !< Left hand side.
   integer(I_P),                  intent(in) :: rhs !< Right hand side.
@@ -472,7 +472,7 @@ contains
   endselect
   endfunction vectorial_pow_integer
 
-  function vectorial_pow_real(lhs, rhs) result(opr)
+  pure function vectorial_pow_real(lhs, rhs) result(opr)
   !< Power field by real.
   class(field_object_vectorial), intent(in) :: lhs !< Left hand side.
   real(R_P),                     intent(in) :: rhs !< Right hand side.
@@ -487,7 +487,7 @@ contains
   endselect
   endfunction vectorial_pow_real
 
-  function eq_vectorial(lhs, rhs) result(opr)
+  pure function eq_vectorial(lhs, rhs) result(opr)
   !< Compare (`==`) fields.
   class(field_object_vectorial), intent(in) :: lhs !< Left hand side.
   class(field_object),           intent(in) :: rhs !< Right hand side.
@@ -500,7 +500,7 @@ contains
   endselect
   endfunction eq_vectorial
 
-  function not_eq_vectorial(lhs, rhs) result(opr)
+  pure function not_eq_vectorial(lhs, rhs) result(opr)
   !< Compare (`/=`) fields.
   class(field_object_vectorial), intent(in) :: lhs !< Left hand side.
   class(field_object),           intent(in) :: rhs !< Right hand side.
