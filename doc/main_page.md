@@ -1,8 +1,12 @@
+---
 project: FLOw
-src_dir: ../src
-exclude_dir: ../src/third_party/PENF/src/lib
+src_dir: ../src/lib
+src_dir: ../src/tests
+src_dir: ../src/third_party/PENF/src/lib
+src_dir: ../src/third_party/VecFor/src/lib
 output_dir: html/publish/
 project_github: https://github.com/szaghi/FLOw
+project_download: https://github.com/szaghi/FLOw/releases/latest
 summary: Fortran fLuid Object
 author: Stefano Zaghi
 github: https://github.com/szaghi
@@ -18,6 +22,10 @@ display: public
 source: true
 warn: true
 graph: true
+sort: alpha
+print_creation_date: true
+creation_date: %Y-%m-%d %H:%M %z
 extra_mods: iso_fortran_env:https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html
 
-{!README-FLOw.md!}
+{!../README.md!}
+---
