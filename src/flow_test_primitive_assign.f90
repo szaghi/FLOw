@@ -4,10 +4,10 @@ program flow_test_primitive_assign
 use flow
 
 implicit none
-type(primitive_object)    :: primitive1           !< A primitive object.
-type(primitive_object)    :: primitive2           !< A primitive object.
-type(field_object_scalar) :: partial_densities(2) !< A scalar field object.
-logical                   :: test_passed(2)       !< List of passed tests.
+type(primitive_object) :: primitive1           !< A primitive object.
+type(primitive_object) :: primitive2           !< A primitive object.
+type(field_scalar)     :: partial_densities(2) !< A scalar field object.
+logical                :: test_passed(2)       !< List of passed tests.
 
 test_passed = .false.
 

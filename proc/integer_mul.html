@@ -841,7 +841,7 @@ private elemental function integer_mul(lhs, rhs) result(opr)
   
 <tr>
   
-  <td><span class="anchor" id="variable-lhs%7E47"></span>integer(kind=I_P),</td>
+  <td><span class="anchor" id="variable-lhs%7E47"></span>integer(kind=I4P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -938,10 +938,10 @@ private elemental function integer_mul(lhs, rhs) result(opr)
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre><span></span>  <span class="k">elemental function </span><span class="n">integer_mul</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">opr</span><span class="p">)</span>
   <span class="c">!&lt; Multiply integer for primitive.</span>
-  <span class="kt">integer</span><span class="p">(</span><span class="n">I_P</span><span class="p">),</span>            <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lhs</span> <span class="c">!&lt; Left hand side.</span>
+  <span class="kt">integer</span><span class="p">(</span><span class="n">I4P</span><span class="p">),</span>            <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lhs</span> <span class="c">!&lt; Left hand side.</span>
   <span class="k">class</span><span class="p">(</span><span class="n">primitive_object</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">rhs</span> <span class="c">!&lt; Right hand side.</span>
   <span class="k">type</span><span class="p">(</span><span class="n">primitive_object</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">opr</span> <span class="c">!&lt; Operator result.</span>
-  <span class="kt">integer</span><span class="p">(</span><span class="n">I_P</span><span class="p">)</span>                        <span class="kd">::</span> <span class="n">d</span>   <span class="c">!&lt; Counter.</span>
+  <span class="kt">integer</span><span class="p">(</span><span class="n">I4P</span><span class="p">)</span>                        <span class="kd">::</span> <span class="n">d</span>   <span class="c">!&lt; Counter.</span>
 
   <span class="n">opr</span><span class="p">%</span><span class="n">density</span> <span class="o">=</span> <span class="n">lhs</span> <span class="o">*</span> <span class="n">rhs</span><span class="p">%</span><span class="n">density</span>
   <span class="n">opr</span><span class="p">%</span><span class="n">velocity</span> <span class="o">=</span> <span class="n">lhs</span> <span class="o">*</span> <span class="n">rhs</span><span class="p">%</span><span class="n">velocity</span>

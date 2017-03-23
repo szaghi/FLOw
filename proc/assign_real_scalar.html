@@ -138,14 +138,14 @@
      </li> 
      
      
-    <li><i class="fa fa-code"></i><a href="../src/flow_field_objects.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/flow_field_scalar_vectorial.f90"> Source File</a></li>
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
-     <li><a href='../sourcefile/flow_field_objects.f90.html'>flow_field_objects.f90</a></li>
+     <li><a href='../sourcefile/flow_field_scalar_vectorial.f90.html'>flow_field_scalar_vectorial.f90</a></li>
   
-     <li><a href='../module/flow_field_objects.html'>flow_field_objects</a></li>
+     <li><a href='../module/flow_field_scalar_vectorial.html'>flow_field_scalar_vectorial</a></li>
   
      <li class="active">assign_real_scalar</li>
   </ol>
@@ -841,7 +841,7 @@ private pure subroutine assign_real_scalar(lhs, rhs)
   
 <tr>
   
-  <td><span class="anchor" id="variable-lhs%7E38"></span>class(<a href='../type/field_object_scalar.html'>field_object_scalar</a>),</td>
+  <td><span class="anchor" id="variable-lhs%7E38"></span>class(<a href='../type/field_scalar.html'>field_scalar</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
@@ -856,7 +856,7 @@ private pure subroutine assign_real_scalar(lhs, rhs)
   
 <tr>
   
-  <td><span class="anchor" id="variable-rhs%7E38"></span>real(kind=R_P),</td>
+  <td><span class="anchor" id="variable-rhs%7E38"></span>real(kind=R8P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -927,13 +927,13 @@ private pure subroutine assign_real_scalar(lhs, rhs)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>  <span class="k">pure subroutine </span><span class="n">assign_real_scalar</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span>
-  <span class="c">!&lt; Assign real to field.</span>
-  <span class="k">class</span><span class="p">(</span><span class="n">field_object_scalar</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lhs</span> <span class="c">!&lt; Left hand side.</span>
-  <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>                  <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">rhs</span> <span class="c">!&lt; Right hand side.</span>
+    <div class="highlight"><pre><span></span>   <span class="k">pure subroutine </span><span class="n">assign_real_scalar</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span>
+   <span class="c">!&lt; Assign real to field.</span>
+   <span class="k">class</span><span class="p">(</span><span class="n">field_scalar</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lhs</span> <span class="c">!&lt; Left hand side.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>           <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">rhs</span> <span class="c">!&lt; Right hand side.</span>
 
-  <span class="n">lhs</span><span class="p">%</span><span class="n">field</span> <span class="o">=</span> <span class="n">rhs</span>
-  <span class="n">endsubroutine</span> <span class="n">assign_real_scalar</span>
+   <span class="n">lhs</span><span class="p">%</span><span class="n">field</span> <span class="o">=</span> <span class="n">rhs</span>
+   <span class="n">endsubroutine</span> <span class="n">assign_real_scalar</span>
 </pre></div>
 
     </section>

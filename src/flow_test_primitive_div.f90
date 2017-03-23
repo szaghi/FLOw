@@ -4,11 +4,11 @@ program flow_test_primitive_div
 use flow
 
 implicit none
-type(primitive_object)    :: primitive1           !< A primitive object.
-type(primitive_object)    :: primitive2           !< A primitive object.
-type(primitive_object)    :: primitive3           !< A primitive object.
-type(field_object_scalar) :: partial_densities(2) !< A scalar field object.
-logical                   :: test_passed(4)       !< List of passed tests.
+type(primitive_object) :: primitive1           !< A primitive object.
+type(primitive_object) :: primitive2           !< A primitive object.
+type(primitive_object) :: primitive3           !< A primitive object.
+type(field_scalar)     :: partial_densities(2) !< A scalar field object.
+logical                :: test_passed(4)       !< List of passed tests.
 
 test_passed = .false.
 

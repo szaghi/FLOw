@@ -1,12 +1,14 @@
 !< FLOw **primitive** class definition.
+
 module flow_primitive_object
 !< FLOw **primitive** class definition.
 !<
 !< **primitive** is a class that handles primitive fluid dynamic variables.
 !< @note The operators of assignment (=), multiplication (*), division (/), sum (+) and subtraction (-) have been overloaded.
 !< Therefore this module provides a far-complete algebra.
-use flow_field_objects
-use penf
+
+use flow_field_scalar_vectorial, only : field_scalar, field_vectorial
+use penf, only : I4P, R8P
 
 implicit none
 private
@@ -14,10 +16,10 @@ public :: primitive_object
 
 type :: primitive_object
   !< FLOw **primitive** class definition.
-  type(field_object_scalar)              :: density              !< Density field.
-  type(field_object_vectorial)           :: velocity             !< Velocity field.
-  type(field_object_scalar)              :: pressure             !< Pressure field.
-  type(field_object_scalar), allocatable :: partial_densities(:) !< Partial densities fields.
+  type(field_scalar)              :: density              !< Density field.
+  type(field_vectorial)           :: velocity             !< Velocity field.
+  type(field_scalar)              :: pressure             !< Pressure field.
+  type(field_scalar), allocatable :: partial_densities(:) !< Partial densities fields.
   contains
     ! public operators
     generic :: assignment(=) => assign_primitive, assign_real                   !< Assignment overloading.
@@ -61,8 +63,8 @@ contains
   pure subroutine assign_real(lhs, rhs)
   !< Assign real to primitive.
   class(primitive_object), intent(inout) :: lhs !< Left hand side.
-  real(R_P),               intent(in)    :: rhs !< Right hand side.
-  integer(I_P)                           :: d   !< Counter.
+  real(R8P),               intent(in)    :: rhs !< Right hand side.
+  integer(I4P)                           :: d   !< Counter.
 
   lhs%density = rhs
   lhs%velocity = rhs
@@ -79,7 +81,7 @@ contains
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   type(primitive_object),  intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
-  integer(I_P)                        :: d   !< Counter.
+  integer(I4P)                        :: d   !< Counter.
 
   opr%density = lhs%density + rhs%density
   opr%velocity = lhs%velocity + rhs%velocity
@@ -97,7 +99,7 @@ contains
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   type(primitive_object),  intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
-  integer(I_P)                        :: d   !< Counter.
+  integer(I4P)                        :: d   !< Counter.
 
   opr%density = lhs%density / rhs%density
   opr%velocity = lhs%velocity / rhs%velocity
@@ -113,9 +115,9 @@ contains
   elemental function div_integer(lhs, rhs) result(opr)
   !< Divide primitive by integer.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
-  integer(I_P),            intent(in) :: rhs !< Right hand side.
+  integer(I4P),            intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
-  integer(I_P)                        :: d   !< Counter.
+  integer(I4P)                        :: d   !< Counter.
 
   opr%density = lhs%density / rhs
   opr%velocity = lhs%velocity / rhs
@@ -131,9 +133,9 @@ contains
   elemental function div_real(lhs, rhs) result(opr)
   !< Divide primitive by real.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
-  real(R_P),               intent(in) :: rhs !< Right hand side.
+  real(R8P),               intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
-  integer(I_P)                        :: d   !< Counter.
+  integer(I4P)                        :: d   !< Counter.
 
   opr%density = lhs%density / rhs
   opr%velocity = lhs%velocity / rhs
@@ -151,7 +153,7 @@ contains
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   type(primitive_object),  intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
-  integer(I_P)                        :: d   !< Counter.
+  integer(I4P)                        :: d   !< Counter.
 
   opr%density = lhs%density * rhs%density
   opr%velocity = lhs%velocity * rhs%velocity
@@ -167,9 +169,9 @@ contains
   elemental function mul_integer(lhs, rhs) result(opr)
   !< Multiply primitive for integer.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
-  integer(I_P),            intent(in) :: rhs !< Right hand side.
+  integer(I4P),            intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
-  integer(I_P)                        :: d   !< Counter.
+  integer(I4P)                        :: d   !< Counter.
 
   opr%density = lhs%density * rhs
   opr%velocity = lhs%velocity * rhs
@@ -184,10 +186,10 @@ contains
 
   elemental function integer_mul(lhs, rhs) result(opr)
   !< Multiply integer for primitive.
-  integer(I_P),            intent(in) :: lhs !< Left hand side.
+  integer(I4P),            intent(in) :: lhs !< Left hand side.
   class(primitive_object), intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
-  integer(I_P)                        :: d   !< Counter.
+  integer(I4P)                        :: d   !< Counter.
 
   opr%density = lhs * rhs%density
   opr%velocity = lhs * rhs%velocity
@@ -203,9 +205,9 @@ contains
   elemental function mul_real(lhs, rhs) result(opr)
   !< Multiply primitive for real.
   class(primitive_object), intent(in) :: lhs !< Left hand side.
-  real(R_P),               intent(in) :: rhs !< Right hand side.
+  real(R8P),               intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
-  integer(I_P)                        :: d   !< Counter.
+  integer(I4P)                        :: d   !< Counter.
 
   opr%density = lhs%density * rhs
   opr%velocity = lhs%velocity * rhs
@@ -220,10 +222,10 @@ contains
 
   elemental function real_mul(lhs, rhs) result(opr)
   !< Multiply real for primitive.
-  real(R_P),               intent(in) :: lhs !< Left hand side.
+  real(R8P),               intent(in) :: lhs !< Left hand side.
   class(primitive_object), intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
-  integer(I_P)                        :: d   !< Counter.
+  integer(I4P)                        :: d   !< Counter.
 
   opr%density = lhs * rhs%density
   opr%velocity = lhs * rhs%velocity
@@ -241,7 +243,7 @@ contains
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   type(primitive_object),  intent(in) :: rhs !< Right hand side.
   type(primitive_object)              :: opr !< Operator result.
-  integer(I_P)                        :: d   !< Counter.
+  integer(I4P)                        :: d   !< Counter.
 
   opr%density = lhs%density - rhs%density
   opr%velocity = lhs%velocity - rhs%velocity
@@ -259,7 +261,7 @@ contains
   class(primitive_object), intent(in) :: lhs !< Left hand side.
   type(primitive_object),  intent(in) :: rhs !< Right hand side.
   logical                             :: opr !< Operator result.
-  integer(I_P)                        :: d   !< Counter.
+  integer(I4P)                        :: d   !< Counter.
 
   opr = lhs%density == rhs%density
   if (opr) opr = lhs%velocity == rhs%velocity
