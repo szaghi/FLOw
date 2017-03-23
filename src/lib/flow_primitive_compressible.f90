@@ -5,9 +5,10 @@ module flow_primitive_compressible
 !<
 !< [[primitive_compressible]] is a class that handles compressible primitive fluid dynamic variables.
 
+! use flow_eos_object, only : eos_object
 use flow_field_object, only : field_object
 use flow_primitive_object, only : primitive_object
-use penf, only : I4P, R8P
+use penf, only : I4P, R8P, str
 use vecfor, only : vector
 
 implicit none
@@ -20,23 +21,35 @@ type, extends(primitive_object) :: primitive_compressible
    type(vector) :: velocity !< Velocity field.
    real(R8P)    :: pressure !< Pressure field.
    contains
+      ! public methods
+      procedure, pass(self) :: left_eigenvectors  !< Return the left eigenvectors matrix `L` as `dF/dP = A = R ^ L`.
+      procedure, pass(self) :: right_eigenvectors !< Return the right eigenvectors matrix `R` as `dF/dP = A = R ^ L`.
       ! deferred methods
-      procedure, pass(lhs) :: assign_field !< Operator `=`.
-      procedure, pass(lhs) :: assign_real  !< Operator `field = real`.
-      procedure, pass(lhs) :: add          !< Operator `+`.
-      procedure, pass(lhs) :: div          !< Operator `/`.
-      procedure, pass(lhs) :: div_integer  !< Operator `field / integer`.
-      procedure, pass(lhs) :: div_real     !< Operator `field / real`.
-      procedure, pass(lhs) :: mul          !< Operator `*`.
-      procedure, pass(lhs) :: mul_integer  !< Operator `field * integer`.
-      procedure, pass(rhs) :: integer_mul  !< Operator `integer * field`.
-      procedure, pass(lhs) :: mul_real     !< Operator `field * real`.
-      procedure, pass(rhs) :: real_mul     !< Operator `real * field`.
-      procedure, pass(lhs) :: sub          !< Operator `-`.
-      procedure, pass(lhs) :: pow_integer  !< Operator `field ** integer`.
-      procedure, pass(lhs) :: pow_real     !< Operator `field ** real`.
-      procedure, pass(lhs) :: eq           !< Operator `=='.
-      procedure, pass(lhs) :: not_eq       !< Operator `/='.
+      procedure, pass(self) :: array       !< Return serialized array of field.
+      procedure, pass(self) :: description !< Return pretty-printed object description.
+      procedure, pass(self) :: destroy     !< Destroy primitive.
+      procedure, pass(self) :: energy      !< Return energy value.
+      procedure, pass(self) :: initialize  !< Initialize primitive.
+      procedure, pass(self) :: momentum    !< Return momentum vector.
+      ! deferred operators
+      procedure, pass(lhs)  :: assign_field !< Operator `=`.
+      procedure, pass(lhs)  :: assign_real  !< Operator `field = real`.
+      procedure, pass(self) :: positive     !< Unary operator `+ field`.
+      procedure, pass(lhs)  :: add          !< Operator `+`.
+      procedure, pass(lhs)  :: div          !< Operator `/`.
+      procedure, pass(lhs)  :: div_integer  !< Operator `field / integer`.
+      procedure, pass(lhs)  :: div_real     !< Operator `field / real`.
+      procedure, pass(lhs)  :: mul          !< Operator `*`.
+      procedure, pass(lhs)  :: mul_integer  !< Operator `field * integer`.
+      procedure, pass(rhs)  :: integer_mul  !< Operator `integer * field`.
+      procedure, pass(lhs)  :: mul_real     !< Operator `field * real`.
+      procedure, pass(rhs)  :: real_mul     !< Operator `real * field`.
+      procedure, pass(self) :: negative     !< Unary operator `- field`.
+      procedure, pass(lhs)  :: sub          !< Operator `-`.
+      procedure, pass(lhs)  :: pow_integer  !< Operator `field ** integer`.
+      procedure, pass(lhs)  :: pow_real     !< Operator `field ** real`.
+      procedure, pass(lhs)  :: eq           !< Operator `=='.
+      procedure, pass(lhs)  :: not_eq       !< Operator `/='.
 endtype primitive_compressible
 
 interface primitive_compressible
@@ -45,7 +58,111 @@ interface primitive_compressible
 endinterface
 
 contains
+   ! public methods
+   ! pure function left_eigenvectors(self, eos) result(eig)
+   pure function left_eigenvectors(self) result(eig)
+   !< Return the left eigenvectors matrix `L` as `dF/dP = A = R ^ L`.
+   class(primitive_compressible), intent(in) :: self          !< Primitive.
+   ! class(eos_object),             intent(in) :: eos           !< Equation of state.
+   real(R8P)                                 :: eig(1:3, 1:3) !< Eigenvectors.
+   real(R8P)                                 :: gp            !< `g*p`.
+   real(R8P)                                 :: gp_a          !< `g*p/a`.
+
+   ! gp = eos%g() * self%pressure
+   ! gp_a = gp / eos%speed_of_sound(density=self%density, pressure=self%pressure)
+   ! eig(1, 1) = 0._R8P            ; eig(1, 2) = -gp_a  ; eig(1, 3) =  1._R8P
+   ! eig(2, 1) = gp / self%density ; eig(2, 2) = 0._R8P ; eig(2, 3) = -1._R8P
+   ! eig(3, 1) = 0._R8P            ; eig(3, 2) =  gp_a  ; eig(3, 3) =  1._R8P
+   endfunction left_eigenvectors
+
+   ! pure function right_eigenvectors(self, eos) result(eig)
+   pure function right_eigenvectors(self) result(eig)
+   !< Return the right eigenvectors matrix `R` as `dF/dP = A = R ^ L`.
+   class(primitive_compressible), intent(in) :: self          !< Primitive.
+   ! class(eos_object),             intent(in) :: eos           !< Equation of state.
+   real(R8P)                                 :: eig(1:3, 1:3) !< Eigenvectors.
+   real(R8P)                                 :: gp            !< `g*p`.
+   real(R8P)                                 :: gp_inv        !< `1/(g*p)`.
+   real(R8P)                                 :: a             !< Speed of sound, `sqrt(g*p/r)`.
+
+   ! gp = eos%g() * self%pressure
+   ! gp_inv = 1._R8P / gp
+   ! a = eos%speed_of_sound(density=self%density, pressure=self%pressure)
+   ! eig(1, 1) =  0.5_R8P * self%density * gp_inv ; eig(1, 2) = self%density * gp_inv  ; eig(1, 3) =  eig(1, 1)
+   ! eig(2, 1) = -0.5_R8P * a * gp_inv            ; eig(2, 2) = 0._R8P                 ; eig(2, 3) = -eig(2, 1)
+   ! eig(3, 1) =  0.5_R8P                         ; eig(3, 2) = 0._R8P                 ; eig(3, 3) =  eig(3, 1)
+   endfunction right_eigenvectors
+
    ! deferred methods
+   pure function array(self) result(array_)
+   !< Return serialized array of field.
+   class(primitive_compressible), intent(in) :: self      !< Primitive.
+   real(R8P), allocatable                    :: array_(:) !< Serialized array of field.
+
+   allocate(array_(1:5))
+   array_(1) = self%density
+   array_(2) = self%velocity%x
+   array_(3) = self%velocity%y
+   array_(4) = self%velocity%z
+   array_(5) = self%pressure
+   endfunction array
+
+   pure function description(self, prefix) result(desc)
+   !< Return a pretty-formatted object description.
+   class(primitive_compressible), intent(in)           :: self             !< Primitive.
+   character(*),                  intent(in), optional :: prefix           !< Prefixing string.
+   character(len=:), allocatable                       :: prefix_          !< Prefixing string, local variable.
+   character(len=:), allocatable                       :: desc             !< Description.
+   character(len=1), parameter                         :: NL=new_line('a') !< New line character.
+
+   prefix_ = '' ; if (present(prefix)) prefix_ = prefix
+   desc = ''
+   desc = desc//prefix_//'density  = '//trim(str(n=self%density))//NL
+   desc = desc//prefix_//'velocity = '//trim(str(n=[self%velocity%x, self%velocity%y, self%velocity%z]))//NL
+   desc = desc//prefix_//'pressure = '//trim(str(n=self%pressure))
+   endfunction description
+
+   elemental subroutine destroy(self)
+   !< Destroy primitive.
+   class(primitive_compressible), intent(inout) :: self  !< Primitive.
+   type(primitive_compressible)                 :: fresh !< Fresh instance of primitive object.
+
+   self = fresh
+   endsubroutine destroy
+
+   ! elemental function energy(self, eos) result(energy_)
+   elemental function energy(self) result(energy_)
+   !< Return energy value.
+   class(primitive_compressible), intent(in) :: self    !< Primitive.
+   ! class(eos_object),             intent(in) :: eos     !< Equation of state.
+   real(R8P)                                 :: energy_ !< Energy value.
+
+   ! energy_ = self%pressure / (eos%g() - 1._R8P) + 0.5_R8P * self%density * self%velocity%sq_norm()
+   endfunction energy
+
+   subroutine initialize(self, initial_state)
+   !< Initialize primitive.
+   class(primitive_compressible), intent(inout)        :: self          !< Primitive.
+   class(primitive_object),       intent(in), optional :: initial_state !< Initial state.
+
+   call self%destroy
+   if (present(initial_state)) then
+      select type(initial_state)
+      class is(primitive_compressible)
+         self = initial_state
+      endselect
+   endif
+   endsubroutine initialize
+
+   elemental function momentum(self) result(momentum_)
+   !< Return momentum vector.
+   class(primitive_compressible), intent(in) :: self      !< Primitive.
+   type(vector)                              :: momentum_ !< Momentum vector.
+
+   momentum_ = self%density * self%velocity
+   endfunction momentum
+
+   ! deferred oprators
    elemental subroutine assign_field(lhs, rhs)
    !< Operator `=`.
    class(primitive_compressible), intent(inout) :: lhs !< Left hand side.
@@ -68,6 +185,20 @@ contains
    lhs%velocity = rhs
    lhs%pressure = rhs
    endsubroutine assign_real
+
+   function positive(self) result(opr)
+   !< Unary operator `+ field`.
+   class(primitive_compressible), intent(in) :: self !< Primitive.
+   class(field_object), allocatable          :: opr  !< Operator result.
+
+   allocate(primitive_compressible :: opr)
+   select type(opr)
+   class is(primitive_compressible)
+      opr%density  = + self%density
+      opr%velocity = + self%velocity
+      opr%pressure = + self%pressure
+   endselect
+   endfunction positive
 
    elemental function add(lhs, rhs) result(opr)
    !< Operator `+`.
@@ -212,6 +343,20 @@ contains
       opr%pressure = lhs * rhs%pressure
    endselect
    endfunction real_mul
+
+   function negative(self) result(opr)
+   !< Unary operator `- field`.
+   class(primitive_compressible), intent(in) :: self !< Primitive.
+   class(field_object), allocatable          :: opr  !< Operator result.
+
+   allocate(primitive_compressible :: opr)
+   select type(opr)
+   class is(primitive_compressible)
+      opr%density  = - self%density
+      opr%velocity = - self%velocity
+      opr%pressure = - self%pressure
+   endselect
+   endfunction negative
 
    elemental function sub(lhs, rhs) result(opr)
    !< Operator `-`.
