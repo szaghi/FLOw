@@ -1,0 +1,3692 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Fortran fLuid Object">
+    
+    <meta name="author" content="Stefano Zaghi" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>flow_primitive_compressible_multispecie &ndash; FLOw</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FLOw </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+		 aria-expanded="false">Contents <span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+				
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+            </ul>
+            </li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>flow_primitive_compressible_multispecie 
+    <small>Module</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+	  data-placement="bottom" data-html="true"
+	  title=" 8.1% of total for modules and submodules.">381 statements</a>
+     </li> 
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/flow_primitive_compressible_multispecie.f90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li><a href='../sourcefile/flow_primitive_compressible_multispecie.f90.html'>flow_primitive_compressible_multispecie.f90</a></li>
+  
+     <li class="active">flow_primitive_compressible_multispecie</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-0">Interfaces</a></h3></div>
+  <div id="inters-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#interface-primitive_compressible_multispecie">primitive_compressible_multispecie</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
+  <div id="types-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#type-primitive_compressible_multispecie">primitive_compressible_multispecie</a>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
+  <div id="funcs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-add%7E3">add</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-array%7E3">array</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-compatible">compatible</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-description%7E4">description</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-div%7E3">div</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-div_integer%7E3">div_integer</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-div_real%7E3">div_real</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-energy%7E3">energy</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-eq%7E3">eq</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-integer_mul%7E3">integer_mul</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-momentum%7E2">momentum</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-mul%7E3">mul</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-mul_integer%7E3">mul_integer</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-mul_real%7E3">mul_real</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-negative%7E3">negative</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-not_eq%7E3">not_eq</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-positive%7E3">positive</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-pow_integer%7E3">pow_integer</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-pow_real%7E3">pow_real</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-primitive_compressible_multispecie_instance">primitive_compressible_multispecie_instance</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-real_mul%7E3">real_mul</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-sub%7E3">sub</a>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-assign_field%7E3">assign_field</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-assign_real%7E3">assign_real</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-destroy%7E3">destroy</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-initialize%7E3">initialize</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+  <hr>
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allmods-0">All Modules</a></h3></div>
+  <div id="allmods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/flow.html">flow</a>
+      
+      <a class="list-group-item" href="../module/flow_compressible_transformations.html">flow_compressible_transformations</a>
+      
+      <a class="list-group-item" href="../module/flow_conservative_compressible.html">flow_conservative_compressible</a>
+      
+      <a class="list-group-item" href="../module/flow_conservative_object.html">flow_conservative_object</a>
+      
+      <a class="list-group-item" href="../module/flow_eos_compressible.html">flow_eos_compressible</a>
+      
+      <a class="list-group-item" href="../module/flow_eos_object.html">flow_eos_object</a>
+      
+      <a class="list-group-item" href="../module/flow_field_object.html">flow_field_object</a>
+      
+      <a class="list-group-item" href="../module/flow_field_scalar_vectorial.html">flow_field_scalar_vectorial</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible.html">flow_primitive_compressible</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html">flow_primitive_compressible_multispecie</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_object.html">flow_primitive_object</a>
+      
+      <a class="list-group-item" href="../module/penf.html">penf</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html">penf_b_size</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html">penf_global_parameters_variables</a>
+      
+      <a class="list-group-item" href="../module/penf_stringify.html">penf_stringify</a>
+      
+      <a class="list-group-item" href="../module/vecfor.html">VecFor</a>
+      
+    </div>
+  </div>
+</div>
+
+
+</div>  
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      
+    
+  
+    <ul class="list-inline">
+      <li><h4>Uses:</h4></li>
+      
+      <li><a href='../module/flow_eos_object.html'>flow_eos_object</a></li>
+      
+      <li><a href='../module/flow_field_object.html'>flow_field_object</a></li>
+      
+      <li><a href='../module/flow_primitive_object.html'>flow_primitive_object</a></li>
+      
+      <li><a href='../module/penf.html'>penf</a></li>
+      
+      <li><a href='../module/vecfor.html'>VecFor</a></li>
+      
+    </ul>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+ -->
+<!-- Title: module~~flow_primitive_compressible_multispecie~~UsesGraph Pages: 1 -->
+<svg id="moduleflow_primitive_compressible_multispecieUsesGraph" width="641pt" height="113pt"
+ viewBox="0.00 0.00 641.00 112.58" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~flow_primitive_compressible_multispecie~~UsesGraph" class="graph" transform="scale(0.62233 0.62233) rotate(0) translate(4 176.899)">
+<title>module~~flow_primitive_compressible_multispecie~~UsesGraph</title>
+<polygon fill="white" stroke="white" points="-4,5 -4,-176.899 1027,-176.899 1027,5 -4,5"/>
+<!-- module~flow_primitive_compressible_multispecie -->
+<g id="node1" class="node"><title>module~flow_primitive_compressible_multispecie</title>
+<polygon fill="none" stroke="black" points="1021,-100.899 817,-100.899 817,-74.8993 1021,-74.8993 1021,-100.899"/>
+<text text-anchor="middle" x="919" y="-85.4493" font-family="Helvetica,sans-Serif" font-size="10.50">flow_primitive_compressible_multispecie</text>
+</g>
+<!-- module~vecfor -->
+<g id="node2" class="node"><title>module~vecfor</title>
+<a xlink:href="../module/vecfor.html" xlink:title="VecFor">
+<polygon fill="#337ab7" stroke="#337ab7" points="613,-172.899 559,-172.899 559,-146.899 613,-146.899 613,-172.899"/>
+<text text-anchor="middle" x="586" y="-157.449" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">VecFor</text>
+</a>
+</g>
+<!-- module~vecfor&#45;&gt;module~flow_primitive_compressible_multispecie -->
+<g id="edge30" class="edge"><title>module~vecfor&#45;&gt;module~flow_primitive_compressible_multispecie</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M613.251,-154.007C664.211,-142.989 775.397,-118.949 848.706,-103.098"/>
+<polygon fill="#000000" stroke="#000000" points="849.754,-106.452 858.788,-100.918 848.274,-99.6106 849.754,-106.452"/>
+</g>
+<!-- module~flow_primitive_object -->
+<g id="node3" class="node"><title>module~flow_primitive_object</title>
+<a xlink:href="../module/flow_primitive_object.html" xlink:title="flow_primitive_object">
+<polygon fill="#337ab7" stroke="#337ab7" points="780,-100.899 668,-100.899 668,-74.8993 780,-74.8993 780,-100.899"/>
+<text text-anchor="middle" x="724" y="-85.4493" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_primitive_object</text>
+</a>
+</g>
+<!-- module~vecfor&#45;&gt;module~flow_primitive_object -->
+<g id="edge4" class="edge"><title>module~vecfor&#45;&gt;module~flow_primitive_object</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M610.991,-146.861C633.03,-135.362 665.35,-118.499 689.787,-105.75"/>
+<polygon fill="#000000" stroke="#000000" points="691.482,-108.813 698.729,-101.084 688.244,-102.607 691.482,-108.813"/>
+</g>
+<!-- module~flow_primitive_object&#45;&gt;module~flow_primitive_compressible_multispecie -->
+<g id="edge32" class="edge"><title>module~flow_primitive_object&#45;&gt;module~flow_primitive_compressible_multispecie</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M780.14,-87.8993C788.397,-87.8993 797.139,-87.8993 806.058,-87.8993"/>
+<polygon fill="#000000" stroke="#000000" points="806.187,-91.3994 816.187,-87.8993 806.187,-84.3994 806.187,-91.3994"/>
+</g>
+<!-- module~penf -->
+<g id="node4" class="node"><title>module~penf</title>
+<a xlink:href="../module/penf.html" xlink:title="penf">
+<polygon fill="#337ab7" stroke="#337ab7" points="504,-90.8993 450,-90.8993 450,-64.8993 504,-64.8993 504,-90.8993"/>
+<text text-anchor="middle" x="477" y="-75.4493" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;module~flow_primitive_compressible_multispecie -->
+<g id="edge34" class="edge"><title>module~penf&#45;&gt;module~flow_primitive_compressible_multispecie</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M484.807,-64.7068C495.122,-48.7268 514.951,-22.6177 540,-11.8993 615.719,20.501 642.35,-23.1039 724,-33.8993"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M724,-33.8993C777.083,-40.0071 835.929,-57.9212 874.948,-71.4552"/>
+<polygon fill="#000000" stroke="#000000" points="873.831,-74.7723 884.426,-74.7918 876.155,-68.1696 873.831,-74.7723"/>
+</g>
+<!-- module~penf&#45;&gt;module~flow_primitive_object -->
+<g id="edge6" class="edge"><title>module~penf&#45;&gt;module~flow_primitive_object</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M504.071,-89.5926C515.01,-93.7214 527.893,-97.8461 540,-99.8993 578.637,-106.451 622.396,-103.993 657.544,-99.6439"/>
+<polygon fill="#000000" stroke="#000000" points="658.231,-103.084 667.688,-98.3074 657.317,-96.1437 658.231,-103.084"/>
+</g>
+<!-- module~flow_eos_object -->
+<g id="node5" class="node"><title>module~flow_eos_object</title>
+<a xlink:href="../module/flow_eos_object.html" xlink:title="flow_eos_object">
+<polygon fill="#337ab7" stroke="#337ab7" points="630,-90.8993 542,-90.8993 542,-64.8993 630,-64.8993 630,-90.8993"/>
+<text text-anchor="middle" x="586" y="-75.4493" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_eos_object</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;module~flow_eos_object -->
+<g id="edge26" class="edge"><title>module~penf&#45;&gt;module~flow_eos_object</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M504.224,-77.8993C512.467,-77.8993 521.831,-77.8993 531.207,-77.8993"/>
+<polygon fill="#000000" stroke="#000000" points="531.333,-81.3994 541.333,-77.8993 531.333,-74.3994 531.333,-81.3994"/>
+</g>
+<!-- module~flow_field_object -->
+<g id="node6" class="node"><title>module~flow_field_object</title>
+<a xlink:href="../module/flow_field_object.html" xlink:title="flow_field_object">
+<polygon fill="#337ab7" stroke="#337ab7" points="631,-46.8993 541,-46.8993 541,-20.8993 631,-20.8993 631,-46.8993"/>
+<text text-anchor="middle" x="586" y="-31.4493" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_field_object</text>
+</a>
+</g>
+<!-- module~penf&#45;&gt;module~flow_field_object -->
+<g id="edge28" class="edge"><title>module~penf&#45;&gt;module~flow_field_object</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M504.224,-66.9098C516.3,-62.0349 530.784,-56.1883 544.185,-50.7789"/>
+<polygon fill="#000000" stroke="#000000" points="545.738,-53.9264 553.701,-46.9375 543.118,-47.4353 545.738,-53.9264"/>
+</g>
+<!-- module~flow_eos_object&#45;&gt;module~flow_primitive_compressible_multispecie -->
+<g id="edge36" class="edge"><title>module~flow_eos_object&#45;&gt;module~flow_primitive_compressible_multispecie</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M616.286,-64.8947C650.171,-50.9451 703.059,-31.1306 724,-33.8993"/>
+</g>
+<!-- module~flow_eos_object&#45;&gt;module~flow_primitive_object -->
+<g id="edge8" class="edge"><title>module~flow_eos_object&#45;&gt;module~flow_primitive_object</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M630.805,-81.146C639.382,-81.7676 648.53,-82.4305 657.618,-83.089"/>
+<polygon fill="#000000" stroke="#000000" points="657.592,-86.5962 667.819,-83.8282 658.098,-79.6146 657.592,-86.5962"/>
+</g>
+<!-- module~flow_field_object&#45;&gt;module~flow_primitive_compressible_multispecie -->
+<g id="edge38" class="edge"><title>module~flow_field_object&#45;&gt;module~flow_primitive_compressible_multispecie</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M631.569,-30.9083C658.559,-29.8799 693.36,-29.8483 724,-33.8993"/>
+</g>
+<!-- module~flow_field_object&#45;&gt;module~flow_primitive_object -->
+<g id="edge10" class="edge"><title>module~flow_field_object&#45;&gt;module~flow_primitive_object</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M619.406,-46.9712C637.915,-54.2138 661.129,-63.2976 680.982,-71.0664"/>
+<polygon fill="#000000" stroke="#000000" points="679.836,-74.376 690.423,-74.7607 682.386,-67.8572 679.836,-74.376"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="node7" class="node"><title>iso_fortran_env</title>
+<a xlink:href="https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="301,-153.899 215,-153.899 215,-127.899 301,-127.899 301,-153.899"/>
+<text text-anchor="middle" x="258" y="-138.449" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+<!-- iso_fortran_env&#45;&gt;module~vecfor -->
+<g id="edge2" class="edge"><title>iso_fortran_env&#45;&gt;module~vecfor</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M301.556,-143.422C366.46,-147.182 487.458,-154.191 548.593,-157.732"/>
+<polygon fill="#000000" stroke="#000000" points="548.394,-161.227 558.579,-158.311 548.798,-154.238 548.394,-161.227"/>
+</g>
+<!-- module~penf_stringify -->
+<g id="node15" class="node"><title>module~penf_stringify</title>
+<a xlink:href="../module/penf_stringify.html" xlink:title="penf_stringify">
+<polygon fill="#337ab7" stroke="#337ab7" points="414,-91.8993 338,-91.8993 338,-65.8993 414,-65.8993 414,-91.8993"/>
+<text text-anchor="middle" x="376" y="-76.4493" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_stringify</text>
+</a>
+</g>
+<!-- iso_fortran_env&#45;&gt;module~penf_stringify -->
+<g id="edge14" class="edge"><title>iso_fortran_env&#45;&gt;module~penf_stringify</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M283.025,-127.751C300.234,-118.709 323.293,-106.593 342.141,-96.6897"/>
+<polygon fill="#000000" stroke="#000000" points="343.787,-99.7787 351.011,-92.029 340.531,-93.582 343.787,-99.7787"/>
+</g>
+<!-- module~penf_b_size -->
+<g id="node13" class="node"><title>module~penf_b_size</title>
+<a xlink:href="../module/penf_b_size.html" xlink:title="penf_b_size">
+<polygon fill="#337ab7" stroke="#337ab7" points="293,-91.8993 223,-91.8993 223,-65.8993 293,-65.8993 293,-91.8993"/>
+<text text-anchor="middle" x="258" y="-76.4493" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_b_size</text>
+</a>
+</g>
+<!-- module~penf_b_size&#45;&gt;module~penf -->
+<g id="edge20" class="edge"><title>module~penf_b_size&#45;&gt;module~penf</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M293.021,-90.7204C306.86,-94.8113 323.011,-98.8759 338,-100.899 371.474,-105.418 380.738,-106.781 414,-100.899 422.735,-99.3546 431.851,-96.6922 440.348,-93.7143"/>
+<polygon fill="#000000" stroke="#000000" points="441.831,-96.8964 449.977,-90.1214 439.384,-90.3381 441.831,-96.8964"/>
+</g>
+<!-- module~penf_b_size&#45;&gt;module~penf_stringify -->
+<g id="edge18" class="edge"><title>module~penf_b_size&#45;&gt;module~penf_stringify</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M293.084,-78.8993C304.014,-78.8993 316.261,-78.8993 327.919,-78.8993"/>
+<polygon fill="#000000" stroke="#000000" points="327.964,-82.3994 337.964,-78.8993 327.964,-75.3994 327.964,-82.3994"/>
+</g>
+<!-- module~penf_global_parameters_variables -->
+<g id="node14" class="node"><title>module~penf_global_parameters_variables</title>
+<a xlink:href="../module/penf_global_parameters_variables.html" xlink:title="penf_global_parameters_variables">
+<polygon fill="#337ab7" stroke="#337ab7" points="178,-70.8993 8.52651e-14,-70.8993 0,-44.8993 178,-44.8993 178,-70.8993"/>
+<text text-anchor="middle" x="89" y="-55.4493" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_global_parameters_variables</text>
+</a>
+</g>
+<!-- module~penf_global_parameters_variables&#45;&gt;module~penf -->
+<g id="edge22" class="edge"><title>module~penf_global_parameters_variables&#45;&gt;module~penf</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M159.919,-44.8849C190.066,-40.5548 225.66,-37.0224 258,-37.8993"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M258,-37.8993C327.82,-39.7925 345.86,-41.5565 414,-56.8993 422.569,-58.8288 431.618,-61.4699 440.102,-64.228"/>
+<polygon fill="#000000" stroke="#000000" points="439.144,-67.5989 449.739,-67.484 441.385,-60.9672 439.144,-67.5989"/>
+</g>
+<!-- module~penf_global_parameters_variables&#45;&gt;module~penf_b_size -->
+<g id="edge12" class="edge"><title>module~penf_global_parameters_variables&#45;&gt;module~penf_b_size</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M178.449,-69.0143C190.206,-70.4752 201.835,-71.9203 212.422,-73.2358"/>
+<polygon fill="#000000" stroke="#000000" points="212.271,-76.7439 222.627,-74.5038 213.135,-69.7973 212.271,-76.7439"/>
+</g>
+<!-- module~penf_global_parameters_variables&#45;&gt;module~penf_stringify -->
+<g id="edge16" class="edge"><title>module~penf_global_parameters_variables&#45;&gt;module~penf_stringify</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M258,-37.8993C288.106,-38.7157 320.272,-50.7107 343.404,-61.5164"/>
+<polygon fill="#000000" stroke="#000000" points="341.896,-64.6749 352.422,-65.8827 344.946,-58.3746 341.896,-64.6749"/>
+</g>
+<!-- module~penf_stringify&#45;&gt;module~penf -->
+<g id="edge24" class="edge"><title>module~penf_stringify&#45;&gt;module~penf</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M414.184,-78.5213C422.511,-78.4388 431.313,-78.3517 439.609,-78.2695"/>
+<polygon fill="#000000" stroke="#000000" points="439.807,-81.7679 449.772,-78.1689 439.738,-74.7682 439.807,-81.7679"/>
+</g>
+</g>
+</svg>
+</div>
+                <script>var panmoduleflow_primitive_compressible_multispecieUsesGraph = svgPanZoom('#moduleflow_primitive_compressible_multispecieUsesGraph', {
+                    zoomEnabled: true,
+                    controlIconsEnabled: true,
+                    fit: true,
+                    center: true,});
+                    </script>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="486pt" height="34pt"
+ viewBox="0.00 0.00 486.00 34.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 30)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="white" points="-4,5 -4,-30 483,-30 483,5 -4,5"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-26 2.13163e-14,-26 0,-1.24345e-14 54,-3.55271e-15 54,-26"/>
+<text text-anchor="middle" x="27" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="138,-26 72,-26 72,-1.24345e-14 138,-3.55271e-15 138,-26"/>
+<text text-anchor="middle" x="105" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="220,-26 156,-26 156,-1.24345e-14 220,-3.55271e-15 220,-26"/>
+<text text-anchor="middle" x="188" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="292,-26 238,-26 238,-1.24345e-14 292,-3.55271e-15 292,-26"/>
+<text text-anchor="middle" x="265" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="364,-26 310,-26 310,-1.24345e-14 364,-3.55271e-15 364,-26"/>
+<text text-anchor="middle" x="337" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="478,-26 382,-26 382,-1.24345e-14 478,-3.55271e-15 478,-26"/>
+<text text-anchor="middle" x="430" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a parent (sub)module to the submodule which is
+    descended from it. Dashed arrows point from a module being used to the
+    module or program unit using it.
+    </p>
+    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    
+
+    
+    <p>FLOw <strong>primitive</strong> compressible mutlispecie object.</p>
+<p><a href="../interface/primitive_compressible_multispecie.html">primitive_compressible_multispecie</a> is a class that handles compressible multispecie primitive fluid dynamic variables.</p>
+    
+    
+    <h3>Used By</h3>
+    
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+ -->
+<!-- Title: module~~flow_primitive_compressible_multispecie~~UsedByGraph Pages: 1 -->
+<svg id="moduleflow_primitive_compressible_multispecieUsedByGraph" width="608pt" height="1134pt"
+ viewBox="0.00 0.00 608.00 1134.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~flow_primitive_compressible_multispecie~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 1130)">
+<title>module~~flow_primitive_compressible_multispecie~~UsedByGraph</title>
+<polygon fill="white" stroke="white" points="-4,5 -4,-1130 605,-1130 605,5 -4,5"/>
+<!-- module~flow_primitive_compressible_multispecie -->
+<g id="node1" class="node"><title>module~flow_primitive_compressible_multispecie</title>
+<polygon fill="none" stroke="black" points="205,-576 1,-576 1,-550 205,-550 205,-576"/>
+<text text-anchor="middle" x="103" y="-560.55" font-family="Helvetica,sans-Serif" font-size="10.50">flow_primitive_compressible_multispecie</text>
+</g>
+<!-- module~flow -->
+<g id="node2" class="node"><title>module~flow</title>
+<a xlink:href="../module/flow.html" xlink:title="flow">
+<polygon fill="#337ab7" stroke="#337ab7" points="296,-576 242,-576 242,-550 296,-550 296,-576"/>
+<text text-anchor="middle" x="269" y="-560.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow</text>
+</a>
+</g>
+<!-- module~flow_primitive_compressible_multispecie&#45;&gt;module~flow -->
+<g id="edge54" class="edge"><title>module~flow_primitive_compressible_multispecie&#45;&gt;module~flow</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M205.769,-563C214.993,-563 223.87,-563 231.91,-563"/>
+<polygon fill="#000000" stroke="#000000" points="231.954,-566.5 241.954,-563 231.954,-559.5 231.954,-566.5"/>
+</g>
+<!-- program~flow_test_primitive_compressible_multispecie_not_eq -->
+<g id="node3" class="node"><title>program~flow_test_primitive_compressible_multispecie_not_eq</title>
+<a xlink:href="../program/flow_test_primitive_compressible_multispecie_not_eq.html" xlink:title="flow_test_primitive_compressible_multispecie_not_eq">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="600,-1126 332,-1126 332,-1100 600,-1100 600,-1126"/>
+<text text-anchor="middle" x="466" y="-1110.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_not_eq</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_not_eq -->
+<g id="edge2" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_not_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M269.631,-576.021C273.505,-653.567 295.14,-1052.48 332,-1091 332.795,-1091.83 333.608,-1092.64 334.438,-1093.42"/>
+<polygon fill="#000000" stroke="#000000" points="332.388,-1096.27 342.352,-1099.87 336.809,-1090.84 332.388,-1096.27"/>
+</g>
+<!-- program~flow_test_primitive_compressible_multispecie_add~2 -->
+<g id="node4" class="node"><title>program~flow_test_primitive_compressible_multispecie_add~2</title>
+<a xlink:href="../program/flow_test_primitive_compressible_multispecie_add%7E2.html" xlink:title="flow_test_primitive_compressible_multispecie_add">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="592,-1082 340,-1082 340,-1056 592,-1056 592,-1082"/>
+<text text-anchor="middle" x="466" y="-1066.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_add</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_add~2 -->
+<g id="edge4" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_add~2</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M269.799,-576.362C274.37,-650.782 298.199,-1012.05 332,-1047 332.799,-1047.83 333.616,-1048.63 334.451,-1049.41"/>
+<polygon fill="#000000" stroke="#000000" points="332.418,-1052.27 342.397,-1055.82 336.815,-1046.82 332.418,-1052.27"/>
+</g>
+<!-- program~flow_test_primitive_compressible_multispecie_sub -->
+<g id="node5" class="node"><title>program~flow_test_primitive_compressible_multispecie_sub</title>
+<a xlink:href="../program/flow_test_primitive_compressible_multispecie_sub.html" xlink:title="flow_test_primitive_compressible_multispecie_sub">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="592,-1038 340,-1038 340,-1012 592,-1012 592,-1038"/>
+<text text-anchor="middle" x="466" y="-1022.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_sub</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_sub -->
+<g id="edge6" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_sub</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M269.957,-576.051C275.18,-645.689 301.151,-971.511 332,-1003 332.928,-1003.95 333.88,-1004.86 334.854,-1005.75"/>
+<polygon fill="#000000" stroke="#000000" points="332.72,-1008.52 342.739,-1011.97 337.055,-1003.03 332.72,-1008.52"/>
+</g>
+<!-- program~flow_test_primitive_compressible_not_eq -->
+<g id="node6" class="node"><title>program~flow_test_primitive_compressible_not_eq</title>
+<a xlink:href="../program/flow_test_primitive_compressible_not_eq.html" xlink:title="flow_test_primitive_compressible_not_eq">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="570,-994 362,-994 362,-968 570,-968 570,-994"/>
+<text text-anchor="middle" x="466" y="-978.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_not_eq</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_not_eq -->
+<g id="edge8" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_not_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M269.112,-576.154C269.925,-638.481 276.637,-903.361 332,-959 337.905,-964.934 344.749,-969.645 352.159,-973.358"/>
+<polygon fill="#000000" stroke="#000000" points="351.253,-976.78 361.82,-977.545 354.036,-970.357 351.253,-976.78"/>
+</g>
+<!-- program~flow_test_primitive_compressible_add~2 -->
+<g id="node7" class="node"><title>program~flow_test_primitive_compressible_add~2</title>
+<a xlink:href="../program/flow_test_primitive_compressible_add%7E2.html" xlink:title="flow_test_primitive_compressible_add">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="562,-950 370,-950 370,-924 562,-924 562,-950"/>
+<text text-anchor="middle" x="466" y="-934.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_add</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_add~2 -->
+<g id="edge10" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_add~2</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M269.399,-576.224C271.436,-634.336 282.592,-866.297 332,-915 339.906,-922.793 349.436,-928.463 359.727,-932.528"/>
+<polygon fill="#000000" stroke="#000000" points="358.771,-935.9 369.366,-935.825 361.037,-929.277 358.771,-935.9"/>
+</g>
+<!-- program~flow_test_primitive_compressible_sub -->
+<g id="node8" class="node"><title>program~flow_test_primitive_compressible_sub</title>
+<a xlink:href="../program/flow_test_primitive_compressible_sub.html" xlink:title="flow_test_primitive_compressible_sub">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="562,-906 370,-906 370,-880 562,-880 562,-906"/>
+<text text-anchor="middle" x="466" y="-890.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_sub</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_sub -->
+<g id="edge12" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_sub</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M269.773,-576.353C273.163,-630.03 288.53,-829.195 332,-871 339.936,-878.632 349.436,-884.212 359.666,-888.234"/>
+<polygon fill="#000000" stroke="#000000" points="358.647,-891.584 369.241,-891.504 360.909,-884.96 358.647,-891.584"/>
+</g>
+<!-- program~flow_test_conservative_compressible_add -->
+<g id="node9" class="node"><title>program~flow_test_conservative_compressible_add</title>
+<a xlink:href="../program/flow_test_conservative_compressible_add.html" xlink:title="flow_test_conservative_compressible_add">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="573,-862 359,-862 359,-836 573,-836 573,-862"/>
+<text text-anchor="middle" x="466" y="-846.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_add</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_add -->
+<g id="edge14" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_add</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M270.234,-576.077C275.066,-624.403 294.321,-791.924 332,-827 337.217,-831.857 343.071,-835.873 349.339,-839.18"/>
+<polygon fill="#000000" stroke="#000000" points="348.244,-842.529 358.791,-843.532 351.172,-836.171 348.244,-842.529"/>
+</g>
+<!-- program~flow_test_conservative_compressible_assign -->
+<g id="node10" class="node"><title>program~flow_test_conservative_compressible_assign</title>
+<a xlink:href="../program/flow_test_conservative_compressible_assign.html" xlink:title="flow_test_conservative_compressible_assign">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="579,-818 353,-818 353,-792 579,-792 579,-818"/>
+<text text-anchor="middle" x="466" y="-802.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_assign</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_assign -->
+<g id="edge16" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_assign</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M270.921,-576.236C277.451,-619.362 300.172,-754.67 332,-783 335.712,-786.304 339.721,-789.213 343.953,-791.77"/>
+<polygon fill="#000000" stroke="#000000" points="342.456,-794.937 352.93,-796.536 345.739,-788.755 342.456,-794.937"/>
+</g>
+<!-- program~flow_test_conservative_compressible_div -->
+<g id="node11" class="node"><title>program~flow_test_conservative_compressible_div</title>
+<a xlink:href="../program/flow_test_conservative_compressible_div.html" xlink:title="flow_test_conservative_compressible_div">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="570,-774 362,-774 362,-748 570,-748 570,-774"/>
+<text text-anchor="middle" x="466" y="-758.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_div</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_div -->
+<g id="edge18" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_div</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M271.896,-576.156C280.322,-613.223 305.887,-717.233 332,-739 338.048,-744.042 344.799,-748.142 351.966,-751.461"/>
+<polygon fill="#000000" stroke="#000000" points="350.665,-754.711 361.245,-755.26 353.317,-748.232 350.665,-754.711"/>
+</g>
+<!-- program~flow_test_conservative_compressible_eq -->
+<g id="node12" class="node"><title>program~flow_test_conservative_compressible_eq</title>
+<a xlink:href="../program/flow_test_conservative_compressible_eq.html" xlink:title="flow_test_conservative_compressible_eq">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="570,-730 362,-730 362,-704 570,-704 570,-730"/>
+<text text-anchor="middle" x="466" y="-714.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_eq</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_eq -->
+<g id="edge20" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M271.122,-576.015C276.255,-602.986 291.999,-664.961 332,-695 338.296,-699.728 345.23,-703.597 352.529,-706.75"/>
+<polygon fill="#000000" stroke="#000000" points="351.358,-710.05 361.947,-710.373 353.87,-703.516 351.358,-710.05"/>
+</g>
+<!-- program~flow_test_conservative_compressible_mul -->
+<g id="node13" class="node"><title>program~flow_test_conservative_compressible_mul</title>
+<a xlink:href="../program/flow_test_conservative_compressible_mul.html" xlink:title="flow_test_conservative_compressible_mul">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="572,-686 360,-686 360,-660 572,-660 572,-686"/>
+<text text-anchor="middle" x="466" y="-670.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_mul</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_mul -->
+<g id="edge22" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_mul</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M274.469,-576.283C283.367,-596.086 302.956,-632.948 332,-651 337.519,-654.43 343.403,-657.377 349.509,-659.904"/>
+<polygon fill="#000000" stroke="#000000" points="348.674,-663.328 359.267,-663.54 351.118,-656.768 348.674,-663.328"/>
+</g>
+<!-- program~flow_test_conservative_compressible_not_eq -->
+<g id="node14" class="node"><title>program~flow_test_conservative_compressible_not_eq</title>
+<a xlink:href="../program/flow_test_conservative_compressible_not_eq.html" xlink:title="flow_test_conservative_compressible_not_eq">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="580,-642 352,-642 352,-616 580,-616 580,-642"/>
+<text text-anchor="middle" x="466" y="-626.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_not_eq</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_not_eq -->
+<g id="edge24" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_not_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M283.905,-576.326C296.003,-586.384 313.957,-599.663 332,-607 337.526,-609.247 343.269,-611.265 349.132,-613.077"/>
+<polygon fill="#000000" stroke="#000000" points="348.518,-616.542 359.095,-615.936 350.449,-609.813 348.518,-616.542"/>
+</g>
+<!-- program~flow_test_conservative_compressible_add~2 -->
+<g id="node15" class="node"><title>program~flow_test_conservative_compressible_add~2</title>
+<a xlink:href="../program/flow_test_conservative_compressible_add%7E2.html" xlink:title="flow_test_conservative_compressible_add">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="573,-598 359,-598 359,-572 573,-572 573,-598"/>
+<text text-anchor="middle" x="466" y="-582.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_add</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_add~2 -->
+<g id="edge26" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_add~2</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M296.392,-566.059C310.682,-567.655 329.247,-569.728 348.835,-571.916"/>
+<polygon fill="#000000" stroke="#000000" points="348.508,-575.401 358.835,-573.032 349.285,-568.444 348.508,-575.401"/>
+</g>
+<!-- program~flow_test_conservative_compressible_sub -->
+<g id="node16" class="node"><title>program~flow_test_conservative_compressible_sub</title>
+<a xlink:href="../program/flow_test_conservative_compressible_sub.html" xlink:title="flow_test_conservative_compressible_sub">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="572,-554 360,-554 360,-528 572,-528 572,-554"/>
+<text text-anchor="middle" x="466" y="-538.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_sub</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_sub -->
+<g id="edge28" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_sub</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M296.392,-559.941C310.772,-558.335 329.483,-556.246 349.207,-554.043"/>
+<polygon fill="#000000" stroke="#000000" points="349.725,-557.507 359.275,-552.919 348.948,-550.55 349.725,-557.507"/>
+</g>
+<!-- program~flow_test_eos_compressible -->
+<g id="node17" class="node"><title>program~flow_test_eos_compressible</title>
+<a xlink:href="../program/flow_test_eos_compressible.html" xlink:title="flow_test_eos_compressible">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="539,-510 393,-510 393,-484 539,-484 539,-510"/>
+<text text-anchor="middle" x="466" y="-494.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_eos_compressible</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_eos_compressible -->
+<g id="edge30" class="edge"><title>module~flow&#45;&gt;program~flow_test_eos_compressible</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M283.905,-549.674C296.003,-539.616 313.957,-526.337 332,-519 347.791,-512.579 365.353,-508.03 382.424,-504.808"/>
+<polygon fill="#000000" stroke="#000000" points="383.156,-508.233 392.402,-503.06 381.948,-501.338 383.156,-508.233"/>
+</g>
+<!-- program~flow_test_compressible_transformations -->
+<g id="node18" class="node"><title>program~flow_test_compressible_transformations</title>
+<a xlink:href="../program/flow_test_compressible_transformations.html" xlink:title="flow_test_compressible_transformations">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="568,-466 364,-466 364,-440 568,-440 568,-466"/>
+<text text-anchor="middle" x="466" y="-450.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_compressible_transformations</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_compressible_transformations -->
+<g id="edge32" class="edge"><title>module~flow&#45;&gt;program~flow_test_compressible_transformations</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M274.469,-549.717C283.367,-529.914 302.956,-493.052 332,-475 338.904,-470.709 346.379,-467.175 354.146,-464.271"/>
+<polygon fill="#000000" stroke="#000000" points="355.389,-467.546 363.747,-461.034 353.153,-460.913 355.389,-467.546"/>
+</g>
+<!-- program~flow_test_primitive_compressible_add -->
+<g id="node19" class="node"><title>program~flow_test_primitive_compressible_add</title>
+<a xlink:href="../program/flow_test_primitive_compressible_add.html" xlink:title="flow_test_primitive_compressible_add">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="562,-422 370,-422 370,-396 562,-396 562,-422"/>
+<text text-anchor="middle" x="466" y="-406.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_add</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_add -->
+<g id="edge34" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_add</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M271.122,-549.985C276.255,-523.014 291.999,-461.039 332,-431 340.357,-424.724 349.839,-419.962 359.804,-416.378"/>
+<polygon fill="#000000" stroke="#000000" points="361.021,-419.663 369.486,-413.291 358.895,-412.994 361.021,-419.663"/>
+</g>
+<!-- program~flow_test_primitive_compressible_assign -->
+<g id="node20" class="node"><title>program~flow_test_primitive_compressible_assign</title>
+<a xlink:href="../program/flow_test_primitive_compressible_assign.html" xlink:title="flow_test_primitive_compressible_assign">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="569,-378 363,-378 363,-352 569,-352 569,-378"/>
+<text text-anchor="middle" x="466" y="-362.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_assign</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_assign -->
+<g id="edge36" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_assign</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M271.896,-549.844C280.322,-512.777 305.887,-408.767 332,-387 338.508,-381.575 345.829,-377.24 353.608,-373.795"/>
+<polygon fill="#000000" stroke="#000000" points="354.89,-377.052 362.927,-370.148 352.339,-370.533 354.89,-377.052"/>
+</g>
+<!-- program~flow_test_primitive_compressible_div -->
+<g id="node21" class="node"><title>program~flow_test_primitive_compressible_div</title>
+<a xlink:href="../program/flow_test_primitive_compressible_div.html" xlink:title="flow_test_primitive_compressible_div">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="560,-334 372,-334 372,-308 560,-308 560,-334"/>
+<text text-anchor="middle" x="466" y="-318.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_div</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_div -->
+<g id="edge38" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_div</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M270.921,-549.764C277.451,-506.638 300.172,-371.33 332,-343 340.581,-335.362 350.75,-329.835 361.591,-325.892"/>
+<polygon fill="#000000" stroke="#000000" points="362.796,-329.182 371.269,-322.821 360.679,-322.509 362.796,-329.182"/>
+</g>
+<!-- program~flow_test_primitive_compressible_eq -->
+<g id="node22" class="node"><title>program~flow_test_primitive_compressible_eq</title>
+<a xlink:href="../program/flow_test_primitive_compressible_eq.html" xlink:title="flow_test_primitive_compressible_eq">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="559,-290 373,-290 373,-264 559,-264 559,-290"/>
+<text text-anchor="middle" x="466" y="-274.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_eq</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_eq -->
+<g id="edge40" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M270.234,-549.923C275.066,-501.597 294.321,-334.076 332,-299 340.763,-290.843 351.322,-285.056 362.619,-281.02"/>
+<polygon fill="#000000" stroke="#000000" points="363.747,-284.335 372.26,-278.029 361.672,-277.65 363.747,-284.335"/>
+</g>
+<!-- program~flow_test_primitive_compressible_mul -->
+<g id="node23" class="node"><title>program~flow_test_primitive_compressible_mul</title>
+<a xlink:href="../program/flow_test_primitive_compressible_mul.html" xlink:title="flow_test_primitive_compressible_mul">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="562,-246 370,-246 370,-220 562,-220 562,-246"/>
+<text text-anchor="middle" x="466" y="-230.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_mul</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_mul -->
+<g id="edge42" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_mul</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M269.773,-549.647C273.163,-495.97 288.53,-296.805 332,-255 339.936,-247.368 349.436,-241.788 359.666,-237.766"/>
+<polygon fill="#000000" stroke="#000000" points="360.909,-241.04 369.241,-234.496 358.647,-234.416 360.909,-241.04"/>
+</g>
+<!-- program~flow_test_primitive_compressible_multispecie_add -->
+<g id="node24" class="node"><title>program~flow_test_primitive_compressible_multispecie_add</title>
+<a xlink:href="../program/flow_test_primitive_compressible_multispecie_add.html" xlink:title="flow_test_primitive_compressible_multispecie_add">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="592,-202 340,-202 340,-176 592,-176 592,-202"/>
+<text text-anchor="middle" x="466" y="-186.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_add</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_add -->
+<g id="edge44" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_add</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M269.399,-549.776C271.436,-491.664 282.592,-259.703 332,-211 332.944,-210.069 333.912,-209.168 334.901,-208.297"/>
+<polygon fill="#000000" stroke="#000000" points="337.078,-211.039 342.887,-202.179 332.82,-205.482 337.078,-211.039"/>
+</g>
+<!-- program~flow_test_primitive_compressible_multispecie_assign -->
+<g id="node25" class="node"><title>program~flow_test_primitive_compressible_multispecie_assign</title>
+<a xlink:href="../program/flow_test_primitive_compressible_multispecie_assign.html" xlink:title="flow_test_primitive_compressible_multispecie_assign">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="598,-158 334,-158 334,-132 598,-132 598,-158"/>
+<text text-anchor="middle" x="466" y="-142.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_assign</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_assign -->
+<g id="edge46" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_assign</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M269.112,-549.846C269.925,-487.519 276.637,-222.639 332,-167 332.935,-166.06 333.894,-165.151 334.875,-164.271"/>
+<polygon fill="#000000" stroke="#000000" points="337.065,-167.002 342.805,-158.097 332.765,-161.479 337.065,-167.002"/>
+</g>
+<!-- program~flow_test_primitive_compressible_multispecie_div -->
+<g id="node26" class="node"><title>program~flow_test_primitive_compressible_multispecie_div</title>
+<a xlink:href="../program/flow_test_primitive_compressible_multispecie_div.html" xlink:title="flow_test_primitive_compressible_multispecie_div">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="590,-114 342,-114 342,-88 590,-88 590,-114"/>
+<text text-anchor="middle" x="466" y="-98.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_div</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_div -->
+<g id="edge48" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_div</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M269.957,-549.949C275.18,-480.311 301.151,-154.489 332,-123 332.928,-122.053 333.88,-121.136 334.854,-120.25"/>
+<polygon fill="#000000" stroke="#000000" points="337.055,-122.972 342.739,-114.031 332.72,-117.476 337.055,-122.972"/>
+</g>
+<!-- program~flow_test_primitive_compressible_multispecie_eq -->
+<g id="node27" class="node"><title>program~flow_test_primitive_compressible_multispecie_eq</title>
+<a xlink:href="../program/flow_test_primitive_compressible_multispecie_eq.html" xlink:title="flow_test_primitive_compressible_multispecie_eq">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="589,-70 343,-70 343,-44 589,-44 589,-70"/>
+<text text-anchor="middle" x="466" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_eq</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_eq -->
+<g id="edge50" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M269.799,-549.638C274.37,-475.218 298.199,-113.945 332,-79 332.799,-78.1739 333.616,-77.3713 334.451,-76.5916"/>
+<polygon fill="#000000" stroke="#000000" points="336.815,-79.181 342.397,-70.1761 332.418,-73.7344 336.815,-79.181"/>
+</g>
+<!-- program~flow_test_primitive_compressible_multispecie_mul -->
+<g id="node28" class="node"><title>program~flow_test_primitive_compressible_multispecie_mul</title>
+<a xlink:href="../program/flow_test_primitive_compressible_multispecie_mul.html" xlink:title="flow_test_primitive_compressible_multispecie_mul">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="592,-26 340,-26 340,-1.24345e-14 592,-3.55271e-15 592,-26"/>
+<text text-anchor="middle" x="466" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_mul</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_mul -->
+<g id="edge52" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_mul</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M269.631,-549.979C273.505,-472.433 295.14,-73.5176 332,-35 332.795,-34.1697 333.608,-33.363 334.438,-32.5793"/>
+<polygon fill="#000000" stroke="#000000" points="336.809,-35.1618 342.352,-26.1325 332.388,-29.7346 336.809,-35.1618"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="486pt" height="34pt"
+ viewBox="0.00 0.00 486.00 34.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 30)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="white" points="-4,5 -4,-30 483,-30 483,5 -4,5"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-26 2.13163e-14,-26 0,-1.24345e-14 54,-3.55271e-15 54,-26"/>
+<text text-anchor="middle" x="27" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="138,-26 72,-26 72,-1.24345e-14 138,-3.55271e-15 138,-26"/>
+<text text-anchor="middle" x="105" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="220,-26 156,-26 156,-1.24345e-14 220,-3.55271e-15 220,-26"/>
+<text text-anchor="middle" x="188" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="292,-26 238,-26 238,-1.24345e-14 292,-3.55271e-15 292,-26"/>
+<text text-anchor="middle" x="265" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="364,-26 310,-26 310,-1.24345e-14 364,-3.55271e-15 364,-26"/>
+<text text-anchor="middle" x="337" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="478,-26 382,-26 382,-1.24345e-14 478,-3.55271e-15 478,-26"/>
+<text text-anchor="middle" x="430" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a parent (sub)module to the submodule which is
+    descended from it. Dashed arrows point from a module being used to the
+    module or program unit using it.
+    </p>
+    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    <br>
+    
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-1">Interfaces</a></h3></div>
+  <div id="inters-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#interface-primitive_compressible_multispecie">primitive_compressible_multispecie</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
+  <div id="types-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#type-primitive_compressible_multispecie">primitive_compressible_multispecie</a>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
+  <div id="funcs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-add%7E3">add</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-array%7E3">array</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-compatible">compatible</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-description%7E4">description</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-div%7E3">div</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-div_integer%7E3">div_integer</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-div_real%7E3">div_real</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-energy%7E3">energy</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-eq%7E3">eq</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-integer_mul%7E3">integer_mul</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-momentum%7E2">momentum</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-mul%7E3">mul</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-mul_integer%7E3">mul_integer</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-mul_real%7E3">mul_real</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-negative%7E3">negative</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-not_eq%7E3">not_eq</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-positive%7E3">positive</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-pow_integer%7E3">pow_integer</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-pow_real%7E3">pow_real</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-primitive_compressible_multispecie_instance">primitive_compressible_multispecie_instance</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-real_mul%7E3">real_mul</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-sub%7E3">sub</a>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-assign_field%7E3">assign_field</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-assign_real%7E3">assign_real</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-destroy%7E3">destroy</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html#proc-initialize%7E3">initialize</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+    <section>
+	 <h2>Interfaces</h2>
+	 
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-primitive_compressible_multispecie"></span><h3>public interface <a href='../interface/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+    <p>Overload <a href="../interface/primitive_compressible_multispecie.html">primitive_compressible_multispecie</a> name with its constructor.</p>
+  </div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private pure function <a href='../proc/primitive_compressible_multispecie_instance.html'>primitive_compressible_multispecie_instance</a>(density, velocity, pressure, partial_densities) result(instance)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p>Return and instance of <a href="../interface/primitive_compressible_multispecie.html">primitive_compressible_multispecie</a>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>density</strong></td><td><p>Density field.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(vector),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>velocity</strong></td><td><p>Velocity field.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>pressure</strong></td><td><p>Pressure field.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>partial_densities</strong>(:)</td><td><p>Partial densities field.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>)
+  </small></h4>
+  <p>Instance of <a href="../interface/primitive_compressible_multispecie.html">primitive_compressible_multispecie</a>.</p>
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+    </section>
+	<br>
+    
+
+    
+    
+    
+    <section>
+     <h2>Derived Types</h2>
+	 
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-primitive_compressible_multispecie"></span><h3>type, public, extends(<a href='../type/primitive_object.html'>primitive_object</a>) :: <a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>
+    
+  </h3></div>
+  <div class="panel-body">
+    
+    
+    <p><strong>Primitive</strong> compressible multispecie object.</p>
+    
+     
+     <h4>Components</h4>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-density%7E5"></span>real(kind=R8P),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>density</strong></td><td> =</td><td>0._R8P</td><td><p>Density, <code>rho</code>.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-partial_densities"></span>real(kind=R8P),</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>partial_densities</strong>(:)</td><td></td><td></td><td><p>Partial densities <code>rho(s), rho = sum(rho(s))</code>.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-pressure%7E6"></span>real(kind=R8P),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>pressure</strong></td><td> =</td><td>0._R8P</td><td><p>Pressure, <code>p</code>.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-velocity%7E4"></span>type(vector),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>velocity</strong></td><td></td><td></td><td><p>Velocity, <code>v</code>.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+     
+     
+     <h4>Constructor</h4>
+       
+         <p>Overload <a href="../interface/primitive_compressible_multispecie.html">primitive_compressible_multispecie</a> name with its constructor.</p>
+       
+       <table class="table table-striped varlist">
+      <tbody>
+        
+             
+             
+             
+             <tr><td>private pure function <strong><a href='../proc/primitive_compressible_multispecie_instance.html'>primitive_compressible_multispecie_instance</a></strong>(density, velocity, pressure, partial_densities)</td><td><p>Return and instance of <a href="../interface/primitive_compressible_multispecie.html">primitive_compressible_multispecie</a>.</p></td></tr>
+             
+        
+       </tbody>
+       </table>
+     
+          
+     
+     <h4>Type-Bound Procedures</h4>
+      <table class="table table-striped varlist">
+      <tbody>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-add%7E2'>add</a></strong>  </td>
+       <td><p>Operator <code>+</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(self) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-array%7E6'>array</a></strong>  </td>
+       <td><p>Return serialized array of field.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-assign_field%7E2'>assign_field</a></strong>  </td>
+       <td><p>Operator <code>=</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-assign_real%7E2'>assign_real</a></strong>  </td>
+       <td><p>Operator <code>field = real</code>.</p></td></tr>
+      
+       <tr><td>generic, public :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-assignment%28%3D%29%7E9'>assignment(=)</a></strong>  => assign_field, assign_real </td>
+       <td><p>Assignment overloading.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-compatible'>compatible</a></strong>  </td>
+       <td><p>Operator <code>.compatible.</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(self) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-description%7E8'>description</a></strong>  </td>
+       <td><p>Return pretty-printed object description.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(self) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-destroy%7E4'>destroy</a></strong>  </td>
+       <td><p>Destroy primitive.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-div%7E2'>div</a></strong>  </td>
+       <td><p>Operator <code>/</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-div_integer%7E2'>div_integer</a></strong>  </td>
+       <td><p>Operator <code>field / integer</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-div_real%7E2'>div_real</a></strong>  </td>
+       <td><p>Operator <code>field / real</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(self) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-energy%7E5'>energy</a></strong>  </td>
+       <td><p>Return energy value.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-eq%7E2'>eq</a></strong>  </td>
+       <td><p>Operator `=='.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(self) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-initialize%7E4'>initialize</a></strong>  </td>
+       <td><p>Initialize primitive.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(rhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-integer_mul%7E2'>integer_mul</a></strong>  </td>
+       <td><p>Operator <code>integer * field</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(self) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-momentum%7E3'>momentum</a></strong>  </td>
+       <td><p>Return momentum vector.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-mul%7E2'>mul</a></strong>  </td>
+       <td><p>Operator <code>*</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-mul_integer%7E2'>mul_integer</a></strong>  </td>
+       <td><p>Operator <code>field * integer</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-mul_real%7E2'>mul_real</a></strong>  </td>
+       <td><p>Operator <code>field * real</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(self) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-negative%7E2'>negative</a></strong>  </td>
+       <td><p>Unary operator <code>- field</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-not_eq%7E2'>not_eq</a></strong>  </td>
+       <td><p>Operator `/='.</p></td></tr>
+      
+       <tr><td>generic, public :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-operator%28%2A%29%7E7'>operator(*)</a></strong>  => mul, mul_integer, integer_mul, real_mul, mul_real </td>
+       <td><p>Operator <code>*</code> overloading.</p></td></tr>
+      
+       <tr><td>generic, public :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-operator%28%2A%2A%29%7E7'>operator(**)</a></strong>  => pow_integer, pow_real </td>
+       <td><p>Operator <code>**</code> overloading.</p></td></tr>
+      
+       <tr><td>generic, public :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-operator%28%2B%29%7E7'>operator(+)</a></strong>  => add, positive </td>
+       <td><p>Operator <code>+</code> overloading.</p></td></tr>
+      
+       <tr><td>generic, public :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-operator%28-%29%7E7'>operator(-)</a></strong>  => sub, negative </td>
+       <td><p>Operator <code>-</code> overloading.</p></td></tr>
+      
+       <tr><td>generic, public :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-operator%28.compatible.%29'>operator(.compatible.)</a></strong>  => compatible </td>
+       <td><p>Operator <code>.compatible.</code> overloading.</p></td></tr>
+      
+       <tr><td>generic, public :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-operator%28SLASH%29%7E7'>operator(/)</a></strong>  => div, div_integer, div_real </td>
+       <td><p>Operator <code>/</code> overloading.</p></td></tr>
+      
+       <tr><td>generic, public :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-operator%28SLASH%3D%29%7E7'>operator(/=)</a></strong>  => not_eq </td>
+       <td><p>Operator <code>/=</code> overloading.</p></td></tr>
+      
+       <tr><td>generic, public :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-operator%28%3D%3D%29%7E7'>operator(==)</a></strong>  => eq </td>
+       <td><p>Operator <code>/=</code> overloading.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(self) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-positive%7E2'>positive</a></strong>  </td>
+       <td><p>Unary operator <code>+ field</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-pow_integer%7E2'>pow_integer</a></strong>  </td>
+       <td><p>Operator <code>field ** integer</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-pow_real%7E2'>pow_real</a></strong>  </td>
+       <td><p>Operator <code>field ** real</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(rhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-real_mul%7E2'>real_mul</a></strong>  </td>
+       <td><p>Operator <code>real * field</code>.</p></td></tr>
+      
+       <tr><td>procedure, public, pass(lhs) :: <strong><a href='../type/primitive_compressible_multispecie.html#boundprocedure-sub%7E2'>sub</a></strong>  </td>
+       <td><p>Operator <code>-</code>.</p></td></tr>
+      
+       </tbody>
+       </table>
+     
+  </div>
+</div>
+
+     
+    </section>
+	<br>
+    
+    
+     
+    <section>
+    <h2>Functions</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-add%7E3"></span><h3>
+private elemental function <a href='../proc/add%7E3.html'>add</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>+</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
+  allocatable</small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-array%7E3"></span><h3>
+private pure function <a href='../proc/array%7E3.html'>array</a>(self) result(array_)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Return serialized array of field.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td><p>Primitive.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R8P),
+  allocatable, (:)</small></h4>
+  <p>Serialized array of field.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-compatible"></span><h3>
+private elemental function <a href='../proc/compatible.html'>compatible</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>.compatible.</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>logical
+  </small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-description%7E4"></span><h3>
+private pure function <a href='../proc/description%7E4.html'>description</a>(self, prefix) result(desc)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Return a pretty-formatted object description.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td><p>Primitive.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>prefix</strong></td><td><p>Prefixing string.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=:),
+  allocatable</small></h4>
+  <p>Description.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-div%7E3"></span><h3>
+private elemental function <a href='../proc/div%7E3.html'>div</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>/</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
+  allocatable</small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-div_integer%7E3"></span><h3>
+private elemental function <a href='../proc/div_integer%7E3.html'>div_integer</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>field / integer</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I4P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
+  allocatable</small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-div_real%7E3"></span><h3>
+private elemental function <a href='../proc/div_real%7E3.html'>div_real</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>field / real</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
+  allocatable</small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-energy%7E3"></span><h3>
+private elemental function <a href='../proc/energy%7E3.html'>energy</a>(self, eos) result(energy_)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Return energy value.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td><p>Primitive.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/eos_object.html'>eos_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>eos</strong></td><td><p>Equation of state.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R8P)
+  </small></h4>
+  <p>Energy value.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-eq%7E3"></span><h3>
+private elemental function <a href='../proc/eq%7E3.html'>eq</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator `=='.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>logical
+  </small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-integer_mul%7E3"></span><h3>
+private elemental function <a href='../proc/integer_mul%7E3.html'>integer_mul</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>integer * field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I4P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
+  allocatable</small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-momentum%7E2"></span><h3>
+private elemental function <a href='../proc/momentum%7E2.html'>momentum</a>(self) result(momentum_)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Return momentum vector.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td><p>Primitive.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(vector)
+  </small></h4>
+  <p>Momentum vector.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-mul%7E3"></span><h3>
+private elemental function <a href='../proc/mul%7E3.html'>mul</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>*</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
+  allocatable</small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-mul_integer%7E3"></span><h3>
+private elemental function <a href='../proc/mul_integer%7E3.html'>mul_integer</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>field * integer</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I4P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
+  allocatable</small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-mul_real%7E3"></span><h3>
+private elemental function <a href='../proc/mul_real%7E3.html'>mul_real</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>field * real</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
+  allocatable</small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-negative%7E3"></span><h3>
+private function <a href='../proc/negative%7E3.html'>negative</a>(self) result(operator_result)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Unary operator <code>- field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td><p>Primitive.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
+  allocatable</small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-not_eq%7E3"></span><h3>
+private elemental function <a href='../proc/not_eq%7E3.html'>not_eq</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator `/='.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>logical
+  </small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-positive%7E3"></span><h3>
+private function <a href='../proc/positive%7E3.html'>positive</a>(self) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Unary operator <code>+ field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td><p>Primitive.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
+  allocatable</small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-pow_integer%7E3"></span><h3>
+private elemental function <a href='../proc/pow_integer%7E3.html'>pow_integer</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>field ** integer</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I4P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
+  allocatable</small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-pow_real%7E3"></span><h3>
+private elemental function <a href='../proc/pow_real%7E3.html'>pow_real</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>field ** real</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
+  allocatable</small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-primitive_compressible_multispecie_instance"></span><h3>
+private pure function <a href='../proc/primitive_compressible_multispecie_instance.html'>primitive_compressible_multispecie_instance</a>(density, velocity, pressure, partial_densities) result(instance)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Return and instance of <a href="../interface/primitive_compressible_multispecie.html">primitive_compressible_multispecie</a>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>density</strong></td><td><p>Density field.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(vector),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>velocity</strong></td><td><p>Velocity field.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>pressure</strong></td><td><p>Pressure field.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>partial_densities</strong>(:)</td><td><p>Partial densities field.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>)
+  </small></h4>
+  <p>Instance of <a href="../interface/primitive_compressible_multispecie.html">primitive_compressible_multispecie</a>.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-real_mul%7E3"></span><h3>
+private elemental function <a href='../proc/real_mul%7E3.html'>real_mul</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>real * field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
+  allocatable</small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-sub%7E3"></span><h3>
+private elemental function <a href='../proc/sub%7E3.html'>sub</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>-</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
+  allocatable</small></h4>
+  <p>Operator result.</p>
+    
+
+  </div>
+  </div>
+
+    
+    </section>
+    <br>
+    
+
+    
+    <section>
+    <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-assign_field%7E3"></span><h3>
+private elemental subroutine <a href='../proc/assign_field%7E3.html'>assign_field</a>(lhs, rhs)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>=</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-assign_real%7E3"></span><h3>
+private elemental subroutine <a href='../proc/assign_real%7E3.html'>assign_real</a>(lhs, rhs)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Operator <code>field = real</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-destroy%7E3"></span><h3>
+private elemental subroutine <a href='../proc/destroy%7E3.html'>destroy</a>(self)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Destroy primitive.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td><p>Primitive.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialize%7E3"></span><h3>
+private subroutine <a href='../proc/initialize%7E3.html'>initialize</a>(self, initial_state)
+    
+    
+	 
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Initialize primitive.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td><p>Primitive.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_object.html'>primitive_object</a>),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>initial_state</strong></td><td><p>Initial state.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    </section>    
+    <br>
+    
+    
+    
+    </div>
+  </div>
+
+  <section class="visible-xs visible-sm hidden-md">
+    <hr>
+    
+
+<div class="panel panel-default">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allmods-1">All Modules</a></h3></div>
+  <div id="allmods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/flow.html">flow</a>
+      
+      <a class="list-group-item" href="../module/flow_compressible_transformations.html">flow_compressible_transformations</a>
+      
+      <a class="list-group-item" href="../module/flow_conservative_compressible.html">flow_conservative_compressible</a>
+      
+      <a class="list-group-item" href="../module/flow_conservative_object.html">flow_conservative_object</a>
+      
+      <a class="list-group-item" href="../module/flow_eos_compressible.html">flow_eos_compressible</a>
+      
+      <a class="list-group-item" href="../module/flow_eos_object.html">flow_eos_object</a>
+      
+      <a class="list-group-item" href="../module/flow_field_object.html">flow_field_object</a>
+      
+      <a class="list-group-item" href="../module/flow_field_scalar_vectorial.html">flow_field_scalar_vectorial</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible.html">flow_primitive_compressible</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_compressible_multispecie.html">flow_primitive_compressible_multispecie</a>
+      
+      <a class="list-group-item" href="../module/flow_primitive_object.html">flow_primitive_object</a>
+      
+      <a class="list-group-item" href="../module/penf.html">penf</a>
+      
+      <a class="list-group-item" href="../module/penf_b_size.html">penf_b_size</a>
+      
+      <a class="list-group-item" href="../module/penf_global_parameters_variables.html">penf_global_parameters_variables</a>
+      
+      <a class="list-group-item" href="../module/penf_stringify.html">penf_stringify</a>
+      
+      <a class="list-group-item" href="../module/vecfor.html">VecFor</a>
+      
+    </div>
+  </div>
+</div>
+
+
+  </section>
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2017 </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2017-03-23 15:59  
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>
