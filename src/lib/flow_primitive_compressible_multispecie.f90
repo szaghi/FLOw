@@ -17,10 +17,10 @@ public :: primitive_compressible_multispecie
 
 type, extends(primitive_object) :: primitive_compressible_multispecie
    !< **Primitive** compressible multispecie object.
-   real(R8P)                :: density              !< Density field.
-   type(vector)             :: velocity             !< Velocity field.
-   real(R8P)                :: pressure             !< Pressure field.
-   real(R8P),   allocatable :: partial_densities(:) !< Partial densities fields.
+   real(R8P)              :: density=0._R8P       !< Density, `rho`.
+   type(vector)           :: velocity             !< Velocity, `v`.
+   real(R8P)              :: pressure=0._R8P      !< Pressure, `p`.
+   real(R8P), allocatable :: partial_densities(:) !< Partial densities `rho(s), rho = sum(rho(s))`.
    contains
       ! deferred methods
       procedure, pass(self) :: array       !< Return serialized array of field.

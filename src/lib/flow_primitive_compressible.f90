@@ -5,6 +5,7 @@ module flow_primitive_compressible
 !<
 !< [[primitive_compressible]] is a class that handles compressible primitive fluid dynamic variables.
 
+use, intrinsic :: iso_fortran_env, only : stderr=>error_unit
 use flow_eos_object, only : eos_object
 use flow_field_object, only : field_object
 use flow_primitive_object, only : primitive_object
@@ -14,12 +15,13 @@ use vecfor, only : vector
 implicit none
 private
 public :: primitive_compressible
+public :: primitive_compressible_pointer
 
 type, extends(primitive_object) :: primitive_compressible
    !< **Primitive** compressible multispecie object.
-   real(R8P)    :: density  !< Density field.
-   type(vector) :: velocity !< Velocity field.
-   real(R8P)    :: pressure !< Pressure field.
+   real(R8P)    :: density=0._R8P  !< Density, `rho`.
+   type(vector) :: velocity        !< Velocity, `v`.
+   real(R8P)    :: pressure=0._R8P !< Pressure, `p`.
    contains
       ! public methods
       procedure, pass(self) :: left_eigenvectors  !< Return the left eigenvectors matrix `L` as `dF/dP = A = R ^ L`.
@@ -58,6 +60,26 @@ interface primitive_compressible
 endinterface
 
 contains
+   ! public non TBP
+   function primitive_compressible_pointer(to, error_message) result(pointer_)
+   !< Return [[primitive_compressible]] pointer associated to [[primitive_object]] or its extensions until
+   !< [[primitive_compressible]] included.
+   !<
+   !< @note A type-guard check is performed and error stop is raised if necessary.
+   class(primitive_object), intent(in), target   :: to            !< Target of associate.
+   character(*),            intent(in), optional :: error_message !< Auxiliary error message.
+   class(primitive_compressible), pointer        :: pointer_      !< Associated pointer.
+
+   select type(to)
+   type is(primitive_compressible)
+      pointer_ => to
+   class default
+      write(stderr, '(A)') 'error: cast primitive_object to primitive_compressible failed!'
+      if (present(error_message)) write(stderr, '(A)') error_message
+      stop
+   endselect
+   endfunction primitive_compressible_pointer
+
    ! public methods
    pure function left_eigenvectors(self, eos) result(eig)
    !< Return the left eigenvectors matrix `L` as `dF/dP = A = R ^ L`.
