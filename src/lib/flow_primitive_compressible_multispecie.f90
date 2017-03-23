@@ -5,6 +5,7 @@ module flow_primitive_compressible_multispecie
 !<
 !< [[primitive_compressible_multispecie]] is a class that handles compressible multispecie primitive fluid dynamic variables.
 
+use flow_eos_object, only : eos_object
 use flow_field_object, only : field_object
 use flow_primitive_object, only : primitive_object
 use penf, only : I4P, R8P, str
@@ -115,14 +116,13 @@ contains
    self = fresh
    endsubroutine destroy
 
-   ! elemental function energy(self, eos) result(energy_)
-   elemental function energy(self) result(energy_)
+   elemental function energy(self, eos) result(energy_)
    !< Return energy value.
    class(primitive_compressible_multispecie), intent(in) :: self    !< Primitive.
-   ! class(eos_object),             intent(in) :: eos     !< Equation of state.
+   class(eos_object),                         intent(in) :: eos     !< Equation of state.
    real(R8P)                                             :: energy_ !< Energy value.
 
-   ! energy_ = self%pressure / (eos%g() - 1._R8P) + 0.5_R8P * self%density * self%velocity%sq_norm()
+   energy_ = self%pressure / (eos%g() - 1._R8P) + 0.5_R8P * self%density * self%velocity%sq_norm()
    endfunction energy
 
    subroutine initialize(self, initial_state)

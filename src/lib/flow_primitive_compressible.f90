@@ -5,7 +5,7 @@ module flow_primitive_compressible
 !<
 !< [[primitive_compressible]] is a class that handles compressible primitive fluid dynamic variables.
 
-! use flow_eos_object, only : eos_object
+use flow_eos_object, only : eos_object
 use flow_field_object, only : field_object
 use flow_primitive_object, only : primitive_object
 use penf, only : I4P, R8P, str
@@ -59,38 +59,36 @@ endinterface
 
 contains
    ! public methods
-   ! pure function left_eigenvectors(self, eos) result(eig)
-   pure function left_eigenvectors(self) result(eig)
+   pure function left_eigenvectors(self, eos) result(eig)
    !< Return the left eigenvectors matrix `L` as `dF/dP = A = R ^ L`.
    class(primitive_compressible), intent(in) :: self          !< Primitive.
-   ! class(eos_object),             intent(in) :: eos           !< Equation of state.
+   class(eos_object),             intent(in) :: eos           !< Equation of state.
    real(R8P)                                 :: eig(1:3, 1:3) !< Eigenvectors.
    real(R8P)                                 :: gp            !< `g*p`.
    real(R8P)                                 :: gp_a          !< `g*p/a`.
 
-   ! gp = eos%g() * self%pressure
-   ! gp_a = gp / eos%speed_of_sound(density=self%density, pressure=self%pressure)
-   ! eig(1, 1) = 0._R8P            ; eig(1, 2) = -gp_a  ; eig(1, 3) =  1._R8P
-   ! eig(2, 1) = gp / self%density ; eig(2, 2) = 0._R8P ; eig(2, 3) = -1._R8P
-   ! eig(3, 1) = 0._R8P            ; eig(3, 2) =  gp_a  ; eig(3, 3) =  1._R8P
+   gp = eos%g() * self%pressure
+   gp_a = gp / eos%speed_of_sound(density=self%density, pressure=self%pressure)
+   eig(1, 1) = 0._R8P            ; eig(1, 2) = -gp_a  ; eig(1, 3) =  1._R8P
+   eig(2, 1) = gp / self%density ; eig(2, 2) = 0._R8P ; eig(2, 3) = -1._R8P
+   eig(3, 1) = 0._R8P            ; eig(3, 2) =  gp_a  ; eig(3, 3) =  1._R8P
    endfunction left_eigenvectors
 
-   ! pure function right_eigenvectors(self, eos) result(eig)
-   pure function right_eigenvectors(self) result(eig)
+   pure function right_eigenvectors(self, eos) result(eig)
    !< Return the right eigenvectors matrix `R` as `dF/dP = A = R ^ L`.
    class(primitive_compressible), intent(in) :: self          !< Primitive.
-   ! class(eos_object),             intent(in) :: eos           !< Equation of state.
+   class(eos_object),             intent(in) :: eos           !< Equation of state.
    real(R8P)                                 :: eig(1:3, 1:3) !< Eigenvectors.
    real(R8P)                                 :: gp            !< `g*p`.
    real(R8P)                                 :: gp_inv        !< `1/(g*p)`.
    real(R8P)                                 :: a             !< Speed of sound, `sqrt(g*p/r)`.
 
-   ! gp = eos%g() * self%pressure
-   ! gp_inv = 1._R8P / gp
-   ! a = eos%speed_of_sound(density=self%density, pressure=self%pressure)
-   ! eig(1, 1) =  0.5_R8P * self%density * gp_inv ; eig(1, 2) = self%density * gp_inv  ; eig(1, 3) =  eig(1, 1)
-   ! eig(2, 1) = -0.5_R8P * a * gp_inv            ; eig(2, 2) = 0._R8P                 ; eig(2, 3) = -eig(2, 1)
-   ! eig(3, 1) =  0.5_R8P                         ; eig(3, 2) = 0._R8P                 ; eig(3, 3) =  eig(3, 1)
+   gp = eos%g() * self%pressure
+   gp_inv = 1._R8P / gp
+   a = eos%speed_of_sound(density=self%density, pressure=self%pressure)
+   eig(1, 1) =  0.5_R8P * self%density * gp_inv ; eig(1, 2) = self%density * gp_inv  ; eig(1, 3) =  eig(1, 1)
+   eig(2, 1) = -0.5_R8P * a * gp_inv            ; eig(2, 2) = 0._R8P                 ; eig(2, 3) = -eig(2, 1)
+   eig(3, 1) =  0.5_R8P                         ; eig(3, 2) = 0._R8P                 ; eig(3, 3) =  eig(3, 1)
    endfunction right_eigenvectors
 
    ! deferred methods
@@ -130,14 +128,13 @@ contains
    self = fresh
    endsubroutine destroy
 
-   ! elemental function energy(self, eos) result(energy_)
-   elemental function energy(self) result(energy_)
+   elemental function energy(self, eos) result(energy_)
    !< Return energy value.
    class(primitive_compressible), intent(in) :: self    !< Primitive.
-   ! class(eos_object),             intent(in) :: eos     !< Equation of state.
+   class(eos_object),             intent(in) :: eos     !< Equation of state.
    real(R8P)                                 :: energy_ !< Energy value.
 
-   ! energy_ = self%pressure / (eos%g() - 1._R8P) + 0.5_R8P * self%density * self%velocity%sq_norm()
+   energy_ = self%pressure / (eos%g() - 1._R8P) + 0.5_R8P * self%density * self%velocity%sq_norm()
    endfunction energy
 
    subroutine initialize(self, initial_state)

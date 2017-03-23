@@ -5,6 +5,7 @@ module flow_primitive_object
 !<
 !< [[primitive_object]] is a class that handles primitive fluid dynamic variables.
 
+use flow_eos_object, only : eos_object
 use flow_field_object, only : field_object
 use penf, only : R8P
 use vecfor, only : vector
@@ -31,13 +32,11 @@ abstract interface
    class(primitive_object), intent(inout) :: self !< Primitive.
    endsubroutine destroy_interface
 
-   ! elemental function energy_interface(self, eos) result(energy_)
-   elemental function energy_interface(self) result(energy_)
+   elemental function energy_interface(self, eos) result(energy_)
    !< Return energy value.
-   ! import :: primitive_object, eos_object, R8P
-   import :: primitive_object, R8P
+   import :: primitive_object, eos_object, R8P
    class(primitive_object), intent(in) :: self    !< Primitive.
-   ! class(eos_object),       intent(in) :: eos     !< Equation of state.
+   class(eos_object),       intent(in) :: eos     !< Equation of state.
    real(R8P)                           :: energy_ !< Energy value.
    endfunction energy_interface
 
