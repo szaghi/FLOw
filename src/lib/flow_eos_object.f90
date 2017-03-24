@@ -107,7 +107,7 @@ abstract interface
    real(R8P)                               :: temperature_ !< Temperature value.
    endfunction temperature_interface
 
-   elemental function total_entalpy(self, density, pressure, velocity_sq_norm) result(entalpy_)
+   elemental function total_entalpy_interface(self, density, pressure, velocity_sq_norm) result(entalpy_)
    !< Return total specific entalpy.
    import :: eos_object, R8P
    class(eos_object), intent(in) :: self             !< Equation of state.
@@ -115,6 +115,6 @@ abstract interface
    real(R8P),         intent(in) :: pressure         !< Pressure value.
    real(R8P),         intent(in) :: velocity_sq_norm !< Velocity vector square norm `||velocity||^2`.
    real(R8P)                     :: entalpy_         !< Total specific entalpy (per unit of mass).
-   endfunction total_entalpy
+   endfunction total_entalpy_interface
 endinterface
 endmodule flow_eos_object

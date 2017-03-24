@@ -8,7 +8,7 @@ use penf, only : R8P, ZeroR8
 
 implicit none
 type(eos_compressible) :: eos                  !< An equation of state.
-logical                :: are_tests_passed(14) !< List of passed tests.
+logical                :: are_tests_passed(15) !< List of passed tests.
 
 are_tests_passed = .false.
 
@@ -71,6 +71,14 @@ print "(A,L1)", 'eos%temperature(density=1, pressure=1) = 1/297.144, is right? '
 are_tests_passed(14) = (eos%temperature(energy=1._R8P) >= 1._R8P/742.86_R8P - ZeroR8).and.&
                        (eos%temperature(energy=1._R8P) <= 1._R8P/742.86_R8P + ZeroR8)
 print "(A,L1)", 'eos%temperature(energy=1) = 1/742.86, is right? ', are_tests_passed(14)
+
+are_tests_passed(15) = (eos%total_entalpy(pressure=1._R8P,                                  &
+                                          density=1._R8P,                                   &
+                                          velocity_sq_norm=2._R8P) >= 4.5_R8P - ZeroR8).and.&
+                       (eos%total_entalpy(pressure=1._R8P,                                  &
+                                          density=1._R8P,                                   &
+                                          velocity_sq_norm=2._R8P) <= 4.5_R8P + ZeroR8)
+print "(A,L1)", 'eos%total_entalpy(pressure=1, density=1, velocity_sq_norm=2) = 4.5, is right? ', are_tests_passed(15)
 
 print "(A,L1)", new_line('a')//'Are all tests passed? ', all(are_tests_passed)
 endprogram flow_test_eos_compressible
