@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title="<p> 7.5% of total for derived types.</p>Including implementation: 190 statements,  3.6% of total for derived types.">29 statements</a>
+	  title="<p> 7.5% of total for derived types.</p>Including implementation: 181 statements,  3.4% of total for derived types.">29 statements</a>
      </li> 
      
      
@@ -238,8 +238,6 @@
       
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-description%7E3">description</a>
       
-      <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-energy%7E2">energy</a>
-      
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-eos_assign_eos">eos_assign_eos</a>
       
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-eta">eta</a>
@@ -249,6 +247,8 @@
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-gm1">gm1</a>
       
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-gp1">gp1</a>
+      
+      <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-internal_energy">internal_energy</a>
       
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-pressure%7E3">pressure</a>
       
@@ -476,8 +476,6 @@
       
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-description%7E3">description</a>
       
-      <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-energy%7E2">energy</a>
-      
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-eos_assign_eos">eos_assign_eos</a>
       
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-eta">eta</a>
@@ -487,6 +485,8 @@
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-gm1">gm1</a>
       
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-gp1">gp1</a>
+      
+      <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-internal_energy">internal_energy</a>
       
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-pressure%7E3">pressure</a>
       
@@ -1324,7 +1324,7 @@ private elemental function <a href='../proc/delta.html'>delta</a>(self) result(d
          
     
     <h3>
-private elemental function <a href='../proc/density.html'>density</a>(self, energy, pressure, speed_of_sound, temperature) result(density_)
+private elemental function <a href='../proc/density.html'>density</a>(self, pressure, speed_of_sound) result(density_)
     
     
 	 
@@ -1374,23 +1374,8 @@ private elemental function <a href='../proc/density.html'>density</a>(self, ener
 <tr>
   
   <td><span class="anchor" ></span>real(kind=R8P),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>energy</strong></td><td><p>Specific internal energy value.</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
+  <td>intent(in)</td>
+  <td></td>
   
   <td></td><td>::</td>
   <td><strong>pressure</strong></td><td><p>Pressure value.</p></td>
@@ -1404,26 +1389,11 @@ private elemental function <a href='../proc/density.html'>density</a>(self, ener
 <tr>
   
   <td><span class="anchor" ></span>real(kind=R8P),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
+  <td>intent(in)</td>
+  <td></td>
   
   <td></td><td>::</td>
   <td><strong>speed_of_sound</strong></td><td><p>Speed of sound value.</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>temperature</strong></td><td><p>Temperature value.</p></td>
   
 </tr>
 
@@ -1542,137 +1512,6 @@ private pure function <a href='../proc/description%7E2.html'>description</a>(sel
      <h4>Return Value <small>character(len=:),
   allocatable</small></h4>
   <p>Description.</p>
-    
-
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-	   
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-energy%7E2"></span><h3>procedure, public, pass(self) :: <strong>energy</strong>  
-    
-  </h3></div>
-  
-  <div class="panel-body">
-    
-
-
-    <p>Return specific internal energy.</p>
-  </div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-    
-    <h3>
-private elemental function <a href='../proc/energy.html'>energy</a>(self, density, pressure, temperature) result(energy_)
-    
-    
-	 
-</h3>
-    
-
-
-
-
-
-
-
-<p>Return specific internal energy.</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/eos_compressible.html'>eos_compressible</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>self</strong></td><td><p>Equation of state.</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>density</strong></td><td><p>Density value.</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>pressure</strong></td><td><p>Pressure value.</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>temperature</strong></td><td><p>Temperature value.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>real(kind=R8P)
-  </small></h4>
-  <p>Energy value.</p>
     
 
       
@@ -2109,6 +1948,137 @@ private elemental function <a href='../proc/gp1.html'>gp1</a>(self) result(gp1_)
      <h4>Return Value <small>real(kind=R8P)
   </small></h4>
   <p><code>gamma + 1</code> value.</p>
+    
+
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-internal_energy"></span><h3>procedure, public, pass(self) :: <strong>internal_energy</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p>Return specific internal energy.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+    
+    <h3>
+private elemental function <a href='../proc/internal_energy.html'>internal_energy</a>(self, density, pressure, temperature) result(energy_)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p>Return specific internal energy.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/eos_compressible.html'>eos_compressible</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td><p>Equation of state.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>density</strong></td><td><p>Density value.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>pressure</strong></td><td><p>Pressure value.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>temperature</strong></td><td><p>Temperature value.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R8P)
+  </small></h4>
+  <p>Energy value.</p>
     
 
       
@@ -2648,22 +2618,22 @@ private elemental function <a href='../proc/total_entalpy.html'>total_entalpy</a
       <span class="c">! public methods</span>
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">compute_derivate</span> <span class="c">!&lt; Compute derivate quantities (from `cp` and `cv`).</span>
       <span class="c">! deferred methods</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cp</span>             <span class="c">!&lt; Return specific heat at constant pressure.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cv</span>             <span class="c">!&lt; Return specific heat at constant volume.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">delta</span>          <span class="c">!&lt; Return `(gamma - 1) / 2`.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">density</span>        <span class="c">!&lt; Return density.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">description</span>    <span class="c">!&lt; Return pretty-printed object description.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">energy</span>         <span class="c">!&lt; Return specific internal energy.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">eos_assign_eos</span> <span class="c">!&lt; Operator `=`.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">eta</span>            <span class="c">!&lt; Return `2 * gamma / (gamma - 1)`.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">g</span>              <span class="c">!&lt; Return specific heats ratio `gamma=cp/cv`.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">gm1</span>            <span class="c">!&lt; Return `gamma - 1`.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">gp1</span>            <span class="c">!&lt; Return `gamma + 1`.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">pressure</span>       <span class="c">!&lt; Return pressure.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">R</span>              <span class="c">!&lt; Return fluid constant `R=cp-cv`.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">speed_of_sound</span> <span class="c">!&lt; Return speed of sound.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">temperature</span>    <span class="c">!&lt; Return temperature.</span>
-      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">total_entalpy</span>  <span class="c">!&lt; Return total specific entalpy.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cp</span>              <span class="c">!&lt; Return specific heat at constant pressure.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cv</span>              <span class="c">!&lt; Return specific heat at constant volume.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">delta</span>           <span class="c">!&lt; Return `(gamma - 1) / 2`.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">density</span>         <span class="c">!&lt; Return density.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">description</span>     <span class="c">!&lt; Return pretty-printed object description.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">eos_assign_eos</span>  <span class="c">!&lt; Operator `=`.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">eta</span>             <span class="c">!&lt; Return `2 * gamma / (gamma - 1)`.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">g</span>               <span class="c">!&lt; Return specific heats ratio `gamma=cp/cv`.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">gm1</span>             <span class="c">!&lt; Return `gamma - 1`.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">gp1</span>             <span class="c">!&lt; Return `gamma + 1`.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">internal_energy</span> <span class="c">!&lt; Return specific internal energy.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">pressure</span>        <span class="c">!&lt; Return pressure.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">R</span>               <span class="c">!&lt; Return fluid constant `R=cp-cv`.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">speed_of_sound</span>  <span class="c">!&lt; Return speed of sound.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">temperature</span>     <span class="c">!&lt; Return temperature.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">total_entalpy</span>   <span class="c">!&lt; Return total specific entalpy.</span>
 <span class="n">endtype</span> <span class="n">eos_compressible</span>
 </pre></div>
 
@@ -2723,7 +2693,7 @@ private elemental function <a href='../proc/total_entalpy.html'>total_entalpy</a
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-03-24 10:21  
+             on 2017-03-24 15:06  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

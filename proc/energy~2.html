@@ -138,14 +138,14 @@
      </li> 
      
      
-    <li><i class="fa fa-code"></i><a href="../src/flow_primitive_compressible.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/flow_primitive_compressible_multispecie.f90"> Source File</a></li>
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
-     <li><a href='../sourcefile/flow_primitive_compressible.f90.html'>flow_primitive_compressible.f90</a></li>
+     <li><a href='../sourcefile/flow_primitive_compressible_multispecie.f90.html'>flow_primitive_compressible_multispecie.f90</a></li>
   
-     <li><a href='../module/flow_primitive_compressible.html'>flow_primitive_compressible</a></li>
+     <li><a href='../module/flow_primitive_compressible_multispecie.html'>flow_primitive_compressible_multispecie</a></li>
   
      <li class="active">energy</li>
   </ol>
@@ -413,8 +413,6 @@
       
       <a class="list-group-item" href="../proc/energy%7E2.html">energy</a>
       
-      <a class="list-group-item" href="../proc/energy%7E3.html">energy</a>
-      
       <a class="list-group-item" href="../proc/eos_assign_eos.html">eos_assign_eos</a>
       
       <a class="list-group-item" href="../interface/eos_compressible.html">eos_compressible</a>
@@ -512,6 +510,8 @@
       <a class="list-group-item" href="../proc/integer_mul_scalar.html">integer_mul_scalar</a>
       
       <a class="list-group-item" href="../proc/integer_mul_vectorial.html">integer_mul_vectorial</a>
+      
+      <a class="list-group-item" href="../proc/internal_energy.html">internal_energy</a>
       
       <a class="list-group-item" href="../proc/iolen_vector_self.html">iolen_vector_self</a>
       
@@ -1047,7 +1047,7 @@ private elemental function energy(self, eos) result(energy_)
   
 <tr>
   
-  <td><span class="anchor" id="variable-self%7E57"></span>class(<a href='../type/primitive_compressible.html'>primitive_compressible</a>),</td>
+  <td><span class="anchor" id="variable-self%7E67"></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1062,7 +1062,7 @@ private elemental function energy(self, eos) result(energy_)
   
 <tr>
   
-  <td><span class="anchor" id="variable-eos%7E9"></span>class(<a href='../type/eos_object.html'>eos_object</a>),</td>
+  <td><span class="anchor" id="variable-eos%7E12"></span>class(<a href='../type/eos_object.html'>eos_object</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1081,7 +1081,7 @@ private elemental function energy(self, eos) result(energy_)
     
     
     
-	 <h3>Return Value <small><span class="anchor" id="variable-energy_%7E4"></span>real(kind=R8P)
+	 <h3>Return Value <small><span class="anchor" id="variable-energy_%7E5"></span>real(kind=R8P)
   </small></h3>
     <p>Energy value.</p>
     
@@ -1144,9 +1144,9 @@ private elemental function energy(self, eos) result(energy_)
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre><span></span>   <span class="k">elemental function </span><span class="n">energy</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">eos</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">energy_</span><span class="p">)</span>
    <span class="c">!&lt; Return energy value.</span>
-   <span class="k">class</span><span class="p">(</span><span class="n">primitive_compressible</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self</span>    <span class="c">!&lt; Primitive.</span>
-   <span class="k">class</span><span class="p">(</span><span class="n">eos_object</span><span class="p">),</span>             <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">eos</span>     <span class="c">!&lt; Equation of state.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span>                                 <span class="kd">::</span> <span class="n">energy_</span> <span class="c">!&lt; Energy value.</span>
+   <span class="k">class</span><span class="p">(</span><span class="n">primitive_compressible_multispecie</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self</span>    <span class="c">!&lt; Primitive.</span>
+   <span class="k">class</span><span class="p">(</span><span class="n">eos_object</span><span class="p">),</span>                         <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">eos</span>     <span class="c">!&lt; Equation of state.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span>                                             <span class="kd">::</span> <span class="n">energy_</span> <span class="c">!&lt; Energy value.</span>
 
    <span class="n">energy_</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">pressure</span> <span class="o">/</span> <span class="p">(</span><span class="n">eos</span><span class="p">%</span><span class="n">g</span><span class="p">()</span> <span class="o">-</span> <span class="mf">1._R8P</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5_R8P</span> <span class="o">*</span> <span class="n">self</span><span class="p">%</span><span class="n">density</span> <span class="o">*</span> <span class="n">self</span><span class="p">%</span><span class="n">velocity</span><span class="p">%</span><span class="n">sq_norm</span><span class="p">()</span>
    <span class="n">endfunction</span> <span class="n">energy</span>
@@ -1380,8 +1380,6 @@ private elemental function energy(self, eos) result(energy_)
       
       <a class="list-group-item" href="../proc/energy%7E2.html">energy</a>
       
-      <a class="list-group-item" href="../proc/energy%7E3.html">energy</a>
-      
       <a class="list-group-item" href="../proc/eos_assign_eos.html">eos_assign_eos</a>
       
       <a class="list-group-item" href="../interface/eos_compressible.html">eos_compressible</a>
@@ -1479,6 +1477,8 @@ private elemental function energy(self, eos) result(energy_)
       <a class="list-group-item" href="../proc/integer_mul_scalar.html">integer_mul_scalar</a>
       
       <a class="list-group-item" href="../proc/integer_mul_vectorial.html">integer_mul_vectorial</a>
+      
+      <a class="list-group-item" href="../proc/internal_energy.html">internal_energy</a>
       
       <a class="list-group-item" href="../proc/iolen_vector_self.html">iolen_vector_self</a>
       
@@ -1989,7 +1989,7 @@ private elemental function energy(self, eos) result(energy_)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-03-24 10:21  
+             on 2017-03-24 15:06  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

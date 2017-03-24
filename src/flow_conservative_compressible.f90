@@ -92,7 +92,7 @@ contains
 
    self%density = r * u
    self%momentum = (r * u * u + p) * normal
-   self%energy = (r * eos%energy(density=r, pressure=p) + r * u * u * 0.5_R8P + p) * u
+   self%energy = (r * eos%internal_energy(density=r, pressure=p) + r * u * u * 0.5_R8P + p) * u
    endsubroutine compute_fluxes_from_primitive
 
    ! deferred methods

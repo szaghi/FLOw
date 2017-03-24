@@ -11,7 +11,7 @@
     <meta name="author" content="Stefano Zaghi" >
     <link rel="icon" href="../favicon.png">
 
-    <title>energy_interface &ndash; FLOw</title>
+    <title>internal_energy_interface &ndash; FLOw</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -117,7 +117,7 @@
     
   
   <div class="row">
-    <h1>energy_interface
+    <h1>internal_energy_interface
 	 <small>Abstract Interface</small>
     
     </h1>
@@ -136,20 +136,20 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title=" 1.4% of total for abstract interfaces.">22 statements</a>
+	  title=" 4.2% of total for abstract interfaces.">64 statements</a>
      </li> 
      
      
-    <li><i class="fa fa-code"></i><a href="../src/flow_primitive_object.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/flow_eos_object.f90"> Source File</a></li>
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
-     <li><a href='../sourcefile/flow_primitive_object.f90.html'>flow_primitive_object.f90</a></li>
+     <li><a href='../sourcefile/flow_eos_object.f90.html'>flow_eos_object.f90</a></li>
   
-     <li><a href='../module/flow_primitive_object.html'>flow_primitive_object</a></li>
+     <li><a href='../module/flow_eos_object.html'>flow_eos_object</a></li>
   
-     <li class="active">energy_interface</li>
+     <li class="active">internal_energy_interface</li>
   </ol>
 </div>
 </div>
@@ -221,8 +221,6 @@
       
       <a class="list-group-item" href="../interface/energy_interface.html">energy_interface</a>
       
-      <a class="list-group-item" href="../interface/energy_interface%7E2.html">energy_interface</a>
-      
       <a class="list-group-item" href="../interface/field_op_integer_interface.html">field_op_integer_interface</a>
       
       <a class="list-group-item" href="../interface/field_op_real_interface.html">field_op_real_interface</a>
@@ -232,6 +230,8 @@
       <a class="list-group-item" href="../interface/initialize_interface%7E2.html">initialize_interface</a>
       
       <a class="list-group-item" href="../interface/integer_op_field_interface.html">integer_op_field_interface</a>
+      
+      <a class="list-group-item" href="../interface/internal_energy_interface.html">internal_energy_interface</a>
       
       <a class="list-group-item" href="../interface/momentum_interface.html">momentum_interface</a>
       
@@ -268,11 +268,11 @@
 	
     
     <h2>abstract interface</h2>
-    <p>Abstract interfaces of deferred methods of <a href="../type/primitive_object.html">primitive_object</a>.</p>
+    <p>Abstract interfaces of deferred methods of <a href="../type/eos_object.html">eos_object</a>.</p>
     
     
     <h2>
-private elemental function energy_interface(self, eos) result(energy_)
+private elemental function internal_energy_interface(self, density, pressure, temperature) result(energy_)
     
     
 	 
@@ -301,12 +301,12 @@ private elemental function energy_interface(self, eos) result(energy_)
   
 <tr>
   
-  <td><span class="anchor" id="variable-self%7E18"></span>class(<a href='../type/primitive_object.html'>primitive_object</a>),</td>
+  <td><span class="anchor" id="variable-self%7E8"></span>class(<a href='../type/eos_object.html'>eos_object</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>self</strong></td><td><p>Primitive.</p></td>
+  <td><strong>self</strong></td><td><p>Equation of state.</p></td>
   
 </tr>
 
@@ -316,12 +316,42 @@ private elemental function energy_interface(self, eos) result(energy_)
   
 <tr>
   
-  <td><span class="anchor" id="variable-eos%7E3"></span>class(<a href='../type/eos_object.html'>eos_object</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
+  <td><span class="anchor" id="variable-density%7E6"></span>real(kind=R8P),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>eos</strong></td><td><p>Equation of state.</p></td>
+  <td><strong>density</strong></td><td><p>Density value.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-pressure%7E8"></span>real(kind=R8P),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>pressure</strong></td><td><p>Pressure value.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-temperature%7E3"></span>real(kind=R8P),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>temperature</strong></td><td><p>Temperature value.</p></td>
   
 </tr>
 
@@ -335,13 +365,13 @@ private elemental function energy_interface(self, eos) result(energy_)
     
     
     
-      <h3>Return Value <span class="anchor" id="variable-energy_%7E2"></span><small>real(kind=R8P)
+      <h3>Return Value <span class="anchor" id="variable-energy_"></span><small>real(kind=R8P)
   </small></h3>
     <p>Energy value.</p>
     
     
     <h3>Description</h3>
-    <p>Return energy value.</p>
+    <p>Return specific internal energy.</p>
     
     <br>
 
@@ -381,8 +411,6 @@ private elemental function energy_interface(self, eos) result(energy_)
       
       <a class="list-group-item" href="../interface/energy_interface.html">energy_interface</a>
       
-      <a class="list-group-item" href="../interface/energy_interface%7E2.html">energy_interface</a>
-      
       <a class="list-group-item" href="../interface/field_op_integer_interface.html">field_op_integer_interface</a>
       
       <a class="list-group-item" href="../interface/field_op_real_interface.html">field_op_real_interface</a>
@@ -392,6 +420,8 @@ private elemental function energy_interface(self, eos) result(energy_)
       <a class="list-group-item" href="../interface/initialize_interface%7E2.html">initialize_interface</a>
       
       <a class="list-group-item" href="../interface/integer_op_field_interface.html">integer_op_field_interface</a>
+      
+      <a class="list-group-item" href="../interface/internal_energy_interface.html">internal_energy_interface</a>
       
       <a class="list-group-item" href="../interface/momentum_interface.html">momentum_interface</a>
       
@@ -432,7 +462,7 @@ private elemental function energy_interface(self, eos) result(energy_)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-03-24 10:21  
+             on 2017-03-24 15:06  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>
