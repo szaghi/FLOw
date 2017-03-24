@@ -28,6 +28,7 @@ type, abstract :: eos_object
       procedure(scalar_interface),         pass(self), deferred :: R              !< Return fluid constant `R=cp-cv`.
       procedure(speed_of_sound_interface), pass(self), deferred :: speed_of_sound !< Return speed of sound.
       procedure(temperature_interface),    pass(self), deferred :: temperature    !< Return temperature.
+      procedure(total_entalpy_interface),  pass(self), deferred :: total_entalpy  !< Return total specific entalpy.
       ! operators
       generic :: assignment(=) => eos_assign_eos !< Overload `=`.
 endtype eos_object
@@ -105,5 +106,15 @@ abstract interface
    real(R8P),         intent(in), optional :: pressure     !< Pressure value.
    real(R8P)                               :: temperature_ !< Temperature value.
    endfunction temperature_interface
+
+   elemental function total_entalpy_interface(self, density, pressure, velocity_sq_norm) result(entalpy_)
+   !< Return total specific entalpy.
+   import :: eos_object, R8P
+   class(eos_object), intent(in) :: self             !< Equation of state.
+   real(R8P),         intent(in) :: density          !< Density value.
+   real(R8P),         intent(in) :: pressure         !< Pressure value.
+   real(R8P),         intent(in) :: velocity_sq_norm !< Velocity vector square norm `||velocity||^2`.
+   real(R8P)                     :: entalpy_         !< Total specific entalpy (per unit of mass).
+   endfunction total_entalpy_interface
 endinterface
 endmodule flow_eos_object

@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title="<p> 7.3% of total for derived types.</p>Including implementation: 181 statements,  3.4% of total for derived types.">28 statements</a>
+	  title="<p> 7.5% of total for derived types.</p>Including implementation: 190 statements,  3.6% of total for derived types.">29 statements</a>
      </li> 
      
      
@@ -255,6 +255,8 @@
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-speed_of_sound">speed_of_sound</a>
       
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-temperature">temperature</a>
+      
+      <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-total_entalpy">total_entalpy</a>
       
     </div>
   </div>
@@ -491,6 +493,8 @@
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-speed_of_sound">speed_of_sound</a>
       
       <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-temperature">temperature</a>
+      
+      <a class="list-group-item" href="../type/eos_compressible.html#boundprocedure-total_entalpy">total_entalpy</a>
       
     </div>
   </div>
@@ -2492,6 +2496,137 @@ private elemental function <a href='../proc/temperature.html'>temperature</a>(se
 </div>
 
     
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-total_entalpy"></span><h3>procedure, public, pass(self) :: <strong>total_entalpy</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p>Return total specific entalpy.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+    
+    <h3>
+private elemental function <a href='../proc/total_entalpy.html'>total_entalpy</a>(self, density, pressure, velocity_sq_norm) result(entalpy_)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p>Return total specific entalpy.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/eos_compressible.html'>eos_compressible</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td><p>Equation of state.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>density</strong></td><td><p>Density value.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>pressure</strong></td><td><p>Pressure value.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>velocity_sq_norm</strong></td><td><p>Velocity vector square norm <code>||velocity||^2</code>.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R8P)
+  </small></h4>
+  <p>Total specific entalpy (per unit of mass).</p>
+    
+
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
     </section>
     
     
@@ -2528,6 +2663,7 @@ private elemental function <a href='../proc/temperature.html'>temperature</a>(se
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">R</span>              <span class="c">!&lt; Return fluid constant `R=cp-cv`.</span>
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">speed_of_sound</span> <span class="c">!&lt; Return speed of sound.</span>
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">temperature</span>    <span class="c">!&lt; Return temperature.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">total_entalpy</span>  <span class="c">!&lt; Return total specific entalpy.</span>
 <span class="n">endtype</span> <span class="n">eos_compressible</span>
 </pre></div>
 
@@ -2587,7 +2723,7 @@ private elemental function <a href='../proc/temperature.html'>temperature</a>(se
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-03-23 15:59  
+             on 2017-03-24 10:21  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>
