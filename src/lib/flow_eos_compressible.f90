@@ -40,6 +40,7 @@ type, extends(eos_object) :: eos_compressible
       procedure, pass(self) :: R              !< Return fluid constant `R=cp-cv`.
       procedure, pass(self) :: speed_of_sound !< Return speed of sound.
       procedure, pass(self) :: temperature    !< Return temperature.
+      procedure, pass(self) :: total_entalpy  !< Return total specific entalpy.
 endtype eos_compressible
 
 interface eos_compressible
@@ -216,6 +217,17 @@ contains
       temperature_ = energy / self%cv()
    endif
    endfunction temperature
+
+   elemental function total_entalpy(self, density, pressure, velocity_sq_norm) result(entalpy_)
+   !< Return total specific entalpy.
+   class(eos_compressible), intent(in) :: self             !< Equation of state.
+   real(R8P),               intent(in) :: density          !< Density value.
+   real(R8P),               intent(in) :: pressure         !< Pressure value.
+   real(R8P),               intent(in) :: velocity_sq_norm !< Velocity vector square norm `||velocity||^2`.
+   real(R8P)                           :: entalpy_         !< Total specific entalpy (per unit of mass).
+
+   entalpy_ = self%g_ * pressure/(self%gm1_ * density) + 0.5_R8P * velocity_sq_norm
+   endfunction total_entalpy
 
    ! operators
    pure subroutine eos_assign_eos(lhs, rhs)
