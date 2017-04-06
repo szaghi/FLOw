@@ -25,22 +25,22 @@ type, extends(eos_object) :: eos_compressible
       ! public methods
       procedure, pass(self) :: compute_derivate !< Compute derivate quantities (from `cp` and `cv`).
       ! deferred methods
-      procedure, pass(self) :: cp             !< Return specific heat at constant pressure.
-      procedure, pass(self) :: cv             !< Return specific heat at constant volume.
-      procedure, pass(self) :: delta          !< Return `(gamma - 1) / 2`.
-      procedure, pass(self) :: density        !< Return density.
-      procedure, pass(self) :: description    !< Return pretty-printed object description.
-      procedure, pass(self) :: energy         !< Return specific internal energy.
-      procedure, pass(lhs)  :: eos_assign_eos !< Operator `=`.
-      procedure, pass(self) :: eta            !< Return `2 * gamma / (gamma - 1)`.
-      procedure, pass(self) :: g              !< Return specific heats ratio `gamma=cp/cv`.
-      procedure, pass(self) :: gm1            !< Return `gamma - 1`.
-      procedure, pass(self) :: gp1            !< Return `gamma + 1`.
-      procedure, pass(self) :: pressure       !< Return pressure.
-      procedure, pass(self) :: R              !< Return fluid constant `R=cp-cv`.
-      procedure, pass(self) :: speed_of_sound !< Return speed of sound.
-      procedure, pass(self) :: temperature    !< Return temperature.
-      procedure, pass(self) :: total_entalpy  !< Return total specific entalpy.
+      procedure, pass(self) :: cp              !< Return specific heat at constant pressure.
+      procedure, pass(self) :: cv              !< Return specific heat at constant volume.
+      procedure, pass(self) :: delta           !< Return `(gamma - 1) / 2`.
+      procedure, pass(self) :: density         !< Return density.
+      procedure, pass(self) :: description     !< Return pretty-printed object description.
+      procedure, pass(lhs)  :: eos_assign_eos  !< Operator `=`.
+      procedure, pass(self) :: eta             !< Return `2 * gamma / (gamma - 1)`.
+      procedure, pass(self) :: g               !< Return specific heats ratio `gamma=cp/cv`.
+      procedure, pass(self) :: gm1             !< Return `gamma - 1`.
+      procedure, pass(self) :: gp1             !< Return `gamma + 1`.
+      procedure, pass(self) :: internal_energy !< Return specific internal energy.
+      procedure, pass(self) :: pressure        !< Return pressure.
+      procedure, pass(self) :: R               !< Return fluid constant `R=cp-cv`.
+      procedure, pass(self) :: speed_of_sound  !< Return speed of sound.
+      procedure, pass(self) :: temperature     !< Return temperature.
+      procedure, pass(self) :: total_entalpy   !< Return total specific entalpy.
 endtype eos_compressible
 
 interface eos_compressible
@@ -87,23 +87,14 @@ contains
    delta_ = self%delta_
    endfunction delta
 
-   elemental function density(self, energy, pressure, speed_of_sound, temperature) result(density_)
+   elemental function density(self, pressure, speed_of_sound) result(density_)
    !< Return density.
-   class(eos_compressible), intent(in)           :: self           !< Equation of state.
-   real(R8P),               intent(in), optional :: energy         !< Specific internal energy value.
-   real(R8P),               intent(in), optional :: pressure       !< Pressure value.
-   real(R8P),               intent(in), optional :: speed_of_sound !< Speed of sound value.
-   real(R8P),               intent(in), optional :: temperature    !< Temperature value.
-   real(R8P)                                     :: density_       !< Density value.
+   class(eos_compressible), intent(in) :: self           !< Equation of state.
+   real(R8P),               intent(in) :: pressure       !< Pressure value.
+   real(R8P),               intent(in) :: speed_of_sound !< Speed of sound value.
+   real(R8P)                           :: density_       !< Density value.
 
-   density_ = 0._R8P
-   if (present(energy).and.present(pressure)) then
-      density_ = pressure / ((self%g_ - 1._R8P) * energy)
-   elseif (present(pressure).and.present(speed_of_sound)) then
-      density_ = self%g_ * pressure / (speed_of_sound * speed_of_sound)
-   elseif (present(pressure).and.present(temperature)) then
-      density_ = pressure / (self%R_ * temperature)
-   endif
+   density_ = self%g_ * pressure / (speed_of_sound * speed_of_sound)
    endfunction density
 
    pure function description(self, prefix) result(desc)
@@ -119,22 +110,6 @@ contains
    desc = desc//prefix_//'cp  = '//trim(str(n=self%cp_))//NL
    desc = desc//prefix_//'cv  = '//trim(str(n=self%cv_))
    endfunction description
-
-   elemental function energy(self, density, pressure, temperature) result(energy_)
-   !< Return specific internal energy.
-   class(eos_compressible), intent(in)           :: self        !< Equation of state.
-   real(R8P),               intent(in), optional :: density     !< Density value.
-   real(R8P),               intent(in), optional :: pressure    !< Pressure value.
-   real(R8P),               intent(in), optional :: temperature !< Temperature value.
-   real(R8P)                                     :: energy_     !< Energy value.
-
-   energy_ = 0._R8P
-   if (present(density).and.present(pressure)) then
-      energy_ = pressure / ((self%g_ - 1._R8P) * density)
-   elseif (present(temperature)) then
-      energy_ = self%cv() * temperature
-   endif
-   endfunction energy
 
    elemental function eta(self) result(eta_)
    !< Return `2 * gamma / (gamma - 1)`.
@@ -167,6 +142,22 @@ contains
 
    gp1_ = self%gp1_
    endfunction gp1
+
+   elemental function internal_energy(self, density, pressure, temperature) result(energy_)
+   !< Return specific internal energy.
+   class(eos_compressible), intent(in)           :: self        !< Equation of state.
+   real(R8P),               intent(in), optional :: density     !< Density value.
+   real(R8P),               intent(in), optional :: pressure    !< Pressure value.
+   real(R8P),               intent(in), optional :: temperature !< Temperature value.
+   real(R8P)                                     :: energy_     !< Energy value.
+
+   energy_ = 0._R8P
+   if (present(density).and.present(pressure)) then
+      energy_ = pressure / ((self%g_ - 1._R8P) * density)
+   elseif (present(temperature)) then
+      energy_ = self%cv() * temperature
+   endif
+   endfunction internal_energy
 
    elemental function pressure(self, density, energy, temperature) result(pressure_)
    !< Return pressure.
