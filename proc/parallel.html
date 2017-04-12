@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title=" 0.2% of total for procedures.">7 statements</a>
+	  title=" 0.2% of total for procedures.">6 statements</a>
      </li> 
      
      
@@ -145,7 +145,7 @@
   
      <li><a href='../sourcefile/vecfor.f90.html'>vecfor.F90</a></li>
   
-     <li><a href='../module/vecfor.html'>VecFor</a></li>
+     <li><a href='../module/vecfor.html'>vecfor</a></li>
   
      <li class="active">parallel</li>
   </ol>
@@ -1045,7 +1045,7 @@ private elemental function parallel(vec1, vec2) result(paral)
   
 <tr>
   
-  <td><span class="anchor" id="variable-vec1%7E4"></span>class(<a href='../type/vector.html'>Vector</a>),</td>
+  <td><span class="anchor" id="variable-vec1%7E4"></span>class(<a href='../type/vector.html'>vector</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1061,7 +1061,7 @@ private elemental function parallel(vec1, vec2) result(paral)
   
 <tr>
   
-  <td><span class="anchor" id="variable-vec2%7E4"></span>type(<a href='../type/vector.html'>Vector</a>),</td>
+  <td><span class="anchor" id="variable-vec2%7E4"></span>type(<a href='../type/vector.html'>vector</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1080,7 +1080,7 @@ private elemental function parallel(vec1, vec2) result(paral)
     
     
     
-	 <h3>Return Value <small><span class="anchor" id="variable-paral"></span>type(<a href='../type/vector.html'>Vector</a>)
+	 <h3>Return Value <small><span class="anchor" id="variable-paral"></span>type(<a href='../type/vector.html'>vector</a>)
   </small></h3>
     <p>Component of of vec1 parallel to vec2.</p>
     
@@ -1260,18 +1260,12 @@ private elemental function parallel(vec1, vec2) result(paral)
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre><span></span>  <span class="k">elemental function </span><span class="n">parallel</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">vec2</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">paral</span><span class="p">)</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
   <span class="c">!&gt; Compute the component of vec1 parallel to vec2.</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
-  <span class="k">class</span><span class="p">(</span><span class="n">Vector</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">vec1</span>  <span class="c">!&lt; First vector.</span>
-  <span class="k">type</span><span class="p">(</span><span class="n">Vector</span><span class="p">),</span>  <span class="k">intent</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">vec2</span>  <span class="c">!&lt; Second vector.</span>
-  <span class="k">type</span><span class="p">(</span><span class="n">Vector</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">paral</span> <span class="c">!&lt; Component of of vec1 parallel to vec2.</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
+  <span class="k">class</span><span class="p">(</span><span class="n">vector</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">vec1</span>  <span class="c">!&lt; First vector.</span>
+  <span class="k">type</span><span class="p">(</span><span class="n">vector</span><span class="p">),</span>  <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">vec2</span>  <span class="c">!&lt; Second vector.</span>
+  <span class="k">type</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">paral</span> <span class="c">!&lt; Component of of vec1 parallel to vec2.</span>
 
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
   <span class="n">paral</span> <span class="o">=</span> <span class="p">(</span><span class="n">vec1</span><span class="p">.</span><span class="n">dot</span><span class="p">.</span><span class="n">vec2</span><span class="p">)</span> <span class="o">*</span> <span class="n">normalize</span><span class="p">(</span><span class="n">vec2</span><span class="p">)</span><span class="o">/</span><span class="n">normL2</span><span class="p">(</span><span class="n">vec2</span><span class="p">)</span>
-  <span class="k">return</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
   <span class="n">endfunction</span> <span class="n">parallel</span>
 </pre></div>
 
@@ -2112,7 +2106,7 @@ private elemental function parallel(vec1, vec2) result(paral)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-12 12:59  
+             on 2017-04-12 15:49  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

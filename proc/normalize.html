@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title=" 0.3% of total for procedures.">13 statements</a>
+	  title=" 0.3% of total for procedures.">12 statements</a>
      </li> 
      
      
@@ -145,7 +145,7 @@
   
      <li><a href='../sourcefile/vecfor.f90.html'>vecfor.F90</a></li>
   
-     <li><a href='../module/vecfor.html'>VecFor</a></li>
+     <li><a href='../module/vecfor.html'>vecfor</a></li>
   
      <li class="active">normalize</li>
   </ol>
@@ -1027,8 +1027,8 @@ public elemental function normalize(vec) result(norm)
 
     
     <p>Normalize a vector.</p>
-<p>The normalization is made by means of norm L2. If the norm L2 of the vector is less than the parameter smallR8P the
- normalization value is set to normL2(vec)+smallR8P.</p>
+<p>The normalization is made by means of norm L2. If the norm L2 of the vector is less than the parameter smallR_P the
+ normalization value is set to normL2(vec)+smallR_P.</p>
     
 
     <h3>Arguments</h3>
@@ -1049,7 +1049,7 @@ public elemental function normalize(vec) result(norm)
   
 <tr>
   
-  <td><span class="anchor" id="variable-vec%7E4"></span>type(<a href='../type/vector.html'>Vector</a>),</td>
+  <td><span class="anchor" id="variable-vec%7E4"></span>type(<a href='../type/vector.html'>vector</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1068,7 +1068,7 @@ public elemental function normalize(vec) result(norm)
     
     
     
-	 <h3>Return Value <small><span class="anchor" id="variable-norm%7E5"></span>type(<a href='../type/vector.html'>Vector</a>)
+	 <h3>Return Value <small><span class="anchor" id="variable-norm%7E5"></span>type(<a href='../type/vector.html'>vector</a>)
   </small></h3>
     <p>Vector normalized.</p>
     
@@ -1217,64 +1217,64 @@ public elemental function normalize(vec) result(norm)
 <path fill="none" stroke="#000000" d="M84.2613,-219.966C89.7119,-217.322 95.147,-214.32 100,-211 118.559,-198.304 136.391,-179.98 148.83,-165.859"/>
 <polygon fill="#000000" stroke="#000000" points="151.631,-167.97 155.496,-158.105 146.323,-163.407 151.631,-167.97"/>
 </g>
-<!-- proc~self_eq_self -->
-<g id="node4" class="node"><title>proc~self_eq_self</title>
-<a xlink:href="../proc/self_eq_self.html" xlink:title="self_eq_self">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="85,-202 15,-202 15,-176 85,-176 85,-202"/>
-<text text-anchor="middle" x="50" y="-186.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_eq_self</text>
-</a>
-</g>
-<!-- proc~self_eq_self&#45;&gt;proc~normalize -->
-<g id="edge6" class="edge"><title>proc~self_eq_self&#45;&gt;proc~normalize</title>
-<path fill="none" stroke="#000000" d="M84.4898,-175.918C97.7099,-170.903 112.892,-165.145 126.542,-159.967"/>
-<polygon fill="#000000" stroke="#000000" points="128.053,-163.137 136.161,-156.318 125.57,-156.592 128.053,-163.137"/>
-</g>
 <!-- proc~face_normal4_self -->
-<g id="node5" class="node"><title>proc~face_normal4_self</title>
+<g id="node4" class="node"><title>proc~face_normal4_self</title>
 <a xlink:href="../proc/face_normal4_self.html" xlink:title="face_normal4_self">
-<polygon fill="#d9534f" stroke="#d9534f" points="100,-158 4.26326e-14,-158 0,-132 100,-132 100,-158"/>
-<text text-anchor="middle" x="50" y="-142.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">face_normal4_self</text>
+<polygon fill="#d9534f" stroke="#d9534f" points="100,-202 4.26326e-14,-202 0,-176 100,-176 100,-202"/>
+<text text-anchor="middle" x="50" y="-186.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">face_normal4_self</text>
 </a>
 </g>
 <!-- proc~face_normal4_self&#45;&gt;proc~normalize -->
-<g id="edge8" class="edge"><title>proc~face_normal4_self&#45;&gt;proc~normalize</title>
-<path fill="none" stroke="#000000" d="M100.205,-145C108.901,-145 117.836,-145 126.208,-145"/>
-<polygon fill="#000000" stroke="#000000" points="126.451,-148.5 136.45,-145 126.45,-141.5 126.451,-148.5"/>
-</g>
-<!-- proc~parallel -->
-<g id="node6" class="node"><title>proc~parallel</title>
-<a xlink:href="../proc/parallel.html" xlink:title="parallel">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="77,-114 23,-114 23,-88 77,-88 77,-114"/>
-<text text-anchor="middle" x="50" y="-98.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">parallel</text>
-</a>
-</g>
-<!-- proc~parallel&#45;&gt;proc~normalize -->
-<g id="edge10" class="edge"><title>proc~parallel&#45;&gt;proc~normalize</title>
-<path fill="none" stroke="#000000" d="M77.1968,-111.316C91.8371,-116.869 110.166,-123.822 126.364,-129.966"/>
-<polygon fill="#000000" stroke="#000000" points="125.531,-133.393 136.122,-133.667 128.014,-126.848 125.531,-133.393"/>
+<g id="edge6" class="edge"><title>proc~face_normal4_self&#45;&gt;proc~normalize</title>
+<path fill="none" stroke="#000000" d="M84.4898,-175.918C97.7099,-170.903 112.892,-165.145 126.542,-159.967"/>
+<polygon fill="#000000" stroke="#000000" points="128.053,-163.137 136.161,-156.318 125.57,-156.592 128.053,-163.137"/>
 </g>
 <!-- proc~face_normal4 -->
-<g id="node7" class="node"><title>proc~face_normal4</title>
+<g id="node5" class="node"><title>proc~face_normal4</title>
 <a xlink:href="../proc/face_normal4.html" xlink:title="face_normal4">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="89,-70 11,-70 11,-44 89,-44 89,-70"/>
-<text text-anchor="middle" x="50" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">face_normal4</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="89,-158 11,-158 11,-132 89,-132 89,-158"/>
+<text text-anchor="middle" x="50" y="-142.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">face_normal4</text>
 </a>
 </g>
 <!-- proc~face_normal4&#45;&gt;proc~normalize -->
-<g id="edge12" class="edge"><title>proc~face_normal4&#45;&gt;proc~normalize</title>
-<path fill="none" stroke="#000000" d="M84.2613,-70.0343C89.7119,-72.678 95.147,-75.6802 100,-79 118.559,-91.6958 136.391,-110.02 148.83,-124.141"/>
-<polygon fill="#000000" stroke="#000000" points="146.323,-126.593 155.496,-131.895 151.631,-122.03 146.323,-126.593"/>
+<g id="edge8" class="edge"><title>proc~face_normal4&#45;&gt;proc~normalize</title>
+<path fill="none" stroke="#000000" d="M89.2723,-145C101.168,-145 114.241,-145 126.173,-145"/>
+<polygon fill="#000000" stroke="#000000" points="126.306,-148.5 136.306,-145 126.306,-141.5 126.306,-148.5"/>
 </g>
 <!-- proc~face_normal3 -->
-<g id="node8" class="node"><title>proc~face_normal3</title>
+<g id="node6" class="node"><title>proc~face_normal3</title>
 <a xlink:href="../proc/face_normal3.html" xlink:title="face_normal3">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="89,-26 11,-26 11,-1.24345e-14 89,-3.55271e-15 89,-26"/>
-<text text-anchor="middle" x="50" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">face_normal3</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="89,-114 11,-114 11,-88 89,-88 89,-114"/>
+<text text-anchor="middle" x="50" y="-98.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">face_normal3</text>
 </a>
 </g>
 <!-- proc~face_normal3&#45;&gt;proc~normalize -->
-<g id="edge14" class="edge"><title>proc~face_normal3&#45;&gt;proc~normalize</title>
-<path fill="none" stroke="#000000" d="M86.8312,-26.0114C91.5474,-28.5686 96.087,-31.5511 100,-35 127.484,-59.2243 146.899,-97.7363 157.266,-122.172"/>
+<g id="edge10" class="edge"><title>proc~face_normal3&#45;&gt;proc~normalize</title>
+<path fill="none" stroke="#000000" d="M84.4898,-114.082C97.7099,-119.097 112.892,-124.855 126.542,-130.033"/>
+<polygon fill="#000000" stroke="#000000" points="125.57,-133.408 136.161,-133.682 128.053,-126.863 125.57,-133.408"/>
+</g>
+<!-- proc~self_eq_self -->
+<g id="node7" class="node"><title>proc~self_eq_self</title>
+<a xlink:href="../proc/self_eq_self.html" xlink:title="self_eq_self">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="85,-70 15,-70 15,-44 85,-44 85,-70"/>
+<text text-anchor="middle" x="50" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">self_eq_self</text>
+</a>
+</g>
+<!-- proc~self_eq_self&#45;&gt;proc~normalize -->
+<g id="edge12" class="edge"><title>proc~self_eq_self&#45;&gt;proc~normalize</title>
+<path fill="none" stroke="#000000" d="M84.2613,-70.0343C89.7119,-72.678 95.147,-75.6802 100,-79 118.559,-91.6958 136.391,-110.02 148.83,-124.141"/>
+<polygon fill="#000000" stroke="#000000" points="146.323,-126.593 155.496,-131.895 151.631,-122.03 146.323,-126.593"/>
+</g>
+<!-- proc~parallel -->
+<g id="node8" class="node"><title>proc~parallel</title>
+<a xlink:href="../proc/parallel.html" xlink:title="parallel">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="77,-26 23,-26 23,-1.24345e-14 77,-3.55271e-15 77,-26"/>
+<text text-anchor="middle" x="50" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">parallel</text>
+</a>
+</g>
+<!-- proc~parallel&#45;&gt;proc~normalize -->
+<g id="edge14" class="edge"><title>proc~parallel&#45;&gt;proc~normalize</title>
+<path fill="none" stroke="#000000" d="M77.21,-21.4153C85.1562,-24.767 93.4546,-29.2309 100,-35 127.484,-59.2243 146.899,-97.7363 157.266,-122.172"/>
 <polygon fill="#000000" stroke="#000000" points="154.135,-123.762 161.152,-131.7 160.616,-121.118 154.135,-123.762"/>
 </g>
 </g>
@@ -1404,27 +1404,21 @@ public elemental function normalize(vec) result(norm)
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre><span></span>  <span class="k">elemental function </span><span class="n">normalize</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">norm</span><span class="p">)</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
   <span class="c">!&lt; Normalize a vector.</span>
   <span class="c">!&lt;</span>
-  <span class="c">!&lt; The normalization is made by means of norm L2. If the norm L2 of the vector is less than the parameter smallR8P the</span>
-  <span class="c">!&lt; normalization value is set to normL2(vec)+smallR8P.</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
-  <span class="k">type</span><span class="p">(</span><span class="n">Vector</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">vec</span>  <span class="c">!&lt; Vector to be normalized.</span>
-  <span class="k">type</span><span class="p">(</span><span class="n">Vector</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">norm</span> <span class="c">!&lt; Vector normalized.</span>
-  <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span>                <span class="kd">::</span> <span class="n">nm</span>   <span class="c">!&lt; Norm L2 of vector.</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
+  <span class="c">!&lt; The normalization is made by means of norm L2. If the norm L2 of the vector is less than the parameter smallR_P the</span>
+  <span class="c">!&lt; normalization value is set to normL2(vec)+smallR_P.</span>
+  <span class="k">type</span><span class="p">(</span><span class="n">vector</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">vec</span>  <span class="c">!&lt; Vector to be normalized.</span>
+  <span class="k">type</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">norm</span> <span class="c">!&lt; Vector normalized.</span>
+  <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span>                <span class="kd">::</span> <span class="n">nm</span>   <span class="c">!&lt; Norm L2 of vector.</span>
 
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
   <span class="n">nm</span> <span class="o">=</span> <span class="n">normL2</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">nm</span> <span class="o">&lt;</span> <span class="n">smallR8P</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">    </span><span class="n">nm</span> <span class="o">=</span> <span class="n">nm</span> <span class="o">+</span> <span class="n">smallR8P</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">nm</span> <span class="o">&lt;</span> <span class="n">smallR_P</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">    </span><span class="n">nm</span> <span class="o">=</span> <span class="n">nm</span> <span class="o">+</span> <span class="n">smallR_P</span>
   <span class="n">endif</span>
   <span class="n">norm</span><span class="p">%</span><span class="n">x</span> <span class="o">=</span> <span class="n">vec</span><span class="p">%</span><span class="n">x</span> <span class="o">/</span> <span class="n">nm</span>
   <span class="n">norm</span><span class="p">%</span><span class="n">y</span> <span class="o">=</span> <span class="n">vec</span><span class="p">%</span><span class="n">y</span> <span class="o">/</span> <span class="n">nm</span>
   <span class="n">norm</span><span class="p">%</span><span class="n">z</span> <span class="o">=</span> <span class="n">vec</span><span class="p">%</span><span class="n">z</span> <span class="o">/</span> <span class="n">nm</span>
-  <span class="k">return</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
   <span class="n">endfunction</span> <span class="n">normalize</span>
 </pre></div>
 
@@ -2265,7 +2259,7 @@ public elemental function normalize(vec) result(norm)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-12 12:59  
+             on 2017-04-12 15:49  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

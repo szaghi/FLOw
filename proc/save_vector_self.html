@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title=" 0.4% of total for procedures.">17 statements</a>
+	  title=" 0.4% of total for procedures.">16 statements</a>
      </li> 
      
      
@@ -145,7 +145,7 @@
   
      <li><a href='../sourcefile/vecfor.f90.html'>vecfor.F90</a></li>
   
-     <li><a href='../module/vecfor.html'>VecFor</a></li>
+     <li><a href='../module/vecfor.html'>vecfor</a></li>
   
      <li class="active">save_vector_self</li>
   </ol>
@@ -1047,7 +1047,7 @@ private subroutine save_vector_self(vec, unit, pos, iostat, iomsg)
   
 <tr>
   
-  <td><span class="anchor" id="variable-vec%7E12"></span>class(<a href='../type/vector.html'>Vector</a>),</td>
+  <td><span class="anchor" id="variable-vec%7E12"></span>class(<a href='../type/vector.html'>vector</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1179,19 +1179,15 @@ private subroutine save_vector_self(vec, unit, pos, iostat, iomsg)
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre><span></span>  <span class="k">subroutine </span><span class="n">save_vector_self</span><span class="p">(</span><span class="n">vec</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">iostat</span><span class="p">,</span> <span class="n">iomsg</span><span class="p">)</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
   <span class="c">!&lt; Save Vector data.</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
-  <span class="k">class</span><span class="p">(</span><span class="n">Vector</span><span class="p">),</span>          <span class="k">intent</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">vec</span>     <span class="c">!&lt; Vector data.</span>
-  <span class="kt">integer</span><span class="p">(</span><span class="n">I4P</span><span class="p">),</span>           <span class="k">intent</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">unit</span>    <span class="c">!&lt; Logic unit.</span>
-  <span class="kt">integer</span><span class="p">(</span><span class="n">I8P</span><span class="p">),</span> <span class="k">optional</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">pos</span>     <span class="c">!&lt; Position specifier.</span>
-  <span class="kt">integer</span><span class="p">(</span><span class="n">I4P</span><span class="p">),</span> <span class="k">optional</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">OUT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">iostat</span>  <span class="c">!&lt; IO error.</span>
-  <span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span> <span class="k">optional</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">OUT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">iomsg</span>   <span class="c">!&lt; IO error message.</span>
-  <span class="kt">integer</span><span class="p">(</span><span class="n">I4P</span><span class="p">)</span>                        <span class="kd">::</span> <span class="n">iostatd</span> <span class="c">!&lt; IO error.</span>
-  <span class="kt">character</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>                      <span class="kd">::</span> <span class="n">iomsgd</span>  <span class="c">!&lt; Temporary variable for IO error message.</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
+  <span class="k">class</span><span class="p">(</span><span class="n">vector</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>            <span class="kd">::</span> <span class="n">vec</span>     <span class="c">!&lt; Vector data.</span>
+  <span class="kt">integer</span><span class="p">(</span><span class="n">I4P</span><span class="p">),</span>  <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>            <span class="kd">::</span> <span class="n">unit</span>    <span class="c">!&lt; Logic unit.</span>
+  <span class="kt">integer</span><span class="p">(</span><span class="n">I8P</span><span class="p">),</span>  <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span>  <span class="k">optional</span> <span class="kd">::</span> <span class="n">pos</span>     <span class="c">!&lt; Position specifier.</span>
+  <span class="kt">integer</span><span class="p">(</span><span class="n">I4P</span><span class="p">),</span>  <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">iostat</span>  <span class="c">!&lt; IO error.</span>
+  <span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span>  <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">iomsg</span>   <span class="c">!&lt; IO error message.</span>
+  <span class="kt">integer</span><span class="p">(</span><span class="n">I4P</span><span class="p">)</span>                         <span class="kd">::</span> <span class="n">iostatd</span> <span class="c">!&lt; IO error.</span>
+  <span class="kt">character</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>                       <span class="kd">::</span> <span class="n">iomsgd</span>  <span class="c">!&lt; Temporary variable for IO error message.</span>
 
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
   <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">pos</span><span class="p">))</span> <span class="k">then</span>
 <span class="k">    write</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">iostat</span><span class="o">=</span><span class="n">iostatd</span><span class="p">,</span> <span class="n">iomsg</span><span class="o">=</span><span class="n">iomsgd</span><span class="p">)</span><span class="n">vec</span><span class="p">%</span><span class="n">x</span><span class="p">,</span> <span class="n">vec</span><span class="p">%</span><span class="n">y</span><span class="p">,</span> <span class="n">vec</span><span class="p">%</span><span class="n">z</span>
   <span class="k">else</span>
@@ -1199,8 +1195,6 @@ private subroutine save_vector_self(vec, unit, pos, iostat, iomsg)
   <span class="n">endif</span>
   <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">iostat</span><span class="p">))</span> <span class="n">iostat</span> <span class="o">=</span> <span class="n">iostatd</span>
   <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">iomsg</span><span class="p">))</span>  <span class="n">iomsg</span>  <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">iomsgd</span><span class="p">))</span>
-  <span class="k">return</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
   <span class="n">endsubroutine</span> <span class="n">save_vector_self</span>
 </pre></div>
 
@@ -2041,7 +2035,7 @@ private subroutine save_vector_self(vec, unit, pos, iostat, iomsg)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-12 12:59  
+             on 2017-04-12 15:49  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

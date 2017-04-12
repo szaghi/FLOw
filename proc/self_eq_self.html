@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title=" 0.4% of total for procedures.">14 statements</a>
+	  title=" 0.3% of total for procedures.">13 statements</a>
      </li> 
      
      
@@ -145,7 +145,7 @@
   
      <li><a href='../sourcefile/vecfor.f90.html'>vecfor.F90</a></li>
   
-     <li><a href='../module/vecfor.html'>VecFor</a></li>
+     <li><a href='../module/vecfor.html'>vecfor</a></li>
   
      <li class="active">self_eq_self</li>
   </ol>
@@ -1045,13 +1045,14 @@ private elemental function self_eq_self(self1, self2) result(compare)
   
 <tr>
   
-  <td><span class="anchor" id="variable-self1%7E2"></span>class(<a href='../type/vector.html'>Vector</a>),</td>
+  <td><span class="anchor" id="variable-self1%7E2"></span>class(<a href='../type/vector.html'>vector</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
   <td><strong>self1</strong></td><td><p>Return .true. if the normL2 of the self1 is = with respect the normL2 of self2 and the directions of
- self1 and self2 are the same, .false. otherwise.</p></td>
+ self1 and self2 are the same, .false. otherwise.
+ Left hand side.</p></td>
   
 </tr>
 
@@ -1061,12 +1062,12 @@ private elemental function self_eq_self(self1, self2) result(compare)
   
 <tr>
   
-  <td><span class="anchor" id="variable-self2%7E2"></span>type(<a href='../type/vector.html'>Vector</a>),</td>
+  <td><span class="anchor" id="variable-self2%7E2"></span>type(<a href='../type/vector.html'>vector</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>self2</strong></td><td></td>
+  <td><strong>self2</strong></td><td><p>Right hand side.</p></td>
   
 </tr>
 
@@ -1082,7 +1083,7 @@ private elemental function self_eq_self(self1, self2) result(compare)
     
 	 <h3>Return Value <small><span class="anchor" id="variable-compare%7E50"></span>logical
   </small></h3>
-    
+    <p>Operator result.</p>
     
     
      <h3>Calls</h3>
@@ -1260,26 +1261,20 @@ private elemental function self_eq_self(self1, self2) result(compare)
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre><span></span>  <span class="k">elemental function </span><span class="n">self_eq_self</span><span class="p">(</span><span class="n">self1</span><span class="p">,</span> <span class="n">self2</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">compare</span><span class="p">)</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
   <span class="c">!&gt; Return .true. if the normL2 of the self1 is = with respect the normL2 of self2 and the directions of</span>
   <span class="c">!&gt; self1 and self2 are the same, .false. otherwise.</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
-  <span class="k">class</span><span class="p">(</span><span class="n">Vector</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self1</span>   <span class="c">! First selftor.</span>
-  <span class="k">type</span><span class="p">(</span><span class="n">Vector</span><span class="p">),</span>  <span class="k">intent</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self2</span>   <span class="c">! Second selftor.</span>
-  <span class="kt">logical</span>                   <span class="kd">::</span> <span class="n">compare</span> <span class="c">! The result of the comparison.</span>
-  <span class="k">type</span><span class="p">(</span><span class="n">Vector</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">n1</span>      <span class="c">! Normalizations of self1.</span>
-  <span class="k">type</span><span class="p">(</span><span class="n">Vector</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">n2</span>      <span class="c">! Normalizations of self2.</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
+  <span class="k">class</span><span class="p">(</span><span class="n">vector</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self1</span>   <span class="c">!&lt; Left hand side.</span>
+  <span class="k">type</span><span class="p">(</span><span class="n">vector</span><span class="p">),</span>  <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self2</span>   <span class="c">!&lt; Right hand side.</span>
+  <span class="kt">logical</span>                   <span class="kd">::</span> <span class="n">compare</span> <span class="c">!&lt; Operator result.</span>
+  <span class="k">type</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">n1</span>      <span class="c">!&lt; Normalizations of self1.</span>
+  <span class="k">type</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">n2</span>      <span class="c">!&lt; Normalizations of self2.</span>
 
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
   <span class="n">compare</span> <span class="o">=</span> <span class="p">(</span><span class="n">normL2</span><span class="p">(</span><span class="n">self1</span><span class="p">)</span><span class="o">==</span><span class="n">normL2</span><span class="p">(</span><span class="n">self2</span><span class="p">))</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">compare</span><span class="p">)</span> <span class="k">then</span> <span class="c">! the normL2 are the same, checking the directions</span>
     <span class="n">n1</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">self1</span><span class="p">)</span>
     <span class="n">n2</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">self2</span><span class="p">)</span>
     <span class="n">compare</span> <span class="o">=</span> <span class="p">((</span><span class="n">n1</span><span class="p">%</span><span class="n">x</span><span class="o">==</span><span class="n">n2</span><span class="p">%</span><span class="n">x</span><span class="p">).</span><span class="nb">AND</span><span class="p">.(</span><span class="n">n1</span><span class="p">%</span><span class="n">y</span><span class="o">==</span><span class="n">n2</span><span class="p">%</span><span class="n">y</span><span class="p">).</span><span class="nb">AND</span><span class="p">.(</span><span class="n">n1</span><span class="p">%</span><span class="n">z</span><span class="o">==</span><span class="n">n2</span><span class="p">%</span><span class="n">z</span><span class="p">))</span>
   <span class="n">endif</span>
-  <span class="k">return</span>
-  <span class="c">!---------------------------------------------------------------------------------------------------------------------------------</span>
   <span class="n">endfunction</span> <span class="n">self_eq_self</span>
 </pre></div>
 
@@ -2120,7 +2115,7 @@ private elemental function self_eq_self(self1, self2) result(compare)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-12 12:59  
+             on 2017-04-12 15:49  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>
