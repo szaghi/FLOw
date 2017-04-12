@@ -1077,7 +1077,7 @@ private elemental subroutine compute_fluxes_from_primitive(self, eos, p, r, u, n
   
 <tr>
   
-  <td><span class="anchor" id="variable-p%7E2"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-p%7E2"></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1092,7 +1092,7 @@ private elemental subroutine compute_fluxes_from_primitive(self, eos, p, r, u, n
   
 <tr>
   
-  <td><span class="anchor" id="variable-r"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-r"></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1107,7 +1107,7 @@ private elemental subroutine compute_fluxes_from_primitive(self, eos, p, r, u, n
   
 <tr>
   
-  <td><span class="anchor" id="variable-u"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-u"></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1197,14 +1197,14 @@ private elemental subroutine compute_fluxes_from_primitive(self, eos, p, r, u, n
    <span class="c">!&lt; Compute conservative fluxes from primitives at interface.</span>
    <span class="k">class</span><span class="p">(</span><span class="n">conservative_compressible</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self</span>   <span class="c">!&lt; Conservative.</span>
    <span class="k">class</span><span class="p">(</span><span class="n">eos_object</span><span class="p">),</span>                <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">eos</span>    <span class="c">!&lt; Equation of state.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>                        <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">p</span>      <span class="c">!&lt; Pressure at interface.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>                        <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">r</span>      <span class="c">!&lt; Density at interface.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>                        <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">u</span>      <span class="c">!&lt; Velocity (normal component) at interface.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>                        <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">p</span>      <span class="c">!&lt; Pressure at interface.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>                        <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">r</span>      <span class="c">!&lt; Density at interface.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>                        <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">u</span>      <span class="c">!&lt; Velocity (normal component) at interface.</span>
    <span class="k">type</span><span class="p">(</span><span class="n">vector</span><span class="p">),</span>                     <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">normal</span> <span class="c">!&lt; Normal (versor) of face where fluxes are given.</span>
 
    <span class="n">self</span><span class="p">%</span><span class="n">density</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">u</span>
    <span class="n">self</span><span class="p">%</span><span class="n">momentum</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">u</span> <span class="o">*</span> <span class="n">u</span> <span class="o">+</span> <span class="n">p</span><span class="p">)</span> <span class="o">*</span> <span class="n">normal</span>
-   <span class="n">self</span><span class="p">%</span><span class="n">energy</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">eos</span><span class="p">%</span><span class="n">internal_energy</span><span class="p">(</span><span class="n">density</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">pressure</span><span class="o">=</span><span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="n">r</span> <span class="o">*</span> <span class="n">u</span> <span class="o">*</span> <span class="n">u</span> <span class="o">*</span> <span class="mf">0.5_R8P</span> <span class="o">+</span> <span class="n">p</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span>
+   <span class="n">self</span><span class="p">%</span><span class="n">energy</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">eos</span><span class="p">%</span><span class="n">internal_energy</span><span class="p">(</span><span class="n">density</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">pressure</span><span class="o">=</span><span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="n">r</span> <span class="o">*</span> <span class="n">u</span> <span class="o">*</span> <span class="n">u</span> <span class="o">*</span> <span class="mf">0.5_R_P</span> <span class="o">+</span> <span class="n">p</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span>
    <span class="n">endsubroutine</span> <span class="n">compute_fluxes_from_primitive</span>
 </pre></div>
 
@@ -2045,7 +2045,7 @@ private elemental subroutine compute_fluxes_from_primitive(self, eos, p, r, u, n
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-06 13:37  
+             on 2017-04-12 12:59  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

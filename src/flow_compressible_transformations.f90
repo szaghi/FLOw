@@ -6,8 +6,6 @@ module flow_compressible_transformations
 use flow_conservative_compressible, only : conservative_compressible
 use flow_eos_object, only : eos_object
 use flow_primitive_compressible, only : primitive_compressible
-use penf, only : R8P
-use vecfor, only : vector
 
 implicit none
 private

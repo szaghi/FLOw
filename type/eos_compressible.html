@@ -532,11 +532,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-r_"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-r_"></span>real(kind=R_P),</td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>R_</strong></td><td> =</td><td>0._R8P</td><td><p>Fluid constant <code>R = cp - cv</code>.</p></td>
+  <td><strong>R_</strong></td><td> =</td><td>0._R_P</td><td><p>Fluid constant <code>R = cp - cv</code>.</p></td>
   
 </tr>
 
@@ -546,11 +546,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-cp_"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-cp_"></span>real(kind=R_P),</td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>cp_</strong></td><td> =</td><td>0._R8P</td><td><p>Specific heat at constant pressure <code>cp</code>.</p></td>
+  <td><strong>cp_</strong></td><td> =</td><td>0._R_P</td><td><p>Specific heat at constant pressure <code>cp</code>.</p></td>
   
 </tr>
 
@@ -560,11 +560,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-cv_"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-cv_"></span>real(kind=R_P),</td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>cv_</strong></td><td> =</td><td>0._R8P</td><td><p>Specific heat at constant volume <code>cv</code>.</p></td>
+  <td><strong>cv_</strong></td><td> =</td><td>0._R_P</td><td><p>Specific heat at constant volume <code>cv</code>.</p></td>
   
 </tr>
 
@@ -574,11 +574,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-delta_"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-delta_"></span>real(kind=R_P),</td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>delta_</strong></td><td> =</td><td>0._R8P</td><td><p><code>(gamma - 1) / 2</code>.</p></td>
+  <td><strong>delta_</strong></td><td> =</td><td>0._R_P</td><td><p><code>(gamma - 1) / 2</code>.</p></td>
   
 </tr>
 
@@ -588,11 +588,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-eta_"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-eta_"></span>real(kind=R_P),</td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>eta_</strong></td><td> =</td><td>0._R8P</td><td><p><code>2 * gamma / (gamma - 1)</code>.</p></td>
+  <td><strong>eta_</strong></td><td> =</td><td>0._R_P</td><td><p><code>2 * gamma / (gamma - 1)</code>.</p></td>
   
 </tr>
 
@@ -602,11 +602,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-g_"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-g_"></span>real(kind=R_P),</td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>g_</strong></td><td> =</td><td>0._R8P</td><td><p>Specific heats ratio <code>gamma = cp / cv</code>.</p></td>
+  <td><strong>g_</strong></td><td> =</td><td>0._R_P</td><td><p>Specific heats ratio <code>gamma = cp / cv</code>.</p></td>
   
 </tr>
 
@@ -616,11 +616,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-gm1_"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-gm1_"></span>real(kind=R_P),</td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>gm1_</strong></td><td> =</td><td>0._R8P</td><td><p><code>gamma - 1</code>.</p></td>
+  <td><strong>gm1_</strong></td><td> =</td><td>0._R_P</td><td><p><code>gamma - 1</code>.</p></td>
   
 </tr>
 
@@ -630,11 +630,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-gp1_"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-gp1_"></span>real(kind=R_P),</td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>gp1_</strong></td><td> =</td><td>0._R8P</td><td><p><code>gamma + 1</code>.</p></td>
+  <td><strong>gp1_</strong></td><td> =</td><td>0._R_P</td><td><p><code>gamma + 1</code>.</p></td>
   
 </tr>
 
@@ -702,7 +702,7 @@ private elemental function <a href='../proc/eos_compressible_instance.html'>eos_
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -717,7 +717,7 @@ private elemental function <a href='../proc/eos_compressible_instance.html'>eos_
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -732,7 +732,7 @@ private elemental function <a href='../proc/eos_compressible_instance.html'>eos_
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -747,7 +747,7 @@ private elemental function <a href='../proc/eos_compressible_instance.html'>eos_
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -863,7 +863,7 @@ private elemental function <a href='../proc/r.html'>R</a>(self) result(R_)
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p>Fluid constant value.</p>
     
@@ -1120,7 +1120,7 @@ private elemental function <a href='../proc/cp.html'>cp</a>(self) result(cp_)
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p><code>cp</code> value.</p>
     
@@ -1206,7 +1206,7 @@ private elemental function <a href='../proc/cv.html'>cv</a>(self) result(cv_)
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p><code>cv</code> value.</p>
     
@@ -1292,7 +1292,7 @@ private elemental function <a href='../proc/delta.html'>delta</a>(self) result(d
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p><code>(gamma - 1) / 2</code> value.</p>
     
@@ -1373,7 +1373,7 @@ private elemental function <a href='../proc/density.html'>density</a>(self, pres
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1388,7 +1388,7 @@ private elemental function <a href='../proc/density.html'>density</a>(self, pres
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1408,7 +1408,7 @@ private elemental function <a href='../proc/density.html'>density</a>(self, pres
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p>Density value.</p>
     
@@ -1687,7 +1687,7 @@ private elemental function <a href='../proc/eta.html'>eta</a>(self) result(eta_)
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p><code>2 * gamma / (gamma - 1)</code> value.</p>
     
@@ -1773,7 +1773,7 @@ private elemental function <a href='../proc/g.html'>g</a>(self) result(g_)
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p>Specific heats ratio value.</p>
     
@@ -1859,7 +1859,7 @@ private elemental function <a href='../proc/gm1.html'>gm1</a>(self) result(gm1_)
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p><code>gamma - 1</code> value.</p>
     
@@ -1945,7 +1945,7 @@ private elemental function <a href='../proc/gp1.html'>gp1</a>(self) result(gp1_)
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p><code>gamma + 1</code> value.</p>
     
@@ -2026,7 +2026,7 @@ private elemental function <a href='../proc/internal_energy.html'>internal_energ
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -2041,7 +2041,7 @@ private elemental function <a href='../proc/internal_energy.html'>internal_energ
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -2056,7 +2056,7 @@ private elemental function <a href='../proc/internal_energy.html'>internal_energ
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -2076,7 +2076,7 @@ private elemental function <a href='../proc/internal_energy.html'>internal_energ
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p>Energy value.</p>
     
@@ -2157,7 +2157,7 @@ private elemental function <a href='../proc/pressure%7E2.html'>pressure</a>(self
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -2172,7 +2172,7 @@ private elemental function <a href='../proc/pressure%7E2.html'>pressure</a>(self
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -2187,7 +2187,7 @@ private elemental function <a href='../proc/pressure%7E2.html'>pressure</a>(self
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -2207,7 +2207,7 @@ private elemental function <a href='../proc/pressure%7E2.html'>pressure</a>(self
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p>Pressure value.</p>
     
@@ -2288,7 +2288,7 @@ private elemental function <a href='../proc/speed_of_sound.html'>speed_of_sound<
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -2303,7 +2303,7 @@ private elemental function <a href='../proc/speed_of_sound.html'>speed_of_sound<
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -2323,7 +2323,7 @@ private elemental function <a href='../proc/speed_of_sound.html'>speed_of_sound<
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p>Speed of sound value.</p>
     
@@ -2404,7 +2404,7 @@ private elemental function <a href='../proc/temperature.html'>temperature</a>(se
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -2419,7 +2419,7 @@ private elemental function <a href='../proc/temperature.html'>temperature</a>(se
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -2434,7 +2434,7 @@ private elemental function <a href='../proc/temperature.html'>temperature</a>(se
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -2454,7 +2454,7 @@ private elemental function <a href='../proc/temperature.html'>temperature</a>(se
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p>Temperature value.</p>
     
@@ -2535,7 +2535,7 @@ private elemental function <a href='../proc/total_entalpy.html'>total_entalpy</a
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -2550,7 +2550,7 @@ private elemental function <a href='../proc/total_entalpy.html'>total_entalpy</a
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -2565,7 +2565,7 @@ private elemental function <a href='../proc/total_entalpy.html'>total_entalpy</a
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -2585,7 +2585,7 @@ private elemental function <a href='../proc/total_entalpy.html'>total_entalpy</a
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p>Total specific entalpy (per unit of mass).</p>
     
@@ -2606,14 +2606,14 @@ private elemental function <a href='../proc/total_entalpy.html'>total_entalpy</a
     <div class="highlight"><pre><span></span><span class="k">type</span><span class="p">,</span> <span class="k">extends</span><span class="p">(</span><span class="n">eos_object</span><span class="p">)</span> <span class="kd">::</span> <span class="n">eos_compressible</span>
    <span class="c">!&lt; Equation of state (EOS) of ideal compressible object class.</span>
    <span class="k">private</span>
-<span class="k">   </span><span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cp_</span><span class="o">=</span><span class="mf">0._R8P</span>    <span class="c">!&lt; Specific heat at constant pressure `cp`.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cv_</span><span class="o">=</span><span class="mf">0._R8P</span>    <span class="c">!&lt; Specific heat at constant volume `cv`.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">g_</span><span class="o">=</span><span class="mf">0._R8P</span>     <span class="c">!&lt; Specific heats ratio `gamma = cp / cv`.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">R_</span><span class="o">=</span><span class="mf">0._R8P</span>     <span class="c">!&lt; Fluid constant `R = cp - cv`.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">gm1_</span><span class="o">=</span><span class="mf">0._R8P</span>   <span class="c">!&lt; `gamma - 1`.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">gp1_</span><span class="o">=</span><span class="mf">0._R8P</span>   <span class="c">!&lt; `gamma + 1`.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">delta_</span><span class="o">=</span><span class="mf">0._R8P</span> <span class="c">!&lt; `(gamma - 1) / 2`.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">eta_</span><span class="o">=</span><span class="mf">0._R8P</span>   <span class="c">!&lt; `2 * gamma / (gamma - 1)`.</span>
+<span class="k">   </span><span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cp_</span><span class="o">=</span><span class="mf">0._R_P</span>    <span class="c">!&lt; Specific heat at constant pressure `cp`.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cv_</span><span class="o">=</span><span class="mf">0._R_P</span>    <span class="c">!&lt; Specific heat at constant volume `cv`.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">g_</span><span class="o">=</span><span class="mf">0._R_P</span>     <span class="c">!&lt; Specific heats ratio `gamma = cp / cv`.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">R_</span><span class="o">=</span><span class="mf">0._R_P</span>     <span class="c">!&lt; Fluid constant `R = cp - cv`.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">gm1_</span><span class="o">=</span><span class="mf">0._R_P</span>   <span class="c">!&lt; `gamma - 1`.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">gp1_</span><span class="o">=</span><span class="mf">0._R_P</span>   <span class="c">!&lt; `gamma + 1`.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">delta_</span><span class="o">=</span><span class="mf">0._R_P</span> <span class="c">!&lt; `(gamma - 1) / 2`.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span> <span class="kd">::</span> <span class="n">eta_</span><span class="o">=</span><span class="mf">0._R_P</span>   <span class="c">!&lt; `2 * gamma / (gamma - 1)`.</span>
    <span class="k">contains</span>
       <span class="c">! public methods</span>
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">compute_derivate</span> <span class="c">!&lt; Compute derivate quantities (from `cp` and `cv`).</span>
@@ -2693,7 +2693,7 @@ private elemental function <a href='../proc/total_entalpy.html'>total_entalpy</a
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-06 13:37  
+             on 2017-04-12 12:59  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

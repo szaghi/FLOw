@@ -4,7 +4,7 @@ module flow_field_scalar_vectorial
 !< FLOw **field** concrete scalar and vectorial objects.
 
 use flow_field_object, only : field_object
-use penf, only : I4P, R8P, str
+use penf, only : I_P, R_P, str
 use vecfor, only : vector
 
 implicit none
@@ -14,7 +14,7 @@ public :: field_vectorial
 
 type, extends(field_object) :: field_scalar
    !< **Scalar field** object.
-   real(R8P) :: field !< Scalar field.
+   real(R_P) :: field !< Scalar field.
    contains
       ! deferred methods
       procedure, pass(self) :: array       => array_scalar        !< Return serialized array of field.
@@ -74,7 +74,7 @@ contains
    pure function array_scalar(self) result(array_)
    !< Return serialized array of field.
    class(field_scalar), intent(in) :: self      !< Field.
-   real(R8P), allocatable          :: array_(:) !< Serialized array of field.
+   real(R_P), allocatable          :: array_(:) !< Serialized array of field.
 
    allocate(array_(1:1))
    array_(1) = self%field
@@ -106,7 +106,7 @@ contains
    elemental subroutine assign_real_scalar(lhs, rhs)
    !< Operator `field = real`.
    class(field_scalar), intent(inout) :: lhs !< Left hand side.
-   real(R8P),           intent(in)    :: rhs !< Right hand side.
+   real(R_P),           intent(in)    :: rhs !< Right hand side.
 
    lhs%field = rhs
    endsubroutine assign_real_scalar
@@ -158,7 +158,7 @@ contains
    elemental function scalar_div_integer(lhs, rhs) result(opr)
    !< Operator `field / integer`.
    class(field_scalar), intent(in)  :: lhs !< Left hand side.
-   integer(I4P),        intent(in)  :: rhs !< Right hand side.
+   integer(I_P),        intent(in)  :: rhs !< Right hand side.
    class(field_object), allocatable :: opr !< Operator result.
 
    allocate(field_scalar :: opr)
@@ -171,7 +171,7 @@ contains
    elemental function scalar_div_real(lhs, rhs) result(opr)
    !< Operator `field / real`.
    class(field_scalar), intent(in)  :: lhs !< Left hand side.
-   real(R8P),           intent(in)  :: rhs !< Right hand side.
+   real(R_P),           intent(in)  :: rhs !< Right hand side.
    class(field_object), allocatable :: opr !< Operator result.
 
    allocate(field_scalar :: opr)
@@ -210,7 +210,7 @@ contains
    elemental function scalar_mul_integer(lhs, rhs) result(opr)
    !< Operator `field * integer`.
    class(field_scalar), intent(in)  :: lhs !< Left hand side.
-   integer(I4P),        intent(in)  :: rhs !< Right hand side.
+   integer(I_P),        intent(in)  :: rhs !< Right hand side.
    class(field_object), allocatable :: opr !< Operator result.
 
    allocate(field_scalar :: opr)
@@ -222,7 +222,7 @@ contains
 
    elemental function integer_mul_scalar(lhs, rhs) result(opr)
    !< Operator `integer * field`.
-   integer(I4P),        intent(in)  :: lhs !< Left hand side.
+   integer(I_P),        intent(in)  :: lhs !< Left hand side.
    class(field_scalar), intent(in)  :: rhs !< Right hand side.
    class(field_object), allocatable :: opr !< Operator result.
 
@@ -236,7 +236,7 @@ contains
    elemental function scalar_mul_real(lhs, rhs) result(opr)
    !< Operator `field * real`.
    class(field_scalar), intent(in)  :: lhs !< Left hand side.
-   real(R8P),           intent(in)  :: rhs !< Right hand side.
+   real(R_P),           intent(in)  :: rhs !< Right hand side.
    class(field_object), allocatable :: opr !< Operator result.
 
    allocate(field_scalar :: opr)
@@ -248,7 +248,7 @@ contains
 
    elemental function real_mul_scalar(lhs, rhs) result(opr)
    !< Operator `real * field`.
-   real(R8P),           intent(in)  :: lhs !< Left hand side.
+   real(R_P),           intent(in)  :: lhs !< Left hand side.
    class(field_scalar), intent(in)  :: rhs !< Right hand side.
    class(field_object), allocatable :: opr !< Operator result.
 
@@ -290,7 +290,7 @@ contains
    elemental function scalar_pow_integer(lhs, rhs) result(opr)
    !< Operator `field ** integer`.
    class(field_scalar), intent(in)  :: lhs !< Left hand side.
-   integer(I4P),        intent(in)  :: rhs !< Right hand side.
+   integer(I_P),        intent(in)  :: rhs !< Right hand side.
    class(field_object), allocatable :: opr !< Operator result.
 
    allocate(field_scalar :: opr)
@@ -303,7 +303,7 @@ contains
    elemental function scalar_pow_real(lhs, rhs) result(opr)
    !< Operator `field ** real`.
    class(field_scalar), intent(in)  :: lhs !< Left hand side.
-   real(R8P),           intent(in)  :: rhs !< Right hand side.
+   real(R_P),           intent(in)  :: rhs !< Right hand side.
    class(field_object), allocatable :: opr !< Operator result.
 
    allocate(field_scalar :: opr)
@@ -344,7 +344,7 @@ contains
    pure function array_vectorial(self) result(array_)
    !< Return serialized array of field.
    class(field_vectorial), intent(in) :: self      !< Field.
-   real(R8P), allocatable             :: array_(:) !< Serialized array of field.
+   real(R_P), allocatable             :: array_(:) !< Serialized array of field.
 
    allocate(array_(1:3))
    array_(1) = self%field%x
@@ -378,7 +378,7 @@ contains
    elemental subroutine assign_real_vectorial(lhs, rhs)
    !< Operator `field = real`.
    class(field_vectorial), intent(inout) :: lhs !< Left hand side.
-   real(R8P),              intent(in)    :: rhs !< Right hand side.
+   real(R_P),              intent(in)    :: rhs !< Right hand side.
 
    lhs%field = rhs
    endsubroutine assign_real_vectorial
@@ -436,7 +436,7 @@ contains
    elemental function vectorial_div_integer(lhs, rhs) result(opr)
    !< Operator `field / integer`.
    class(field_vectorial), intent(in) :: lhs !< Left hand side.
-   integer(I4P),           intent(in) :: rhs !< Right hand side.
+   integer(I_P),           intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable   :: opr !< Operator result.
 
    allocate(field_vectorial :: opr)
@@ -449,7 +449,7 @@ contains
    elemental function vectorial_div_real(lhs, rhs) result(opr)
    !< Operator `field / real`.
    class(field_vectorial), intent(in) :: lhs !< Left hand side.
-   real(R8P),              intent(in) :: rhs !< Right hand side.
+   real(R_P),              intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable   :: opr !< Operator result.
 
    allocate(field_vectorial :: opr)
@@ -484,7 +484,7 @@ contains
    elemental function vectorial_mul_integer(lhs, rhs) result(opr)
    !< Operator `field * integer`.
    class(field_vectorial), intent(in) :: lhs !< Left hand side.
-   integer(I4P),           intent(in) :: rhs !< Right hand side.
+   integer(I_P),           intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable   :: opr !< Operator result.
 
    allocate(field_vectorial :: opr)
@@ -496,7 +496,7 @@ contains
 
    elemental function integer_mul_vectorial(lhs, rhs) result(opr)
    !< Operator `integer * field`.
-   integer(I4P),           intent(in) :: lhs !< Left hand side.
+   integer(I_P),           intent(in) :: lhs !< Left hand side.
    class(field_vectorial), intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable   :: opr !< Operator result.
 
@@ -510,7 +510,7 @@ contains
    elemental function vectorial_mul_real(lhs, rhs) result(opr)
    !< Operator `field * real`.
    class(field_vectorial), intent(in) :: lhs !< Left hand side.
-   real(R8P),              intent(in) :: rhs !< Right hand side.
+   real(R_P),              intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable   :: opr !< Operator result.
 
    allocate(field_vectorial :: opr)
@@ -522,7 +522,7 @@ contains
 
    elemental function real_mul_vectorial(lhs, rhs) result(opr)
    !< Operator `real * field`.
-   real(R8P),              intent(in) :: lhs !< Left hand side.
+   real(R_P),              intent(in) :: lhs !< Left hand side.
    class(field_vectorial), intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable   :: opr !< Operator result.
 
@@ -564,7 +564,7 @@ contains
    elemental function vectorial_pow_integer(lhs, rhs) result(opr)
    !< Operator `field ** integer`.
    class(field_vectorial), intent(in) :: lhs !< Left hand side.
-   integer(I4P),           intent(in) :: rhs !< Right hand side.
+   integer(I_P),           intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable   :: opr !< Operator result.
 
    allocate(field_vectorial :: opr)
@@ -579,7 +579,7 @@ contains
    elemental function vectorial_pow_real(lhs, rhs) result(opr)
    !< Operator `field ** real`.
    class(field_vectorial), intent(in) :: lhs !< Left hand side.
-   real(R8P),              intent(in) :: rhs !< Right hand side.
+   real(R_P),              intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable   :: opr !< Operator result.
 
    allocate(field_vectorial :: opr)

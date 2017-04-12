@@ -9,7 +9,7 @@ use, intrinsic :: iso_fortran_env, only : stderr=>error_unit
 use flow_eos_object, only : eos_object
 use flow_field_object, only : field_object
 use flow_conservative_object, only : conservative_object
-use penf, only : I4P, R8P, str
+use penf, only : I_P, R_P, str
 use vecfor, only : vector
 
 implicit none
@@ -19,9 +19,9 @@ public :: conservative_compressible_pointer
 
 type, extends(conservative_object) :: conservative_compressible
    !< **Conservative** compressible multispecie object.
-   real(R8P)    :: density=0._R8P !< Density, `rho`.
+   real(R_P)    :: density=0._R_P !< Density, `rho`.
    type(vector) :: momentum       !< Momentum, `rho * v`, `rho` being the density and `v` the velocity vector.
-   real(R8P)    :: energy=0._R8P  !< Energy, `rho * E`, `rho` being the density and `E` the specific energy.
+   real(R_P)    :: energy=0._R_P  !< Energy, `rho * E`, `rho` being the density and `E` the specific energy.
    contains
       ! public methods
       procedure, pass(self) :: compute_fluxes_from_primitive !< Compute conservative fluxes from primitives at interface.
@@ -85,21 +85,21 @@ contains
    !< Compute conservative fluxes from primitives at interface.
    class(conservative_compressible), intent(inout) :: self   !< Conservative.
    class(eos_object),                intent(in)    :: eos    !< Equation of state.
-   real(R8P),                        intent(in)    :: p      !< Pressure at interface.
-   real(R8P),                        intent(in)    :: r      !< Density at interface.
-   real(R8P),                        intent(in)    :: u      !< Velocity (normal component) at interface.
+   real(R_P),                        intent(in)    :: p      !< Pressure at interface.
+   real(R_P),                        intent(in)    :: r      !< Density at interface.
+   real(R_P),                        intent(in)    :: u      !< Velocity (normal component) at interface.
    type(vector),                     intent(in)    :: normal !< Normal (versor) of face where fluxes are given.
 
    self%density = r * u
    self%momentum = (r * u * u + p) * normal
-   self%energy = (r * eos%internal_energy(density=r, pressure=p) + r * u * u * 0.5_R8P + p) * u
+   self%energy = (r * eos%internal_energy(density=r, pressure=p) + r * u * u * 0.5_R_P + p) * u
    endsubroutine compute_fluxes_from_primitive
 
    ! deferred methods
    pure function array(self) result(array_)
    !< Return serialized array of field.
    class(conservative_compressible), intent(in) :: self      !< Conservative.
-   real(R8P), allocatable                       :: array_(:) !< Serialized array of field.
+   real(R_P), allocatable                       :: array_(:) !< Serialized array of field.
 
    allocate(array_(1:5))
    array_(1) = self%density
@@ -115,9 +115,9 @@ contains
    class(eos_object),                intent(in)  :: eos              !< Equation of state.
    type(vector),                     intent(in)  :: normal           !< Normal (versor) of face where fluxes are given.
    class(conservative_object),       intent(out) :: fluxes           !< Conservative fluxes.
-   real(R8P)                                     :: pressure_        !< Pressure value.
+   real(R_P)                                     :: pressure_        !< Pressure value.
    type(vector)                                  :: velocity_        !< Velocity vector.
-   real(R8P)                                     :: velocity_normal_ !< Velocity component parallel to given normal.
+   real(R_P)                                     :: velocity_normal_ !< Velocity component parallel to given normal.
 
    select type(fluxes)
    class is(conservative_compressible)
@@ -171,11 +171,11 @@ contains
    !< Return pressure value.
    class(conservative_compressible), intent(in) :: self      !< Conservative.
    class(eos_object),                intent(in) :: eos       !< Equation of state.
-   real(R8P)                                    :: pressure_ !< Pressure value.
+   real(R_P)                                    :: pressure_ !< Pressure value.
    type(vector)                                 :: velocity_ !< Velocity vector.
 
    velocity_ = self%velocity()
-   pressure_ = (eos%g() - 1._R8P) * (self%energy - 0.5_R8P * self%density * velocity_%sq_norm())
+   pressure_ = (eos%g() - 1._R_P) * (self%energy - 0.5_R_P * self%density * velocity_%sq_norm())
    endfunction pressure
 
    elemental function velocity(self) result(velocity_)
@@ -203,7 +203,7 @@ contains
    elemental subroutine assign_real(lhs, rhs)
    !< Operator `field = real`.
    class(conservative_compressible), intent(inout) :: lhs !< Left hand side.
-   real(R8P),                        intent(in)    :: rhs !< Right hand side.
+   real(R_P),                        intent(in)    :: rhs !< Right hand side.
 
    lhs%density  = rhs
    lhs%momentum = rhs
@@ -263,7 +263,7 @@ contains
    elemental function div_integer(lhs, rhs) result(opr)
    !< Operator `field / integer`.
    class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   integer(I4P),                     intent(in) :: rhs !< Right hand side.
+   integer(I_P),                     intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable             :: opr !< Operator result.
 
    allocate(conservative_compressible :: opr)
@@ -278,7 +278,7 @@ contains
    elemental function div_real(lhs, rhs) result(opr)
    !< Operator `field / real`.
    class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   real(R8P),                        intent(in) :: rhs !< Right hand side.
+   real(R_P),                        intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable             :: opr !< Operator result.
 
    allocate(conservative_compressible :: opr)
@@ -311,7 +311,7 @@ contains
    elemental function mul_integer(lhs, rhs) result(opr)
    !< Operator `field * integer`.
    class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   integer(I4P),                     intent(in) :: rhs !< Right hand side.
+   integer(I_P),                     intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable             :: opr !< Operator result.
 
    allocate(conservative_compressible :: opr)
@@ -325,7 +325,7 @@ contains
 
    elemental function integer_mul(lhs, rhs) result(opr)
    !< Operator `integer * field`.
-   integer(I4P),                     intent(in) :: lhs !< Left hand side.
+   integer(I_P),                     intent(in) :: lhs !< Left hand side.
    class(conservative_compressible), intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable             :: opr !< Operator result.
 
@@ -341,7 +341,7 @@ contains
    elemental function mul_real(lhs, rhs) result(opr)
    !< Operator `field * real`.
    class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   real(R8P),                        intent(in) :: rhs !< Right hand side.
+   real(R_P),                        intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable             :: opr !< Operator result.
 
    allocate(conservative_compressible :: opr)
@@ -355,7 +355,7 @@ contains
 
    elemental function real_mul(lhs, rhs) result(opr)
    !< Operator `real * field`.
-   real(R8P),                        intent(in) :: lhs !< Left hand side.
+   real(R_P),                        intent(in) :: lhs !< Left hand side.
    class(conservative_compressible), intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable             :: opr !< Operator result.
 
@@ -403,7 +403,7 @@ contains
    elemental function pow_integer(lhs, rhs) result(opr)
    !< Operator `field ** integer`.
    class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   integer(I4P),                     intent(in) :: rhs !< Right hand side.
+   integer(I_P),                     intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable             :: opr !< Operator result.
 
    allocate(conservative_compressible :: opr)
@@ -420,7 +420,7 @@ contains
    elemental function pow_real(lhs, rhs) result(opr)
    !< Operator `field ** real`.
    class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   real(R8P),                        intent(in) :: rhs !< Right hand side.
+   real(R_P),                        intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable             :: opr !< Operator result.
 
    allocate(conservative_compressible :: opr)
@@ -462,9 +462,9 @@ contains
    !< Return and instance of [[conservative_compressible]].
    !<
    !< @note This procedure is used for overloading [[conservative_compressible]] name.
-   real(R8P),    intent(in), optional :: density  !< Density field.
+   real(R_P),    intent(in), optional :: density  !< Density field.
    type(vector), intent(in), optional :: velocity !< Velocity field.
-   real(R8P),    intent(in), optional :: pressure !< Pressure field.
+   real(R_P),    intent(in), optional :: pressure !< Pressure field.
    type(conservative_compressible)    :: instance !< Instance of [[conservative_compressible]].
 
    if (present(density )) instance%density  = density

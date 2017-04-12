@@ -599,11 +599,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-density"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-density"></span>real(kind=R_P),</td>
   
   <td>public</td>
   <td></td><td>::</td>
-  <td><strong>density</strong></td><td> =</td><td>0._R8P</td><td><p>Density, <code>rho</code>.</p></td>
+  <td><strong>density</strong></td><td> =</td><td>0._R_P</td><td><p>Density, <code>rho</code>.</p></td>
   
 </tr>
 
@@ -613,11 +613,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-energy"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-energy"></span>real(kind=R_P),</td>
   
   <td>public</td>
   <td></td><td>::</td>
-  <td><strong>energy</strong></td><td> =</td><td>0._R8P</td><td><p>Energy, <code>rho * E</code>, <code>rho</code> being the density and <code>E</code> the specific energy.</p></td>
+  <td><strong>energy</strong></td><td> =</td><td>0._R_P</td><td><p>Energy, <code>rho * E</code>, <code>rho</code> being the density and <code>E</code> the specific energy.</p></td>
   
 </tr>
 
@@ -699,7 +699,7 @@ private pure function <a href='../proc/conservative_compressible_instance.html'>
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -729,7 +729,7 @@ private pure function <a href='../proc/conservative_compressible_instance.html'>
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -946,7 +946,7 @@ private pure function <a href='../proc/array.html'>array</a>(self) result(array_
   
   
   
-     <h4>Return Value <small>real(kind=R8P),
+     <h4>Return Value <small>real(kind=R_P),
   allocatable, (:)</small></h4>
   <p>Serialized array of field.</p>
     
@@ -1119,7 +1119,7 @@ private elemental subroutine <a href='../proc/assign_real.html'>assign_real</a>(
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1287,7 +1287,7 @@ private elemental subroutine <a href='../proc/assign_real%7E3.html'>assign_real<
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1517,7 +1517,7 @@ private elemental subroutine <a href='../proc/compute_fluxes_from_primitive.html
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1532,7 +1532,7 @@ private elemental subroutine <a href='../proc/compute_fluxes_from_primitive.html
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1547,7 +1547,7 @@ private elemental subroutine <a href='../proc/compute_fluxes_from_primitive.html
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1933,7 +1933,7 @@ private elemental function <a href='../proc/div_integer.html'>div_integer</a>(lh
   
 <tr>
   
-  <td><span class="anchor" ></span>integer(kind=I4P),</td>
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -2034,7 +2034,7 @@ private elemental function <a href='../proc/div_real.html'>div_real</a>(lhs, rhs
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -2313,7 +2313,7 @@ private elemental function <a href='../proc/integer_mul.html'>integer_mul</a>(lh
   
 <tr>
   
-  <td><span class="anchor" ></span>integer(kind=I4P),</td>
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -2530,7 +2530,7 @@ private elemental function <a href='../proc/mul_integer.html'>mul_integer</a>(lh
   
 <tr>
   
-  <td><span class="anchor" ></span>integer(kind=I4P),</td>
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -2631,7 +2631,7 @@ private elemental function <a href='../proc/mul_real.html'>mul_real</a>(lhs, rhs
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -3004,7 +3004,7 @@ private elemental function <a href='../proc/mul_integer%7E3.html'>mul_integer</a
   
 <tr>
   
-  <td><span class="anchor" ></span>integer(kind=I4P),</td>
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -3073,7 +3073,7 @@ private elemental function <a href='../proc/integer_mul%7E3.html'>integer_mul</a
   
 <tr>
   
-  <td><span class="anchor" ></span>integer(kind=I4P),</td>
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -3157,7 +3157,7 @@ private elemental function <a href='../proc/real_mul%7E3.html'>real_mul</a>(lhs,
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -3256,7 +3256,7 @@ private elemental function <a href='../proc/mul_real%7E3.html'>mul_real</a>(lhs,
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -3359,7 +3359,7 @@ private elemental function <a href='../proc/pow_integer%7E3.html'>pow_integer</a
   
 <tr>
   
-  <td><span class="anchor" ></span>integer(kind=I4P),</td>
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -3443,7 +3443,7 @@ private elemental function <a href='../proc/pow_real%7E3.html'>pow_real</a>(lhs,
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -3974,7 +3974,7 @@ private elemental function <a href='../proc/div_integer%7E3.html'>div_integer</a
   
 <tr>
   
-  <td><span class="anchor" ></span>integer(kind=I4P),</td>
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -4058,7 +4058,7 @@ private elemental function <a href='../proc/div_real%7E3.html'>div_real</a>(lhs,
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -4452,7 +4452,7 @@ private elemental function <a href='../proc/pow_integer.html'>pow_integer</a>(lh
   
 <tr>
   
-  <td><span class="anchor" ></span>integer(kind=I4P),</td>
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -4553,7 +4553,7 @@ private elemental function <a href='../proc/pow_real.html'>pow_real</a>(lhs, rhs
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -4674,7 +4674,7 @@ private elemental function <a href='../proc/pressure.html'>pressure</a>(self, eo
   
   
   
-     <h4>Return Value <small>real(kind=R8P)
+     <h4>Return Value <small>real(kind=R_P)
   </small></h4>
   <p>Pressure value.</p>
     
@@ -4740,7 +4740,7 @@ private elemental function <a href='../proc/real_mul.html'>real_mul</a>(lhs, rhs
   
 <tr>
   
-  <td><span class="anchor" ></span>real(kind=R8P),</td>
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -4982,9 +4982,9 @@ private elemental function <a href='../proc/velocity.html'>velocity</a>(self) re
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre><span></span><span class="k">type</span><span class="p">,</span> <span class="k">extends</span><span class="p">(</span><span class="n">conservative_object</span><span class="p">)</span> <span class="kd">::</span> <span class="n">conservative_compressible</span>
    <span class="c">!&lt; **Conservative** compressible multispecie object.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">density</span><span class="o">=</span><span class="mf">0._R8P</span> <span class="c">!&lt; Density, `rho`.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">density</span><span class="o">=</span><span class="mf">0._R_P</span> <span class="c">!&lt; Density, `rho`.</span>
    <span class="k">type</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span> <span class="kd">::</span> <span class="n">momentum</span>       <span class="c">!&lt; Momentum, `rho * v`, `rho` being the density and `v` the velocity vector.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">energy</span><span class="o">=</span><span class="mf">0._R8P</span>  <span class="c">!&lt; Energy, `rho * E`, `rho` being the density and `E` the specific energy.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">energy</span><span class="o">=</span><span class="mf">0._R_P</span>  <span class="c">!&lt; Energy, `rho * E`, `rho` being the density and `E` the specific energy.</span>
    <span class="k">contains</span>
       <span class="c">! public methods</span>
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">compute_fluxes_from_primitive</span> <span class="c">!&lt; Compute conservative fluxes from primitives at interface.</span>
@@ -5074,7 +5074,7 @@ private elemental function <a href='../proc/velocity.html'>velocity</a>(self) re
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-06 13:37  
+             on 2017-04-12 12:59  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

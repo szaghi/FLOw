@@ -4,7 +4,7 @@ program flow_test_primitive_compressible_assign
 !< FLOw test.
 
 use flow, only : primitive_compressible
-use penf, only : R8P
+use penf, only : R_P
 use vecfor, only : vector
 
 implicit none
@@ -15,18 +15,18 @@ logical                      :: test_passed(2) !< List of passed tests.
 
 test_passed = .false.
 
-primitive1 = 0.125_R8P
-test_passed(1) = (primitive1%density    == 0.125_R8P).and. &
-                 (primitive1%velocity%x == 0.125_R8P).and. &
-                 (primitive1%velocity%y == 0.125_R8P).and. &
-                 (primitive1%velocity%z == 0.125_R8P).and. &
-                 (primitive1%pressure   == 0.125_R8P)
+primitive1 = 0.125_R_P
+test_passed(1) = (primitive1%density    == 0.125_R_P).and. &
+                 (primitive1%velocity%x == 0.125_R_P).and. &
+                 (primitive1%velocity%y == 0.125_R_P).and. &
+                 (primitive1%velocity%z == 0.125_R_P).and. &
+                 (primitive1%pressure   == 0.125_R_P)
 print "(A,F6.3)",       'density   = ', primitive1%density
 print "(A,3(F6.3,1X))", 'velocity  = ', primitive1%velocity
 print "(A,F6.3)",       'pressure  = ', primitive1%pressure
 
-velocity = 1._R8P
-primitive1 = primitive_compressible(density=0.125_R8P, velocity=velocity, pressure=2._R8P)
+velocity = 1._R_P
+primitive1 = primitive_compressible(density=0.125_R_P, velocity=velocity, pressure=2._R_P)
 primitive2 = primitive1
 test_passed(2) = primitive1 == primitive2
 print "(A)", ''

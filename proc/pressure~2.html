@@ -1062,7 +1062,7 @@ private elemental function pressure(self, density, energy, temperature) result(p
   
 <tr>
   
-  <td><span class="anchor" id="variable-density%7E13"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-density%7E13"></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -1077,7 +1077,7 @@ private elemental function pressure(self, density, energy, temperature) result(p
   
 <tr>
   
-  <td><span class="anchor" id="variable-energy%7E7"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-energy%7E7"></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -1092,7 +1092,7 @@ private elemental function pressure(self, density, energy, temperature) result(p
   
 <tr>
   
-  <td><span class="anchor" id="variable-temperature%7E6"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-temperature%7E6"></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -1111,7 +1111,7 @@ private elemental function pressure(self, density, energy, temperature) result(p
     
     
     
-	 <h3>Return Value <small><span class="anchor" id="variable-pressure_%7E4"></span>real(kind=R8P)
+	 <h3>Return Value <small><span class="anchor" id="variable-pressure_%7E4"></span>real(kind=R_P)
   </small></h3>
     <p>Pressure value.</p>
     
@@ -1175,9 +1175,9 @@ private elemental function pressure(self, density, energy, temperature) result(p
     <div class="highlight"><pre><span></span>   <span class="k">elemental function </span><span class="n">density</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">speed_of_sound</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">density_</span><span class="p">)</span>
    <span class="c">!&lt; Return density.</span>
    <span class="k">class</span><span class="p">(</span><span class="n">eos_compressible</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self</span>           <span class="c">!&lt; Equation of state.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">pressure</span>       <span class="c">!&lt; Pressure value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">speed_of_sound</span> <span class="c">!&lt; Speed of sound value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span>                           <span class="kd">::</span> <span class="n">density_</span>       <span class="c">!&lt; Density value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">pressure</span>       <span class="c">!&lt; Pressure value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">speed_of_sound</span> <span class="c">!&lt; Speed of sound value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span>                           <span class="kd">::</span> <span class="n">density_</span>       <span class="c">!&lt; Density value.</span>
 
    <span class="n">density_</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">g_</span> <span class="o">*</span> <span class="n">pressure</span> <span class="o">/</span> <span class="p">(</span><span class="n">speed_of_sound</span> <span class="o">*</span> <span class="n">speed_of_sound</span><span class="p">)</span>
    <span class="n">endfunction</span> <span class="n">density</span>
@@ -1199,7 +1199,7 @@ private elemental function pressure(self, density, energy, temperature) result(p
    <span class="k">elemental function </span><span class="n">eta</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">eta_</span><span class="p">)</span>
    <span class="c">!&lt; Return `2 * gamma / (gamma - 1)`.</span>
    <span class="k">class</span><span class="p">(</span><span class="n">eos_compressible</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self</span> <span class="c">!&lt; Equation of state.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span>                           <span class="kd">::</span> <span class="n">eta_</span> <span class="c">!&lt; `2 * gamma / (gamma - 1)` value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span>                           <span class="kd">::</span> <span class="n">eta_</span> <span class="c">!&lt; `2 * gamma / (gamma - 1)` value.</span>
 
    <span class="n">eta_</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">eta_</span>
    <span class="n">endfunction</span> <span class="n">eta</span>
@@ -1207,7 +1207,7 @@ private elemental function pressure(self, density, energy, temperature) result(p
    <span class="k">elemental function </span><span class="n">g</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">g_</span><span class="p">)</span>
    <span class="c">!&lt; Return specific heats ratio `gamma=cp/cv`.</span>
    <span class="k">class</span><span class="p">(</span><span class="n">eos_compressible</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self</span> <span class="c">!&lt; Equation of state.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span>                           <span class="kd">::</span> <span class="n">g_</span>   <span class="c">!&lt; Specific heats ratio value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span>                           <span class="kd">::</span> <span class="n">g_</span>   <span class="c">!&lt; Specific heats ratio value.</span>
 
    <span class="n">g_</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">g_</span>
    <span class="n">endfunction</span> <span class="n">g</span>
@@ -1215,7 +1215,7 @@ private elemental function pressure(self, density, energy, temperature) result(p
    <span class="k">elemental function </span><span class="n">gm1</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">gm1_</span><span class="p">)</span>
    <span class="c">!&lt; Return `gamma - 1`.</span>
    <span class="k">class</span><span class="p">(</span><span class="n">eos_compressible</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self</span> <span class="c">!&lt; Equation of state.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span>                           <span class="kd">::</span> <span class="n">gm1_</span> <span class="c">!&lt; `gamma - 1` value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span>                           <span class="kd">::</span> <span class="n">gm1_</span> <span class="c">!&lt; `gamma - 1` value.</span>
 
    <span class="n">gm1_</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">gm1_</span>
    <span class="n">endfunction</span> <span class="n">gm1</span>
@@ -1223,7 +1223,7 @@ private elemental function pressure(self, density, energy, temperature) result(p
    <span class="k">elemental function </span><span class="n">gp1</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">gp1_</span><span class="p">)</span>
    <span class="c">!&lt; Return `gamma + 1`.</span>
    <span class="k">class</span><span class="p">(</span><span class="n">eos_compressible</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self</span> <span class="c">!&lt; Equation of state.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span>                           <span class="kd">::</span> <span class="n">gp1_</span> <span class="c">!&lt; `gamma + 1` value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span>                           <span class="kd">::</span> <span class="n">gp1_</span> <span class="c">!&lt; `gamma + 1` value.</span>
 
    <span class="n">gp1_</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">gp1_</span>
    <span class="n">endfunction</span> <span class="n">gp1</span>
@@ -1231,14 +1231,14 @@ private elemental function pressure(self, density, energy, temperature) result(p
    <span class="k">elemental function </span><span class="n">internal_energy</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">temperature</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">energy_</span><span class="p">)</span>
    <span class="c">!&lt; Return specific internal energy.</span>
    <span class="k">class</span><span class="p">(</span><span class="n">eos_compressible</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>           <span class="kd">::</span> <span class="n">self</span>        <span class="c">!&lt; Equation of state.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">density</span>     <span class="c">!&lt; Density value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">pressure</span>    <span class="c">!&lt; Pressure value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">temperature</span> <span class="c">!&lt; Temperature value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span>                                     <span class="kd">::</span> <span class="n">energy_</span>     <span class="c">!&lt; Energy value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">density</span>     <span class="c">!&lt; Density value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">pressure</span>    <span class="c">!&lt; Pressure value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">temperature</span> <span class="c">!&lt; Temperature value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span>                                     <span class="kd">::</span> <span class="n">energy_</span>     <span class="c">!&lt; Energy value.</span>
 
-   <span class="n">energy_</span> <span class="o">=</span> <span class="mf">0._R8P</span>
+   <span class="n">energy_</span> <span class="o">=</span> <span class="mf">0._R_P</span>
    <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">density</span><span class="p">).</span><span class="nb">and</span><span class="p">.</span><span class="nb">present</span><span class="p">(</span><span class="n">pressure</span><span class="p">))</span> <span class="k">then</span>
-<span class="k">      </span><span class="n">energy_</span> <span class="o">=</span> <span class="n">pressure</span> <span class="o">/</span> <span class="p">((</span><span class="n">self</span><span class="p">%</span><span class="n">g_</span> <span class="o">-</span> <span class="mf">1._R8P</span><span class="p">)</span> <span class="o">*</span> <span class="n">density</span><span class="p">)</span>
+<span class="k">      </span><span class="n">energy_</span> <span class="o">=</span> <span class="n">pressure</span> <span class="o">/</span> <span class="p">((</span><span class="n">self</span><span class="p">%</span><span class="n">g_</span> <span class="o">-</span> <span class="mf">1._R_P</span><span class="p">)</span> <span class="o">*</span> <span class="n">density</span><span class="p">)</span>
    <span class="n">elseif</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">temperature</span><span class="p">))</span> <span class="k">then</span>
 <span class="k">      </span><span class="n">energy_</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">cv</span><span class="p">()</span> <span class="o">*</span> <span class="n">temperature</span>
    <span class="n">endif</span>
@@ -1247,14 +1247,14 @@ private elemental function pressure(self, density, energy, temperature) result(p
    <span class="k">elemental function </span><span class="n">pressure</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">energy</span><span class="p">,</span> <span class="n">temperature</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">pressure_</span><span class="p">)</span>
    <span class="c">!&lt; Return pressure.</span>
    <span class="k">class</span><span class="p">(</span><span class="n">eos_compressible</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>           <span class="kd">::</span> <span class="n">self</span>        <span class="c">!&lt; Equation of state.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">density</span>     <span class="c">!&lt; Density value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">energy</span>      <span class="c">!&lt; Specific internal energy value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">temperature</span> <span class="c">!&lt; Temperature value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span>                                     <span class="kd">::</span> <span class="n">pressure_</span>   <span class="c">!&lt; Pressure value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">density</span>     <span class="c">!&lt; Density value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">energy</span>      <span class="c">!&lt; Specific internal energy value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">temperature</span> <span class="c">!&lt; Temperature value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span>                                     <span class="kd">::</span> <span class="n">pressure_</span>   <span class="c">!&lt; Pressure value.</span>
 
-   <span class="n">pressure_</span> <span class="o">=</span> <span class="mf">0._R8P</span>
+   <span class="n">pressure_</span> <span class="o">=</span> <span class="mf">0._R_P</span>
    <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">density</span><span class="p">).</span><span class="nb">and</span><span class="p">.</span><span class="nb">present</span><span class="p">(</span><span class="n">energy</span><span class="p">))</span> <span class="k">then</span>
-<span class="k">      </span><span class="n">pressure_</span> <span class="o">=</span> <span class="n">density</span> <span class="o">*</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">g_</span> <span class="o">-</span> <span class="mf">1._R8P</span><span class="p">)</span> <span class="o">*</span> <span class="n">energy</span>
+<span class="k">      </span><span class="n">pressure_</span> <span class="o">=</span> <span class="n">density</span> <span class="o">*</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">g_</span> <span class="o">-</span> <span class="mf">1._R_P</span><span class="p">)</span> <span class="o">*</span> <span class="n">energy</span>
    <span class="n">elseif</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">density</span><span class="p">).</span><span class="nb">and</span><span class="p">.</span><span class="nb">present</span><span class="p">(</span><span class="n">temperature</span><span class="p">))</span> <span class="k">then</span>
 <span class="k">      </span><span class="n">pressure_</span> <span class="o">=</span> <span class="n">density</span> <span class="o">*</span> <span class="n">self</span><span class="p">%</span><span class="n">R_</span> <span class="o">*</span> <span class="n">temperature</span>
    <span class="n">endif</span>
@@ -2098,7 +2098,7 @@ private elemental function pressure(self, density, energy, temperature) result(p
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-06 13:37  
+             on 2017-04-12 12:59  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

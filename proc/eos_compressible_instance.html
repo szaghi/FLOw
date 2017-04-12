@@ -1048,7 +1048,7 @@ private elemental function eos_compressible_instance(cp, cv, gam, R) result(inst
   
 <tr>
   
-  <td><span class="anchor" id="variable-cp%7E3"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-cp%7E3"></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -1063,7 +1063,7 @@ private elemental function eos_compressible_instance(cp, cv, gam, R) result(inst
   
 <tr>
   
-  <td><span class="anchor" id="variable-cv%7E3"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-cv%7E3"></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -1078,7 +1078,7 @@ private elemental function eos_compressible_instance(cp, cv, gam, R) result(inst
   
 <tr>
   
-  <td><span class="anchor" id="variable-gam"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-gam"></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -1093,7 +1093,7 @@ private elemental function eos_compressible_instance(cp, cv, gam, R) result(inst
   
 <tr>
   
-  <td><span class="anchor" id="variable-r%7E3"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-r%7E3"></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -1278,17 +1278,17 @@ private elemental function eos_compressible_instance(cp, cv, gam, R) result(inst
    <span class="c">!&lt; Return and instance of [[eos_compressible]].</span>
    <span class="c">!&lt;</span>
    <span class="c">!&lt; @note This procedure is used for overloading [[eos_compressible]] name.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">cp</span>       <span class="c">!&lt; Specific heat at constant pressure `cp` value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">cv</span>       <span class="c">!&lt; Specific heat at constant volume `cv` value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">gam</span>      <span class="c">!&lt; Specific heats ratio `gamma=cp/cv` value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">R</span>        <span class="c">!&lt; Fluid constant `R=cp-cv` value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">cp</span>       <span class="c">!&lt; Specific heat at constant pressure `cp` value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">cv</span>       <span class="c">!&lt; Specific heat at constant volume `cv` value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">gam</span>      <span class="c">!&lt; Specific heats ratio `gamma=cp/cv` value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">R</span>        <span class="c">!&lt; Fluid constant `R=cp-cv` value.</span>
    <span class="k">type</span><span class="p">(</span><span class="n">eos_compressible</span><span class="p">)</span>          <span class="kd">::</span> <span class="n">instance</span> <span class="c">!&lt; Instance of [[eos_compressible]].</span>
 
    <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">cp</span><span class="p">).</span><span class="nb">and</span><span class="p">.</span><span class="nb">present</span><span class="p">(</span><span class="n">cv</span><span class="p">))</span> <span class="k">then</span>
 <span class="k">      </span><span class="n">instance</span><span class="p">%</span><span class="n">cp_</span> <span class="o">=</span> <span class="n">cp</span>
       <span class="n">instance</span><span class="p">%</span><span class="n">cv_</span> <span class="o">=</span> <span class="n">cv</span>
    <span class="n">elseif</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">gam</span><span class="p">).</span><span class="nb">and</span><span class="p">.</span><span class="nb">present</span><span class="p">(</span><span class="n">R</span><span class="p">))</span> <span class="k">then</span>
-<span class="k">      </span><span class="n">instance</span><span class="p">%</span><span class="n">cv_</span> <span class="o">=</span> <span class="n">R</span><span class="o">/</span><span class="p">(</span><span class="n">gam</span> <span class="o">-</span> <span class="mf">1._R8P</span><span class="p">)</span>
+<span class="k">      </span><span class="n">instance</span><span class="p">%</span><span class="n">cv_</span> <span class="o">=</span> <span class="n">R</span><span class="o">/</span><span class="p">(</span><span class="n">gam</span> <span class="o">-</span> <span class="mf">1._R_P</span><span class="p">)</span>
       <span class="n">instance</span><span class="p">%</span><span class="n">cp_</span> <span class="o">=</span> <span class="n">gam</span> <span class="o">*</span> <span class="n">instance</span><span class="p">%</span><span class="n">cv_</span>
    <span class="n">elseif</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">gam</span><span class="p">).</span><span class="nb">and</span><span class="p">.</span><span class="nb">present</span><span class="p">(</span><span class="n">cp</span><span class="p">))</span> <span class="k">then</span>
 <span class="k">      </span><span class="n">instance</span><span class="p">%</span><span class="n">cp_</span> <span class="o">=</span> <span class="n">cp</span>
@@ -2144,7 +2144,7 @@ private elemental function eos_compressible_instance(cp, cv, gam, R) result(inst
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-06 13:37  
+             on 2017-04-12 12:59  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

@@ -1062,7 +1062,7 @@ private elemental function total_entalpy(self, density, pressure, velocity_sq_no
   
 <tr>
   
-  <td><span class="anchor" id="variable-density%7E16"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-density%7E16"></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1077,7 +1077,7 @@ private elemental function total_entalpy(self, density, pressure, velocity_sq_no
   
 <tr>
   
-  <td><span class="anchor" id="variable-pressure%7E17"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-pressure%7E17"></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1092,7 +1092,7 @@ private elemental function total_entalpy(self, density, pressure, velocity_sq_no
   
 <tr>
   
-  <td><span class="anchor" id="variable-velocity_sq_norm%7E2"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-velocity_sq_norm%7E2"></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -1111,7 +1111,7 @@ private elemental function total_entalpy(self, density, pressure, velocity_sq_no
     
     
     
-	 <h3>Return Value <small><span class="anchor" id="variable-entalpy_%7E2"></span>real(kind=R8P)
+	 <h3>Return Value <small><span class="anchor" id="variable-entalpy_%7E2"></span>real(kind=R_P)
   </small></h3>
     <p>Total specific entalpy (per unit of mass).</p>
     
@@ -1175,12 +1175,12 @@ private elemental function total_entalpy(self, density, pressure, velocity_sq_no
     <div class="highlight"><pre><span></span>   <span class="k">elemental function </span><span class="n">total_entalpy</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">velocity_sq_norm</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">entalpy_</span><span class="p">)</span>
    <span class="c">!&lt; Return total specific entalpy.</span>
    <span class="k">class</span><span class="p">(</span><span class="n">eos_compressible</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self</span>             <span class="c">!&lt; Equation of state.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">density</span>          <span class="c">!&lt; Density value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">pressure</span>         <span class="c">!&lt; Pressure value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">velocity_sq_norm</span> <span class="c">!&lt; Velocity vector square norm `||velocity||^2`.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span>                           <span class="kd">::</span> <span class="n">entalpy_</span>         <span class="c">!&lt; Total specific entalpy (per unit of mass).</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">density</span>          <span class="c">!&lt; Density value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">pressure</span>         <span class="c">!&lt; Pressure value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">velocity_sq_norm</span> <span class="c">!&lt; Velocity vector square norm `||velocity||^2`.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span>                           <span class="kd">::</span> <span class="n">entalpy_</span>         <span class="c">!&lt; Total specific entalpy (per unit of mass).</span>
 
-   <span class="n">entalpy_</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">g_</span> <span class="o">*</span> <span class="n">pressure</span><span class="o">/</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">gm1_</span> <span class="o">*</span> <span class="n">density</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5_R8P</span> <span class="o">*</span> <span class="n">velocity_sq_norm</span>
+   <span class="n">entalpy_</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">g_</span> <span class="o">*</span> <span class="n">pressure</span><span class="o">/</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">gm1_</span> <span class="o">*</span> <span class="n">density</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5_R_P</span> <span class="o">*</span> <span class="n">velocity_sq_norm</span>
    <span class="n">endfunction</span> <span class="n">total_entalpy</span>
 </pre></div>
 
@@ -2021,7 +2021,7 @@ private elemental function total_entalpy(self, density, pressure, velocity_sq_no
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-06 13:37  
+             on 2017-04-12 12:59  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

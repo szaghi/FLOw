@@ -1062,7 +1062,7 @@ private elemental function internal_energy(self, density, pressure, temperature)
   
 <tr>
   
-  <td><span class="anchor" id="variable-density%7E12"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-density%7E12"></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -1077,7 +1077,7 @@ private elemental function internal_energy(self, density, pressure, temperature)
   
 <tr>
   
-  <td><span class="anchor" id="variable-pressure%7E14"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-pressure%7E14"></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -1092,7 +1092,7 @@ private elemental function internal_energy(self, density, pressure, temperature)
   
 <tr>
   
-  <td><span class="anchor" id="variable-temperature%7E5"></span>real(kind=R8P),</td>
+  <td><span class="anchor" id="variable-temperature%7E5"></span>real(kind=R_P),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
@@ -1111,7 +1111,7 @@ private elemental function internal_energy(self, density, pressure, temperature)
     
     
     
-	 <h3>Return Value <small><span class="anchor" id="variable-energy_%7E3"></span>real(kind=R8P)
+	 <h3>Return Value <small><span class="anchor" id="variable-energy_%7E3"></span>real(kind=R_P)
   </small></h3>
     <p>Energy value.</p>
     
@@ -1175,14 +1175,14 @@ private elemental function internal_energy(self, density, pressure, temperature)
     <div class="highlight"><pre><span></span>   <span class="k">elemental function </span><span class="n">internal_energy</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">temperature</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">energy_</span><span class="p">)</span>
    <span class="c">!&lt; Return specific internal energy.</span>
    <span class="k">class</span><span class="p">(</span><span class="n">eos_compressible</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>           <span class="kd">::</span> <span class="n">self</span>        <span class="c">!&lt; Equation of state.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">density</span>     <span class="c">!&lt; Density value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">pressure</span>    <span class="c">!&lt; Pressure value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">temperature</span> <span class="c">!&lt; Temperature value.</span>
-   <span class="kt">real</span><span class="p">(</span><span class="n">R8P</span><span class="p">)</span>                                     <span class="kd">::</span> <span class="n">energy_</span>     <span class="c">!&lt; Energy value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">density</span>     <span class="c">!&lt; Density value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">pressure</span>    <span class="c">!&lt; Pressure value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">),</span>               <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">temperature</span> <span class="c">!&lt; Temperature value.</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">R_P</span><span class="p">)</span>                                     <span class="kd">::</span> <span class="n">energy_</span>     <span class="c">!&lt; Energy value.</span>
 
-   <span class="n">energy_</span> <span class="o">=</span> <span class="mf">0._R8P</span>
+   <span class="n">energy_</span> <span class="o">=</span> <span class="mf">0._R_P</span>
    <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">density</span><span class="p">).</span><span class="nb">and</span><span class="p">.</span><span class="nb">present</span><span class="p">(</span><span class="n">pressure</span><span class="p">))</span> <span class="k">then</span>
-<span class="k">      </span><span class="n">energy_</span> <span class="o">=</span> <span class="n">pressure</span> <span class="o">/</span> <span class="p">((</span><span class="n">self</span><span class="p">%</span><span class="n">g_</span> <span class="o">-</span> <span class="mf">1._R8P</span><span class="p">)</span> <span class="o">*</span> <span class="n">density</span><span class="p">)</span>
+<span class="k">      </span><span class="n">energy_</span> <span class="o">=</span> <span class="n">pressure</span> <span class="o">/</span> <span class="p">((</span><span class="n">self</span><span class="p">%</span><span class="n">g_</span> <span class="o">-</span> <span class="mf">1._R_P</span><span class="p">)</span> <span class="o">*</span> <span class="n">density</span><span class="p">)</span>
    <span class="n">elseif</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">temperature</span><span class="p">))</span> <span class="k">then</span>
 <span class="k">      </span><span class="n">energy_</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">cv</span><span class="p">()</span> <span class="o">*</span> <span class="n">temperature</span>
    <span class="n">endif</span>
@@ -2026,7 +2026,7 @@ private elemental function internal_energy(self, density, pressure, temperature)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-06 13:37  
+             on 2017-04-12 12:59  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

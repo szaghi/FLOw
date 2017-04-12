@@ -8,7 +8,7 @@ module flow_primitive_compressible_multispecie
 use flow_eos_object, only : eos_object
 use flow_field_object, only : field_object
 use flow_primitive_object, only : primitive_object
-use penf, only : I4P, R8P, str
+use penf, only : I_P, R_P, str
 use vecfor, only : vector
 
 implicit none
@@ -17,10 +17,10 @@ public :: primitive_compressible_multispecie
 
 type, extends(primitive_object) :: primitive_compressible_multispecie
    !< **Primitive** compressible multispecie object.
-   real(R8P)              :: density=0._R8P       !< Density, `rho`.
+   real(R_P)              :: density=0._R_P       !< Density, `rho`.
    type(vector)           :: velocity             !< Velocity, `v`.
-   real(R8P)              :: pressure=0._R8P      !< Pressure, `p`.
-   real(R8P), allocatable :: partial_densities(:) !< Partial densities `rho(s), rho = sum(rho(s))`.
+   real(R_P)              :: pressure=0._R_P      !< Pressure, `p`.
+   real(R_P), allocatable :: partial_densities(:) !< Partial densities `rho(s), rho = sum(rho(s))`.
    contains
       ! deferred methods
       procedure, pass(self) :: array       !< Return serialized array of field.
@@ -64,7 +64,7 @@ contains
    pure function array(self) result(array_)
    !< Return serialized array of field.
    class(primitive_compressible_multispecie), intent(in) :: self      !< Primitive.
-   real(R8P), allocatable                                :: array_(:) !< Serialized array of field.
+   real(R_P), allocatable                                :: array_(:) !< Serialized array of field.
 
    if (allocated(self%partial_densities)) then
       allocate(array_(1:5+size(self%partial_densities, dim=1)))
@@ -120,9 +120,9 @@ contains
    !< Return energy value.
    class(primitive_compressible_multispecie), intent(in) :: self    !< Primitive.
    class(eos_object),                         intent(in) :: eos     !< Equation of state.
-   real(R8P)                                             :: energy_ !< Energy value.
+   real(R_P)                                             :: energy_ !< Energy value.
 
-   energy_ = self%pressure / (eos%g() - 1._R8P) + 0.5_R8P * self%density * self%velocity%sq_norm()
+   energy_ = self%pressure / (eos%g() - 1._R_P) + 0.5_R_P * self%density * self%velocity%sq_norm()
    endfunction energy
 
    subroutine initialize(self, initial_state)
@@ -165,7 +165,7 @@ contains
    elemental subroutine assign_real(lhs, rhs)
    !< Operator `field = real`.
    class(primitive_compressible_multispecie), intent(inout) :: lhs !< Left hand side.
-   real(R8P),                                 intent(in)    :: rhs !< Right hand side.
+   real(R_P),                                 intent(in)    :: rhs !< Right hand side.
 
                                          lhs%density           = rhs
                                          lhs%velocity          = rhs
@@ -229,7 +229,7 @@ contains
    elemental function div_integer(lhs, rhs) result(opr)
    !< Operator `field / integer`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
-   integer(I4P),                              intent(in) :: rhs !< Right hand side.
+   integer(I_P),                              intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable                      :: opr !< Operator result.
 
    allocate(primitive_compressible_multispecie :: opr)
@@ -245,7 +245,7 @@ contains
    elemental function div_real(lhs, rhs) result(opr)
    !< Operator `field / real`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
-   real(R8P),                                 intent(in) :: rhs !< Right hand side.
+   real(R_P),                                 intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable                      :: opr !< Operator result.
 
    allocate(primitive_compressible_multispecie :: opr)
@@ -280,7 +280,7 @@ contains
    elemental function mul_integer(lhs, rhs) result(opr)
    !< Operator `field * integer`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
-   integer(I4P),                              intent(in) :: rhs !< Right hand side.
+   integer(I_P),                              intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable                      :: opr !< Operator result.
 
    allocate(primitive_compressible_multispecie :: opr)
@@ -295,7 +295,7 @@ contains
 
    elemental function integer_mul(lhs, rhs) result(opr)
    !< Operator `integer * field`.
-   integer(I4P),                              intent(in) :: lhs !< Left hand side.
+   integer(I_P),                              intent(in) :: lhs !< Left hand side.
    class(primitive_compressible_multispecie), intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable                      :: opr !< Operator result.
 
@@ -312,7 +312,7 @@ contains
    elemental function mul_real(lhs, rhs) result(opr)
    !< Operator `field * real`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
-   real(R8P),                                 intent(in) :: rhs !< Right hand side.
+   real(R_P),                                 intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable                      :: opr !< Operator result.
 
    allocate(primitive_compressible_multispecie :: opr)
@@ -327,7 +327,7 @@ contains
 
    elemental function real_mul(lhs, rhs) result(opr)
    !< Operator `real * field`.
-   real(R8P),                                 intent(in) :: lhs !< Left hand side.
+   real(R_P),                                 intent(in) :: lhs !< Left hand side.
    class(primitive_compressible_multispecie), intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable                      :: opr !< Operator result.
 
@@ -378,7 +378,7 @@ contains
    elemental function pow_integer(lhs, rhs) result(opr)
    !< Operator `field ** integer`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
-   integer(I4P),                              intent(in) :: rhs !< Right hand side.
+   integer(I_P),                              intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable                      :: opr !< Operator result.
 
    allocate(primitive_compressible_multispecie :: opr)
@@ -396,7 +396,7 @@ contains
    elemental function pow_real(lhs, rhs) result(opr)
    !< Operator `field ** real`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
-   real(R8P),                                 intent(in) :: rhs !< Right hand side.
+   real(R_P),                                 intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable                      :: opr !< Operator result.
 
    allocate(primitive_compressible_multispecie :: opr)
@@ -416,7 +416,7 @@ contains
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
    class(field_object),                       intent(in) :: rhs !< Right hand side.
    logical                                               :: opr !< Operator result.
-   integer(I4P)                                          :: d   !< Counter.
+   integer(I_P)                                          :: d   !< Counter.
 
    select type(rhs)
    class is(primitive_compressible_multispecie)
@@ -464,10 +464,10 @@ contains
    !< Return and instance of [[primitive_compressible_multispecie]].
    !<
    !< @note This procedure is used for overloading [[primitive_compressible_multispecie]] name.
-   real(R8P),    intent(in), optional       :: density              !< Density field.
+   real(R_P),    intent(in), optional       :: density              !< Density field.
    type(vector), intent(in), optional       :: velocity             !< Velocity field.
-   real(R8P),    intent(in), optional       :: pressure             !< Pressure field.
-   real(R8P),    intent(in), optional       :: partial_densities(:) !< Partial densities field.
+   real(R_P),    intent(in), optional       :: pressure             !< Pressure field.
+   real(R_P),    intent(in), optional       :: partial_densities(:) !< Partial densities field.
    type(primitive_compressible_multispecie) :: instance !< Instance of [[primitive_compressible_multispecie]].
 
    if (present(density          )) instance%density           = density
