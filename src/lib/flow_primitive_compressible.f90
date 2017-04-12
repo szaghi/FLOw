@@ -9,7 +9,7 @@ use, intrinsic :: iso_fortran_env, only : stderr=>error_unit
 use flow_eos_object, only : eos_object
 use flow_field_object, only : field_object
 use flow_primitive_object, only : primitive_object
-use penf, only : I4P, R8P, str
+use penf, only : I_P, R_P, str
 use vecfor, only : vector
 
 implicit none
@@ -19,9 +19,9 @@ public :: primitive_compressible_pointer
 
 type, extends(primitive_object) :: primitive_compressible
    !< **Primitive** compressible multispecie object.
-   real(R8P)    :: density=0._R8P  !< Density, `rho`.
+   real(R_P)    :: density=0._R_P  !< Density, `rho`.
    type(vector) :: velocity        !< Velocity, `v`.
-   real(R8P)    :: pressure=0._R8P !< Pressure, `p`.
+   real(R_P)    :: pressure=0._R_P !< Pressure, `p`.
    contains
       ! public methods
       procedure, pass(self) :: left_eigenvectors  !< Return the left eigenvectors matrix `L` as `dF/dP = A = R ^ L`.
@@ -85,39 +85,39 @@ contains
    !< Return the left eigenvectors matrix `L` as `dF/dP = A = R ^ L`.
    class(primitive_compressible), intent(in) :: self          !< Primitive.
    class(eos_object),             intent(in) :: eos           !< Equation of state.
-   real(R8P)                                 :: eig(1:3, 1:3) !< Eigenvectors.
-   real(R8P)                                 :: gp            !< `g*p`.
-   real(R8P)                                 :: gp_a          !< `g*p/a`.
+   real(R_P)                                 :: eig(1:3, 1:3) !< Eigenvectors.
+   real(R_P)                                 :: gp            !< `g*p`.
+   real(R_P)                                 :: gp_a          !< `g*p/a`.
 
    gp = eos%g() * self%pressure
    gp_a = gp / eos%speed_of_sound(density=self%density, pressure=self%pressure)
-   eig(1, 1) = 0._R8P            ; eig(1, 2) = -gp_a  ; eig(1, 3) =  1._R8P
-   eig(2, 1) = gp / self%density ; eig(2, 2) = 0._R8P ; eig(2, 3) = -1._R8P
-   eig(3, 1) = 0._R8P            ; eig(3, 2) =  gp_a  ; eig(3, 3) =  1._R8P
+   eig(1, 1) = 0._R_P            ; eig(1, 2) = -gp_a  ; eig(1, 3) =  1._R_P
+   eig(2, 1) = gp / self%density ; eig(2, 2) = 0._R_P ; eig(2, 3) = -1._R_P
+   eig(3, 1) = 0._R_P            ; eig(3, 2) =  gp_a  ; eig(3, 3) =  1._R_P
    endfunction left_eigenvectors
 
    pure function right_eigenvectors(self, eos) result(eig)
    !< Return the right eigenvectors matrix `R` as `dF/dP = A = R ^ L`.
    class(primitive_compressible), intent(in) :: self          !< Primitive.
    class(eos_object),             intent(in) :: eos           !< Equation of state.
-   real(R8P)                                 :: eig(1:3, 1:3) !< Eigenvectors.
-   real(R8P)                                 :: gp            !< `g*p`.
-   real(R8P)                                 :: gp_inv        !< `1/(g*p)`.
-   real(R8P)                                 :: a             !< Speed of sound, `sqrt(g*p/r)`.
+   real(R_P)                                 :: eig(1:3, 1:3) !< Eigenvectors.
+   real(R_P)                                 :: gp            !< `g*p`.
+   real(R_P)                                 :: gp_inv        !< `1/(g*p)`.
+   real(R_P)                                 :: a             !< Speed of sound, `sqrt(g*p/r)`.
 
    gp = eos%g() * self%pressure
-   gp_inv = 1._R8P / gp
+   gp_inv = 1._R_P / gp
    a = eos%speed_of_sound(density=self%density, pressure=self%pressure)
-   eig(1, 1) =  0.5_R8P * self%density * gp_inv ; eig(1, 2) = self%density * gp_inv  ; eig(1, 3) =  eig(1, 1)
-   eig(2, 1) = -0.5_R8P * a * gp_inv            ; eig(2, 2) = 0._R8P                 ; eig(2, 3) = -eig(2, 1)
-   eig(3, 1) =  0.5_R8P                         ; eig(3, 2) = 0._R8P                 ; eig(3, 3) =  eig(3, 1)
+   eig(1, 1) =  0.5_R_P * self%density * gp_inv ; eig(1, 2) = self%density * gp_inv  ; eig(1, 3) =  eig(1, 1)
+   eig(2, 1) = -0.5_R_P * a * gp_inv            ; eig(2, 2) = 0._R_P                 ; eig(2, 3) = -eig(2, 1)
+   eig(3, 1) =  0.5_R_P                         ; eig(3, 2) = 0._R_P                 ; eig(3, 3) =  eig(3, 1)
    endfunction right_eigenvectors
 
    ! deferred methods
    pure function array(self) result(array_)
    !< Return serialized array of field.
    class(primitive_compressible), intent(in) :: self      !< Primitive.
-   real(R8P), allocatable                    :: array_(:) !< Serialized array of field.
+   real(R_P), allocatable                    :: array_(:) !< Serialized array of field.
 
    allocate(array_(1:5))
    array_(1) = self%density
@@ -154,9 +154,9 @@ contains
    !< Return energy value.
    class(primitive_compressible), intent(in) :: self    !< Primitive.
    class(eos_object),             intent(in) :: eos     !< Equation of state.
-   real(R8P)                                 :: energy_ !< Energy value.
+   real(R_P)                                 :: energy_ !< Energy value.
 
-   energy_ = self%pressure / (eos%g() - 1._R8P) + 0.5_R8P * self%density * self%velocity%sq_norm()
+   energy_ = self%pressure / (eos%g() - 1._R_P) + 0.5_R_P * self%density * self%velocity%sq_norm()
    endfunction energy
 
    subroutine initialize(self, initial_state)
@@ -198,7 +198,7 @@ contains
    elemental subroutine assign_real(lhs, rhs)
    !< Operator `field = real`.
    class(primitive_compressible), intent(inout) :: lhs !< Left hand side.
-   real(R8P),                     intent(in)    :: rhs !< Right hand side.
+   real(R_P),                     intent(in)    :: rhs !< Right hand side.
 
    lhs%density  = rhs
    lhs%velocity = rhs
@@ -258,7 +258,7 @@ contains
    elemental function div_integer(lhs, rhs) result(opr)
    !< Operator `field / integer`.
    class(primitive_compressible), intent(in) :: lhs !< Left hand side.
-   integer(I4P),                  intent(in) :: rhs !< Right hand side.
+   integer(I_P),                  intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable          :: opr !< Operator result.
 
    allocate(primitive_compressible :: opr)
@@ -273,7 +273,7 @@ contains
    elemental function div_real(lhs, rhs) result(opr)
    !< Operator `field / real`.
    class(primitive_compressible), intent(in) :: lhs !< Left hand side.
-   real(R8P),                     intent(in) :: rhs !< Right hand side.
+   real(R_P),                     intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable          :: opr !< Operator result.
 
    allocate(primitive_compressible :: opr)
@@ -306,7 +306,7 @@ contains
    elemental function mul_integer(lhs, rhs) result(opr)
    !< Operator `field * integer`.
    class(primitive_compressible), intent(in) :: lhs !< Left hand side.
-   integer(I4P),                  intent(in) :: rhs !< Right hand side.
+   integer(I_P),                  intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable          :: opr !< Operator result.
 
    allocate(primitive_compressible :: opr)
@@ -320,7 +320,7 @@ contains
 
    elemental function integer_mul(lhs, rhs) result(opr)
    !< Operator `integer * field`.
-   integer(I4P),                  intent(in) :: lhs !< Left hand side.
+   integer(I_P),                  intent(in) :: lhs !< Left hand side.
    class(primitive_compressible), intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable          :: opr !< Operator result.
 
@@ -336,7 +336,7 @@ contains
    elemental function mul_real(lhs, rhs) result(opr)
    !< Operator `field * real`.
    class(primitive_compressible), intent(in) :: lhs !< Left hand side.
-   real(R8P),                     intent(in) :: rhs !< Right hand side.
+   real(R_P),                     intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable          :: opr !< Operator result.
 
    allocate(primitive_compressible :: opr)
@@ -350,7 +350,7 @@ contains
 
    elemental function real_mul(lhs, rhs) result(opr)
    !< Operator `real * field`.
-   real(R8P),                     intent(in) :: lhs !< Left hand side.
+   real(R_P),                     intent(in) :: lhs !< Left hand side.
    class(primitive_compressible), intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable          :: opr !< Operator result.
 
@@ -398,7 +398,7 @@ contains
    elemental function pow_integer(lhs, rhs) result(opr)
    !< Operator `field ** integer`.
    class(primitive_compressible), intent(in) :: lhs !< Left hand side.
-   integer(I4P),                  intent(in) :: rhs !< Right hand side.
+   integer(I_P),                  intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable          :: opr !< Operator result.
 
    allocate(primitive_compressible :: opr)
@@ -415,7 +415,7 @@ contains
    elemental function pow_real(lhs, rhs) result(opr)
    !< Operator `field ** real`.
    class(primitive_compressible), intent(in) :: lhs !< Left hand side.
-   real(R8P),                     intent(in) :: rhs !< Right hand side.
+   real(R_P),                     intent(in) :: rhs !< Right hand side.
    class(field_object), allocatable          :: opr !< Operator result.
 
    allocate(primitive_compressible :: opr)
@@ -457,9 +457,9 @@ contains
    !< Return and instance of [[primitive_compressible]].
    !<
    !< @note This procedure is used for overloading [[primitive_compressible]] name.
-   real(R8P),    intent(in), optional :: density  !< Density field.
+   real(R_P),    intent(in), optional :: density  !< Density field.
    type(vector), intent(in), optional :: velocity !< Velocity field.
-   real(R8P),    intent(in), optional :: pressure !< Pressure field.
+   real(R_P),    intent(in), optional :: pressure !< Pressure field.
    type(primitive_compressible)       :: instance !< Instance of [[primitive_compressible]].
 
    if (present(density )) instance%density  = density

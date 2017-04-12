@@ -3,7 +3,7 @@
 module flow_eos_object
 !< FLOw **EOS** (Equation of State) object.
 
-use penf, only : R8P
+use penf, only : R_P
 
 implicit none
 private
@@ -44,11 +44,11 @@ abstract interface
 
    elemental function density_interface(self, pressure, speed_of_sound) result(density_)
    !< Return density.
-   import :: eos_object, R8P
+   import :: eos_object, R_P
    class(eos_object), intent(in) :: self           !< Equation of state.
-   real(R8P),         intent(in) :: pressure       !< Pressure value.
-   real(R8P),         intent(in) :: speed_of_sound !< Speed of sound value.
-   real(R8P)                     :: density_       !< Density value.
+   real(R_P),         intent(in) :: pressure       !< Pressure value.
+   real(R_P),         intent(in) :: speed_of_sound !< Speed of sound value.
+   real(R_P)                     :: density_       !< Density value.
    endfunction density_interface
 
    pure function description_interface(self, prefix) result(desc)
@@ -61,58 +61,58 @@ abstract interface
 
    elemental function internal_energy_interface(self, density, pressure, temperature) result(energy_)
    !< Return specific internal energy.
-   import :: eos_object, R8P
+   import :: eos_object, R_P
    class(eos_object), intent(in)           :: self        !< Equation of state.
-   real(R8P),         intent(in), optional :: density     !< Density value.
-   real(R8P),         intent(in), optional :: pressure    !< Pressure value.
-   real(R8P),         intent(in), optional :: temperature !< Temperature value.
-   real(R8P)                               :: energy_     !< Energy value.
+   real(R_P),         intent(in), optional :: density     !< Density value.
+   real(R_P),         intent(in), optional :: pressure    !< Pressure value.
+   real(R_P),         intent(in), optional :: temperature !< Temperature value.
+   real(R_P)                               :: energy_     !< Energy value.
    endfunction internal_energy_interface
 
    elemental function pressure_interface(self, density, energy, temperature) result(pressure_)
    !< Return pressure.
-   import :: eos_object, R8P
+   import :: eos_object, R_P
    class(eos_object), intent(in)           :: self        !< Equation of state.
-   real(R8P),         intent(in), optional :: density     !< Density value.
-   real(R8P),         intent(in), optional :: energy      !< Specific internal energy value.
-   real(R8P),         intent(in), optional :: temperature !< Temperature value.
-   real(R8P)                               :: pressure_   !< Pressure value.
+   real(R_P),         intent(in), optional :: density     !< Density value.
+   real(R_P),         intent(in), optional :: energy      !< Specific internal energy value.
+   real(R_P),         intent(in), optional :: temperature !< Temperature value.
+   real(R_P)                               :: pressure_   !< Pressure value.
    endfunction pressure_interface
 
    elemental function scalar_interface(self) result(scalar_)
    !< Return a scalar real value by only `self` data.
-   import :: eos_object, R8P
+   import :: eos_object, R_P
    class(eos_object), intent(in) :: self    !< Equation of state.
-   real(R8P)                     :: scalar_ !< Scalar value.
+   real(R_P)                     :: scalar_ !< Scalar value.
    endfunction scalar_interface
 
    elemental function speed_of_sound_interface(self, density, pressure) result(speed_of_sound_)
    !< Return speed of sound.
-   import :: eos_object, R8P
+   import :: eos_object, R_P
    class(eos_object), intent(in) :: self            !< Equation of state.
-   real(R8P),         intent(in) :: density         !< Density value.
-   real(R8P),         intent(in) :: pressure        !< Pressure value.
-   real(R8P)                     :: speed_of_sound_ !< Speed of sound value.
+   real(R_P),         intent(in) :: density         !< Density value.
+   real(R_P),         intent(in) :: pressure        !< Pressure value.
+   real(R_P)                     :: speed_of_sound_ !< Speed of sound value.
    endfunction speed_of_sound_interface
 
    elemental function temperature_interface(self, density, energy, pressure) result(temperature_)
    !< Return temperature.
-   import :: eos_object, R8P
+   import :: eos_object, R_P
    class(eos_object), intent(in)           :: self         !< Equation of state.
-   real(R8P),         intent(in), optional :: density      !< Density value.
-   real(R8P),         intent(in), optional :: energy       !< Specific internal energy value.
-   real(R8P),         intent(in), optional :: pressure     !< Pressure value.
-   real(R8P)                               :: temperature_ !< Temperature value.
+   real(R_P),         intent(in), optional :: density      !< Density value.
+   real(R_P),         intent(in), optional :: energy       !< Specific internal energy value.
+   real(R_P),         intent(in), optional :: pressure     !< Pressure value.
+   real(R_P)                               :: temperature_ !< Temperature value.
    endfunction temperature_interface
 
    elemental function total_entalpy_interface(self, density, pressure, velocity_sq_norm) result(entalpy_)
    !< Return total specific entalpy.
-   import :: eos_object, R8P
+   import :: eos_object, R_P
    class(eos_object), intent(in) :: self             !< Equation of state.
-   real(R8P),         intent(in) :: density          !< Density value.
-   real(R8P),         intent(in) :: pressure         !< Pressure value.
-   real(R8P),         intent(in) :: velocity_sq_norm !< Velocity vector square norm `||velocity||^2`.
-   real(R8P)                     :: entalpy_         !< Total specific entalpy (per unit of mass).
+   real(R_P),         intent(in) :: density          !< Density value.
+   real(R_P),         intent(in) :: pressure         !< Pressure value.
+   real(R_P),         intent(in) :: velocity_sq_norm !< Velocity vector square norm `||velocity||^2`.
+   real(R_P)                     :: entalpy_         !< Total specific entalpy (per unit of mass).
    endfunction total_entalpy_interface
 endinterface
 endmodule flow_eos_object

@@ -3,7 +3,7 @@
 module flow_field_object
 !< FLOw **field** abstract object.
 
-use penf, only : I4P, R8P
+use penf, only : I_P, R_P
 
 implicit none
 private
@@ -49,9 +49,9 @@ abstract interface
    !< Abstract interfaces of deferred methods of [[field_object]].
    pure function array_interface(self) result(array_)
    !< Return serialized array of field.
-   import :: field_object, R8P
+   import :: field_object, R_P
    class(field_object), intent(in) :: self      !< Field.
-   real(R8P), allocatable          :: array_(:) !< Serialized array of field.
+   real(R_P), allocatable          :: array_(:) !< Serialized array of field.
    endfunction array_interface
 
    pure function description_interface(self, prefix) result(desc)
@@ -71,9 +71,9 @@ abstract interface
 
    elemental subroutine assign_real_interface(lhs, rhs)
    !< Operator `field = real`.
-   import :: field_object, R8P
+   import :: field_object, R_P
    class(field_object), intent(inout) :: lhs !< Left hand side.
-   real(R8P),           intent(in)    :: rhs !< Right hand side.
+   real(R_P),           intent(in)    :: rhs !< Right hand side.
    endsubroutine assign_real_interface
 
    function unary_operator(self) result(opr)
@@ -93,32 +93,32 @@ abstract interface
 
    elemental function integer_op_field_interface(lhs, rhs) result(opr)
    !< Operator `field.op.integer`.
-   import :: field_object, I4P
-   integer(I4P),        intent(in)  :: lhs !< Left hand side.
+   import :: field_object, I_P
+   integer(I_P),        intent(in)  :: lhs !< Left hand side.
    class(field_object), intent(in)  :: rhs !< Right hand side.
    class(field_object), allocatable :: opr !< Operator result.
    endfunction integer_op_field_interface
 
    elemental function field_op_integer_interface(lhs, rhs) result(opr)
    !< Operator `field.op.integer`.
-   import :: field_object, I4P
+   import :: field_object, I_P
    class(field_object), intent(in)  :: lhs !< Left hand side.
-   integer(I4P),        intent(in)  :: rhs !< Right hand side.
+   integer(I_P),        intent(in)  :: rhs !< Right hand side.
    class(field_object), allocatable :: opr !< Operator result.
    endfunction field_op_integer_interface
 
    elemental function field_op_real_interface(lhs, rhs) result(opr)
    !< Operator `field.op.real`.
-   import :: field_object, R8P
+   import :: field_object, R_P
    class(field_object), intent(in)  :: lhs !< Left hand side.
-   real(R8P),           intent(in)  :: rhs !< Right hand side.
+   real(R_P),           intent(in)  :: rhs !< Right hand side.
    class(field_object), allocatable :: opr !< Operator result.
    endfunction field_op_real_interface
 
    elemental function real_op_field_interface(lhs, rhs) result(opr)
    !< Operator `real.op.field`.
-   import :: field_object, R8P
-   real(R8P),           intent(in)  :: lhs !< Left hand side.
+   import :: field_object, R_P
+   real(R_P),           intent(in)  :: lhs !< Left hand side.
    class(field_object), intent(in)  :: rhs !< Right hand side.
    class(field_object), allocatable :: opr !< Operator result.
    endfunction real_op_field_interface

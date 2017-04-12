@@ -4,7 +4,7 @@ program flow_test_primitive_compressible_div
 !< FLOw test.
 
 use flow, only : primitive_compressible
-use penf, only : I4P, R8P
+use penf, only : I_P, R_P
 use vecfor, only : vector
 
 implicit none
@@ -16,10 +16,10 @@ logical                      :: test_passed(3) !< List of passed tests.
 
 test_passed = .false.
 
-velocity = 1._R8P
-primitive1 = primitive_compressible(density=0.125_R8P, velocity=velocity, pressure=1._R8P)
-velocity = 2._R8P
-primitive2 = primitive_compressible(density=1._R8P, velocity=velocity, pressure=1._R8P)
+velocity = 1._R_P
+primitive1 = primitive_compressible(density=0.125_R_P, velocity=velocity, pressure=1._R_P)
+velocity = 2._R_P
+primitive2 = primitive_compressible(density=1._R_P, velocity=velocity, pressure=1._R_P)
 
 primitive3 = primitive1 / primitive2
 test_passed(1) = primitive3 == (primitive1 / primitive2)
@@ -28,16 +28,16 @@ print "(A,3(F6.3,1X))", 'velocity  => 1      / 2   = ', primitive3%velocity
 print "(A,F6.3)",       'pressure  => 1      / 1   = ', primitive3%pressure
 call print_error(test='primitive3 = primitive1 / primitive2', is_test_passed=test_passed(1))
 
-primitive3 = primitive1 / 2._R8P
-test_passed(2) = primitive3 == (primitive1 / 2._R8P)
+primitive3 = primitive1 / 2._R_P
+test_passed(2) = primitive3 == (primitive1 / 2._R_P)
 print "(A)", ''
 print "(A,F6.3)",       'density   => 0.125  / 2.0 = ', primitive3%density
 print "(A,3(F6.3,1X))", 'velocity  => 1      / 2.0 = ', primitive3%velocity
 print "(A,F6.3)",       'pressure  => 1      / 2.0 = ', primitive3%pressure
 call print_error(test='primitive3 = primitive1 / 2.0', is_test_passed=test_passed(2))
 
-primitive3 = primitive1 / 2_I4P
-test_passed(3) = primitive3 == (primitive1 / 2_I4P)
+primitive3 = primitive1 / 2_I_P
+test_passed(3) = primitive3 == (primitive1 / 2_I_P)
 print "(A)", ''
 print "(A,F6.3)",       'density   => 0.125  / 2 = ', primitive3%density
 print "(A,3(F6.3,1X))", 'velocity  => 1      / 2 = ', primitive3%velocity

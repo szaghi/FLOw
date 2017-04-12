@@ -7,7 +7,7 @@ module flow_primitive_object
 
 use flow_eos_object, only : eos_object
 use flow_field_object, only : field_object
-use penf, only : R8P
+use penf, only : R_P
 use vecfor, only : vector
 
 implicit none
@@ -34,10 +34,10 @@ abstract interface
 
    elemental function energy_interface(self, eos) result(energy_)
    !< Return energy value.
-   import :: primitive_object, eos_object, R8P
+   import :: primitive_object, eos_object, R_P
    class(primitive_object), intent(in) :: self    !< Primitive.
    class(eos_object),       intent(in) :: eos     !< Equation of state.
-   real(R8P)                           :: energy_ !< Energy value.
+   real(R_P)                           :: energy_ !< Energy value.
    endfunction energy_interface
 
    subroutine initialize_interface(self, initial_state)

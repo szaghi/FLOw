@@ -227,8 +227,8 @@ rule = tar --xform="s%^%FLOw/%" -czf FLOw.tar.gz *
 
 [rule-makecoverage]
 help   = Perform coverage analysis
-rule_1 = FoBiS.py clean -mode tests-gnu
-rule_2 = FoBiS.py build -mode tests-gnu -coverage
+rule_1 = FoBiS.py clean -mode tests-gnu-debug
+rule_2 = FoBiS.py build -mode tests-gnu-debug -coverage
 rule_3 = ./scripts/run_tests.sh
 rule_4 = rm -f exe/obj/penf* exe/obj/vecfor*
 rule_5 = gcov -o exe/obj/ src/lib/flow*
@@ -236,8 +236,8 @@ rule_6 = rm -f *.gcov
 
 [rule-makecoverage-analysis]
 help   = Perform coverage analysis and saving reports in markdown
-rule_1 = FoBiS.py clean -mode tests-gnu
-rule_2 = FoBiS.py build -mode tests-gnu -coverage
+rule_1 = FoBiS.py clean -mode tests-gnu-debug
+rule_2 = FoBiS.py build -mode tests-gnu-debug -coverage
 rule_3 = ./scripts/run_tests.sh
 rule_4 = rm -f exe/obj/penf* exe/obj/vecfor*
 rule_5 = gcov -o exe/obj/ src/lib/flow*

@@ -7,7 +7,7 @@ module flow_conservative_object
 
 use flow_eos_object, only : eos_object
 use flow_field_object, only : field_object
-use penf, only : R8P
+use penf, only : R_P
 use vecfor, only : vector
 
 implicit none
@@ -51,10 +51,10 @@ abstract interface
 
    elemental function pressure_interface(self, eos) result(pressure_)
    !< Return pressure value.
-   import :: conservative_object, eos_object, R8P
+   import :: conservative_object, eos_object, R_P
    class(conservative_object), intent(in) :: self      !< Conservative.
    class(eos_object),          intent(in) :: eos       !< Equation of state.
-   real(R8P)                              :: pressure_ !< Pressure value.
+   real(R_P)                              :: pressure_ !< Pressure value.
    endfunction pressure_interface
 
    elemental function velocity_interface(self) result(velocity_)
