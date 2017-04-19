@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title="<p> 8.2% of total for derived types.</p>Including implementation: 545 statements, 10.9% of total for derived types.">32 statements</a>
+	  title="<p> 8.4% of total for derived types.</p>Including implementation: 557 statements, 11.1% of total for derived types.">33 statements</a>
      </li> 
      
      
@@ -249,6 +249,8 @@
       <a class="list-group-item" href="../type/conservative_compressible.html#boundprocedure-mul_real">mul_real</a>
       
       <a class="list-group-item" href="../type/conservative_compressible.html#boundprocedure-negative">negative</a>
+      
+      <a class="list-group-item" href="../type/conservative_compressible.html#boundprocedure-normalize">normalize</a>
       
       <a class="list-group-item" href="../type/conservative_compressible.html#boundprocedure-not_eq">not_eq</a>
       
@@ -534,6 +536,8 @@
       <a class="list-group-item" href="../type/conservative_compressible.html#boundprocedure-mul_real">mul_real</a>
       
       <a class="list-group-item" href="../type/conservative_compressible.html#boundprocedure-negative">negative</a>
+      
+      <a class="list-group-item" href="../type/conservative_compressible.html#boundprocedure-normalize">normalize</a>
       
       <a class="list-group-item" href="../type/conservative_compressible.html#boundprocedure-not_eq">not_eq</a>
       
@@ -2742,6 +2746,113 @@ private function <a href='../proc/negative.html'>negative</a>(self) result(opr)
      <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
   allocatable</small></h4>
   <p>Operator result.</p>
+    
+
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-normalize"></span><h3>procedure, public, pass(self) :: <strong>normalize</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p>Normalize conservative with respect a given normal vector.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+    
+    <h3>
+private elemental subroutine <a href='../proc/normalize.html'>normalize</a>(self, eos, normal)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><em>Normalize</em> conservative with respect a given normal vector.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/conservative_compressible.html'>conservative_compressible</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td><p>Conservative.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/eos_object.html'>eos_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>eos</strong></td><td><p>Equation of state.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/vector.html'>vector</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>normal</strong></td><td><p>Normal vector.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
     
 
       
@@ -4996,6 +5107,7 @@ private elemental function <a href='../proc/velocity.html'>velocity</a>(self) re
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">description</span>    <span class="c">!&lt; Return pretty-printed object description.</span>
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">destroy</span>        <span class="c">!&lt; Destroy conservative.</span>
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">initialize</span>     <span class="c">!&lt; Initialize conservative.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">normalize</span>      <span class="c">!&lt; Normalize conservative with respect a given normal vector.</span>
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">pressure</span>       <span class="c">!&lt; Return pressure value.</span>
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">velocity</span>       <span class="c">!&lt; Return velocity vector.</span>
       <span class="c">! deferred operators</span>
@@ -5076,7 +5188,7 @@ private elemental function <a href='../proc/velocity.html'>velocity</a>(self) re
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-12 15:49  
+             on 2017-04-19 09:54  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

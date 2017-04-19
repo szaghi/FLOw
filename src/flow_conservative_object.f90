@@ -21,6 +21,7 @@ type, extends(field_object), abstract :: conservative_object
       procedure(compute_fluxes_interface), pass(self), deferred :: compute_fluxes !< Compute conservative fluxes.
       procedure(destroy_interface),        pass(self), deferred :: destroy        !< Destroy conservative.
       procedure(initialize_interface),     pass(self), deferred :: initialize     !< Initialize conservative.
+      procedure(normalize_interface),      pass(self), deferred :: normalize      !< Normalize with respect a normal vector.
       procedure(pressure_interface),       pass(self), deferred :: pressure       !< Return pressure value.
       procedure(velocity_interface),       pass(self), deferred :: velocity       !< Return velocity vector.
 endtype conservative_object
@@ -48,6 +49,14 @@ abstract interface
    class(conservative_object),           intent(inout) :: self          !< conservative.
    class(conservative_object), optional, intent(in)    :: initial_state !< Initial state.
    endsubroutine initialize_interface
+
+   elemental subroutine normalize_interface(self, eos, normal)
+   !< *Normalize* conservative with respect a given normal vector.
+   import :: conservative_object, eos_object, vector
+   class(conservative_object), intent(inout) :: self   !< Conservative.
+   class(eos_object),          intent(in)    :: eos    !< Equation of state.
+   type(vector),               intent(in)    :: normal !< Normal vector.
+   endsubroutine normalize_interface
 
    elemental function pressure_interface(self, eos) result(pressure_)
    !< Return pressure value.

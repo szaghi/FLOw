@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title="<p> 1.6% of total for derived types.</p>Including implementation: 7 statements,  0.1% of total for derived types.">7 statements</a>
+	  title="<p> 1.9% of total for derived types.</p>Including implementation: 8 statements,  0.2% of total for derived types.">8 statements</a>
      </li> 
      
      
@@ -225,6 +225,8 @@
       <a class="list-group-item" href="../type/primitive_object.html#boundprocedure-mul_real%7E3">mul_real</a>
       
       <a class="list-group-item" href="../type/primitive_object.html#boundprocedure-negative%7E3">negative</a>
+      
+      <a class="list-group-item" href="../type/primitive_object.html#boundprocedure-normalize%7E5">normalize</a>
       
       <a class="list-group-item" href="../type/primitive_object.html#boundprocedure-not_eq%7E3">not_eq</a>
       
@@ -412,29 +414,29 @@
 <polygon fill="none" stroke="black" points="87,-48 1,-48 1,-22 87,-22 87,-48"/>
 <text text-anchor="middle" x="44" y="-32.55" font-family="Helvetica,sans-Serif" font-size="10.50">primitive_object</text>
 </g>
-<!-- type~primitive_compressible_multispecie -->
-<g id="node2" class="node"><title>type~primitive_compressible_multispecie</title>
-<a xlink:href="../type/primitive_compressible_multispecie.html" xlink:title="primitive_compressible_multispecie">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="305,-70 125,-70 125,-44 305,-44 305,-70"/>
-<text text-anchor="middle" x="215" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">primitive_compressible_multispecie</text>
-</a>
-</g>
-<!-- type~primitive_object&#45;&gt;type~primitive_compressible_multispecie -->
-<g id="edge2" class="edge"><title>type~primitive_object&#45;&gt;type~primitive_compressible_multispecie</title>
-<path fill="none" stroke="#000000" d="M87.593,-40.6085C95.877,-41.6742 104.858,-42.8297 114.088,-44.0171"/>
-<polygon fill="#000000" stroke="#000000" points="113.813,-47.5106 124.178,-45.3153 114.707,-40.5678 113.813,-47.5106"/>
-</g>
 <!-- type~primitive_compressible -->
-<g id="node3" class="node"><title>type~primitive_compressible</title>
+<g id="node2" class="node"><title>type~primitive_compressible</title>
 <a xlink:href="../type/primitive_compressible.html" xlink:title="primitive_compressible">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="275,-26 155,-26 155,-1.24345e-14 275,-3.55271e-15 275,-26"/>
-<text text-anchor="middle" x="215" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">primitive_compressible</text>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="275,-70 155,-70 155,-44 275,-44 275,-70"/>
+<text text-anchor="middle" x="215" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">primitive_compressible</text>
 </a>
 </g>
 <!-- type~primitive_object&#45;&gt;type~primitive_compressible -->
-<g id="edge4" class="edge"><title>type~primitive_object&#45;&gt;type~primitive_compressible</title>
-<path fill="none" stroke="#000000" d="M87.593,-29.3915C104.867,-27.1692 125.173,-24.5567 144.435,-22.0785"/>
-<polygon fill="#000000" stroke="#000000" points="144.92,-25.5451 154.391,-20.7976 144.026,-18.6024 144.92,-25.5451"/>
+<g id="edge2" class="edge"><title>type~primitive_object&#45;&gt;type~primitive_compressible</title>
+<path fill="none" stroke="#000000" d="M87.593,-40.6085C104.867,-42.8308 125.173,-45.4433 144.435,-47.9215"/>
+<polygon fill="#000000" stroke="#000000" points="144.026,-51.3976 154.391,-49.2024 144.92,-44.4549 144.026,-51.3976"/>
+</g>
+<!-- type~primitive_compressible_multispecie -->
+<g id="node3" class="node"><title>type~primitive_compressible_multispecie</title>
+<a xlink:href="../type/primitive_compressible_multispecie.html" xlink:title="primitive_compressible_multispecie">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="305,-26 125,-26 125,-1.24345e-14 305,-3.55271e-15 305,-26"/>
+<text text-anchor="middle" x="215" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">primitive_compressible_multispecie</text>
+</a>
+</g>
+<!-- type~primitive_object&#45;&gt;type~primitive_compressible_multispecie -->
+<g id="edge4" class="edge"><title>type~primitive_object&#45;&gt;type~primitive_compressible_multispecie</title>
+<path fill="none" stroke="#000000" d="M87.593,-29.3915C95.877,-28.3258 104.858,-27.1703 114.088,-25.9829"/>
+<polygon fill="#000000" stroke="#000000" points="114.707,-29.4322 124.178,-24.6847 113.813,-22.4894 114.707,-29.4322"/>
 </g>
 </g>
 </svg>
@@ -550,6 +552,8 @@
       <a class="list-group-item" href="../type/primitive_object.html#boundprocedure-mul_real%7E3">mul_real</a>
       
       <a class="list-group-item" href="../type/primitive_object.html#boundprocedure-negative%7E3">negative</a>
+      
+      <a class="list-group-item" href="../type/primitive_object.html#boundprocedure-normalize%7E5">normalize</a>
       
       <a class="list-group-item" href="../type/primitive_object.html#boundprocedure-not_eq%7E3">not_eq</a>
       
@@ -2521,6 +2525,100 @@ function <a href='../interface/unary_operator.html'>unary_operator</a>(self) res
      <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
   allocatable</small></h4>
   <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-normalize%7E5"></span><h3>procedure(<a href='../interface/normalize_interface%7E2.html'>normalize_interface</a>), public, deferred, pass(self) :: <strong>normalize</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p>Normalize with respect a normal vector.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+elemental subroutine <a href='../interface/normalize_interface%7E2.html'>normalize_interface</a>(self, normal)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p><em>Normalize</em> primitive with respect a given normal vector.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_object.html'>primitive_object</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td><p>Primitive.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/vector.html'>vector</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>normal</strong></td><td><p>Normal vector.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
     
 
          
@@ -4591,10 +4689,11 @@ elemental function <a href='../interface/symmetric_op_interface.html'>symmetric_
   <span class="c">!&lt; **Primitive** object.</span>
   <span class="k">contains</span>
       <span class="c">! deferred methods</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">destroy_interface</span><span class="p">),</span>     <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">destroy</span>    <span class="c">!&lt; Destroy primitive.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">energy_interface</span><span class="p">),</span>      <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">energy</span>     <span class="c">!&lt; Return energy value.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">initialize_interface</span><span class="p">),</span>  <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">initialize</span> <span class="c">!&lt; Initialize primitive.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">momentum_interface</span><span class="p">),</span>    <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">momentum</span>   <span class="c">!&lt; Return momentum vector.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">destroy_interface</span><span class="p">),</span>    <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">destroy</span>    <span class="c">!&lt; Destroy primitive.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">energy_interface</span><span class="p">),</span>     <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">energy</span>     <span class="c">!&lt; Return energy value.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">initialize_interface</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">initialize</span> <span class="c">!&lt; Initialize primitive.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">momentum_interface</span><span class="p">),</span>   <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">momentum</span>   <span class="c">!&lt; Return momentum vector.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">normalize_interface</span><span class="p">),</span>  <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">normalize</span>  <span class="c">!&lt; Normalize with respect a normal vector.</span>
 <span class="n">endtype</span> <span class="n">primitive_object</span>
 </pre></div>
 
@@ -4654,7 +4753,7 @@ elemental function <a href='../interface/symmetric_op_interface.html'>symmetric_
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-12 15:49  
+             on 2017-04-19 09:54  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

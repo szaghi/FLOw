@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title="<p> 1.9% of total for derived types.</p>Including implementation: 8 statements,  0.2% of total for derived types.">8 statements</a>
+	  title="<p> 2.1% of total for derived types.</p>Including implementation: 9 statements,  0.2% of total for derived types.">9 statements</a>
      </li> 
      
      
@@ -223,6 +223,8 @@
       <a class="list-group-item" href="../type/conservative_object.html#boundprocedure-mul_real%7E3">mul_real</a>
       
       <a class="list-group-item" href="../type/conservative_object.html#boundprocedure-negative%7E3">negative</a>
+      
+      <a class="list-group-item" href="../type/conservative_object.html#boundprocedure-normalize%7E2">normalize</a>
       
       <a class="list-group-item" href="../type/conservative_object.html#boundprocedure-not_eq%7E3">not_eq</a>
       
@@ -538,6 +540,8 @@
       <a class="list-group-item" href="../type/conservative_object.html#boundprocedure-mul_real%7E3">mul_real</a>
       
       <a class="list-group-item" href="../type/conservative_object.html#boundprocedure-negative%7E3">negative</a>
+      
+      <a class="list-group-item" href="../type/conservative_object.html#boundprocedure-normalize%7E2">normalize</a>
       
       <a class="list-group-item" href="../type/conservative_object.html#boundprocedure-not_eq%7E3">not_eq</a>
       
@@ -2446,6 +2450,115 @@ function <a href='../interface/unary_operator.html'>unary_operator</a>(self) res
      <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
   allocatable</small></h4>
   <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-normalize%7E2"></span><h3>procedure(<a href='../interface/normalize_interface.html'>normalize_interface</a>), public, deferred, pass(self) :: <strong>normalize</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p>Normalize with respect a normal vector.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+elemental subroutine <a href='../interface/normalize_interface.html'>normalize_interface</a>(self, eos, normal)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p><em>Normalize</em> conservative with respect a given normal vector.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/conservative_object.html'>conservative_object</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td><p>Conservative.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/eos_object.html'>eos_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>eos</strong></td><td><p>Equation of state.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/vector.html'>vector</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>normal</strong></td><td><p>Normal vector.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
     
 
          
@@ -4710,6 +4823,7 @@ elemental function <a href='../interface/velocity_interface.html'>velocity_inter
       <span class="k">procedure</span><span class="p">(</span><span class="n">compute_fluxes_interface</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">compute_fluxes</span> <span class="c">!&lt; Compute conservative fluxes.</span>
       <span class="k">procedure</span><span class="p">(</span><span class="n">destroy_interface</span><span class="p">),</span>        <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">destroy</span>        <span class="c">!&lt; Destroy conservative.</span>
       <span class="k">procedure</span><span class="p">(</span><span class="n">initialize_interface</span><span class="p">),</span>     <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">initialize</span>     <span class="c">!&lt; Initialize conservative.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">normalize_interface</span><span class="p">),</span>      <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">normalize</span>      <span class="c">!&lt; Normalize with respect a normal vector.</span>
       <span class="k">procedure</span><span class="p">(</span><span class="n">pressure_interface</span><span class="p">),</span>       <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">pressure</span>       <span class="c">!&lt; Return pressure value.</span>
       <span class="k">procedure</span><span class="p">(</span><span class="n">velocity_interface</span><span class="p">),</span>       <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">velocity</span>       <span class="c">!&lt; Return velocity vector.</span>
 <span class="n">endtype</span> <span class="n">conservative_object</span>
@@ -4771,7 +4885,7 @@ elemental function <a href='../interface/velocity_interface.html'>velocity_inter
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-12 15:49  
+             on 2017-04-19 09:54  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

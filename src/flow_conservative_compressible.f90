@@ -31,6 +31,7 @@ type, extends(conservative_object) :: conservative_compressible
       procedure, pass(self) :: description    !< Return pretty-printed object description.
       procedure, pass(self) :: destroy        !< Destroy conservative.
       procedure, pass(self) :: initialize     !< Initialize conservative.
+      procedure, pass(self) :: normalize      !< Normalize conservative with respect a given normal vector.
       procedure, pass(self) :: pressure       !< Return pressure value.
       procedure, pass(self) :: velocity       !< Return velocity vector.
       ! deferred operators
@@ -167,6 +168,20 @@ contains
    endif
    endsubroutine initialize
 
+   elemental subroutine normalize(self, eos, normal)
+   !< *Normalize* conservative with respect a given normal vector.
+   class(conservative_compressible), intent(inout) :: self      !< Conservative.
+   class(eos_object),                intent(in)    :: eos       !< Equation of state.
+   type(vector),                     intent(in)    :: normal    !< Normal vector.
+   real(R_P)                                       :: pressure_ !< Pressure value.
+   type(vector)                                    :: velocity_ !< Velocity vector.
+
+   velocity_ = self%velocity() .paral. normal
+   pressure_ = self%pressure(eos=eos)
+   self%momentum = self%density * velocity_
+   self%energy = pressure_ / eos%gm1() + 0.5_R_P * self%density * velocity_%sq_norm()
+   endsubroutine normalize
+
    elemental function pressure(self, eos) result(pressure_)
    !< Return pressure value.
    class(conservative_compressible), intent(in) :: self      !< Conservative.
@@ -175,7 +190,7 @@ contains
    type(vector)                                 :: velocity_ !< Velocity vector.
 
    velocity_ = self%velocity()
-   pressure_ = (eos%g() - 1._R_P) * (self%energy - 0.5_R_P * self%density * velocity_%sq_norm())
+   pressure_ = eos%gm1() * (self%energy - 0.5_R_P * self%density * velocity_%sq_norm())
    endfunction pressure
 
    elemental function velocity(self) result(velocity_)

@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title="<p> 8.5% of total for derived types.</p>Including implementation: 609 statements, 12.2% of total for derived types.">33 statements</a>
+	  title="<p> 8.6% of total for derived types.</p>Including implementation: 615 statements, 12.3% of total for derived types.">34 statements</a>
      </li> 
      
      
@@ -253,6 +253,8 @@
       <a class="list-group-item" href="../type/primitive_compressible_multispecie.html#boundprocedure-mul_real%7E2">mul_real</a>
       
       <a class="list-group-item" href="../type/primitive_compressible_multispecie.html#boundprocedure-negative%7E2">negative</a>
+      
+      <a class="list-group-item" href="../type/primitive_compressible_multispecie.html#boundprocedure-normalize%7E4">normalize</a>
       
       <a class="list-group-item" href="../type/primitive_compressible_multispecie.html#boundprocedure-not_eq%7E2">not_eq</a>
       
@@ -540,6 +542,8 @@
       <a class="list-group-item" href="../type/primitive_compressible_multispecie.html#boundprocedure-mul_real%7E2">mul_real</a>
       
       <a class="list-group-item" href="../type/primitive_compressible_multispecie.html#boundprocedure-negative%7E2">negative</a>
+      
+      <a class="list-group-item" href="../type/primitive_compressible_multispecie.html#boundprocedure-normalize%7E4">normalize</a>
       
       <a class="list-group-item" href="../type/primitive_compressible_multispecie.html#boundprocedure-not_eq%7E2">not_eq</a>
       
@@ -2800,6 +2804,98 @@ private function <a href='../proc/negative%7E3.html'>negative</a>(self) result(o
     
 	   
 <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-normalize%7E4"></span><h3>procedure, public, pass(self) :: <strong>normalize</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p>Normalize primitive with respect a given normal vector.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+    
+    <h3>
+private elemental subroutine <a href='../proc/normalize%7E3.html'>normalize</a>(self, normal)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><em>Normalize</em> primitive with respect a given normal vector.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td><p>Primitive.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/vector.html'>vector</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>normal</strong></td><td><p>Normal vector.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-not_eq%7E2"></span><h3>procedure, public, pass(lhs) :: <strong>not_eq</strong>  
     
   </h3></div>
@@ -4959,6 +5055,7 @@ private elemental function <a href='../proc/sub%7E3.html'>sub</a>(lhs, rhs) resu
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">energy</span>      <span class="c">!&lt; Return energy value.</span>
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">initialize</span>  <span class="c">!&lt; Initialize primitive.</span>
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">momentum</span>    <span class="c">!&lt; Return momentum vector.</span>
+      <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="kd">::</span> <span class="n">normalize</span>   <span class="c">!&lt; Normalize primitive with respect a given normal vector.</span>
       <span class="c">! deferred operators</span>
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">assign_field</span> <span class="c">!&lt; Operator `=`.</span>
       <span class="k">procedure</span><span class="p">,</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">assign_real</span>  <span class="c">!&lt; Operator `field = real`.</span>
@@ -5041,7 +5138,7 @@ private elemental function <a href='../proc/sub%7E3.html'>sub</a>(lhs, rhs) resu
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-12 15:49  
+             on 2017-04-19 09:54  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

@@ -18,10 +18,11 @@ type, extends(field_object), abstract :: primitive_object
   !< **Primitive** object.
   contains
       ! deferred methods
-      procedure(destroy_interface),     pass(self), deferred :: destroy    !< Destroy primitive.
-      procedure(energy_interface),      pass(self), deferred :: energy     !< Return energy value.
-      procedure(initialize_interface),  pass(self), deferred :: initialize !< Initialize primitive.
-      procedure(momentum_interface),    pass(self), deferred :: momentum   !< Return momentum vector.
+      procedure(destroy_interface),    pass(self), deferred :: destroy    !< Destroy primitive.
+      procedure(energy_interface),     pass(self), deferred :: energy     !< Return energy value.
+      procedure(initialize_interface), pass(self), deferred :: initialize !< Initialize primitive.
+      procedure(momentum_interface),   pass(self), deferred :: momentum   !< Return momentum vector.
+      procedure(normalize_interface),  pass(self), deferred :: normalize  !< Normalize with respect a normal vector.
 endtype primitive_object
 
 abstract interface
@@ -53,5 +54,12 @@ abstract interface
    class(primitive_object), intent(in) :: self      !< Primitive.
    type(vector)                        :: momentum_ !< Momentum vector.
    endfunction momentum_interface
+
+   elemental subroutine normalize_interface(self, normal)
+   !< *Normalize* primitive with respect a given normal vector.
+   import :: primitive_object, vector
+   class(primitive_object), intent(inout) :: self   !< Primitive.
+   type(vector),            intent(in)    :: normal !< Normal vector.
+   endsubroutine normalize_interface
 endinterface
 endmodule flow_primitive_object
