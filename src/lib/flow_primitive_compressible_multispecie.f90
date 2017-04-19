@@ -29,6 +29,7 @@ type, extends(primitive_object) :: primitive_compressible_multispecie
       procedure, pass(self) :: energy      !< Return energy value.
       procedure, pass(self) :: initialize  !< Initialize primitive.
       procedure, pass(self) :: momentum    !< Return momentum vector.
+      procedure, pass(self) :: normalize   !< Normalize primitive with respect a given normal vector.
       ! deferred operators
       procedure, pass(lhs)  :: assign_field !< Operator `=`.
       procedure, pass(lhs)  :: assign_real  !< Operator `field = real`.
@@ -146,6 +147,14 @@ contains
 
    momentum_ = self%density * self%velocity
    endfunction momentum
+
+   elemental subroutine normalize(self, normal)
+   !< *Normalize* primitive with respect a given normal vector.
+   class(primitive_compressible_multispecie), intent(inout) :: self   !< Primitive.
+   type(vector),                              intent(in)    :: normal !< Normal vector.
+
+   self%velocity = self%velocity .paral. normal
+   endsubroutine normalize
 
    ! deferred oprators
    elemental subroutine assign_field(lhs, rhs)
