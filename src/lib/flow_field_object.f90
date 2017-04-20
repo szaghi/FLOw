@@ -83,7 +83,7 @@ abstract interface
    class(field_object), allocatable :: opr  !< Operator result.
    endfunction unary_operator
 
-   elemental function symmetric_op_interface(lhs, rhs) result(opr)
+   pure function symmetric_op_interface(lhs, rhs) result(opr)
    !< Operator `field.op.field`.
    import :: field_object
    class(field_object), intent(in)  :: lhs !< Left hand side.
@@ -91,7 +91,7 @@ abstract interface
    class(field_object), allocatable :: opr !< Operator result.
    endfunction symmetric_op_interface
 
-   elemental function integer_op_field_interface(lhs, rhs) result(opr)
+   pure function integer_op_field_interface(lhs, rhs) result(opr)
    !< Operator `field.op.integer`.
    import :: field_object, I_P
    integer(I_P),        intent(in)  :: lhs !< Left hand side.
@@ -99,7 +99,7 @@ abstract interface
    class(field_object), allocatable :: opr !< Operator result.
    endfunction integer_op_field_interface
 
-   elemental function field_op_integer_interface(lhs, rhs) result(opr)
+   pure function field_op_integer_interface(lhs, rhs) result(opr)
    !< Operator `field.op.integer`.
    import :: field_object, I_P
    class(field_object), intent(in)  :: lhs !< Left hand side.
@@ -107,7 +107,7 @@ abstract interface
    class(field_object), allocatable :: opr !< Operator result.
    endfunction field_op_integer_interface
 
-   elemental function field_op_real_interface(lhs, rhs) result(opr)
+   pure function field_op_real_interface(lhs, rhs) result(opr)
    !< Operator `field.op.real`.
    import :: field_object, R_P
    class(field_object), intent(in)  :: lhs !< Left hand side.
@@ -115,7 +115,7 @@ abstract interface
    class(field_object), allocatable :: opr !< Operator result.
    endfunction field_op_real_interface
 
-   elemental function real_op_field_interface(lhs, rhs) result(opr)
+   pure function real_op_field_interface(lhs, rhs) result(opr)
    !< Operator `real.op.field`.
    import :: field_object, R_P
    real(R_P),           intent(in)  :: lhs !< Left hand side.

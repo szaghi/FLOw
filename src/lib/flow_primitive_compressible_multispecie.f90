@@ -197,7 +197,7 @@ contains
    endselect
    endfunction positive
 
-   elemental function add(lhs, rhs) result(opr)
+   pure function add(lhs, rhs) result(opr)
    !< Operator `+`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
    class(field_object),                       intent(in) :: rhs !< Right hand side.
@@ -216,7 +216,7 @@ contains
    endselect
    endfunction add
 
-   elemental function div(lhs, rhs) result(opr)
+   pure function div(lhs, rhs) result(opr)
    !< Operator `/`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
    class(field_object),                       intent(in) :: rhs !< Right hand side.
@@ -235,7 +235,7 @@ contains
    endselect
    endfunction div
 
-   elemental function div_integer(lhs, rhs) result(opr)
+   pure function div_integer(lhs, rhs) result(opr)
    !< Operator `field / integer`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
    integer(I_P),                              intent(in) :: rhs !< Right hand side.
@@ -251,7 +251,7 @@ contains
    endselect
    endfunction div_integer
 
-   elemental function div_real(lhs, rhs) result(opr)
+   pure function div_real(lhs, rhs) result(opr)
    !< Operator `field / real`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
    real(R_P),                                 intent(in) :: rhs !< Right hand side.
@@ -267,7 +267,7 @@ contains
    endselect
    endfunction div_real
 
-   elemental function mul(lhs, rhs) result(opr)
+   pure function mul(lhs, rhs) result(opr)
    !< Operator `*`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
    class(field_object),                       intent(in) :: rhs !< Right hand side.
@@ -286,7 +286,7 @@ contains
    endselect
    endfunction mul
 
-   elemental function mul_integer(lhs, rhs) result(opr)
+   pure function mul_integer(lhs, rhs) result(opr)
    !< Operator `field * integer`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
    integer(I_P),                              intent(in) :: rhs !< Right hand side.
@@ -302,7 +302,7 @@ contains
    endselect
    endfunction mul_integer
 
-   elemental function integer_mul(lhs, rhs) result(opr)
+   pure function integer_mul(lhs, rhs) result(opr)
    !< Operator `integer * field`.
    integer(I_P),                              intent(in) :: lhs !< Left hand side.
    class(primitive_compressible_multispecie), intent(in) :: rhs !< Right hand side.
@@ -318,7 +318,7 @@ contains
    endselect
    endfunction integer_mul
 
-   elemental function mul_real(lhs, rhs) result(opr)
+   pure function mul_real(lhs, rhs) result(opr)
    !< Operator `field * real`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
    real(R_P),                                 intent(in) :: rhs !< Right hand side.
@@ -334,7 +334,7 @@ contains
    endselect
    endfunction mul_real
 
-   elemental function real_mul(lhs, rhs) result(opr)
+   pure function real_mul(lhs, rhs) result(opr)
    !< Operator `real * field`.
    real(R_P),                                 intent(in) :: lhs !< Left hand side.
    class(primitive_compressible_multispecie), intent(in) :: rhs !< Right hand side.
@@ -365,7 +365,7 @@ contains
    endselect
    endfunction negative
 
-   elemental function sub(lhs, rhs) result(opr)
+   pure function sub(lhs, rhs) result(opr)
    !< Operator `-`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
    class(field_object),                       intent(in) :: rhs !< Right hand side.
@@ -384,7 +384,7 @@ contains
    endselect
    endfunction sub
 
-   elemental function pow_integer(lhs, rhs) result(opr)
+   pure function pow_integer(lhs, rhs) result(opr)
    !< Operator `field ** integer`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
    integer(I_P),                              intent(in) :: rhs !< Right hand side.
@@ -402,7 +402,7 @@ contains
    endselect
    endfunction pow_integer
 
-   elemental function pow_real(lhs, rhs) result(opr)
+   pure function pow_real(lhs, rhs) result(opr)
    !< Operator `field ** real`.
    class(primitive_compressible_multispecie), intent(in) :: lhs !< Left hand side.
    real(R_P),                                 intent(in) :: rhs !< Right hand side.
