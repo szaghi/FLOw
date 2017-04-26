@@ -338,34 +338,45 @@
 <polygon fill="none" stroke="black" points="790,-128 666,-128 666,-102 790,-102 790,-128"/>
 <text text-anchor="middle" x="728" y="-112.55" font-family="Helvetica,sans-Serif" font-size="10.50">flow_eos_compressible</text>
 </g>
-<!-- module~flow_eos_object -->
-<g id="node2" class="node"><title>module~flow_eos_object</title>
-<a xlink:href="../module/flow_eos_object.html" xlink:title="flow_eos_object">
-<polygon fill="#337ab7" stroke="#337ab7" points="629,-108 541,-108 541,-82 629,-82 629,-108"/>
-<text text-anchor="middle" x="585" y="-92.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_eos_object</text>
-</a>
-</g>
-<!-- module~flow_eos_object&#45;&gt;module~flow_eos_compressible -->
-<g id="edge18" class="edge"><title>module~flow_eos_object&#45;&gt;module~flow_eos_compressible</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M629.854,-101.273C638.126,-102.43 646.953,-103.665 655.795,-104.901"/>
-<polygon fill="#000000" stroke="#000000" points="655.367,-108.375 665.755,-106.294 656.336,-101.443 655.367,-108.375"/>
-</g>
 <!-- module~penf -->
-<g id="node3" class="node"><title>module~penf</title>
+<g id="node2" class="node"><title>module~penf</title>
 <a xlink:href="../module/penf.html" xlink:title="penf">
 <polygon fill="#337ab7" stroke="#337ab7" points="504,-128 450,-128 450,-102 504,-102 504,-128"/>
 <text text-anchor="middle" x="477" y="-112.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf</text>
 </a>
 </g>
 <!-- module~penf&#45;&gt;module~flow_eos_compressible -->
-<g id="edge20" class="edge"><title>module~penf&#45;&gt;module~flow_eos_compressible</title>
+<g id="edge18" class="edge"><title>module~penf&#45;&gt;module~flow_eos_compressible</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M504.284,-116.055C515.366,-116.434 528.292,-116.814 540,-117 578.17,-117.606 620.703,-117.241 655.645,-116.665"/>
 <polygon fill="#000000" stroke="#000000" points="655.821,-120.163 665.759,-116.489 655.7,-113.164 655.821,-120.163"/>
 </g>
+<!-- module~flow_eos_object -->
+<g id="node3" class="node"><title>module~flow_eos_object</title>
+<a xlink:href="../module/flow_eos_object.html" xlink:title="flow_eos_object">
+<polygon fill="#337ab7" stroke="#337ab7" points="629,-108 541,-108 541,-82 629,-82 629,-108"/>
+<text text-anchor="middle" x="585" y="-92.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_eos_object</text>
+</a>
+</g>
 <!-- module~penf&#45;&gt;module~flow_eos_object -->
-<g id="edge2" class="edge"><title>module~penf&#45;&gt;module~flow_eos_object</title>
+<g id="edge16" class="edge"><title>module~penf&#45;&gt;module~flow_eos_object</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M504.253,-109.953C512.153,-108.49 521.075,-106.838 530.032,-105.179"/>
 <polygon fill="#000000" stroke="#000000" points="530.912,-108.576 540.107,-103.313 529.637,-101.693 530.912,-108.576"/>
+</g>
+<!-- module~flow_eos_object&#45;&gt;module~flow_eos_compressible -->
+<g id="edge20" class="edge"><title>module~flow_eos_object&#45;&gt;module~flow_eos_compressible</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M629.854,-101.273C638.126,-102.43 646.953,-103.665 655.795,-104.901"/>
+<polygon fill="#000000" stroke="#000000" points="655.367,-108.375 665.755,-106.294 656.336,-101.443 655.367,-108.375"/>
+</g>
+<!-- module~penf_global_parameters_variables -->
+<g id="node4" class="node"><title>module~penf_global_parameters_variables</title>
+<a xlink:href="../module/penf_global_parameters_variables.html" xlink:title="penf_global_parameters_variables">
+<polygon fill="#337ab7" stroke="#337ab7" points="178,-108 8.52651e-14,-108 0,-82 178,-82 178,-108"/>
+<text text-anchor="middle" x="89" y="-92.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_global_parameters_variables</text>
+</a>
+</g>
+<!-- module~penf_global_parameters_variables&#45;&gt;module~penf -->
+<g id="edge10" class="edge"><title>module~penf_global_parameters_variables&#45;&gt;module~penf</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M143.427,-108.01C200.911,-120.517 294.347,-137.347 376,-136"/>
 </g>
 <!-- module~penf_b_size -->
 <g id="node5" class="node"><title>module~penf_b_size</title>
@@ -374,59 +385,48 @@
 <text text-anchor="middle" x="258" y="-92.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_b_size</text>
 </a>
 </g>
+<!-- module~penf_global_parameters_variables&#45;&gt;module~penf_b_size -->
+<g id="edge2" class="edge"><title>module~penf_global_parameters_variables&#45;&gt;module~penf_b_size</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M178.449,-95C190.206,-95 201.835,-95 212.422,-95"/>
+<polygon fill="#000000" stroke="#000000" points="212.627,-98.5001 222.627,-95 212.627,-91.5001 212.627,-98.5001"/>
+</g>
+<!-- module~penf_stringify -->
+<g id="node6" class="node"><title>module~penf_stringify</title>
+<a xlink:href="../module/penf_stringify.html" xlink:title="penf_stringify">
+<polygon fill="#337ab7" stroke="#337ab7" points="414,-87 338,-87 338,-61 414,-61 414,-87"/>
+<text text-anchor="middle" x="376" y="-71.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_stringify</text>
+</a>
+</g>
+<!-- module~penf_global_parameters_variables&#45;&gt;module~penf_stringify -->
+<g id="edge8" class="edge"><title>module~penf_global_parameters_variables&#45;&gt;module~penf_stringify</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M150.709,-81.9431C170.794,-78.2835 193.256,-74.8116 214,-73 252.963,-69.5974 262.89,-72.7358 302,-73 310.312,-73.0562 319.149,-73.1478 327.715,-73.2534"/>
+<polygon fill="#000000" stroke="#000000" points="327.93,-76.7564 337.975,-73.3877 328.022,-69.757 327.93,-76.7564"/>
+</g>
 <!-- module~penf_b_size&#45;&gt;module~penf -->
 <g id="edge12" class="edge"><title>module~penf_b_size&#45;&gt;module~penf</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M280.699,-108.214C303.885,-120.414 341.305,-136.572 376,-136"/>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M376,-136C397.555,-135.644 421.168,-130.981 440.14,-126.139"/>
 <polygon fill="#000000" stroke="#000000" points="441.123,-129.499 449.88,-123.535 439.315,-122.736 441.123,-129.499"/>
 </g>
-<!-- module~penf_stringify -->
-<g id="node7" class="node"><title>module~penf_stringify</title>
-<a xlink:href="../module/penf_stringify.html" xlink:title="penf_stringify">
-<polygon fill="#337ab7" stroke="#337ab7" points="414,-87 338,-87 338,-61 414,-61 414,-87"/>
-<text text-anchor="middle" x="376" y="-71.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_stringify</text>
-</a>
-</g>
 <!-- module~penf_b_size&#45;&gt;module~penf_stringify -->
 <g id="edge6" class="edge"><title>module~penf_b_size&#45;&gt;module~penf_stringify</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M293.084,-88.7562C304.014,-86.8111 316.261,-84.6316 327.919,-82.5569"/>
 <polygon fill="#000000" stroke="#000000" points="328.732,-85.9672 337.964,-80.7692 327.505,-79.0755 328.732,-85.9672"/>
 </g>
-<!-- module~penf_global_parameters_variables -->
-<g id="node6" class="node"><title>module~penf_global_parameters_variables</title>
-<a xlink:href="../module/penf_global_parameters_variables.html" xlink:title="penf_global_parameters_variables">
-<polygon fill="#337ab7" stroke="#337ab7" points="178,-108 8.52651e-14,-108 0,-82 178,-82 178,-108"/>
-<text text-anchor="middle" x="89" y="-92.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">penf_global_parameters_variables</text>
-</a>
-</g>
-<!-- module~penf_global_parameters_variables&#45;&gt;module~penf -->
-<g id="edge14" class="edge"><title>module~penf_global_parameters_variables&#45;&gt;module~penf</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M143.427,-108.01C200.911,-120.517 294.347,-137.347 376,-136"/>
-</g>
-<!-- module~penf_global_parameters_variables&#45;&gt;module~penf_b_size -->
-<g id="edge4" class="edge"><title>module~penf_global_parameters_variables&#45;&gt;module~penf_b_size</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M178.449,-95C190.206,-95 201.835,-95 212.422,-95"/>
-<polygon fill="#000000" stroke="#000000" points="212.627,-98.5001 222.627,-95 212.627,-91.5001 212.627,-98.5001"/>
-</g>
-<!-- module~penf_global_parameters_variables&#45;&gt;module~penf_stringify -->
-<g id="edge10" class="edge"><title>module~penf_global_parameters_variables&#45;&gt;module~penf_stringify</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M150.709,-81.9431C170.794,-78.2835 193.256,-74.8116 214,-73 252.963,-69.5974 262.89,-72.7358 302,-73 310.312,-73.0562 319.149,-73.1478 327.715,-73.2534"/>
-<polygon fill="#000000" stroke="#000000" points="327.93,-76.7564 337.975,-73.3877 328.022,-69.757 327.93,-76.7564"/>
-</g>
 <!-- module~penf_stringify&#45;&gt;module~penf -->
-<g id="edge16" class="edge"><title>module~penf_stringify&#45;&gt;module~penf</title>
+<g id="edge14" class="edge"><title>module~penf_stringify&#45;&gt;module~penf</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M408.235,-87.0854C418.489,-91.2481 429.905,-95.8822 440.442,-100.16"/>
 <polygon fill="#000000" stroke="#000000" points="439.231,-103.445 449.813,-103.964 441.864,-96.9595 439.231,-103.445"/>
 </g>
 <!-- iso_fortran_env -->
-<g id="node9" class="node"><title>iso_fortran_env</title>
+<g id="node8" class="node"><title>iso_fortran_env</title>
 <a xlink:href="https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html" xlink:title="iso_fortran_env">
 <polygon fill="#337ab7" stroke="#337ab7" points="301,-26 215,-26 215,-1.24345e-14 301,-3.55271e-15 301,-26"/>
 <text text-anchor="middle" x="258" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
 </a>
 </g>
 <!-- iso_fortran_env&#45;&gt;module~penf_stringify -->
-<g id="edge8" class="edge"><title>iso_fortran_env&#45;&gt;module~penf_stringify</title>
+<g id="edge4" class="edge"><title>iso_fortran_env&#45;&gt;module~penf_stringify</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M283.314,-26.086C300.346,-34.8907 323.01,-46.607 341.663,-56.2498"/>
 <polygon fill="#000000" stroke="#000000" points="340.237,-59.4525 350.728,-60.9356 343.452,-53.2342 340.237,-59.4525"/>
 </g>
@@ -541,353 +541,353 @@
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M124.134,-629C132.825,-629 141.526,-629 149.563,-629"/>
 <polygon fill="#000000" stroke="#000000" points="149.691,-632.5 159.691,-629 149.691,-625.5 149.691,-632.5"/>
 </g>
+<!-- program~flow_test_conservative_compressible_add~2 -->
+<g id="node3" class="node"><title>program~flow_test_conservative_compressible_add~2</title>
+<a xlink:href="../program/flow_test_conservative_compressible_add%7E2.html" xlink:title="flow_test_conservative_compressible_add">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="498,-1258 284,-1258 284,-1232 498,-1232 498,-1258"/>
+<text text-anchor="middle" x="391" y="-1242.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_add</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_add~2 -->
+<g id="edge2" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_add~2</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.454,-642.263C190.444,-726.011 208.481,-1179.39 250,-1223 256.983,-1230.33 265.33,-1235.89 274.429,-1240.04"/>
+<polygon fill="#000000" stroke="#000000" points="273.169,-1243.31 283.755,-1243.74 275.751,-1236.8 273.169,-1243.31"/>
+</g>
+<!-- program~flow_test_conservative_compressible_sub -->
+<g id="node4" class="node"><title>program~flow_test_conservative_compressible_sub</title>
+<a xlink:href="../program/flow_test_conservative_compressible_sub.html" xlink:title="flow_test_conservative_compressible_sub">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="497,-1214 285,-1214 285,-1188 497,-1188 497,-1214"/>
+<text text-anchor="middle" x="391" y="-1198.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_sub</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_sub -->
+<g id="edge4" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_sub</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.562,-642.046C191.108,-721.556 211.477,-1138.88 250,-1179 257.078,-1186.37 265.536,-1191.94 274.745,-1196.09"/>
+<polygon fill="#000000" stroke="#000000" points="273.594,-1199.4 284.181,-1199.79 276.147,-1192.88 273.594,-1199.4"/>
+</g>
+<!-- program~flow_test_eos_compressible -->
+<g id="node5" class="node"><title>program~flow_test_eos_compressible</title>
+<a xlink:href="../program/flow_test_eos_compressible.html" xlink:title="flow_test_eos_compressible">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="464,-1170 318,-1170 318,-1144 464,-1144 464,-1170"/>
+<text text-anchor="middle" x="391" y="-1154.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_eos_compressible</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_eos_compressible -->
+<g id="edge6" class="edge"><title>module~flow&#45;&gt;program~flow_test_eos_compressible</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.721,-642.467C191.95,-719.139 214.567,-1098.45 250,-1135 264.963,-1150.43 285.978,-1157.93 307.225,-1161.1"/>
+<polygon fill="#000000" stroke="#000000" points="306.972,-1164.6 317.315,-1162.3 307.796,-1157.64 306.972,-1164.6"/>
+</g>
+<!-- program~flow_test_primitive_compressible_add -->
+<g id="node6" class="node"><title>program~flow_test_primitive_compressible_add</title>
+<a xlink:href="../program/flow_test_primitive_compressible_add.html" xlink:title="flow_test_primitive_compressible_add">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="487,-1126 295,-1126 295,-1100 487,-1100 487,-1126"/>
+<text text-anchor="middle" x="391" y="-1110.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_add</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_add -->
+<g id="edge8" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_add</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.872,-642.229C192.743,-714.335 217.547,-1057.92 250,-1091 259.633,-1100.82 271.72,-1107.42 284.744,-1111.72"/>
+<polygon fill="#000000" stroke="#000000" points="283.794,-1115.09 294.371,-1114.47 285.714,-1108.36 283.794,-1115.09"/>
+</g>
+<!-- program~flow_test_primitive_compressible_assign -->
+<g id="node7" class="node"><title>program~flow_test_primitive_compressible_assign</title>
+<a xlink:href="../program/flow_test_primitive_compressible_assign.html" xlink:title="flow_test_primitive_compressible_assign">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="494,-1082 288,-1082 288,-1056 494,-1056 494,-1082"/>
+<text text-anchor="middle" x="391" y="-1066.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_assign</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_assign -->
+<g id="edge10" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_assign</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M188.074,-642.288C193.692,-710.301 220.562,-1017.41 250,-1047 257.96,-1055 267.552,-1060.85 277.943,-1065.06"/>
+<polygon fill="#000000" stroke="#000000" points="277.091,-1068.47 287.686,-1068.48 279.411,-1061.87 277.091,-1068.47"/>
+</g>
+<!-- program~flow_test_primitive_compressible_div -->
+<g id="node8" class="node"><title>program~flow_test_primitive_compressible_div</title>
+<a xlink:href="../program/flow_test_primitive_compressible_div.html" xlink:title="flow_test_primitive_compressible_div">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="485,-1038 297,-1038 297,-1012 485,-1012 485,-1038"/>
+<text text-anchor="middle" x="391" y="-1022.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_div</text>
+</a>
+</g>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_div -->
+<g id="edge12" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_div</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.239,-642.235C188.611,-702.593 197.421,-951.054 250,-1003 260.14,-1013.02 272.845,-1019.64 286.448,-1023.9"/>
+<polygon fill="#000000" stroke="#000000" points="285.924,-1027.38 296.489,-1026.59 287.737,-1020.62 285.924,-1027.38"/>
+</g>
 <!-- program~flow_test_primitive_compressible_eq -->
-<g id="node3" class="node"><title>program~flow_test_primitive_compressible_eq</title>
+<g id="node9" class="node"><title>program~flow_test_primitive_compressible_eq</title>
 <a xlink:href="../program/flow_test_primitive_compressible_eq.html" xlink:title="flow_test_primitive_compressible_eq">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="484,-1258 298,-1258 298,-1232 484,-1232 484,-1258"/>
-<text text-anchor="middle" x="391" y="-1242.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_eq</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="484,-994 298,-994 298,-968 484,-968 484,-994"/>
+<text text-anchor="middle" x="391" y="-978.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_eq</text>
 </a>
 </g>
 <!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_eq -->
-<g id="edge2" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_eq</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.454,-642.263C190.444,-726.011 208.481,-1179.39 250,-1223 260.202,-1233.72 273.317,-1240.63 287.431,-1244.93"/>
-<polygon fill="#000000" stroke="#000000" points="286.779,-1248.38 297.338,-1247.51 288.541,-1241.6 286.779,-1248.38"/>
+<g id="edge14" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.557,-642.157C190.2,-697.913 203.347,-913.901 250,-959 260.493,-969.144 273.622,-975.784 287.62,-979.996"/>
+<polygon fill="#000000" stroke="#000000" points="286.869,-983.417 297.427,-982.537 288.625,-976.641 286.869,-983.417"/>
 </g>
 <!-- program~flow_test_primitive_compressible_mul -->
-<g id="node4" class="node"><title>program~flow_test_primitive_compressible_mul</title>
+<g id="node10" class="node"><title>program~flow_test_primitive_compressible_mul</title>
 <a xlink:href="../program/flow_test_primitive_compressible_mul.html" xlink:title="flow_test_primitive_compressible_mul">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="487,-1214 295,-1214 295,-1188 487,-1188 487,-1214"/>
-<text text-anchor="middle" x="391" y="-1198.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_mul</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="487,-950 295,-950 295,-924 487,-924 487,-950"/>
+<text text-anchor="middle" x="391" y="-934.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_mul</text>
 </a>
 </g>
 <!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_mul -->
-<g id="edge4" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_mul</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.562,-642.046C191.108,-721.556 211.477,-1138.88 250,-1179 259.434,-1188.83 271.321,-1195.45 284.17,-1199.79"/>
-<polygon fill="#000000" stroke="#000000" points="283.581,-1203.26 294.16,-1202.67 285.525,-1196.53 283.581,-1203.26"/>
+<g id="edge16" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_mul</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.969,-642.104C192.011,-693.01 209.246,-876.699 250,-915 259.783,-924.194 271.742,-930.482 284.517,-934.681"/>
+<polygon fill="#000000" stroke="#000000" points="283.847,-938.129 294.423,-937.499 285.762,-931.396 283.847,-938.129"/>
 </g>
 <!-- program~flow_test_primitive_compressible_multispecie_add -->
-<g id="node5" class="node"><title>program~flow_test_primitive_compressible_multispecie_add</title>
+<g id="node11" class="node"><title>program~flow_test_primitive_compressible_multispecie_add</title>
 <a xlink:href="../program/flow_test_primitive_compressible_multispecie_add.html" xlink:title="flow_test_primitive_compressible_multispecie_add">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="517,-1170 265,-1170 265,-1144 517,-1144 517,-1170"/>
-<text text-anchor="middle" x="391" y="-1154.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_add</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="517,-906 265,-906 265,-880 517,-880 517,-906"/>
+<text text-anchor="middle" x="391" y="-890.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_add</text>
 </a>
 </g>
 <!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_add -->
-<g id="edge6" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_add</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.721,-642.467C191.95,-719.139 214.567,-1098.45 250,-1135 251.886,-1136.95 253.869,-1138.76 255.936,-1140.47"/>
-<polygon fill="#000000" stroke="#000000" points="254.133,-1143.48 264.303,-1146.45 258.206,-1137.79 254.133,-1143.48"/>
+<g id="edge18" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_add</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M188.548,-642.254C194.187,-688.188 215.151,-839.469 250,-871 251.791,-872.621 253.651,-874.15 255.57,-875.592"/>
+<polygon fill="#000000" stroke="#000000" points="254.072,-878.796 264.349,-881.373 257.922,-872.95 254.072,-878.796"/>
 </g>
 <!-- program~flow_test_primitive_compressible_multispecie_assign -->
-<g id="node6" class="node"><title>program~flow_test_primitive_compressible_multispecie_assign</title>
+<g id="node12" class="node"><title>program~flow_test_primitive_compressible_multispecie_assign</title>
 <a xlink:href="../program/flow_test_primitive_compressible_multispecie_assign.html" xlink:title="flow_test_primitive_compressible_multispecie_assign">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="523,-1126 259,-1126 259,-1100 523,-1100 523,-1126"/>
-<text text-anchor="middle" x="391" y="-1110.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_assign</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="523,-862 259,-862 259,-836 523,-836 523,-862"/>
+<text text-anchor="middle" x="391" y="-846.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_assign</text>
 </a>
 </g>
 <!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_assign -->
-<g id="edge8" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_assign</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.872,-642.229C192.743,-714.335 217.547,-1057.92 250,-1091 250.927,-1091.95 251.877,-1092.86 252.848,-1093.75"/>
-<polygon fill="#000000" stroke="#000000" points="250.686,-1096.5 260.69,-1099.99 255.044,-1091.02 250.686,-1096.5"/>
+<g id="edge20" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_assign</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.318,-642.047C196.703,-682.094 220.903,-802.053 250,-827 251.358,-828.164 252.751,-829.28 254.177,-830.35"/>
+<polygon fill="#000000" stroke="#000000" points="252.406,-833.375 262.676,-835.981 256.273,-827.54 252.406,-833.375"/>
 </g>
 <!-- program~flow_test_primitive_compressible_multispecie_div -->
-<g id="node7" class="node"><title>program~flow_test_primitive_compressible_multispecie_div</title>
+<g id="node13" class="node"><title>program~flow_test_primitive_compressible_multispecie_div</title>
 <a xlink:href="../program/flow_test_primitive_compressible_multispecie_div.html" xlink:title="flow_test_primitive_compressible_multispecie_div">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="515,-1082 267,-1082 267,-1056 515,-1056 515,-1082"/>
-<text text-anchor="middle" x="391" y="-1066.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_div</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="515,-818 267,-818 267,-792 515,-792 515,-818"/>
+<text text-anchor="middle" x="391" y="-802.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_div</text>
 </a>
 </g>
 <!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_div -->
-<g id="edge10" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_div</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M188.074,-642.288C193.692,-710.301 220.562,-1017.41 250,-1047 252.613,-1049.63 255.401,-1052.02 258.336,-1054.2"/>
-<polygon fill="#000000" stroke="#000000" points="256.676,-1057.3 266.971,-1059.8 260.483,-1051.42 256.676,-1057.3"/>
+<g id="edge22" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_div</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M188.165,-642.286C191.586,-672.598 204.44,-747.006 250,-783 252.624,-785.073 255.364,-786.989 258.2,-788.759"/>
+<polygon fill="#000000" stroke="#000000" points="256.534,-791.837 266.975,-793.637 259.936,-785.719 256.534,-791.837"/>
 </g>
 <!-- program~flow_test_primitive_compressible_multispecie_eq -->
-<g id="node8" class="node"><title>program~flow_test_primitive_compressible_multispecie_eq</title>
+<g id="node14" class="node"><title>program~flow_test_primitive_compressible_multispecie_eq</title>
 <a xlink:href="../program/flow_test_primitive_compressible_multispecie_eq.html" xlink:title="flow_test_primitive_compressible_multispecie_eq">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="514,-1038 268,-1038 268,-1012 514,-1012 514,-1038"/>
-<text text-anchor="middle" x="391" y="-1022.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_eq</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="514,-774 268,-774 268,-748 514,-748 514,-774"/>
+<text text-anchor="middle" x="391" y="-758.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_eq</text>
 </a>
 </g>
 <!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_eq -->
-<g id="edge12" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_eq</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.239,-642.235C188.611,-702.593 197.421,-951.054 250,-1003 252.762,-1005.73 255.714,-1008.21 258.823,-1010.45"/>
-<polygon fill="#000000" stroke="#000000" points="257.073,-1013.49 267.396,-1015.87 260.814,-1007.57 257.073,-1013.49"/>
+<g id="edge24" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M190.425,-642.065C197.346,-665.667 215.372,-715.171 250,-739 252.62,-740.803 255.331,-742.48 258.119,-744.04"/>
+<polygon fill="#000000" stroke="#000000" points="256.753,-747.271 267.26,-748.632 259.895,-741.016 256.753,-747.271"/>
 </g>
 <!-- program~flow_test_primitive_compressible_multispecie_mul -->
-<g id="node9" class="node"><title>program~flow_test_primitive_compressible_multispecie_mul</title>
+<g id="node15" class="node"><title>program~flow_test_primitive_compressible_multispecie_mul</title>
 <a xlink:href="../program/flow_test_primitive_compressible_multispecie_mul.html" xlink:title="flow_test_primitive_compressible_multispecie_mul">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="517,-994 265,-994 265,-968 517,-968 517,-994"/>
-<text text-anchor="middle" x="391" y="-978.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_mul</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="517,-730 265,-730 265,-704 517,-704 517,-730"/>
+<text text-anchor="middle" x="391" y="-714.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_mul</text>
 </a>
 </g>
 <!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_mul -->
-<g id="edge14" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_mul</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.557,-642.157C190.2,-697.913 203.347,-913.901 250,-959 251.987,-960.921 254.069,-962.716 256.233,-964.394"/>
-<polygon fill="#000000" stroke="#000000" points="254.72,-967.595 264.966,-970.291 258.637,-961.794 254.72,-967.595"/>
+<g id="edge26" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_mul</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M195.473,-642.117C206.184,-657.513 226.136,-682.524 250,-695 253.602,-696.883 257.322,-698.615 261.129,-700.208"/>
+<polygon fill="#000000" stroke="#000000" points="260.165,-703.587 270.756,-703.887 262.664,-697.048 260.165,-703.587"/>
 </g>
 <!-- program~flow_test_primitive_compressible_multispecie_normalize -->
-<g id="node10" class="node"><title>program~flow_test_primitive_compressible_multispecie_normalize</title>
+<g id="node16" class="node"><title>program~flow_test_primitive_compressible_multispecie_normalize</title>
 <a xlink:href="../program/flow_test_primitive_compressible_multispecie_normalize.html" xlink:title="flow_test_primitive_compressible_multispecie_normalize">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="531,-950 251,-950 251,-924 531,-924 531,-950"/>
-<text text-anchor="middle" x="391" y="-934.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_normalize</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="531,-686 251,-686 251,-660 531,-660 531,-686"/>
+<text text-anchor="middle" x="391" y="-670.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_normalize</text>
 </a>
 </g>
 <!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_normalize -->
-<g id="edge16" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_normalize</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.969,-642.104C192.011,-693.01 209.246,-876.699 250,-915 250.99,-915.931 252.003,-916.831 253.036,-917.703"/>
-<polygon fill="#000000" stroke="#000000" points="251.219,-920.712 261.343,-923.835 255.376,-915.08 251.219,-920.712"/>
+<g id="edge28" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_normalize</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M214.272,-639.735C225.239,-643.732 238.088,-648.017 250,-651 260.396,-653.603 271.305,-655.955 282.256,-658.066"/>
+<polygon fill="#000000" stroke="#000000" points="281.84,-661.549 292.312,-659.937 283.121,-654.667 281.84,-661.549"/>
 </g>
 <!-- program~flow_test_primitive_compressible_multispecie_not_eq -->
-<g id="node11" class="node"><title>program~flow_test_primitive_compressible_multispecie_not_eq</title>
+<g id="node17" class="node"><title>program~flow_test_primitive_compressible_multispecie_not_eq</title>
 <a xlink:href="../program/flow_test_primitive_compressible_multispecie_not_eq.html" xlink:title="flow_test_primitive_compressible_multispecie_not_eq">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="525,-906 257,-906 257,-880 525,-880 525,-906"/>
-<text text-anchor="middle" x="391" y="-890.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_not_eq</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="525,-642 257,-642 257,-616 525,-616 525,-642"/>
+<text text-anchor="middle" x="391" y="-626.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_not_eq</text>
 </a>
 </g>
 <!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_not_eq -->
-<g id="edge18" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_not_eq</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M188.548,-642.254C194.187,-688.188 215.151,-839.469 250,-871 251.148,-872.039 252.324,-873.04 253.527,-874.005"/>
-<polygon fill="#000000" stroke="#000000" points="251.628,-876.949 261.815,-879.858 255.665,-871.231 251.628,-876.949"/>
+<g id="edge30" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_not_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M214.09,-629C223.319,-629 234.372,-629 246.387,-629"/>
+<polygon fill="#000000" stroke="#000000" points="246.687,-632.5 256.687,-629 246.687,-625.5 246.687,-632.5"/>
 </g>
 <!-- program~flow_test_primitive_compressible_multispecie_add~2 -->
-<g id="node12" class="node"><title>program~flow_test_primitive_compressible_multispecie_add~2</title>
+<g id="node18" class="node"><title>program~flow_test_primitive_compressible_multispecie_add~2</title>
 <a xlink:href="../program/flow_test_primitive_compressible_multispecie_add%7E2.html" xlink:title="flow_test_primitive_compressible_multispecie_add">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="517,-862 265,-862 265,-836 517,-836 517,-862"/>
-<text text-anchor="middle" x="391" y="-846.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_add</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="517,-598 265,-598 265,-572 517,-572 517,-598"/>
+<text text-anchor="middle" x="391" y="-582.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_add</text>
 </a>
 </g>
 <!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_add~2 -->
-<g id="edge20" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_add~2</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.318,-642.047C196.703,-682.094 220.903,-802.053 250,-827 251.796,-828.54 253.653,-829.995 255.566,-831.37"/>
-<polygon fill="#000000" stroke="#000000" points="253.964,-834.499 264.284,-836.9 257.714,-828.588 253.964,-834.499"/>
-</g>
-<!-- program~flow_test_primitive_compressible_multispecie_sub -->
-<g id="node13" class="node"><title>program~flow_test_primitive_compressible_multispecie_sub</title>
-<a xlink:href="../program/flow_test_primitive_compressible_multispecie_sub.html" xlink:title="flow_test_primitive_compressible_multispecie_sub">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="517,-818 265,-818 265,-792 517,-792 517,-818"/>
-<text text-anchor="middle" x="391" y="-802.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_sub</text>
-</a>
-</g>
-<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_sub -->
-<g id="edge22" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_sub</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M188.165,-642.286C191.586,-672.598 204.44,-747.006 250,-783 252.041,-784.613 254.152,-786.13 256.324,-787.557"/>
-<polygon fill="#000000" stroke="#000000" points="254.583,-790.594 264.981,-792.626 258.12,-784.553 254.583,-790.594"/>
-</g>
-<!-- program~flow_test_primitive_compressible_normalize -->
-<g id="node14" class="node"><title>program~flow_test_primitive_compressible_normalize</title>
-<a xlink:href="../program/flow_test_primitive_compressible_normalize.html" xlink:title="flow_test_primitive_compressible_normalize">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="502,-774 280,-774 280,-748 502,-748 502,-774"/>
-<text text-anchor="middle" x="391" y="-758.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_normalize</text>
-</a>
-</g>
-<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_normalize -->
-<g id="edge24" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_normalize</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M190.425,-642.065C197.346,-665.667 215.372,-715.171 250,-739 256.244,-743.297 263.01,-746.881 270.083,-749.861"/>
-<polygon fill="#000000" stroke="#000000" points="269.306,-753.309 279.898,-753.561 271.775,-746.759 269.306,-753.309"/>
-</g>
-<!-- program~flow_test_primitive_compressible_not_eq -->
-<g id="node15" class="node"><title>program~flow_test_primitive_compressible_not_eq</title>
-<a xlink:href="../program/flow_test_primitive_compressible_not_eq.html" xlink:title="flow_test_primitive_compressible_not_eq">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="495,-730 287,-730 287,-704 495,-704 495,-730"/>
-<text text-anchor="middle" x="391" y="-714.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_not_eq</text>
-</a>
-</g>
-<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_not_eq -->
-<g id="edge26" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_not_eq</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M195.473,-642.117C206.184,-657.513 226.136,-682.524 250,-695 258.474,-699.43 267.597,-703.024 276.981,-705.934"/>
-<polygon fill="#000000" stroke="#000000" points="276.264,-709.369 286.839,-708.725 278.171,-702.633 276.264,-709.369"/>
-</g>
-<!-- program~flow_test_primitive_compressible_add~2 -->
-<g id="node16" class="node"><title>program~flow_test_primitive_compressible_add~2</title>
-<a xlink:href="../program/flow_test_primitive_compressible_add%7E2.html" xlink:title="flow_test_primitive_compressible_add">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="487,-686 295,-686 295,-660 487,-660 487,-686"/>
-<text text-anchor="middle" x="391" y="-670.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_add</text>
-</a>
-</g>
-<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_add~2 -->
-<g id="edge28" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_add~2</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M214.272,-639.735C225.239,-643.732 238.088,-648.017 250,-651 260.967,-653.746 272.504,-656.213 284.06,-658.411"/>
-<polygon fill="#000000" stroke="#000000" points="283.739,-661.911 294.206,-660.275 285.003,-655.026 283.739,-661.911"/>
-</g>
-<!-- program~flow_test_primitive_compressible_sub -->
-<g id="node17" class="node"><title>program~flow_test_primitive_compressible_sub</title>
-<a xlink:href="../program/flow_test_primitive_compressible_sub.html" xlink:title="flow_test_primitive_compressible_sub">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="487,-642 295,-642 295,-616 487,-616 487,-642"/>
-<text text-anchor="middle" x="391" y="-626.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_sub</text>
-</a>
-</g>
-<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_sub -->
-<g id="edge30" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_sub</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M214.09,-629C232.542,-629 258.283,-629 284.426,-629"/>
-<polygon fill="#000000" stroke="#000000" points="284.451,-632.5 294.451,-629 284.451,-625.5 284.451,-632.5"/>
-</g>
-<!-- program~flow_test_conservative_compressible_add -->
-<g id="node18" class="node"><title>program~flow_test_conservative_compressible_add</title>
-<a xlink:href="../program/flow_test_conservative_compressible_add.html" xlink:title="flow_test_conservative_compressible_add">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="498,-598 284,-598 284,-572 498,-572 498,-598"/>
-<text text-anchor="middle" x="391" y="-582.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_add</text>
-</a>
-</g>
-<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_add -->
-<g id="edge32" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_add</title>
+<g id="edge32" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_add~2</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M214.272,-618.265C225.239,-614.268 238.088,-609.983 250,-607 260.396,-604.397 271.305,-602.045 282.256,-599.934"/>
 <polygon fill="#000000" stroke="#000000" points="283.121,-603.333 292.312,-598.063 281.84,-596.451 283.121,-603.333"/>
 </g>
-<!-- program~flow_test_conservative_compressible_assign -->
-<g id="node19" class="node"><title>program~flow_test_conservative_compressible_assign</title>
-<a xlink:href="../program/flow_test_conservative_compressible_assign.html" xlink:title="flow_test_conservative_compressible_assign">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="504,-554 278,-554 278,-528 504,-528 504,-554"/>
-<text text-anchor="middle" x="391" y="-538.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_assign</text>
+<!-- program~flow_test_primitive_compressible_multispecie_sub -->
+<g id="node19" class="node"><title>program~flow_test_primitive_compressible_multispecie_sub</title>
+<a xlink:href="../program/flow_test_primitive_compressible_multispecie_sub.html" xlink:title="flow_test_primitive_compressible_multispecie_sub">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="517,-554 265,-554 265,-528 517,-528 517,-554"/>
+<text text-anchor="middle" x="391" y="-538.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_multispecie_sub</text>
 </a>
 </g>
-<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_assign -->
-<g id="edge34" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_assign</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M195.473,-615.883C206.184,-600.487 226.136,-575.476 250,-563 255.691,-560.025 261.676,-557.426 267.836,-555.159"/>
-<polygon fill="#000000" stroke="#000000" points="269.279,-558.366 277.643,-551.862 267.049,-551.731 269.279,-558.366"/>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_sub -->
+<g id="edge34" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_multispecie_sub</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M195.473,-615.883C206.184,-600.487 226.136,-575.476 250,-563 253.602,-561.117 257.322,-559.385 261.129,-557.792"/>
+<polygon fill="#000000" stroke="#000000" points="262.664,-560.952 270.756,-554.113 260.165,-554.413 262.664,-560.952"/>
 </g>
-<!-- program~flow_test_conservative_compressible_div -->
-<g id="node20" class="node"><title>program~flow_test_conservative_compressible_div</title>
-<a xlink:href="../program/flow_test_conservative_compressible_div.html" xlink:title="flow_test_conservative_compressible_div">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="495,-510 287,-510 287,-484 495,-484 495,-510"/>
-<text text-anchor="middle" x="391" y="-494.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_div</text>
+<!-- program~flow_test_primitive_compressible_normalize -->
+<g id="node20" class="node"><title>program~flow_test_primitive_compressible_normalize</title>
+<a xlink:href="../program/flow_test_primitive_compressible_normalize.html" xlink:title="flow_test_primitive_compressible_normalize">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="502,-510 280,-510 280,-484 502,-484 502,-510"/>
+<text text-anchor="middle" x="391" y="-494.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_normalize</text>
 </a>
 </g>
-<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_div -->
-<g id="edge36" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_div</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M190.425,-615.935C197.346,-592.333 215.372,-542.829 250,-519 258.189,-513.364 267.276,-508.955 276.776,-505.526"/>
-<polygon fill="#000000" stroke="#000000" points="277.959,-508.822 286.397,-502.414 275.805,-502.162 277.959,-508.822"/>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_normalize -->
+<g id="edge36" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_normalize</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M190.425,-615.935C197.346,-592.333 215.372,-542.829 250,-519 256.244,-514.703 263.01,-511.119 270.083,-508.139"/>
+<polygon fill="#000000" stroke="#000000" points="271.775,-511.241 279.898,-504.439 269.306,-504.691 271.775,-511.241"/>
 </g>
-<!-- program~flow_test_conservative_compressible_eq -->
-<g id="node21" class="node"><title>program~flow_test_conservative_compressible_eq</title>
-<a xlink:href="../program/flow_test_conservative_compressible_eq.html" xlink:title="flow_test_conservative_compressible_eq">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="495,-466 287,-466 287,-440 495,-440 495,-466"/>
-<text text-anchor="middle" x="391" y="-450.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_eq</text>
+<!-- program~flow_test_compressible_transformations -->
+<g id="node21" class="node"><title>program~flow_test_compressible_transformations</title>
+<a xlink:href="../program/flow_test_compressible_transformations.html" xlink:title="flow_test_compressible_transformations">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="493,-466 289,-466 289,-440 493,-440 493,-466"/>
+<text text-anchor="middle" x="391" y="-450.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_compressible_transformations</text>
 </a>
 </g>
-<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_eq -->
-<g id="edge38" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_eq</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M188.165,-615.714C191.586,-585.402 204.44,-510.994 250,-475 258.176,-468.54 267.472,-463.61 277.298,-459.879"/>
-<polygon fill="#000000" stroke="#000000" points="278.502,-463.167 286.863,-456.66 276.269,-456.533 278.502,-463.167"/>
+<!-- module~flow&#45;&gt;program~flow_test_compressible_transformations -->
+<g id="edge38" class="edge"><title>module~flow&#45;&gt;program~flow_test_compressible_transformations</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M188.165,-615.714C191.586,-585.402 204.44,-510.994 250,-475 258.633,-468.18 268.513,-463.064 278.949,-459.266"/>
+<polygon fill="#000000" stroke="#000000" points="280.222,-462.533 288.668,-456.138 278.077,-455.87 280.222,-462.533"/>
 </g>
-<!-- program~flow_test_conservative_compressible_mul -->
-<g id="node22" class="node"><title>program~flow_test_conservative_compressible_mul</title>
-<a xlink:href="../program/flow_test_conservative_compressible_mul.html" xlink:title="flow_test_conservative_compressible_mul">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="497,-422 285,-422 285,-396 497,-396 497,-422"/>
-<text text-anchor="middle" x="391" y="-406.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_mul</text>
+<!-- program~flow_test_primitive_compressible_not_eq -->
+<g id="node22" class="node"><title>program~flow_test_primitive_compressible_not_eq</title>
+<a xlink:href="../program/flow_test_primitive_compressible_not_eq.html" xlink:title="flow_test_primitive_compressible_not_eq">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="495,-422 287,-422 287,-396 495,-396 495,-422"/>
+<text text-anchor="middle" x="391" y="-406.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_not_eq</text>
 </a>
 </g>
-<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_mul -->
-<g id="edge40" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_mul</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.318,-615.953C196.703,-575.906 220.903,-455.947 250,-431 257.399,-424.657 265.852,-419.743 274.863,-415.97"/>
-<polygon fill="#000000" stroke="#000000" points="276.263,-419.184 284.433,-412.439 273.84,-412.617 276.263,-419.184"/>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_not_eq -->
+<g id="edge40" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_not_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.318,-615.953C196.703,-575.906 220.903,-455.947 250,-431 258.053,-424.095 267.357,-418.885 277.267,-414.995"/>
+<polygon fill="#000000" stroke="#000000" points="278.623,-418.23 286.934,-411.658 276.339,-411.613 278.623,-418.23"/>
 </g>
-<!-- program~flow_test_conservative_compressible_normalize -->
-<g id="node23" class="node"><title>program~flow_test_conservative_compressible_normalize</title>
-<a xlink:href="../program/flow_test_conservative_compressible_normalize.html" xlink:title="flow_test_conservative_compressible_normalize">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="512,-378 270,-378 270,-352 512,-352 512,-378"/>
-<text text-anchor="middle" x="391" y="-362.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_normalize</text>
+<!-- program~flow_test_primitive_compressible_add~2 -->
+<g id="node23" class="node"><title>program~flow_test_primitive_compressible_add~2</title>
+<a xlink:href="../program/flow_test_primitive_compressible_add%7E2.html" xlink:title="flow_test_primitive_compressible_add">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="487,-378 295,-378 295,-352 487,-352 487,-378"/>
+<text text-anchor="middle" x="391" y="-362.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_add</text>
 </a>
 </g>
-<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_normalize -->
-<g id="edge42" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_normalize</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M188.548,-615.746C194.187,-569.812 215.151,-418.531 250,-387 253.452,-383.877 257.157,-381.094 261.058,-378.617"/>
-<polygon fill="#000000" stroke="#000000" points="262.876,-381.611 269.894,-373.673 259.458,-375.502 262.876,-381.611"/>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_add~2 -->
+<g id="edge42" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_add~2</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M188.548,-615.746C194.187,-569.812 215.151,-418.531 250,-387 259.882,-378.059 271.836,-371.904 284.555,-367.759"/>
+<polygon fill="#000000" stroke="#000000" points="285.741,-371.061 294.409,-364.968 283.834,-364.326 285.741,-371.061"/>
 </g>
-<!-- program~flow_test_conservative_compressible_not_eq -->
-<g id="node24" class="node"><title>program~flow_test_conservative_compressible_not_eq</title>
-<a xlink:href="../program/flow_test_conservative_compressible_not_eq.html" xlink:title="flow_test_conservative_compressible_not_eq">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="505,-334 277,-334 277,-308 505,-308 505,-334"/>
-<text text-anchor="middle" x="391" y="-318.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_not_eq</text>
+<!-- program~flow_test_primitive_compressible_sub -->
+<g id="node24" class="node"><title>program~flow_test_primitive_compressible_sub</title>
+<a xlink:href="../program/flow_test_primitive_compressible_sub.html" xlink:title="flow_test_primitive_compressible_sub">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="487,-334 295,-334 295,-308 487,-308 487,-334"/>
+<text text-anchor="middle" x="391" y="-318.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_sub</text>
 </a>
 </g>
-<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_not_eq -->
-<g id="edge44" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_not_eq</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.969,-615.896C192.011,-564.99 209.246,-381.301 250,-343 255.155,-338.155 260.915,-334.117 267.079,-330.767"/>
-<polygon fill="#000000" stroke="#000000" points="268.856,-333.797 276.378,-326.336 265.845,-327.478 268.856,-333.797"/>
+<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_sub -->
+<g id="edge44" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_sub</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.969,-615.896C192.011,-564.99 209.246,-381.301 250,-343 259.783,-333.806 271.742,-327.518 284.517,-323.319"/>
+<polygon fill="#000000" stroke="#000000" points="285.762,-326.604 294.423,-320.501 283.847,-319.871 285.762,-326.604"/>
 </g>
-<!-- program~flow_test_conservative_compressible_add~2 -->
-<g id="node25" class="node"><title>program~flow_test_conservative_compressible_add~2</title>
-<a xlink:href="../program/flow_test_conservative_compressible_add%7E2.html" xlink:title="flow_test_conservative_compressible_add">
+<!-- program~flow_test_conservative_compressible_add -->
+<g id="node25" class="node"><title>program~flow_test_conservative_compressible_add</title>
+<a xlink:href="../program/flow_test_conservative_compressible_add.html" xlink:title="flow_test_conservative_compressible_add">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="498,-290 284,-290 284,-264 498,-264 498,-290"/>
 <text text-anchor="middle" x="391" y="-274.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_add</text>
 </a>
 </g>
-<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_add~2 -->
-<g id="edge46" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_add~2</title>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_add -->
+<g id="edge46" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_add</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.557,-615.843C190.2,-560.087 203.347,-344.099 250,-299 257.073,-292.163 265.344,-286.917 274.271,-282.934"/>
 <polygon fill="#000000" stroke="#000000" points="275.742,-286.117 283.789,-279.226 273.201,-279.595 275.742,-286.117"/>
 </g>
-<!-- program~flow_test_conservative_compressible_sub -->
-<g id="node26" class="node"><title>program~flow_test_conservative_compressible_sub</title>
-<a xlink:href="../program/flow_test_conservative_compressible_sub.html" xlink:title="flow_test_conservative_compressible_sub">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="497,-246 285,-246 285,-220 497,-220 497,-246"/>
-<text text-anchor="middle" x="391" y="-230.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_sub</text>
+<!-- program~flow_test_conservative_compressible_assign -->
+<g id="node26" class="node"><title>program~flow_test_conservative_compressible_assign</title>
+<a xlink:href="../program/flow_test_conservative_compressible_assign.html" xlink:title="flow_test_conservative_compressible_assign">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="504,-246 278,-246 278,-220 504,-220 504,-246"/>
+<text text-anchor="middle" x="391" y="-230.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_assign</text>
 </a>
 </g>
-<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_sub -->
-<g id="edge48" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_sub</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.239,-615.765C188.611,-555.407 197.421,-306.946 250,-255 257.204,-247.883 265.702,-242.477 274.898,-238.419"/>
-<polygon fill="#000000" stroke="#000000" points="276.23,-241.656 284.303,-234.795 273.713,-235.124 276.23,-241.656"/>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_assign -->
+<g id="edge48" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_assign</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.239,-615.765C188.611,-555.407 197.421,-306.946 250,-255 255.453,-249.613 261.647,-245.207 268.323,-241.623"/>
+<polygon fill="#000000" stroke="#000000" points="270.13,-244.641 277.702,-237.231 267.162,-238.302 270.13,-244.641"/>
 </g>
-<!-- program~flow_test_eos_compressible -->
-<g id="node27" class="node"><title>program~flow_test_eos_compressible</title>
-<a xlink:href="../program/flow_test_eos_compressible.html" xlink:title="flow_test_eos_compressible">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="464,-202 318,-202 318,-176 464,-176 464,-202"/>
-<text text-anchor="middle" x="391" y="-186.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_eos_compressible</text>
+<!-- program~flow_test_conservative_compressible_div -->
+<g id="node27" class="node"><title>program~flow_test_conservative_compressible_div</title>
+<a xlink:href="../program/flow_test_conservative_compressible_div.html" xlink:title="flow_test_conservative_compressible_div">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="495,-202 287,-202 287,-176 495,-176 495,-202"/>
+<text text-anchor="middle" x="391" y="-186.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_div</text>
 </a>
 </g>
-<!-- module~flow&#45;&gt;program~flow_test_eos_compressible -->
-<g id="edge50" class="edge"><title>module~flow&#45;&gt;program~flow_test_eos_compressible</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M188.074,-615.712C193.692,-547.699 220.562,-240.591 250,-211 265.084,-195.837 286.029,-188.399 307.167,-185.2"/>
-<polygon fill="#000000" stroke="#000000" points="307.695,-188.662 317.202,-183.985 306.853,-181.712 307.695,-188.662"/>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_div -->
+<g id="edge50" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_div</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M188.074,-615.712C193.692,-547.699 220.562,-240.591 250,-211 257.614,-203.347 266.721,-197.661 276.592,-193.495"/>
+<polygon fill="#000000" stroke="#000000" points="278.08,-196.678 286.267,-189.953 275.673,-190.105 278.08,-196.678"/>
 </g>
-<!-- program~flow_test_compressible_transformations -->
-<g id="node28" class="node"><title>program~flow_test_compressible_transformations</title>
-<a xlink:href="../program/flow_test_compressible_transformations.html" xlink:title="flow_test_compressible_transformations">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="493,-158 289,-158 289,-132 493,-132 493,-158"/>
-<text text-anchor="middle" x="391" y="-142.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_compressible_transformations</text>
+<!-- program~flow_test_conservative_compressible_eq -->
+<g id="node28" class="node"><title>program~flow_test_conservative_compressible_eq</title>
+<a xlink:href="../program/flow_test_conservative_compressible_eq.html" xlink:title="flow_test_conservative_compressible_eq">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="495,-158 287,-158 287,-132 495,-132 495,-158"/>
+<text text-anchor="middle" x="391" y="-142.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_eq</text>
 </a>
 </g>
-<!-- module~flow&#45;&gt;program~flow_test_compressible_transformations -->
-<g id="edge52" class="edge"><title>module~flow&#45;&gt;program~flow_test_compressible_transformations</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.872,-615.771C192.743,-543.665 217.547,-200.084 250,-167 258.252,-158.587 268.306,-152.541 279.207,-148.273"/>
-<polygon fill="#000000" stroke="#000000" points="280.63,-151.486 288.98,-144.964 278.386,-144.856 280.63,-151.486"/>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_eq -->
+<g id="edge52" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.872,-615.771C192.743,-543.665 217.547,-200.084 250,-167 257.771,-159.078 267.138,-153.255 277.306,-149.039"/>
+<polygon fill="#000000" stroke="#000000" points="278.623,-152.285 286.846,-145.604 276.252,-145.698 278.623,-152.285"/>
 </g>
-<!-- program~flow_test_primitive_compressible_add -->
-<g id="node29" class="node"><title>program~flow_test_primitive_compressible_add</title>
-<a xlink:href="../program/flow_test_primitive_compressible_add.html" xlink:title="flow_test_primitive_compressible_add">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="487,-114 295,-114 295,-88 487,-88 487,-114"/>
-<text text-anchor="middle" x="391" y="-98.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_add</text>
+<!-- program~flow_test_conservative_compressible_mul -->
+<g id="node29" class="node"><title>program~flow_test_conservative_compressible_mul</title>
+<a xlink:href="../program/flow_test_conservative_compressible_mul.html" xlink:title="flow_test_conservative_compressible_mul">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="497,-114 285,-114 285,-88 497,-88 497,-114"/>
+<text text-anchor="middle" x="391" y="-98.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_mul</text>
 </a>
 </g>
-<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_add -->
-<g id="edge54" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_add</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.721,-615.533C191.95,-538.861 214.567,-159.545 250,-123 259.576,-113.124 271.63,-106.497 284.638,-102.174"/>
-<polygon fill="#000000" stroke="#000000" points="285.606,-105.538 294.256,-99.4202 283.679,-98.808 285.606,-105.538"/>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_mul -->
+<g id="edge54" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_mul</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.721,-615.533C191.95,-538.861 214.567,-159.545 250,-123 257.114,-115.663 265.596,-110.119 274.821,-105.981"/>
+<polygon fill="#000000" stroke="#000000" points="276.225,-109.19 284.27,-102.297 273.682,-102.668 276.225,-109.19"/>
 </g>
-<!-- program~flow_test_primitive_compressible_assign -->
-<g id="node30" class="node"><title>program~flow_test_primitive_compressible_assign</title>
-<a xlink:href="../program/flow_test_primitive_compressible_assign.html" xlink:title="flow_test_primitive_compressible_assign">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="494,-70 288,-70 288,-44 494,-44 494,-70"/>
-<text text-anchor="middle" x="391" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_assign</text>
+<!-- program~flow_test_conservative_compressible_normalize -->
+<g id="node30" class="node"><title>program~flow_test_conservative_compressible_normalize</title>
+<a xlink:href="../program/flow_test_conservative_compressible_normalize.html" xlink:title="flow_test_conservative_compressible_normalize">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="512,-70 270,-70 270,-44 512,-44 512,-70"/>
+<text text-anchor="middle" x="391" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_normalize</text>
 </a>
 </g>
-<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_assign -->
-<g id="edge56" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_assign</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.562,-615.954C191.108,-536.444 211.477,-119.125 250,-79 257.963,-70.7063 267.672,-64.6965 278.232,-60.4152"/>
-<polygon fill="#000000" stroke="#000000" points="279.436,-63.702 287.71,-57.0838 277.115,-57.0981 279.436,-63.702"/>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_normalize -->
+<g id="edge56" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_normalize</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.562,-615.954C191.108,-536.444 211.477,-119.125 250,-79 253.464,-75.3921 257.258,-72.2164 261.309,-69.4272"/>
+<polygon fill="#000000" stroke="#000000" points="263.192,-72.3795 269.962,-64.2301 259.587,-66.3787 263.192,-72.3795"/>
 </g>
-<!-- program~flow_test_primitive_compressible_div -->
-<g id="node31" class="node"><title>program~flow_test_primitive_compressible_div</title>
-<a xlink:href="../program/flow_test_primitive_compressible_div.html" xlink:title="flow_test_primitive_compressible_div">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="485,-26 297,-26 297,-1.24345e-14 485,-3.55271e-15 485,-26"/>
-<text text-anchor="middle" x="391" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_primitive_compressible_div</text>
+<!-- program~flow_test_conservative_compressible_not_eq -->
+<g id="node31" class="node"><title>program~flow_test_conservative_compressible_not_eq</title>
+<a xlink:href="../program/flow_test_conservative_compressible_not_eq.html" xlink:title="flow_test_conservative_compressible_not_eq">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="505,-26 277,-26 277,-1.24345e-14 505,-3.55271e-15 505,-26"/>
+<text text-anchor="middle" x="391" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flow_test_conservative_compressible_not_eq</text>
 </a>
 </g>
-<!-- module~flow&#45;&gt;program~flow_test_primitive_compressible_div -->
-<g id="edge58" class="edge"><title>module~flow&#45;&gt;program~flow_test_primitive_compressible_div</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.454,-615.737C190.444,-531.989 208.481,-78.6095 250,-35 259.994,-24.5029 272.783,-17.6545 286.568,-13.3354"/>
-<polygon fill="#000000" stroke="#000000" points="287.499,-16.7095 296.249,-10.7355 285.683,-9.94909 287.499,-16.7095"/>
+<!-- module~flow&#45;&gt;program~flow_test_conservative_compressible_not_eq -->
+<g id="edge58" class="edge"><title>module~flow&#45;&gt;program~flow_test_conservative_compressible_not_eq</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.454,-615.737C190.444,-531.989 208.481,-78.6095 250,-35 254.993,-29.7557 260.684,-25.422 266.847,-21.8595"/>
+<polygon fill="#000000" stroke="#000000" points="268.82,-24.786 276.191,-17.1755 265.683,-18.5282 268.82,-24.786"/>
 </g>
 </g>
 </svg>
@@ -3038,7 +3038,7 @@ private pure subroutine <a href='../proc/eos_assign_eos.html'>eos_assign_eos</a>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-20 13:47  
+             on 2017-04-26 04:17  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

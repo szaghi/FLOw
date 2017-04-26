@@ -190,10 +190,10 @@ contains
    allocate(primitive_compressible_multispecie :: opr)
    select type(opr)
    class is(primitive_compressible_multispecie)
-                                             opr%density           = + self%density
-                                             opr%velocity          = + self%velocity
-                                             opr%pressure          = + self%pressure
-      if (allocated(self%partial_densities)) opr%partial_densities = + self%partial_densities
+                                             opr%density           = self%density
+                                             opr%velocity          = self%velocity
+                                             opr%pressure          = self%pressure
+      if (allocated(self%partial_densities)) opr%partial_densities = self%partial_densities
    endselect
    endfunction positive
 

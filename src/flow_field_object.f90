@@ -3,7 +3,7 @@
 module flow_field_object
 !< FLOw **field** abstract object.
 
-use penf, only : I_P, R_P
+use penf, only : I1P, I_P, R_P
 
 implicit none
 private
@@ -11,6 +11,7 @@ public :: field_object
 
 type, abstract :: field_object
    !< **Field** abstract object.
+   integer(I1P), allocatable :: memory_leaks !< Workaround for GNU memory leaks bug.
    contains
       ! deferred methods
       procedure(array_interface),            pass(self), deferred :: array        !< Return serialized array of field.

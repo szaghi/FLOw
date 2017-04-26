@@ -9,7 +9,7 @@ use, intrinsic :: iso_fortran_env, only : stderr=>error_unit
 use flow_eos_object, only : eos_object
 use flow_field_object, only : field_object
 use flow_conservative_object, only : conservative_object
-use penf, only : I_P, R_P, str
+use penf, only : I1P, I_P, R_P, str
 use vecfor, only : vector
 
 implicit none
@@ -19,9 +19,9 @@ public :: conservative_compressible_pointer
 
 type, extends(conservative_object) :: conservative_compressible
    !< **Conservative** compressible multispecie object.
-   real(R_P)    :: density=0._R_P !< Density, `rho`.
-   type(vector) :: momentum       !< Momentum, `rho * v`, `rho` being the density and `v` the velocity vector.
-   real(R_P)    :: energy=0._R_P  !< Energy, `rho * E`, `rho` being the density and `E` the specific energy.
+   real(R_P)                 :: density=0._R_P !< Density, `rho`.
+   type(vector)              :: momentum       !< Momentum, `rho * v`, `rho` being the density and `v` the velocity vector.
+   real(R_P)                 :: energy=0._R_P  !< Energy, `rho * E`, `rho` being the density and `E` the specific energy.
    contains
       ! public methods
       procedure, pass(self) :: compute_fluxes_from_primitive !< Compute conservative fluxes from primitives at interface.
