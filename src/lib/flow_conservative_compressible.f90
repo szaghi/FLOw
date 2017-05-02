@@ -19,9 +19,9 @@ public :: conservative_compressible_pointer
 
 type, extends(conservative_object) :: conservative_compressible
    !< **Conservative** compressible multispecie object.
-   real(R_P)                 :: density=0._R_P !< Density, `rho`.
-   type(vector)              :: momentum       !< Momentum, `rho * v`, `rho` being the density and `v` the velocity vector.
-   real(R_P)                 :: energy=0._R_P  !< Energy, `rho * E`, `rho` being the density and `E` the specific energy.
+   real(R_P)    :: density=0._R_P !< Density, `rho`.
+   type(vector) :: momentum       !< Momentum, `rho * v`, `rho` being the density and `v` the velocity vector.
+   real(R_P)    :: energy=0._R_P  !< Energy, `rho * E`, `rho` being the density and `E` the specific energy.
    contains
       ! public methods
       procedure, pass(self), public :: compute_fluxes_from_primitive !< Compute conservative fluxes from primitives at interface.
@@ -234,11 +234,11 @@ contains
    select type(rhs)
    class is(conservative_compressible)
       allocate(opr(1:5))
-      opr%(1) = lhs%density    + rhs%density
-      opr%(2) = lhs%momentum%x + rhs%momentum%x
-      opr%(3) = lhs%momentum%y + rhs%momentum%y
-      opr%(4) = lhs%momentum%z + rhs%momentum%z
-      opr%(5) = lhs%energy     + rhs%energy
+      opr(1) = lhs%density    + rhs%density
+      opr(2) = lhs%momentum%x + rhs%momentum%x
+      opr(3) = lhs%momentum%y + rhs%momentum%y
+      opr(4) = lhs%momentum%z + rhs%momentum%z
+      opr(5) = lhs%energy     + rhs%energy
    endselect
    endfunction field_add_field
 
@@ -249,11 +249,11 @@ contains
    real(R_P), allocatable                       :: opr(:)  !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs%density    + rhs(1)
-   opr%(2) = lhs%momentum%x + rhs(2)
-   opr%(3) = lhs%momentum%y + rhs(3)
-   opr%(4) = lhs%momentum%z + rhs(4)
-   opr%(5) = lhs%energy     + rhs(5)
+   opr(1) = lhs%density    + rhs(1)
+   opr(2) = lhs%momentum%x + rhs(2)
+   opr(3) = lhs%momentum%y + rhs(3)
+   opr(4) = lhs%momentum%z + rhs(4)
+   opr(5) = lhs%energy     + rhs(5)
    endfunction field_add_real
 
    pure function real_add_field(lhs, rhs) result(opr)
@@ -263,11 +263,11 @@ contains
    real(R_P), allocatable                       :: opr(:)  !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs(1) + rhs%density
-   opr%(2) = lhs(2) + rhs%momentum%x
-   opr%(3) = lhs(3) + rhs%momentum%y
-   opr%(4) = lhs(4) + rhs%momentum%z
-   opr%(5) = lhs(5) + rhs%energy
+   opr(1) = lhs(1) + rhs%density
+   opr(2) = lhs(2) + rhs%momentum%x
+   opr(3) = lhs(3) + rhs%momentum%y
+   opr(4) = lhs(4) + rhs%momentum%z
+   opr(5) = lhs(5) + rhs%energy
    endfunction real_add_field
 
    pure function positive(self) result(opr)
@@ -288,11 +288,11 @@ contains
    select type(rhs)
    class is(conservative_compressible)
       allocate(opr(1:5))
-      opr%(1) = lhs%density    / rhs%density
-      opr%(2) = lhs%momentum%x / rhs%momentum%x
-      opr%(3) = lhs%momentum%y / rhs%momentum%y
-      opr%(4) = lhs%momentum%z / rhs%momentum%z
-      opr%(5) = lhs%energy     / rhs%energy
+      opr(1) = lhs%density    / rhs%density
+      opr(2) = lhs%momentum%x / rhs%momentum%x
+      opr(3) = lhs%momentum%y / rhs%momentum%y
+      opr(4) = lhs%momentum%z / rhs%momentum%z
+      opr(5) = lhs%energy     / rhs%energy
    endselect
    endfunction field_div_field
 
@@ -303,11 +303,11 @@ contains
    real(R_P), allocatable                       :: opr(:)  !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs%density    / rhs(1)
-   opr%(2) = lhs%momentum%x / rhs(2)
-   opr%(3) = lhs%momentum%y / rhs(3)
-   opr%(4) = lhs%momentum%z / rhs(4)
-   opr%(5) = lhs%energy     / rhs(5)
+   opr(1) = lhs%density    / rhs(1)
+   opr(2) = lhs%momentum%x / rhs(2)
+   opr(3) = lhs%momentum%y / rhs(3)
+   opr(4) = lhs%momentum%z / rhs(4)
+   opr(5) = lhs%energy     / rhs(5)
    endfunction field_div_integer
 
    pure function integer_div_field(lhs, rhs) result(opr)
@@ -317,11 +317,11 @@ contains
    real(R_P), allocatable                       :: opr(:)  !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs(1) / rhs%density
-   opr%(2) = lhs(2) / rhs%momentum%x
-   opr%(3) = lhs(3) / rhs%momentum%y
-   opr%(4) = lhs(4) / rhs%momentum%z
-   opr%(5) = lhs(5) / rhs%energy
+   opr(1) = lhs(1) / rhs%density
+   opr(2) = lhs(2) / rhs%momentum%x
+   opr(3) = lhs(3) / rhs%momentum%y
+   opr(4) = lhs(4) / rhs%momentum%z
+   opr(5) = lhs(5) / rhs%energy
    endfunction integer_div_field
 
    pure function field_div_integer_scalar(lhs, rhs) result(opr)
@@ -331,11 +331,11 @@ contains
    real(R_P), allocatable                       :: opr(:) !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs%density    / rhs
-   opr%(2) = lhs%momentum%x / rhs
-   opr%(3) = lhs%momentum%y / rhs
-   opr%(4) = lhs%momentum%z / rhs
-   opr%(5) = lhs%energy     / rhs
+   opr(1) = lhs%density    / rhs
+   opr(2) = lhs%momentum%x / rhs
+   opr(3) = lhs%momentum%y / rhs
+   opr(4) = lhs%momentum%z / rhs
+   opr(5) = lhs%energy     / rhs
    endfunction field_div_integer_scalar
 
    pure function integer_scalar_div_field(lhs, rhs) result(opr)
@@ -345,11 +345,11 @@ contains
    real(R_P), allocatable                       :: opr(:) !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs / rhs%density
-   opr%(2) = lhs / rhs%momentum%x
-   opr%(3) = lhs / rhs%momentum%y
-   opr%(4) = lhs / rhs%momentum%z
-   opr%(5) = lhs / rhs%energy
+   opr(1) = lhs / rhs%density
+   opr(2) = lhs / rhs%momentum%x
+   opr(3) = lhs / rhs%momentum%y
+   opr(4) = lhs / rhs%momentum%z
+   opr(5) = lhs / rhs%energy
    endfunction integer_scalar_div_field
 
    pure function field_div_real(lhs, rhs) result(opr)
@@ -359,11 +359,11 @@ contains
    real(R_P), allocatable                       :: opr(:)  !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs%density    / rhs(1)
-   opr%(2) = lhs%momentum%x / rhs(2)
-   opr%(3) = lhs%momentum%y / rhs(3)
-   opr%(4) = lhs%momentum%z / rhs(4)
-   opr%(5) = lhs%energy     / rhs(5)
+   opr(1) = lhs%density    / rhs(1)
+   opr(2) = lhs%momentum%x / rhs(2)
+   opr(3) = lhs%momentum%y / rhs(3)
+   opr(4) = lhs%momentum%z / rhs(4)
+   opr(5) = lhs%energy     / rhs(5)
    endfunction field_div_real
 
    pure function real_div_field(lhs, rhs) result(opr)
@@ -373,11 +373,11 @@ contains
    real(R_P), allocatable                       :: opr(:)  !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs(1) / rhs%density
-   opr%(2) = lhs(2) / rhs%momentum%x
-   opr%(3) = lhs(3) / rhs%momentum%y
-   opr%(4) = lhs(4) / rhs%momentum%z
-   opr%(5) = lhs(5) / rhs%energy
+   opr(1) = lhs(1) / rhs%density
+   opr(2) = lhs(2) / rhs%momentum%x
+   opr(3) = lhs(3) / rhs%momentum%y
+   opr(4) = lhs(4) / rhs%momentum%z
+   opr(5) = lhs(5) / rhs%energy
    endfunction real_div_field
 
    pure function field_div_real_scalar(lhs, rhs) result(opr)
@@ -387,11 +387,11 @@ contains
    real(R_P), allocatable                       :: opr(:) !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs%density    / rhs
-   opr%(2) = lhs%momentum%x / rhs
-   opr%(3) = lhs%momentum%y / rhs
-   opr%(4) = lhs%momentum%z / rhs
-   opr%(5) = lhs%energy     / rhs
+   opr(1) = lhs%density    / rhs
+   opr(2) = lhs%momentum%x / rhs
+   opr(3) = lhs%momentum%y / rhs
+   opr(4) = lhs%momentum%z / rhs
+   opr(5) = lhs%energy     / rhs
    endfunction field_div_real_scalar
 
    pure function real_scalar_div_field(lhs, rhs) result(opr)
@@ -401,11 +401,11 @@ contains
    real(R_P), allocatable                       :: opr(:) !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs / rhs%density
-   opr%(2) = lhs / rhs%momentum%x
-   opr%(3) = lhs / rhs%momentum%y
-   opr%(4) = lhs / rhs%momentum%z
-   opr%(5) = lhs / rhs%energy
+   opr(1) = lhs / rhs%density
+   opr(2) = lhs / rhs%momentum%x
+   opr(3) = lhs / rhs%momentum%y
+   opr(4) = lhs / rhs%momentum%z
+   opr(5) = lhs / rhs%energy
    endfunction real_scalar_div_field
 
    ! *
@@ -418,11 +418,11 @@ contains
    select type(rhs)
    class is(conservative_compressible)
       allocate(opr(1:5))
-      opr%(1) = lhs%density    * rhs%density
-      opr%(2) = lhs%momentum%x * rhs%momentum%x
-      opr%(3) = lhs%momentum%y * rhs%momentum%y
-      opr%(4) = lhs%momentum%z * rhs%momentum%z
-      opr%(5) = lhs%energy     * rhs%energy
+      opr(1) = lhs%density    * rhs%density
+      opr(2) = lhs%momentum%x * rhs%momentum%x
+      opr(3) = lhs%momentum%y * rhs%momentum%y
+      opr(4) = lhs%momentum%z * rhs%momentum%z
+      opr(5) = lhs%energy     * rhs%energy
    endselect
    endfunction field_mul_field
 
@@ -433,11 +433,11 @@ contains
    real(R_P), allocatable                       :: opr(:)  !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs%density    * rhs(1)
-   opr%(2) = lhs%momentum%x * rhs(2)
-   opr%(3) = lhs%momentum%y * rhs(3)
-   opr%(4) = lhs%momentum%z * rhs(4)
-   opr%(5) = lhs%energy     * rhs(5)
+   opr(1) = lhs%density    * rhs(1)
+   opr(2) = lhs%momentum%x * rhs(2)
+   opr(3) = lhs%momentum%y * rhs(3)
+   opr(4) = lhs%momentum%z * rhs(4)
+   opr(5) = lhs%energy     * rhs(5)
    endfunction field_mul_integer
 
    pure function integer_mul_field(lhs, rhs) result(opr)
@@ -447,11 +447,11 @@ contains
    real(R_P), allocatable                       :: opr(:)  !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs(1) * rhs%density
-   opr%(2) = lhs(2) * rhs%momentum%x
-   opr%(3) = lhs(3) * rhs%momentum%y
-   opr%(4) = lhs(4) * rhs%momentum%z
-   opr%(5) = lhs(5) * rhs%energy
+   opr(1) = lhs(1) * rhs%density
+   opr(2) = lhs(2) * rhs%momentum%x
+   opr(3) = lhs(3) * rhs%momentum%y
+   opr(4) = lhs(4) * rhs%momentum%z
+   opr(5) = lhs(5) * rhs%energy
    endfunction integer_mul_field
 
    pure function field_mul_integer_scalar(lhs, rhs) result(opr)
@@ -461,11 +461,11 @@ contains
    real(R_P), allocatable                       :: opr(:) !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs%density    * rhs
-   opr%(2) = lhs%momentum%x * rhs
-   opr%(3) = lhs%momentum%y * rhs
-   opr%(4) = lhs%momentum%z * rhs
-   opr%(5) = lhs%energy     * rhs
+   opr(1) = lhs%density    * rhs
+   opr(2) = lhs%momentum%x * rhs
+   opr(3) = lhs%momentum%y * rhs
+   opr(4) = lhs%momentum%z * rhs
+   opr(5) = lhs%energy     * rhs
    endfunction field_mul_integer_scalar
 
    pure function integer_scalar_mul_field(lhs, rhs) result(opr)
@@ -475,11 +475,11 @@ contains
    real(R_P), allocatable                       :: opr(:) !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs * rhs%density
-   opr%(2) = lhs * rhs%momentum%x
-   opr%(3) = lhs * rhs%momentum%y
-   opr%(4) = lhs * rhs%momentum%z
-   opr%(5) = lhs * rhs%energy
+   opr(1) = lhs * rhs%density
+   opr(2) = lhs * rhs%momentum%x
+   opr(3) = lhs * rhs%momentum%y
+   opr(4) = lhs * rhs%momentum%z
+   opr(5) = lhs * rhs%energy
    endfunction integer_scalar_mul_field
 
    pure function field_mul_real(lhs, rhs) result(opr)
@@ -489,11 +489,11 @@ contains
    real(R_P), allocatable                       :: opr(:)  !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs%density    * rhs(1)
-   opr%(2) = lhs%momentum%x * rhs(2)
-   opr%(3) = lhs%momentum%y * rhs(3)
-   opr%(4) = lhs%momentum%z * rhs(4)
-   opr%(5) = lhs%energy     * rhs(5)
+   opr(1) = lhs%density    * rhs(1)
+   opr(2) = lhs%momentum%x * rhs(2)
+   opr(3) = lhs%momentum%y * rhs(3)
+   opr(4) = lhs%momentum%z * rhs(4)
+   opr(5) = lhs%energy     * rhs(5)
    endfunction field_mul_real
 
    pure function real_mul_field(lhs, rhs) result(opr)
@@ -503,11 +503,11 @@ contains
    real(R_P), allocatable                       :: opr(:)  !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs(1) * rhs%density
-   opr%(2) = lhs(2) * rhs%momentum%x
-   opr%(3) = lhs(3) * rhs%momentum%y
-   opr%(4) = lhs(4) * rhs%momentum%z
-   opr%(5) = lhs(5) * rhs%energy
+   opr(1) = lhs(1) * rhs%density
+   opr(2) = lhs(2) * rhs%momentum%x
+   opr(3) = lhs(3) * rhs%momentum%y
+   opr(4) = lhs(4) * rhs%momentum%z
+   opr(5) = lhs(5) * rhs%energy
    endfunction real_mul_field
 
    pure function field_mul_real_scalar(lhs, rhs) result(opr)
@@ -517,11 +517,11 @@ contains
    real(R_P), allocatable                       :: opr(:) !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs%density    * rhs
-   opr%(2) = lhs%momentum%x * rhs
-   opr%(3) = lhs%momentum%y * rhs
-   opr%(4) = lhs%momentum%z * rhs
-   opr%(5) = lhs%energy     * rhs
+   opr(1) = lhs%density    * rhs
+   opr(2) = lhs%momentum%x * rhs
+   opr(3) = lhs%momentum%y * rhs
+   opr(4) = lhs%momentum%z * rhs
+   opr(5) = lhs%energy     * rhs
    endfunction field_mul_real_scalar
 
    pure function real_scalar_mul_field(lhs, rhs) result(opr)
@@ -531,11 +531,11 @@ contains
    real(R_P), allocatable                       :: opr(:) !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs * rhs%density
-   opr%(2) = lhs * rhs%momentum%x
-   opr%(3) = lhs * rhs%momentum%y
-   opr%(4) = lhs * rhs%momentum%z
-   opr%(5) = lhs * rhs%energy
+   opr(1) = lhs * rhs%density
+   opr(2) = lhs * rhs%momentum%x
+   opr(3) = lhs * rhs%momentum%y
+   opr(4) = lhs * rhs%momentum%z
+   opr(5) = lhs * rhs%energy
    endfunction real_scalar_mul_field
 
    ! -
@@ -548,11 +548,11 @@ contains
    select type(rhs)
    class is(conservative_compressible)
       allocate(opr(1:5))
-      opr%(1) = lhs%density    - rhs%density
-      opr%(2) = lhs%momentum%x - rhs%momentum%x
-      opr%(3) = lhs%momentum%y - rhs%momentum%y
-      opr%(4) = lhs%momentum%z - rhs%momentum%z
-      opr%(5) = lhs%energy     - rhs%energy
+      opr(1) = lhs%density    - rhs%density
+      opr(2) = lhs%momentum%x - rhs%momentum%x
+      opr(3) = lhs%momentum%y - rhs%momentum%y
+      opr(4) = lhs%momentum%z - rhs%momentum%z
+      opr(5) = lhs%energy     - rhs%energy
    endselect
    endfunction field_sub_field
 
@@ -563,11 +563,11 @@ contains
    real(R_P), allocatable                       :: opr(:)  !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs%density    - rhs(1)
-   opr%(2) = lhs%momentum%x - rhs(2)
-   opr%(3) = lhs%momentum%y - rhs(3)
-   opr%(4) = lhs%momentum%z - rhs(4)
-   opr%(5) = lhs%energy     - rhs(5)
+   opr(1) = lhs%density    - rhs(1)
+   opr(2) = lhs%momentum%x - rhs(2)
+   opr(3) = lhs%momentum%y - rhs(3)
+   opr(4) = lhs%momentum%z - rhs(4)
+   opr(5) = lhs%energy     - rhs(5)
    endfunction field_sub_real
 
    pure function real_sub_field(lhs, rhs) result(opr)
@@ -577,11 +577,11 @@ contains
    real(R_P), allocatable                       :: opr(:)  !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs(1) - rhs%density
-   opr%(2) = lhs(2) - rhs%momentum%x
-   opr%(3) = lhs(3) - rhs%momentum%y
-   opr%(4) = lhs(4) - rhs%momentum%z
-   opr%(5) = lhs(5) - rhs%energy
+   opr(1) = lhs(1) - rhs%density
+   opr(2) = lhs(2) - rhs%momentum%x
+   opr(3) = lhs(3) - rhs%momentum%y
+   opr(4) = lhs(4) - rhs%momentum%z
+   opr(5) = lhs(5) - rhs%energy
    endfunction real_sub_field
 
    pure function negative(self) result(opr)
@@ -600,25 +600,25 @@ contains
    real(R_P), allocatable                       :: opr(:) !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs%density    ** rhs
-   opr%(2) = lhs%momentum%x ** rhs
-   opr%(3) = lhs%momentum%y ** rhs
-   opr%(4) = lhs%momentum%z ** rhs
-   opr%(5) = lhs%energy     ** rhs
+   opr(1) = lhs%density    ** rhs
+   opr(2) = lhs%momentum%x ** rhs
+   opr(3) = lhs%momentum%y ** rhs
+   opr(4) = lhs%momentum%z ** rhs
+   opr(5) = lhs%energy     ** rhs
    endfunction field_pow_integer
 
    pure function field_pow_real(lhs, rhs) result(opr)
    !< `** real` operator.
-   class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   real(R_P),                        intent(in) :: rhs !< Right hand side.
-   class(field_object), allocatable             :: opr !< Operator result.
+   class(conservative_compressible), intent(in) :: lhs    !< Left hand side.
+   real(R_P),                        intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
 
    allocate(opr(1:5))
-   opr%(1) = lhs%density    ** rhs
-   opr%(2) = lhs%momentum%x ** rhs
-   opr%(3) = lhs%momentum%y ** rhs
-   opr%(4) = lhs%momentum%z ** rhs
-   opr%(5) = lhs%energy     ** rhs
+   opr(1) = lhs%density    ** rhs
+   opr(2) = lhs%momentum%x ** rhs
+   opr(3) = lhs%momentum%y ** rhs
+   opr(4) = lhs%momentum%z ** rhs
+   opr(5) = lhs%energy     ** rhs
    endfunction field_pow_real
 
    ! =

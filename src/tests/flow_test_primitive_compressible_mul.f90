@@ -11,6 +11,7 @@ implicit none
 type(primitive_compressible) :: primitive1     !< A primitive object.
 type(primitive_compressible) :: primitive2     !< A primitive object.
 type(primitive_compressible) :: primitive3     !< A primitive object.
+type(primitive_compressible) :: primitive4     !< A primitive object.
 type(vector)                 :: velocity       !< A vector object.
 logical                      :: test_passed(5) !< List of passed tests.
 
@@ -21,43 +22,47 @@ primitive1 = primitive_compressible(density=0.125_R_P, velocity=velocity, pressu
 velocity = 2._R_P
 primitive2 = primitive_compressible(density=1._R_P, velocity=velocity, pressure=1._R_P)
 
-primitive3 = primitive1 * primitive2
-test_passed(1) = primitive3 == (primitive1 * primitive2)
-print "(A,F6.3)",       'density   => 0.125  * 1 = ', primitive3%density
-print "(A,3(F6.3,1X))", 'velocity  => 1      * 2 = ', primitive3%velocity
-print "(A,F6.3)",       'pressure  => 1      * 1 = ', primitive3%pressure
+primitive3 = primitive_compressible(density=0.125_R_P, velocity=velocity, pressure=1._R_P)
+primitive4 = primitive1 * primitive2
+test_passed(1) = primitive3 == primitive4
+print "(A,F6.3)",       'density   => 0.125  * 1 = ', primitive4%density
+print "(A,3(F6.3,1X))", 'velocity  => 1      * 2 = ', primitive4%velocity
+print "(A,F6.3)",       'pressure  => 1      * 1 = ', primitive4%pressure
 call print_error(test='primitive3 = primitive1 * primitive2', is_test_passed=test_passed(1))
 
-primitive3 = 2._R_P * primitive1
-test_passed(2) = primitive3 == (2._R_P * primitive1)
+velocity = 2._R_P
+primitive3 = primitive_compressible(density=0.25_R_P, velocity=velocity, pressure=2._R_P)
+
+primitive4 = 2._R_P * primitive1
+test_passed(2) = primitive3 == primitive4
 print "(A)", ''
-print "(A,F6.3)",       'density   => 2.0 * 0.125  = ', primitive3%density
-print "(A,3(F6.3,1X))", 'velocity  => 2.0 * 1      = ', primitive3%velocity
-print "(A,F6.3)",       'pressure  => 2.0 * 1      = ', primitive3%pressure
+print "(A,F6.3)",       'density   => 2.0 * 0.125  = ', primitive4%density
+print "(A,3(F6.3,1X))", 'velocity  => 2.0 * 1      = ', primitive4%velocity
+print "(A,F6.3)",       'pressure  => 2.0 * 1      = ', primitive4%pressure
 call print_error(test='primitive3 = 2.0 * primitive1', is_test_passed=test_passed(2))
 
-primitive3 = primitive1 * 2._R_P
-test_passed(3) = primitive3 == (primitive1 * 2._R_P)
+primitive4 = primitive1 * 2._R_P
+test_passed(3) = primitive3 == primitive4
 print "(A)", ''
-print "(A,F6.3)",       'density   => 0.125  * 2.0 = ', primitive3%density
-print "(A,3(F6.3,1X))", 'velocity  => 1      * 2.0 = ', primitive3%velocity
-print "(A,F6.3)",       'pressure  => 1      * 2.0 = ', primitive3%pressure
+print "(A,F6.3)",       'density   => 0.125  * 2.0 = ', primitive4%density
+print "(A,3(F6.3,1X))", 'velocity  => 1      * 2.0 = ', primitive4%velocity
+print "(A,F6.3)",       'pressure  => 1      * 2.0 = ', primitive4%pressure
 call print_error(test='primitive3 = primitive1 * 2.0', is_test_passed=test_passed(3))
 
 primitive3 = 2_I_P * primitive1
-test_passed(4) = primitive3 == (2_I_P * primitive1)
+test_passed(4) = primitive3 == primitive4
 print "(A)", ''
-print "(A,F6.3)",       'density   => 2 * 0.125  = ', primitive3%density
-print "(A,3(F6.3,1X))", 'velocity  => 2 * 1      = ', primitive3%velocity
-print "(A,F6.3)",       'pressure  => 2 * 1      = ', primitive3%pressure
+print "(A,F6.3)",       'density   => 2 * 0.125  = ', primitive4%density
+print "(A,3(F6.3,1X))", 'velocity  => 2 * 1      = ', primitive4%velocity
+print "(A,F6.3)",       'pressure  => 2 * 1      = ', primitive4%pressure
 call print_error(test='primitive3 = 2 * primitive1', is_test_passed=test_passed(4))
 
 primitive3 = primitive1 * 2_I_P
-test_passed(5) = primitive3 == (primitive1 * 2_I_P)
+test_passed(5) = primitive3 == primitive4
 print "(A)", ''
-print "(A,F6.3)",       'density   => 0.125  * 2 = ', primitive3%density
-print "(A,3(F6.3,1X))", 'velocity  => 1      * 2 = ', primitive3%velocity
-print "(A,F6.3)",       'pressure  => 1      * 2 = ', primitive3%pressure
+print "(A,F6.3)",       'density   => 0.125  * 2 = ', primitive4%density
+print "(A,3(F6.3,1X))", 'velocity  => 1      * 2 = ', primitive4%velocity
+print "(A,F6.3)",       'pressure  => 1      * 2 = ', primitive4%pressure
 call print_error(test='primitive3 = primitive1 * 2', is_test_passed=test_passed(5))
 
 print "(A,L1)", new_line('a')//'Are all tests passed? ', all(test_passed)

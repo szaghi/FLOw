@@ -73,13 +73,13 @@ type, abstract :: field_object
                                         real_sub_field,  &
                                         negative !< Overloading `-` operator.
       ! **
-      procedure(field_op_integer), pass(lhs), deferred, public :: field_pow_integer !< `** integer` operator.
-      procedure(field_op_real),    pass(lhs), deferred, public :: field_pow_real    !< `** real` operator.
+      procedure(field_op_integer_scalar), pass(lhs), deferred, public :: field_pow_integer !< `** integer` operator.
+      procedure(field_op_real_scalar),    pass(lhs), deferred, public :: field_pow_real    !< `** real` operator.
       generic, public :: operator(**) => field_pow_integer, field_pow_real !< Overloading `**` operator.
       ! =
       procedure(assign_field_interface), pass(lhs), deferred, public :: assign_field !< `=` operator.
       procedure(assign_real_interface),  pass(lhs), deferred, public :: assign_real  !< `= real` operator.
-      generic, public :: assignment(=) => assign_integrand, assign_real !< Overloading `=` assignament.
+      generic, public :: assignment(=) => assign_field, assign_real !< Overloading `=` assignament.
       ! ==
       procedure(compare_interface), pass(lhs), deferred, public :: eq !< `==' operator.
       generic, public :: operator(==) => eq !< Overloading `==` operator.
@@ -107,13 +107,13 @@ abstract interface
    endfunction description_interface
 
    ! operators
-   pure function symmetric_op(lhs, rhs) result(opr)
+   pure function symmetric_operator(lhs, rhs) result(opr)
    !< Operator `field.op.field`.
-   import :: field_object
+   import :: field_object, R_P
    class(field_object), intent(in) :: lhs    !< Left hand side.
    class(field_object), intent(in) :: rhs    !< Right hand side.
    real(R_P), allocatable          :: opr(:) !< Operator result.
-   endfunction symmetric_op
+   endfunction symmetric_operator
 
    pure function field_op_integer(lhs, rhs) result(opr)
    !< Operator `field.op.integer`.
@@ -181,7 +181,7 @@ abstract interface
 
    pure function unary_operator(self) result(opr)
    !< Unary operator `.op.field`.
-   import :: field_object
+   import :: field_object, R_P
    class(field_object), intent(in) :: self   !< Field.
    real(R_P), allocatable          :: opr(:) !< Operator result.
    endfunction unary_operator
