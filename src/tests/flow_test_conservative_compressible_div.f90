@@ -11,6 +11,7 @@ implicit none
 type(conservative_compressible) :: conservative1  !< A conservative object.
 type(conservative_compressible) :: conservative2  !< A conservative object.
 type(conservative_compressible) :: conservative3  !< A conservative object.
+type(conservative_compressible) :: conservative4  !< A conservative object.
 type(vector)                    :: momentum       !< A vector object.
 logical                         :: test_passed(3) !< List of passed tests.
 
@@ -21,27 +22,31 @@ conservative1 = conservative_compressible(density=0.125_R_P, momentum=momentum, 
 momentum = 2._R_P
 conservative2 = conservative_compressible(density=1._R_P, momentum=momentum, energy=1._R_P)
 
-conservative3 = conservative1 / conservative2
-test_passed(1) = conservative3 == (conservative1 / conservative2)
-print "(A,F6.3)",       'density   => 0.125  / 1   = ', conservative3%density
-print "(A,3(F6.3,1X))", 'momentum  => 1      / 2   = ', conservative3%momentum
-print "(A,F6.3)",       'energy    => 1      / 1   = ', conservative3%energy
+momentum = 0.5_R_P
+conservative3 = conservative_compressible(density=0.125_R_P, momentum=momentum, energy=1._R_P)
+conservative4 = conservative1 / conservative2
+test_passed(1) = conservative3 == conservative4
+print "(A,F6.3)",       'density   => 0.125  / 1   = ', conservative4%density
+print "(A,3(F6.3,1X))", 'momentum  => 1      / 2   = ', conservative4%momentum
+print "(A,F6.3)",       'energy    => 1      / 1   = ', conservative4%energy
 call print_error(test='conservative3 = conservative1 / conservative2', is_test_passed=test_passed(1))
 
-conservative3 = conservative1 / 2._R_P
-test_passed(2) = conservative3 == (conservative1 / 2._R_P)
+momentum = 0.5_R_P
+conservative3 = conservative_compressible(density=0.0625_R_P, momentum=momentum, energy=0.5_R_P)
+conservative4 = conservative1 / 2._R_P
+test_passed(2) = conservative3 == conservative4
 print "(A)", ''
-print "(A,F6.3)",       'density   => 0.125  / 2.0 = ', conservative3%density
-print "(A,3(F6.3,1X))", 'momentum  => 1      / 2.0 = ', conservative3%momentum
-print "(A,F6.3)",       'energy    => 1      / 2.0 = ', conservative3%energy
+print "(A,F6.3)",       'density   => 0.125  / 2.0 = ', conservative4%density
+print "(A,3(F6.3,1X))", 'momentum  => 1      / 2.0 = ', conservative4%momentum
+print "(A,F6.3)",       'energy    => 1      / 2.0 = ', conservative4%energy
 call print_error(test='conservative3 = conservative1 / 2.0', is_test_passed=test_passed(2))
 
-conservative3 = conservative1 / 2_I_P
-test_passed(3) = conservative3 == (conservative1 / 2_I_P)
+conservative4 = conservative1 / 2_I_P
+test_passed(3) = conservative3 == conservative4
 print "(A)", ''
-print "(A,F6.3)",       'density   => 0.125  / 2 = ', conservative3%density
-print "(A,3(F6.3,1X))", 'momentum  => 1      / 2 = ', conservative3%momentum
-print "(A,F6.3)",       'energy    => 1      / 2 = ', conservative3%energy
+print "(A,F6.3)",       'density   => 0.125  / 2 = ', conservative4%density
+print "(A,3(F6.3,1X))", 'momentum  => 1      / 2 = ', conservative4%momentum
+print "(A,F6.3)",       'energy    => 1      / 2 = ', conservative4%energy
 call print_error(test='conservative3 = conservative1 / 2', is_test_passed=test_passed(3))
 
 print "(A,L1)", new_line('a')//'Are all tests passed? ', all(test_passed)

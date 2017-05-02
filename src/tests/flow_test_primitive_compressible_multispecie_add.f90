@@ -11,6 +11,7 @@ implicit none
 type(primitive_compressible_multispecie) :: primitive1     !< A primitive object.
 type(primitive_compressible_multispecie) :: primitive2     !< A primitive object.
 type(primitive_compressible_multispecie) :: primitive3     !< A primitive object.
+type(primitive_compressible_multispecie) :: primitive4     !< A primitive object.
 type(vector)                             :: velocity       !< A vector object.
 logical                                  :: test_passed(2) !< List of passed tests.
 
@@ -22,16 +23,21 @@ primitive1 = primitive_compressible_multispecie(density=0.125_R_P,  &
                                                 pressure=1._R_P,    &
                                                 partial_densities=[0.125_R_P / 2,  0.125_R_P / 2])
 velocity = 2._R_P
-primitive2 = primitive_compressible_multispecie(density=1._R_P,  &
+primitive2 = primitive_compressible_multispecie(density=1._R_P,     &
                                                 velocity=velocity,  &
                                                 pressure=1._R_P,    &
                                                 partial_densities=[1._R_P / 2,  1._R_P / 2])
-primitive3 = primitive1 + primitive2
-test_passed(1) = primitive3 == (primitive1 + primitive2)
-print "(A,F6.3)",       'density   => 0.125  + 1   = ', primitive3%density
-print "(A,3(F6.3,1X))", 'velocity  => 1      + 2   = ', primitive3%velocity
-print "(A,F6.3)",       'pressure  => 1      + 1   = ', primitive3%pressure
-print "(A,2(F7.4,1X))", 'densities => 0.0625 + 0.5 = ', primitive3%partial_densities
+velocity = 3._R_P
+primitive3 = primitive_compressible_multispecie(density=1.125_R_P,  &
+                                                velocity=velocity,  &
+                                                pressure=2._R_P,    &
+                                                partial_densities=[0.5625_R_P, 0.5625_R_P])
+primitive4 = primitive1 + primitive2
+test_passed(1) = primitive3 == primitive3
+print "(A,F6.3)",       'density   => 0.125  + 1   = ', primitive4%density
+print "(A,3(F6.3,1X))", 'velocity  => 1      + 2   = ', primitive4%velocity
+print "(A,F6.3)",       'pressure  => 1      + 1   = ', primitive4%pressure
+print "(A,2(F7.4,1X))", 'densities => 0.0625 + 0.5 = ', primitive4%partial_densities
 
 velocity = -1._R_P
 primitive1 = primitive_compressible_multispecie(density=0.125_R_P, velocity=velocity, pressure=1._R_P, &

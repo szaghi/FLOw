@@ -19,40 +19,62 @@ public :: conservative_compressible_pointer
 
 type, extends(conservative_object) :: conservative_compressible
    !< **Conservative** compressible multispecie object.
-   real(R_P)                 :: density=0._R_P !< Density, `rho`.
-   type(vector)              :: momentum       !< Momentum, `rho * v`, `rho` being the density and `v` the velocity vector.
-   real(R_P)                 :: energy=0._R_P  !< Energy, `rho * E`, `rho` being the density and `E` the specific energy.
+   real(R_P)    :: density=0._R_P !< Density, `rho`.
+   type(vector) :: momentum       !< Momentum, `rho * v`, `rho` being the density and `v` the velocity vector.
+   real(R_P)    :: energy=0._R_P  !< Energy, `rho * E`, `rho` being the density and `E` the specific energy.
    contains
       ! public methods
-      procedure, pass(self) :: compute_fluxes_from_primitive !< Compute conservative fluxes from primitives at interface.
+      procedure, pass(self), public :: compute_fluxes_from_primitive !< Compute conservative fluxes from primitives at interface.
       ! deferred methods
-      procedure, pass(self) :: array          !< Return serialized array of field.
-      procedure, pass(self) :: compute_fluxes !< Compute conservative fluxes.
-      procedure, pass(self) :: description    !< Return pretty-printed object description.
-      procedure, pass(self) :: destroy        !< Destroy conservative.
-      procedure, pass(self) :: initialize     !< Initialize conservative.
-      procedure, pass(self) :: normalize      !< Normalize conservative with respect a given normal vector.
-      procedure, pass(self) :: pressure       !< Return pressure value.
-      procedure, pass(self) :: velocity       !< Return velocity vector.
+      procedure, pass(self), public :: array          !< Return serialized array of field.
+      procedure, pass(self), public :: compute_fluxes !< Compute conservative fluxes.
+      procedure, pass(self), public :: description    !< Return pretty-printed object description.
+      procedure, pass(self), public :: destroy        !< Destroy conservative.
+      procedure, pass(self), public :: initialize     !< Initialize conservative.
+      procedure, pass(self), public :: normalize      !< Normalize conservative with respect a given normal vector.
+      procedure, pass(self), public :: pressure       !< Return pressure value.
+      procedure, pass(self), public :: velocity       !< Return velocity vector.
       ! deferred operators
-      procedure, pass(lhs)  :: assign_field !< Operator `=`.
-      procedure, pass(lhs)  :: assign_real  !< Operator `field = real`.
-      procedure, pass(self) :: positive     !< Unary operator `+ field`.
-      procedure, pass(lhs)  :: add          !< Operator `+`.
-      procedure, pass(lhs)  :: div          !< Operator `/`.
-      procedure, pass(lhs)  :: div_integer  !< Operator `field / integer`.
-      procedure, pass(lhs)  :: div_real     !< Operator `field / real`.
-      procedure, pass(lhs)  :: mul          !< Operator `*`.
-      procedure, pass(lhs)  :: mul_integer  !< Operator `field * integer`.
-      procedure, pass(rhs)  :: integer_mul  !< Operator `integer * field`.
-      procedure, pass(lhs)  :: mul_real     !< Operator `field * real`.
-      procedure, pass(rhs)  :: real_mul     !< Operator `real * field`.
-      procedure, pass(self) :: negative     !< Unary operator `- field`.
-      procedure, pass(lhs)  :: sub          !< Operator `-`.
-      procedure, pass(lhs)  :: pow_integer  !< Operator `field ** integer`.
-      procedure, pass(lhs)  :: pow_real     !< Operator `field ** real`.
-      procedure, pass(lhs)  :: eq           !< Operator `=='.
-      procedure, pass(lhs)  :: not_eq       !< Operator `/='.
+      ! +
+      procedure, pass(lhs),  public :: field_add_field !< `+` operator.
+      procedure, pass(lhs),  public :: field_add_real  !< `+ real` operator.
+      procedure, pass(rhs),  public :: real_add_field  !< `real +` operator.
+      procedure, pass(self), public :: positive        !< Unary operator `+ field`.
+      ! /
+      procedure, pass(lhs), public :: field_div_field          !< `/` operator.
+      procedure, pass(lhs), public :: field_div_integer        !< `/ integer` operator.
+      procedure, pass(rhs), public :: integer_div_field        !< `integer /` operator.
+      procedure, pass(lhs), public :: field_div_integer_scalar !< `/ integer_scalar` operator.
+      procedure, pass(rhs), public :: integer_scalar_div_field !< `integer_scalar /` operator.
+      procedure, pass(lhs), public :: field_div_real           !< `/ real` operator.
+      procedure, pass(rhs), public :: real_div_field           !< `real /` operator.
+      procedure, pass(lhs), public :: field_div_real_scalar    !< `/ real_scalar` operator.
+      procedure, pass(rhs), public :: real_scalar_div_field    !< `real_scalar /` operator.
+      ! *
+      procedure, pass(lhs), public :: field_mul_field          !< `*` operator.
+      procedure, pass(lhs), public :: field_mul_integer        !< `* integer` operator.
+      procedure, pass(rhs), public :: integer_mul_field        !< `integer *` operator.
+      procedure, pass(lhs), public :: field_mul_integer_scalar !< `* integer_scalar` operator.
+      procedure, pass(rhs), public :: integer_scalar_mul_field !< `integer_scalar *` operator.
+      procedure, pass(lhs), public :: field_mul_real           !< `* real` operator.
+      procedure, pass(rhs), public :: real_mul_field           !< `real *` operator.
+      procedure, pass(lhs), public :: field_mul_real_scalar    !< `* real_scalar` operator.
+      procedure, pass(rhs), public :: real_scalar_mul_field    !< `real_scalar *` operator.
+      ! -
+      procedure, pass(lhs),  public :: field_sub_field !< `-` operator.
+      procedure, pass(lhs),  public :: field_sub_real  !< `- real` operator.
+      procedure, pass(rhs),  public :: real_sub_field  !< `real -` operator.
+      procedure, pass(self), public :: negative        !< Unary operator `- field`.
+      ! **
+      procedure, pass(lhs), public :: field_pow_integer !< `** integer` operator.
+      procedure, pass(lhs), public :: field_pow_real    !< `** real` operator.
+      ! =
+      procedure, pass(lhs), public :: assign_field !< `=` operator.
+      procedure, pass(lhs), public :: assign_real  !< `= real` operator.
+      ! ==
+      procedure, pass(lhs), public :: eq !< `==' operator.
+      ! /=
+      procedure, pass(lhs), public :: not_eq !< `/=' operator.
 endtype conservative_compressible
 
 interface conservative_compressible
@@ -202,7 +224,405 @@ contains
    endfunction velocity
 
    ! deferred oprators
-   elemental subroutine assign_field(lhs, rhs)
+   ! +
+   pure function field_add_field(lhs, rhs) result(opr)
+   !< `+` operator.
+   class(conservative_compressible), intent(in) :: lhs    !< Left hand side.
+   class(field_object),              intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   select type(rhs)
+   class is(conservative_compressible)
+      allocate(opr(1:5))
+      opr(1) = lhs%density    + rhs%density
+      opr(2) = lhs%momentum%x + rhs%momentum%x
+      opr(3) = lhs%momentum%y + rhs%momentum%y
+      opr(4) = lhs%momentum%z + rhs%momentum%z
+      opr(5) = lhs%energy     + rhs%energy
+   endselect
+   endfunction field_add_field
+
+   pure function field_add_real(lhs, rhs) result(opr)
+   !< `+ real` operator.
+   class(conservative_compressible), intent(in) :: lhs     !< Left hand side.
+   real(R_P),                        intent(in) :: rhs(1:) !< Right hand side.
+   real(R_P), allocatable                       :: opr(:)  !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs%density    + rhs(1)
+   opr(2) = lhs%momentum%x + rhs(2)
+   opr(3) = lhs%momentum%y + rhs(3)
+   opr(4) = lhs%momentum%z + rhs(4)
+   opr(5) = lhs%energy     + rhs(5)
+   endfunction field_add_real
+
+   pure function real_add_field(lhs, rhs) result(opr)
+   !< `real +` operator.
+   real(R_P),                        intent(in) :: lhs(1:) !< Left hand side.
+   class(conservative_compressible), intent(in) :: rhs     !< Right hand side.
+   real(R_P), allocatable                       :: opr(:)  !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs(1) + rhs%density
+   opr(2) = lhs(2) + rhs%momentum%x
+   opr(3) = lhs(3) + rhs%momentum%y
+   opr(4) = lhs(4) + rhs%momentum%z
+   opr(5) = lhs(5) + rhs%energy
+   endfunction real_add_field
+
+   pure function positive(self) result(opr)
+   !< Unary operator `+ field`.
+   class(conservative_compressible), intent(in) :: self   !< conservative.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   opr = self%array()
+   endfunction positive
+
+   ! /
+   pure function field_div_field(lhs, rhs) result(opr)
+   !< `/` operator.
+   class(conservative_compressible), intent(in) :: lhs    !< Left hand side.
+   class(field_object),              intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   select type(rhs)
+   class is(conservative_compressible)
+      allocate(opr(1:5))
+      opr(1) = lhs%density    / rhs%density
+      opr(2) = lhs%momentum%x / rhs%momentum%x
+      opr(3) = lhs%momentum%y / rhs%momentum%y
+      opr(4) = lhs%momentum%z / rhs%momentum%z
+      opr(5) = lhs%energy     / rhs%energy
+   endselect
+   endfunction field_div_field
+
+   pure function field_div_integer(lhs, rhs) result(opr)
+   !< `/ integer` operator.
+   class(conservative_compressible), intent(in) :: lhs     !< Left hand side.
+   integer(I_P),                     intent(in) :: rhs(1:) !< Right hand side.
+   real(R_P), allocatable                       :: opr(:)  !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs%density    / rhs(1)
+   opr(2) = lhs%momentum%x / rhs(2)
+   opr(3) = lhs%momentum%y / rhs(3)
+   opr(4) = lhs%momentum%z / rhs(4)
+   opr(5) = lhs%energy     / rhs(5)
+   endfunction field_div_integer
+
+   pure function integer_div_field(lhs, rhs) result(opr)
+   !< `integer /` operator.
+   integer(I_P),                     intent(in) :: lhs(1:) !< Left hand side.
+   class(conservative_compressible), intent(in) :: rhs     !< Right hand side.
+   real(R_P), allocatable                       :: opr(:)  !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs(1) / rhs%density
+   opr(2) = lhs(2) / rhs%momentum%x
+   opr(3) = lhs(3) / rhs%momentum%y
+   opr(4) = lhs(4) / rhs%momentum%z
+   opr(5) = lhs(5) / rhs%energy
+   endfunction integer_div_field
+
+   pure function field_div_integer_scalar(lhs, rhs) result(opr)
+   !< `/ integer_scalar` operator.
+   class(conservative_compressible), intent(in) :: lhs    !< Left hand side.
+   integer(I_P),                     intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs%density    / rhs
+   opr(2) = lhs%momentum%x / rhs
+   opr(3) = lhs%momentum%y / rhs
+   opr(4) = lhs%momentum%z / rhs
+   opr(5) = lhs%energy     / rhs
+   endfunction field_div_integer_scalar
+
+   pure function integer_scalar_div_field(lhs, rhs) result(opr)
+   !< `integer_scalar /` operator.
+   integer(I_P),                     intent(in) :: lhs    !< Left hand side.
+   class(conservative_compressible), intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs / rhs%density
+   opr(2) = lhs / rhs%momentum%x
+   opr(3) = lhs / rhs%momentum%y
+   opr(4) = lhs / rhs%momentum%z
+   opr(5) = lhs / rhs%energy
+   endfunction integer_scalar_div_field
+
+   pure function field_div_real(lhs, rhs) result(opr)
+   !< `/ real` operator.
+   class(conservative_compressible), intent(in) :: lhs     !< Left hand side.
+   real(R_P),                        intent(in) :: rhs(1:) !< Right hand side.
+   real(R_P), allocatable                       :: opr(:)  !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs%density    / rhs(1)
+   opr(2) = lhs%momentum%x / rhs(2)
+   opr(3) = lhs%momentum%y / rhs(3)
+   opr(4) = lhs%momentum%z / rhs(4)
+   opr(5) = lhs%energy     / rhs(5)
+   endfunction field_div_real
+
+   pure function real_div_field(lhs, rhs) result(opr)
+   !< `real /` operator.
+   real(R_P),                        intent(in) :: lhs(1:) !< Left hand side.
+   class(conservative_compressible), intent(in) :: rhs     !< Right hand side.
+   real(R_P), allocatable                       :: opr(:)  !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs(1) / rhs%density
+   opr(2) = lhs(2) / rhs%momentum%x
+   opr(3) = lhs(3) / rhs%momentum%y
+   opr(4) = lhs(4) / rhs%momentum%z
+   opr(5) = lhs(5) / rhs%energy
+   endfunction real_div_field
+
+   pure function field_div_real_scalar(lhs, rhs) result(opr)
+   !< `/ real_scalar` operator.
+   class(conservative_compressible), intent(in) :: lhs    !< Left hand side.
+   real(R_P),                        intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs%density    / rhs
+   opr(2) = lhs%momentum%x / rhs
+   opr(3) = lhs%momentum%y / rhs
+   opr(4) = lhs%momentum%z / rhs
+   opr(5) = lhs%energy     / rhs
+   endfunction field_div_real_scalar
+
+   pure function real_scalar_div_field(lhs, rhs) result(opr)
+   !< `real_scalar /` operator.
+   real(R_P),                        intent(in) :: lhs    !< Left hand side.
+   class(conservative_compressible), intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs / rhs%density
+   opr(2) = lhs / rhs%momentum%x
+   opr(3) = lhs / rhs%momentum%y
+   opr(4) = lhs / rhs%momentum%z
+   opr(5) = lhs / rhs%energy
+   endfunction real_scalar_div_field
+
+   ! *
+   pure function field_mul_field(lhs, rhs) result(opr)
+   !< `*` operator.
+   class(conservative_compressible), intent(in) :: lhs    !< Left hand side.
+   class(field_object),              intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   select type(rhs)
+   class is(conservative_compressible)
+      allocate(opr(1:5))
+      opr(1) = lhs%density    * rhs%density
+      opr(2) = lhs%momentum%x * rhs%momentum%x
+      opr(3) = lhs%momentum%y * rhs%momentum%y
+      opr(4) = lhs%momentum%z * rhs%momentum%z
+      opr(5) = lhs%energy     * rhs%energy
+   endselect
+   endfunction field_mul_field
+
+   pure function field_mul_integer(lhs, rhs) result(opr)
+   !< `* integer` operator.
+   class(conservative_compressible), intent(in) :: lhs     !< Left hand side.
+   integer(I_P),                     intent(in) :: rhs(1:) !< Right hand side.
+   real(R_P), allocatable                       :: opr(:)  !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs%density    * rhs(1)
+   opr(2) = lhs%momentum%x * rhs(2)
+   opr(3) = lhs%momentum%y * rhs(3)
+   opr(4) = lhs%momentum%z * rhs(4)
+   opr(5) = lhs%energy     * rhs(5)
+   endfunction field_mul_integer
+
+   pure function integer_mul_field(lhs, rhs) result(opr)
+   !< `integer *` operator.
+   integer(I_P),                     intent(in) :: lhs(1:) !< Left hand side.
+   class(conservative_compressible), intent(in) :: rhs     !< Right hand side.
+   real(R_P), allocatable                       :: opr(:)  !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs(1) * rhs%density
+   opr(2) = lhs(2) * rhs%momentum%x
+   opr(3) = lhs(3) * rhs%momentum%y
+   opr(4) = lhs(4) * rhs%momentum%z
+   opr(5) = lhs(5) * rhs%energy
+   endfunction integer_mul_field
+
+   pure function field_mul_integer_scalar(lhs, rhs) result(opr)
+   !< `* integer_scalar` operator.
+   class(conservative_compressible), intent(in) :: lhs    !< Left hand side.
+   integer(I_P),                     intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs%density    * rhs
+   opr(2) = lhs%momentum%x * rhs
+   opr(3) = lhs%momentum%y * rhs
+   opr(4) = lhs%momentum%z * rhs
+   opr(5) = lhs%energy     * rhs
+   endfunction field_mul_integer_scalar
+
+   pure function integer_scalar_mul_field(lhs, rhs) result(opr)
+   !< `integer_scalar *` operator.
+   integer(I_P),                     intent(in) :: lhs    !< Left hand side.
+   class(conservative_compressible), intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs * rhs%density
+   opr(2) = lhs * rhs%momentum%x
+   opr(3) = lhs * rhs%momentum%y
+   opr(4) = lhs * rhs%momentum%z
+   opr(5) = lhs * rhs%energy
+   endfunction integer_scalar_mul_field
+
+   pure function field_mul_real(lhs, rhs) result(opr)
+   !< `* real` operator.
+   class(conservative_compressible), intent(in) :: lhs     !< Left hand side.
+   real(R_P),                        intent(in) :: rhs(1:) !< Right hand side.
+   real(R_P), allocatable                       :: opr(:)  !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs%density    * rhs(1)
+   opr(2) = lhs%momentum%x * rhs(2)
+   opr(3) = lhs%momentum%y * rhs(3)
+   opr(4) = lhs%momentum%z * rhs(4)
+   opr(5) = lhs%energy     * rhs(5)
+   endfunction field_mul_real
+
+   pure function real_mul_field(lhs, rhs) result(opr)
+   !< `real *` operator.
+   real(R_P),                        intent(in) :: lhs(1:) !< Left hand side.
+   class(conservative_compressible), intent(in) :: rhs     !< Right hand side.
+   real(R_P), allocatable                       :: opr(:)  !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs(1) * rhs%density
+   opr(2) = lhs(2) * rhs%momentum%x
+   opr(3) = lhs(3) * rhs%momentum%y
+   opr(4) = lhs(4) * rhs%momentum%z
+   opr(5) = lhs(5) * rhs%energy
+   endfunction real_mul_field
+
+   pure function field_mul_real_scalar(lhs, rhs) result(opr)
+   !< `* real_scalar` operator.
+   class(conservative_compressible), intent(in) :: lhs    !< Left hand side.
+   real(R_P),                        intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs%density    * rhs
+   opr(2) = lhs%momentum%x * rhs
+   opr(3) = lhs%momentum%y * rhs
+   opr(4) = lhs%momentum%z * rhs
+   opr(5) = lhs%energy     * rhs
+   endfunction field_mul_real_scalar
+
+   pure function real_scalar_mul_field(lhs, rhs) result(opr)
+   !< `real_scalar *` operator.
+   real(R_P),                        intent(in) :: lhs    !< Left hand side.
+   class(conservative_compressible), intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs * rhs%density
+   opr(2) = lhs * rhs%momentum%x
+   opr(3) = lhs * rhs%momentum%y
+   opr(4) = lhs * rhs%momentum%z
+   opr(5) = lhs * rhs%energy
+   endfunction real_scalar_mul_field
+
+   ! -
+   pure function field_sub_field(lhs, rhs) result(opr)
+   !< `-` operator.
+   class(conservative_compressible), intent(in) :: lhs    !< Left hand side.
+   class(field_object),              intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   select type(rhs)
+   class is(conservative_compressible)
+      allocate(opr(1:5))
+      opr(1) = lhs%density    - rhs%density
+      opr(2) = lhs%momentum%x - rhs%momentum%x
+      opr(3) = lhs%momentum%y - rhs%momentum%y
+      opr(4) = lhs%momentum%z - rhs%momentum%z
+      opr(5) = lhs%energy     - rhs%energy
+   endselect
+   endfunction field_sub_field
+
+   pure function field_sub_real(lhs, rhs) result(opr)
+   !< `- real` operator.
+   class(conservative_compressible), intent(in) :: lhs     !< Left hand side.
+   real(R_P),                        intent(in) :: rhs(1:) !< Right hand side.
+   real(R_P), allocatable                       :: opr(:)  !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs%density    - rhs(1)
+   opr(2) = lhs%momentum%x - rhs(2)
+   opr(3) = lhs%momentum%y - rhs(3)
+   opr(4) = lhs%momentum%z - rhs(4)
+   opr(5) = lhs%energy     - rhs(5)
+   endfunction field_sub_real
+
+   pure function real_sub_field(lhs, rhs) result(opr)
+   !< `real -` operator.
+   real(R_P),                        intent(in) :: lhs(1:) !< Left hand side.
+   class(conservative_compressible), intent(in) :: rhs     !< Right hand side.
+   real(R_P), allocatable                       :: opr(:)  !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs(1) - rhs%density
+   opr(2) = lhs(2) - rhs%momentum%x
+   opr(3) = lhs(3) - rhs%momentum%y
+   opr(4) = lhs(4) - rhs%momentum%z
+   opr(5) = lhs(5) - rhs%energy
+   endfunction real_sub_field
+
+   pure function negative(self) result(opr)
+   !< Unary operator `- field`.
+   class(conservative_compressible), intent(in) :: self   !< conservative.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   opr = - self%array()
+   endfunction negative
+
+   ! **
+   pure function field_pow_integer(lhs, rhs) result(opr)
+   !< `** integer` operator.
+   class(conservative_compressible), intent(in) :: lhs    !< Left hand side.
+   integer(I_P),                     intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs%density    ** rhs
+   opr(2) = lhs%momentum%x ** rhs
+   opr(3) = lhs%momentum%y ** rhs
+   opr(4) = lhs%momentum%z ** rhs
+   opr(5) = lhs%energy     ** rhs
+   endfunction field_pow_integer
+
+   pure function field_pow_real(lhs, rhs) result(opr)
+   !< `** real` operator.
+   class(conservative_compressible), intent(in) :: lhs    !< Left hand side.
+   real(R_P),                        intent(in) :: rhs    !< Right hand side.
+   real(R_P), allocatable                       :: opr(:) !< Operator result.
+
+   allocate(opr(1:5))
+   opr(1) = lhs%density    ** rhs
+   opr(2) = lhs%momentum%x ** rhs
+   opr(3) = lhs%momentum%y ** rhs
+   opr(4) = lhs%momentum%z ** rhs
+   opr(5) = lhs%energy     ** rhs
+   endfunction field_pow_real
+
+   ! =
+   pure subroutine assign_field(lhs, rhs)
    !< Operator `=`.
    class(conservative_compressible), intent(inout) :: lhs !< Left hand side.
    class(field_object),              intent(in)    :: rhs !< Right hand side.
@@ -215,240 +635,19 @@ contains
    endselect
    endsubroutine assign_field
 
-   elemental subroutine assign_real(lhs, rhs)
+   pure subroutine assign_real(lhs, rhs)
    !< Operator `field = real`.
-   class(conservative_compressible), intent(inout) :: lhs !< Left hand side.
-   real(R_P),                        intent(in)    :: rhs !< Right hand side.
+   class(conservative_compressible), intent(inout) :: lhs     !< Left hand side.
+   real(R_P),                        intent(in)    :: rhs(1:) !< Right hand side.
 
-   lhs%density  = rhs
-   lhs%momentum = rhs
-   lhs%energy   = rhs
+   lhs%density    = rhs(1)
+   lhs%momentum%x = rhs(2)
+   lhs%momentum%y = rhs(3)
+   lhs%momentum%z = rhs(4)
+   lhs%energy     = rhs(5)
    endsubroutine assign_real
 
-   function positive(self) result(opr)
-   !< Unary operator `+ field`.
-   class(conservative_compressible), intent(in) :: self !< conservative.
-   class(field_object), allocatable             :: opr  !< Operator result.
-
-   allocate(conservative_compressible :: opr)
-   select type(opr)
-   class is(conservative_compressible)
-      opr%density  = + self%density
-      opr%momentum = + self%momentum
-      opr%energy   = + self%energy
-   endselect
-   endfunction positive
-
-   pure function add(lhs, rhs) result(opr)
-   !< Operator `+`.
-   class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   class(field_object),              intent(in) :: rhs !< Right hand side.
-   class(field_object), allocatable             :: opr !< Operator result.
-
-   allocate(conservative_compressible :: opr)
-   select type(opr)
-   class is(conservative_compressible)
-      select type(rhs)
-      class is(conservative_compressible)
-         opr%density  = lhs%density  + rhs%density
-         opr%momentum = lhs%momentum + rhs%momentum
-         opr%energy   = lhs%energy   + rhs%energy
-      endselect
-   endselect
-   endfunction add
-
-   pure function div(lhs, rhs) result(opr)
-   !< Operator `/`.
-   class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   class(field_object),              intent(in) :: rhs !< Right hand side.
-   class(field_object), allocatable             :: opr !< Operator result.
-
-   allocate(conservative_compressible :: opr)
-   select type(opr)
-   class is(conservative_compressible)
-      select type(rhs)
-      class is(conservative_compressible)
-         opr%density  = lhs%density  / rhs%density
-         opr%momentum = lhs%momentum / rhs%momentum
-         opr%energy   = lhs%energy   / rhs%energy
-      endselect
-   endselect
-   endfunction div
-
-   pure function div_integer(lhs, rhs) result(opr)
-   !< Operator `field / integer`.
-   class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   integer(I_P),                     intent(in) :: rhs !< Right hand side.
-   class(field_object), allocatable             :: opr !< Operator result.
-
-   allocate(conservative_compressible :: opr)
-   select type(opr)
-   class is(conservative_compressible)
-      opr%density  = lhs%density  / rhs
-      opr%momentum = lhs%momentum / rhs
-      opr%energy   = lhs%energy   / rhs
-   endselect
-   endfunction div_integer
-
-   pure function div_real(lhs, rhs) result(opr)
-   !< Operator `field / real`.
-   class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   real(R_P),                        intent(in) :: rhs !< Right hand side.
-   class(field_object), allocatable             :: opr !< Operator result.
-
-   allocate(conservative_compressible :: opr)
-   select type(opr)
-   class is(conservative_compressible)
-      opr%density  = lhs%density  / rhs
-      opr%momentum = lhs%momentum / rhs
-      opr%energy   = lhs%energy   / rhs
-   endselect
-   endfunction div_real
-
-   pure function mul(lhs, rhs) result(opr)
-   !< Operator `*`.
-   class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   class(field_object),              intent(in) :: rhs !< Right hand side.
-   class(field_object), allocatable             :: opr !< Operator result.
-
-   allocate(conservative_compressible :: opr)
-   select type(opr)
-   class is(conservative_compressible)
-      select type(rhs)
-      class is(conservative_compressible)
-         opr%density  = lhs%density  * rhs%density
-         opr%momentum = lhs%momentum * rhs%momentum
-         opr%energy   = lhs%energy   * rhs%energy
-      endselect
-   endselect
-   endfunction mul
-
-   pure function mul_integer(lhs, rhs) result(opr)
-   !< Operator `field * integer`.
-   class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   integer(I_P),                     intent(in) :: rhs !< Right hand side.
-   class(field_object), allocatable             :: opr !< Operator result.
-
-   allocate(conservative_compressible :: opr)
-   select type(opr)
-   class is(conservative_compressible)
-      opr%density  = lhs%density  * rhs
-      opr%momentum = lhs%momentum * rhs
-      opr%energy   = lhs%energy   * rhs
-   endselect
-   endfunction mul_integer
-
-   pure function integer_mul(lhs, rhs) result(opr)
-   !< Operator `integer * field`.
-   integer(I_P),                     intent(in) :: lhs !< Left hand side.
-   class(conservative_compressible), intent(in) :: rhs !< Right hand side.
-   class(field_object), allocatable             :: opr !< Operator result.
-
-   allocate(conservative_compressible :: opr)
-   select type(opr)
-   class is(conservative_compressible)
-      opr%density  = lhs * rhs%density
-      opr%momentum = lhs * rhs%momentum
-      opr%energy   = lhs * rhs%energy
-   endselect
-   endfunction integer_mul
-
-   pure function mul_real(lhs, rhs) result(opr)
-   !< Operator `field * real`.
-   class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   real(R_P),                        intent(in) :: rhs !< Right hand side.
-   class(field_object), allocatable             :: opr !< Operator result.
-
-   allocate(conservative_compressible :: opr)
-   select type(opr)
-   class is(conservative_compressible)
-      opr%density  = lhs%density  * rhs
-      opr%momentum = lhs%momentum * rhs
-      opr%energy   = lhs%energy   * rhs
-   endselect
-   endfunction mul_real
-
-   pure function real_mul(lhs, rhs) result(opr)
-   !< Operator `real * field`.
-   real(R_P),                        intent(in) :: lhs !< Left hand side.
-   class(conservative_compressible), intent(in) :: rhs !< Right hand side.
-   class(field_object), allocatable             :: opr !< Operator result.
-
-   allocate(conservative_compressible :: opr)
-   select type(opr)
-   class is(conservative_compressible)
-      opr%density  = lhs * rhs%density
-      opr%momentum = lhs * rhs%momentum
-      opr%energy   = lhs * rhs%energy
-   endselect
-   endfunction real_mul
-
-   function negative(self) result(opr)
-   !< Unary operator `- field`.
-   class(conservative_compressible), intent(in) :: self !< conservative.
-   class(field_object), allocatable             :: opr  !< Operator result.
-
-   allocate(conservative_compressible :: opr)
-   select type(opr)
-   class is(conservative_compressible)
-      opr%density  = - self%density
-      opr%momentum = - self%momentum
-      opr%energy   = - self%energy
-   endselect
-   endfunction negative
-
-   pure function sub(lhs, rhs) result(opr)
-   !< Operator `-`.
-   class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   class(field_object),              intent(in) :: rhs !< Right hand side.
-   class(field_object), allocatable             :: opr !< Operator result.
-
-   allocate(conservative_compressible :: opr)
-   select type(opr)
-   class is(conservative_compressible)
-      select type(rhs)
-      class is(conservative_compressible)
-         opr%density  = lhs%density  - rhs%density
-         opr%momentum = lhs%momentum - rhs%momentum
-         opr%energy   = lhs%energy   - rhs%energy
-      endselect
-   endselect
-   endfunction sub
-
-   pure function pow_integer(lhs, rhs) result(opr)
-   !< Operator `field ** integer`.
-   class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   integer(I_P),                     intent(in) :: rhs !< Right hand side.
-   class(field_object), allocatable             :: opr !< Operator result.
-
-   allocate(conservative_compressible :: opr)
-   select type(opr)
-   class is(conservative_compressible)
-      opr%density    = lhs%density    ** rhs
-      opr%momentum%x = lhs%momentum%x ** rhs
-      opr%momentum%y = lhs%momentum%y ** rhs
-      opr%momentum%z = lhs%momentum%z ** rhs
-      opr%energy     = lhs%energy     ** rhs
-   endselect
-   endfunction pow_integer
-
-   pure function pow_real(lhs, rhs) result(opr)
-   !< Operator `field ** real`.
-   class(conservative_compressible), intent(in) :: lhs !< Left hand side.
-   real(R_P),                        intent(in) :: rhs !< Right hand side.
-   class(field_object), allocatable             :: opr !< Operator result.
-
-   allocate(conservative_compressible :: opr)
-   select type(opr)
-   class is(conservative_compressible)
-      opr%density    = lhs%density    ** rhs
-      opr%momentum%x = lhs%momentum%x ** rhs
-      opr%momentum%y = lhs%momentum%y ** rhs
-      opr%momentum%z = lhs%momentum%z ** rhs
-      opr%energy     = lhs%energy     ** rhs
-   endselect
-   endfunction pow_real
-
+   ! ==
    elemental function eq(lhs, rhs) result(opr)
    !< Operator `=='.
    class(conservative_compressible), intent(in) :: lhs !< Left hand side.
@@ -463,6 +662,7 @@ contains
    endselect
    endfunction eq
 
+   ! /=
    elemental function not_eq(lhs, rhs) result(opr)
    !< Operator `/='.
    class(conservative_compressible), intent(in) :: lhs !< Left hand side.
