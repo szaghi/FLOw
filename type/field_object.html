@@ -134,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title="<p> 7.4% of total for derived types.</p>Including implementation: 32 statements,  0.6% of total for derived types.">32 statements</a>
+	  title="<p>10.2% of total for derived types.</p>Including implementation: 45 statements,  0.8% of total for derived types.">45 statements</a>
      </li> 
      
      
@@ -167,17 +167,6 @@
   
 
 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../type/field_object.html#variable-memory_leaks">memory_leaks</a>
-      
-    </div>
-  </div>
-</div>
-
 
 
 
@@ -199,8 +188,6 @@
   <div id="boundprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-add%7E3">add</a>
-      
       <a class="list-group-item" href="../type/field_object.html#boundprocedure-array%7E2">array</a>
       
       <a class="list-group-item" href="../type/field_object.html#boundprocedure-assign_field%7E3">assign_field</a>
@@ -211,21 +198,47 @@
       
       <a class="list-group-item" href="../type/field_object.html#boundprocedure-description%7E2">description</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-div%7E3">div</a>
-      
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-div_integer%7E3">div_integer</a>
-      
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-div_real%7E3">div_real</a>
-      
       <a class="list-group-item" href="../type/field_object.html#boundprocedure-eq%7E3">eq</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-integer_mul%7E3">integer_mul</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_add_field%7E3">field_add_field</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-mul%7E3">mul</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_add_real%7E3">field_add_real</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-mul_integer%7E3">mul_integer</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_div_field%7E3">field_div_field</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-mul_real%7E3">mul_real</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_div_integer%7E3">field_div_integer</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_div_integer_scalar%7E3">field_div_integer_scalar</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_div_real%7E3">field_div_real</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_div_real_scalar%7E3">field_div_real_scalar</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_mul_field%7E3">field_mul_field</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_mul_integer%7E3">field_mul_integer</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_mul_integer_scalar%7E3">field_mul_integer_scalar</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_mul_real%7E3">field_mul_real</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_mul_real_scalar%7E3">field_mul_real_scalar</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_pow_integer%7E3">field_pow_integer</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_pow_real%7E3">field_pow_real</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_sub_field%7E3">field_sub_field</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_sub_real%7E3">field_sub_real</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-integer_div_field%7E3">integer_div_field</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-integer_mul_field%7E3">integer_mul_field</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-integer_scalar_div_field%7E3">integer_scalar_div_field</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-integer_scalar_mul_field%7E3">integer_scalar_mul_field</a>
       
       <a class="list-group-item" href="../type/field_object.html#boundprocedure-negative%7E3">negative</a>
       
@@ -247,13 +260,17 @@
       
       <a class="list-group-item" href="../type/field_object.html#boundprocedure-positive%7E3">positive</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-pow_integer%7E3">pow_integer</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-real_add_field%7E3">real_add_field</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-pow_real%7E3">pow_real</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-real_div_field%7E3">real_div_field</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-real_mul%7E3">real_mul</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-real_mul_field%7E3">real_mul_field</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-sub%7E3">sub</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-real_scalar_div_field%7E3">real_scalar_div_field</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-real_scalar_mul_field%7E3">real_scalar_mul_field</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-real_sub_field%7E3">real_sub_field</a>
       
     </div>
   </div>
@@ -286,10 +303,6 @@
       <a class="list-group-item" href="../type/eos_object.html">eos_object</a>
       
       <a class="list-group-item" href="../type/field_object.html">field_object</a>
-      
-      <a class="list-group-item" href="../type/field_scalar.html">field_scalar</a>
-      
-      <a class="list-group-item" href="../type/field_vectorial.html">field_vectorial</a>
       
       <a class="list-group-item" href="../type/primitive_compressible.html">primitive_compressible</a>
       
@@ -324,66 +337,42 @@
 <!-- Generated by graphviz version 2.26.3 (20100126.1600)
  -->
 <!-- Title: type~~field_object~~InheritedByGraph Pages: 1 -->
-<svg id="typefield_objectInheritedByGraph" width="438pt" height="166pt"
- viewBox="0.00 0.00 438.00 166.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="type~~field_object~~InheritedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 162)">
+<svg id="typefield_objectInheritedByGraph" width="438pt" height="122pt"
+ viewBox="0.00 0.00 438.00 122.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="type~~field_object~~InheritedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 118)">
 <title>type~~field_object~~InheritedByGraph</title>
-<polygon fill="white" stroke="white" points="-4,5 -4,-162 435,-162 435,5 -4,5"/>
+<polygon fill="white" stroke="white" points="-4,5 -4,-118 435,-118 435,5 -4,5"/>
 <!-- type~field_object -->
 <g id="node1" class="node"><title>type~field_object</title>
 <polygon fill="none" stroke="black" points="67,-92 1,-92 1,-66 67,-66 67,-92"/>
 <text text-anchor="middle" x="34" y="-76.55" font-family="Helvetica,sans-Serif" font-size="10.50">field_object</text>
 </g>
-<!-- type~field_scalar -->
-<g id="node2" class="node"><title>type~field_scalar</title>
-<a xlink:href="../type/field_scalar.html" xlink:title="field_scalar">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="191,-158 125,-158 125,-132 191,-132 191,-158"/>
-<text text-anchor="middle" x="158" y="-142.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">field_scalar</text>
-</a>
-</g>
-<!-- type~field_object&#45;&gt;type~field_scalar -->
-<g id="edge8" class="edge"><title>type~field_object&#45;&gt;type~field_scalar</title>
-<path fill="none" stroke="#000000" d="M52.7845,-92.067C66.5859,-101.352 85.9922,-113.761 104,-123 107.547,-124.819 111.28,-126.6 115.058,-128.31"/>
-<polygon fill="#000000" stroke="#000000" points="113.896,-131.621 124.462,-132.398 116.687,-125.201 113.896,-131.621"/>
-</g>
 <!-- type~conservative_object -->
-<g id="node3" class="node"><title>type~conservative_object</title>
+<g id="node2" class="node"><title>type~conservative_object</title>
 <a xlink:href="../type/conservative_object.html" xlink:title="conservative_object">
 <polygon fill="#5cb85c" stroke="#5cb85c" points="211,-114 105,-114 105,-88 211,-88 211,-114"/>
 <text text-anchor="middle" x="158" y="-98.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">conservative_object</text>
 </a>
 </g>
 <!-- type~field_object&#45;&gt;type~conservative_object -->
-<g id="edge10" class="edge"><title>type~field_object&#45;&gt;type~conservative_object</title>
+<g id="edge8" class="edge"><title>type~field_object&#45;&gt;type~conservative_object</title>
 <path fill="none" stroke="#000000" d="M67.5562,-84.9535C75.8785,-86.4301 85.0738,-88.0615 94.319,-89.7018"/>
 <polygon fill="#000000" stroke="#000000" points="93.8739,-93.1774 104.332,-91.4782 95.0968,-86.285 93.8739,-93.1774"/>
 </g>
 <!-- type~primitive_object -->
-<g id="node4" class="node"><title>type~primitive_object</title>
+<g id="node3" class="node"><title>type~primitive_object</title>
 <a xlink:href="../type/primitive_object.html" xlink:title="primitive_object">
 <polygon fill="#5cb85c" stroke="#5cb85c" points="201,-70 115,-70 115,-44 201,-44 201,-70"/>
 <text text-anchor="middle" x="158" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">primitive_object</text>
 </a>
 </g>
 <!-- type~field_object&#45;&gt;type~primitive_object -->
-<g id="edge12" class="edge"><title>type~field_object&#45;&gt;type~primitive_object</title>
+<g id="edge10" class="edge"><title>type~field_object&#45;&gt;type~primitive_object</title>
 <path fill="none" stroke="#000000" d="M67.5562,-73.0465C78.8753,-71.0383 91.8092,-68.7435 104.287,-66.5297"/>
 <polygon fill="#000000" stroke="#000000" points="104.922,-69.9718 114.157,-64.7786 103.699,-63.0794 104.922,-69.9718"/>
 </g>
-<!-- type~field_vectorial -->
-<g id="node5" class="node"><title>type~field_vectorial</title>
-<a xlink:href="../type/field_vectorial.html" xlink:title="field_vectorial">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="197,-26 119,-26 119,-1.24345e-14 197,-3.55271e-15 197,-26"/>
-<text text-anchor="middle" x="158" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">field_vectorial</text>
-</a>
-</g>
-<!-- type~field_object&#45;&gt;type~field_vectorial -->
-<g id="edge14" class="edge"><title>type~field_object&#45;&gt;type~field_vectorial</title>
-<path fill="none" stroke="#000000" d="M52.7845,-65.933C66.5859,-56.6481 85.9922,-44.2386 104,-35 107.254,-33.3307 110.665,-31.6944 114.123,-30.1151"/>
-<polygon fill="#000000" stroke="#000000" points="115.563,-33.3056 123.315,-26.0841 112.752,-26.8949 115.563,-33.3056"/>
-</g>
 <!-- type~conservative_compressible -->
-<g id="node6" class="node"><title>type~conservative_compressible</title>
+<g id="node4" class="node"><title>type~conservative_compressible</title>
 <a xlink:href="../type/conservative_compressible.html" xlink:title="conservative_compressible">
 <polygon fill="#5cb85c" stroke="#5cb85c" points="410,-114 268,-114 268,-88 410,-88 410,-114"/>
 <text text-anchor="middle" x="339" y="-98.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">conservative_compressible</text>
@@ -395,7 +384,7 @@
 <polygon fill="#000000" stroke="#000000" points="257.95,-104.5 267.95,-101 257.95,-97.5001 257.95,-104.5"/>
 </g>
 <!-- type~primitive_compressible -->
-<g id="node8" class="node"><title>type~primitive_compressible</title>
+<g id="node6" class="node"><title>type~primitive_compressible</title>
 <a xlink:href="../type/primitive_compressible.html" xlink:title="primitive_compressible">
 <polygon fill="#5cb85c" stroke="#5cb85c" points="399,-70 279,-70 279,-44 399,-44 399,-70"/>
 <text text-anchor="middle" x="339" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">primitive_compressible</text>
@@ -407,7 +396,7 @@
 <polygon fill="#000000" stroke="#000000" points="268.494,-60.5001 278.494,-57 268.494,-53.5001 268.494,-60.5001"/>
 </g>
 <!-- type~primitive_compressible_multispecie -->
-<g id="node9" class="node"><title>type~primitive_compressible_multispecie</title>
+<g id="node7" class="node"><title>type~primitive_compressible_multispecie</title>
 <a xlink:href="../type/primitive_compressible_multispecie.html" xlink:title="primitive_compressible_multispecie">
 <polygon fill="#5cb85c" stroke="#5cb85c" points="429,-26 249,-26 249,-1.24345e-14 429,-3.55271e-15 429,-26"/>
 <text text-anchor="middle" x="339" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">primitive_compressible_multispecie</text>
@@ -474,17 +463,6 @@
       
 
 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../type/field_object.html#variable-memory_leaks">memory_leaks</a>
-      
-    </div>
-  </div>
-</div>
-
 
 
 
@@ -506,8 +484,6 @@
   <div id="boundprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-add%7E3">add</a>
-      
       <a class="list-group-item" href="../type/field_object.html#boundprocedure-array%7E2">array</a>
       
       <a class="list-group-item" href="../type/field_object.html#boundprocedure-assign_field%7E3">assign_field</a>
@@ -518,21 +494,47 @@
       
       <a class="list-group-item" href="../type/field_object.html#boundprocedure-description%7E2">description</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-div%7E3">div</a>
-      
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-div_integer%7E3">div_integer</a>
-      
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-div_real%7E3">div_real</a>
-      
       <a class="list-group-item" href="../type/field_object.html#boundprocedure-eq%7E3">eq</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-integer_mul%7E3">integer_mul</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_add_field%7E3">field_add_field</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-mul%7E3">mul</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_add_real%7E3">field_add_real</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-mul_integer%7E3">mul_integer</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_div_field%7E3">field_div_field</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-mul_real%7E3">mul_real</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_div_integer%7E3">field_div_integer</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_div_integer_scalar%7E3">field_div_integer_scalar</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_div_real%7E3">field_div_real</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_div_real_scalar%7E3">field_div_real_scalar</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_mul_field%7E3">field_mul_field</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_mul_integer%7E3">field_mul_integer</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_mul_integer_scalar%7E3">field_mul_integer_scalar</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_mul_real%7E3">field_mul_real</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_mul_real_scalar%7E3">field_mul_real_scalar</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_pow_integer%7E3">field_pow_integer</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_pow_real%7E3">field_pow_real</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_sub_field%7E3">field_sub_field</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-field_sub_real%7E3">field_sub_real</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-integer_div_field%7E3">integer_div_field</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-integer_mul_field%7E3">integer_mul_field</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-integer_scalar_div_field%7E3">integer_scalar_div_field</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-integer_scalar_mul_field%7E3">integer_scalar_mul_field</a>
       
       <a class="list-group-item" href="../type/field_object.html#boundprocedure-negative%7E3">negative</a>
       
@@ -554,13 +556,17 @@
       
       <a class="list-group-item" href="../type/field_object.html#boundprocedure-positive%7E3">positive</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-pow_integer%7E3">pow_integer</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-real_add_field%7E3">real_add_field</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-pow_real%7E3">pow_real</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-real_div_field%7E3">real_div_field</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-real_mul%7E3">real_mul</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-real_mul_field%7E3">real_mul_field</a>
       
-      <a class="list-group-item" href="../type/field_object.html#boundprocedure-sub%7E3">sub</a>
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-real_scalar_div_field%7E3">real_scalar_div_field</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-real_scalar_mul_field%7E3">real_scalar_mul_field</a>
+      
+      <a class="list-group-item" href="../type/field_object.html#boundprocedure-real_sub_field%7E3">real_sub_field</a>
       
     </div>
   </div>
@@ -580,38 +586,6 @@
     <br class="visible-xs visible-sm hidden-md">
 
     
-    <section>
-    <h2>Components</h2>
-    
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th>
-
-<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-memory_leaks"></span>integer(kind=I1P),</td>
-  
-  <td>public,</td>
-  <td>allocatable</td><td>::</td>
-  <td><strong>memory_leaks</strong></td><td></td><td></td><td><p>Workaround for GNU memory leaks bug.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-    </section>
-    <br>
-    
     
     
     
@@ -620,109 +594,6 @@
      
     <section>
     <h2>Type-Bound Procedures</h2>
-    
-	   
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-add%7E3"></span><h3>procedure(<a href='../interface/symmetric_op_interface.html'>symmetric_op_interface</a>), public, deferred, pass(lhs) :: <strong>add</strong>  
-    
-  </h3></div>
-  
-  <div class="panel-body">
-    
-
-
-    <p>Operator <code>+</code>.</p>
-  </div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-pure function <a href='../interface/symmetric_op_interface.html'>symmetric_op_interface</a>(lhs, rhs) result(opr)
-    
-    
-	 
-<small>Prototype</small></h3>
-    
-
-
-
-
-
-
-
-<p>Operator <code>field.op.field</code>.</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
-  <p>Operator result.</p>
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
     
 	   
 <div class="panel panel-default">
@@ -814,7 +685,7 @@ pure function <a href='../interface/array_interface.html'>array_interface</a>(se
     
 	   
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-assign_field%7E3"></span><h3>procedure(<a href='../interface/assign_interface.html'>assign_interface</a>), public, deferred, pass(lhs) :: <strong>assign_field</strong>  
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-assign_field%7E3"></span><h3>procedure(<a href='../interface/assign_field_interface.html'>assign_field_interface</a>), public, deferred, pass(lhs) :: <strong>assign_field</strong>  
     
   </h3></div>
   
@@ -822,7 +693,7 @@ pure function <a href='../interface/array_interface.html'>array_interface</a>(se
     
 
 
-    <p>Operator <code>=</code>.</p>
+    <p><code>=</code> operator.</p>
   </div>
   
   <ul class="list-group">
@@ -833,7 +704,7 @@ pure function <a href='../interface/array_interface.html'>array_interface</a>(se
             
     
     <h3>
-elemental subroutine <a href='../interface/assign_interface.html'>assign_interface</a>(lhs, rhs)
+pure subroutine <a href='../interface/assign_field_interface.html'>assign_field_interface</a>(lhs, rhs)
     
     
 	 
@@ -916,7 +787,7 @@ elemental subroutine <a href='../interface/assign_interface.html'>assign_interfa
     
 
 
-    <p>Operator <code>field = real</code>.</p>
+    <p><code>= real</code> operator.</p>
   </div>
   
   <ul class="list-group">
@@ -927,7 +798,7 @@ elemental subroutine <a href='../interface/assign_interface.html'>assign_interfa
             
     
     <h3>
-elemental subroutine <a href='../interface/assign_real_interface.html'>assign_real_interface</a>(lhs, rhs)
+pure subroutine <a href='../interface/assign_real_interface.html'>assign_real_interface</a>(lhs, rhs)
     
     
 	 
@@ -981,7 +852,7 @@ elemental subroutine <a href='../interface/assign_real_interface.html'>assign_re
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  <td><strong>rhs</strong>(1:)</td><td><p>Right hand side.</p></td>
   
 </tr>
 
@@ -1010,7 +881,7 @@ elemental subroutine <a href='../interface/assign_real_interface.html'>assign_re
     
 
 
-    <p>Assignment overloading.</p>
+    <p>Overloading <code>=</code> assignament.</p>
   </div>
   
   <ul class="list-group">
@@ -1021,7 +892,7 @@ elemental subroutine <a href='../interface/assign_real_interface.html'>assign_re
             
     
     <h3>
-private elemental subroutine <a href='../proc/assign_field%7E3.html'>assign_field</a>(lhs, rhs)
+private pure subroutine <a href='../proc/assign_field%7E3.html'>assign_field</a>(lhs, rhs)
     
     
 	 
@@ -1096,7 +967,7 @@ private elemental subroutine <a href='../proc/assign_field%7E3.html'>assign_fiel
             
     
     <h3>
-private elemental subroutine <a href='../proc/assign_real%7E3.html'>assign_real</a>(lhs, rhs)
+private pure subroutine <a href='../proc/assign_real%7E3.html'>assign_real</a>(lhs, rhs)
     
     
 	 
@@ -1150,7 +1021,7 @@ private elemental subroutine <a href='../proc/assign_real%7E3.html'>assign_real<
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  <td><strong>rhs</strong>(1:)</td><td><p>Right hand side.</p></td>
   
 </tr>
 
@@ -1274,315 +1145,6 @@ pure function <a href='../interface/description_interface.html'>description_inte
     
 	   
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-div%7E3"></span><h3>procedure(<a href='../interface/symmetric_op_interface.html'>symmetric_op_interface</a>), public, deferred, pass(lhs) :: <strong>div</strong>  
-    
-  </h3></div>
-  
-  <div class="panel-body">
-    
-
-
-    <p>Operator <code>/</code>.</p>
-  </div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-pure function <a href='../interface/symmetric_op_interface.html'>symmetric_op_interface</a>(lhs, rhs) result(opr)
-    
-    
-	 
-<small>Prototype</small></h3>
-    
-
-
-
-
-
-
-
-<p>Operator <code>field.op.field</code>.</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
-  <p>Operator result.</p>
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-	   
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-div_integer%7E3"></span><h3>procedure(<a href='../interface/field_op_integer_interface.html'>field_op_integer_interface</a>), public, deferred, pass(lhs) :: <strong>div_integer</strong>  
-    
-  </h3></div>
-  
-  <div class="panel-body">
-    
-
-
-    <p>Operator <code>field / integer</code>.</p>
-  </div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-pure function <a href='../interface/field_op_integer_interface.html'>field_op_integer_interface</a>(lhs, rhs) result(opr)
-    
-    
-	 
-<small>Prototype</small></h3>
-    
-
-
-
-
-
-
-
-<p>Operator <code>field.op.integer</code>.</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer(kind=I_P),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
-  <p>Operator result.</p>
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-	   
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-div_real%7E3"></span><h3>procedure(<a href='../interface/field_op_real_interface.html'>field_op_real_interface</a>), public, deferred, pass(lhs) :: <strong>div_real</strong>  
-    
-  </h3></div>
-  
-  <div class="panel-body">
-    
-
-
-    <p>Operator <code>field / real</code>.</p>
-  </div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-pure function <a href='../interface/field_op_real_interface.html'>field_op_real_interface</a>(lhs, rhs) result(opr)
-    
-    
-	 
-<small>Prototype</small></h3>
-    
-
-
-
-
-
-
-
-<p>Operator <code>field.op.real</code>.</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=R_P),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
-  <p>Operator result.</p>
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-	   
-<div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-eq%7E3"></span><h3>procedure(<a href='../interface/compare_interface.html'>compare_interface</a>), public, deferred, pass(lhs) :: <strong>eq</strong>  
     
   </h3></div>
@@ -1591,7 +1153,7 @@ pure function <a href='../interface/field_op_real_interface.html'>field_op_real_
     
 
 
-    <p>Operator `=='.</p>
+    <p>`==' operator.</p>
   </div>
   
   <ul class="list-group">
@@ -1686,7 +1248,7 @@ elemental function <a href='../interface/compare_interface.html'>compare_interfa
     
 	   
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-integer_mul%7E3"></span><h3>procedure(<a href='../interface/integer_op_field_interface.html'>integer_op_field_interface</a>), public, deferred, pass(rhs) :: <strong>integer_mul</strong>  
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_add_field%7E3"></span><h3>procedure(<a href='../interface/symmetric_operator.html'>symmetric_operator</a>), public, deferred, pass(lhs) :: <strong>field_add_field</strong>  
     
   </h3></div>
   
@@ -1694,7 +1256,7 @@ elemental function <a href='../interface/compare_interface.html'>compare_interfa
     
 
 
-    <p>Operator <code>integer * field</code>.</p>
+    <p><code>+</code> operator.</p>
   </div>
   
   <ul class="list-group">
@@ -1705,110 +1267,7 @@ elemental function <a href='../interface/compare_interface.html'>compare_interfa
             
     
     <h3>
-pure function <a href='../interface/integer_op_field_interface.html'>integer_op_field_interface</a>(lhs, rhs) result(opr)
-    
-    
-	 
-<small>Prototype</small></h3>
-    
-
-
-
-
-
-
-
-<p>Operator <code>field.op.integer</code>.</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer(kind=I_P),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
-  <p>Operator result.</p>
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-	   
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-mul%7E3"></span><h3>procedure(<a href='../interface/symmetric_op_interface.html'>symmetric_op_interface</a>), public, deferred, pass(lhs) :: <strong>mul</strong>  
-    
-  </h3></div>
-  
-  <div class="panel-body">
-    
-
-
-    <p>Operator <code>*</code>.</p>
-  </div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-pure function <a href='../interface/symmetric_op_interface.html'>symmetric_op_interface</a>(lhs, rhs) result(opr)
+pure function <a href='../interface/symmetric_operator.html'>symmetric_operator</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -1877,8 +1336,8 @@ pure function <a href='../interface/symmetric_op_interface.html'>symmetric_op_in
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -1892,7 +1351,7 @@ pure function <a href='../interface/symmetric_op_interface.html'>symmetric_op_in
     
 	   
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-mul_integer%7E3"></span><h3>procedure(<a href='../interface/field_op_integer_interface.html'>field_op_integer_interface</a>), public, deferred, pass(lhs) :: <strong>mul_integer</strong>  
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_add_real%7E3"></span><h3>procedure(<a href='../interface/field_op_real.html'>field_op_real</a>), public, deferred, pass(lhs) :: <strong>field_add_real</strong>  
     
   </h3></div>
   
@@ -1900,7 +1359,7 @@ pure function <a href='../interface/symmetric_op_interface.html'>symmetric_op_in
     
 
 
-    <p>Operator <code>field * integer</code>.</p>
+    <p><code>+ real</code> operator.</p>
   </div>
   
   <ul class="list-group">
@@ -1911,7 +1370,213 @@ pure function <a href='../interface/symmetric_op_interface.html'>symmetric_op_in
             
     
     <h3>
-pure function <a href='../interface/field_op_integer_interface.html'>field_op_integer_interface</a>(lhs, rhs) result(opr)
+pure function <a href='../interface/field_op_real.html'>field_op_real</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>field.op.real</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong>(1:)</td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_div_field%7E3"></span><h3>procedure(<a href='../interface/symmetric_operator.html'>symmetric_operator</a>), public, deferred, pass(lhs) :: <strong>field_div_field</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>/</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/symmetric_operator.html'>symmetric_operator</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>field.op.field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_div_integer%7E3"></span><h3>procedure(<a href='../interface/field_op_integer.html'>field_op_integer</a>), public, deferred, pass(lhs) :: <strong>field_div_integer</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>/ integer</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/field_op_integer.html'>field_op_integer</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -1925,6 +1590,109 @@ pure function <a href='../interface/field_op_integer_interface.html'>field_op_in
 
 
 <p>Operator <code>field.op.integer</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong>(1:)</td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_div_integer_scalar%7E3"></span><h3>procedure(<a href='../interface/field_op_integer_scalar.html'>field_op_integer_scalar</a>), public, deferred, pass(lhs) :: <strong>field_div_integer_scalar</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>/ integer_scalar</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/field_op_integer_scalar.html'>field_op_integer_scalar</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>field.op.integer_scalar</code>.</p>
     
     <h4>Arguments</h4>
     
@@ -1980,8 +1748,8 @@ pure function <a href='../interface/field_op_integer_interface.html'>field_op_in
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -1995,7 +1763,7 @@ pure function <a href='../interface/field_op_integer_interface.html'>field_op_in
     
 	   
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-mul_real%7E3"></span><h3>procedure(<a href='../interface/field_op_real_interface.html'>field_op_real_interface</a>), public, deferred, pass(lhs) :: <strong>mul_real</strong>  
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_div_real%7E3"></span><h3>procedure(<a href='../interface/field_op_real.html'>field_op_real</a>), public, deferred, pass(lhs) :: <strong>field_div_real</strong>  
     
   </h3></div>
   
@@ -2003,7 +1771,7 @@ pure function <a href='../interface/field_op_integer_interface.html'>field_op_in
     
 
 
-    <p>Operator <code>field * real</code>.</p>
+    <p><code>/ real</code> operator.</p>
   </div>
   
   <ul class="list-group">
@@ -2014,7 +1782,7 @@ pure function <a href='../interface/field_op_integer_interface.html'>field_op_in
             
     
     <h3>
-pure function <a href='../interface/field_op_real_interface.html'>field_op_real_interface</a>(lhs, rhs) result(opr)
+pure function <a href='../interface/field_op_real.html'>field_op_real</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -2028,6 +1796,109 @@ pure function <a href='../interface/field_op_real_interface.html'>field_op_real_
 
 
 <p>Operator <code>field.op.real</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong>(1:)</td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_div_real_scalar%7E3"></span><h3>procedure(<a href='../interface/field_op_real_scalar.html'>field_op_real_scalar</a>), public, deferred, pass(lhs) :: <strong>field_div_real_scalar</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>/ real_scalar</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/field_op_real_scalar.html'>field_op_real_scalar</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>field.op.real_scalar</code>.</p>
     
     <h4>Arguments</h4>
     
@@ -2083,8 +1954,1347 @@ pure function <a href='../interface/field_op_real_interface.html'>field_op_real_
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_mul_field%7E3"></span><h3>procedure(<a href='../interface/symmetric_operator.html'>symmetric_operator</a>), public, deferred, pass(lhs) :: <strong>field_mul_field</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>*</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/symmetric_operator.html'>symmetric_operator</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>field.op.field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_mul_integer%7E3"></span><h3>procedure(<a href='../interface/field_op_integer.html'>field_op_integer</a>), public, deferred, pass(lhs) :: <strong>field_mul_integer</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>* integer</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/field_op_integer.html'>field_op_integer</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>field.op.integer</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong>(1:)</td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_mul_integer_scalar%7E3"></span><h3>procedure(<a href='../interface/field_op_integer_scalar.html'>field_op_integer_scalar</a>), public, deferred, pass(lhs) :: <strong>field_mul_integer_scalar</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>* integer_scalar</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/field_op_integer_scalar.html'>field_op_integer_scalar</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>field.op.integer_scalar</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_mul_real%7E3"></span><h3>procedure(<a href='../interface/field_op_real.html'>field_op_real</a>), public, deferred, pass(lhs) :: <strong>field_mul_real</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>* real</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/field_op_real.html'>field_op_real</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>field.op.real</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong>(1:)</td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_mul_real_scalar%7E3"></span><h3>procedure(<a href='../interface/field_op_real_scalar.html'>field_op_real_scalar</a>), public, deferred, pass(lhs) :: <strong>field_mul_real_scalar</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>* real_scalar</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/field_op_real_scalar.html'>field_op_real_scalar</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>field.op.real_scalar</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_pow_integer%7E3"></span><h3>procedure(<a href='../interface/field_op_integer_scalar.html'>field_op_integer_scalar</a>), public, deferred, pass(lhs) :: <strong>field_pow_integer</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>** integer</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/field_op_integer_scalar.html'>field_op_integer_scalar</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>field.op.integer_scalar</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_pow_real%7E3"></span><h3>procedure(<a href='../interface/field_op_real_scalar.html'>field_op_real_scalar</a>), public, deferred, pass(lhs) :: <strong>field_pow_real</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>** real</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/field_op_real_scalar.html'>field_op_real_scalar</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>field.op.real_scalar</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_sub_field%7E3"></span><h3>procedure(<a href='../interface/symmetric_operator.html'>symmetric_operator</a>), public, deferred, pass(lhs) :: <strong>field_sub_field</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>-</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/symmetric_operator.html'>symmetric_operator</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>field.op.field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-field_sub_real%7E3"></span><h3>procedure(<a href='../interface/field_op_real.html'>field_op_real</a>), public, deferred, pass(lhs) :: <strong>field_sub_real</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>- real</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/field_op_real.html'>field_op_real</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>field.op.real</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong>(1:)</td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-integer_div_field%7E3"></span><h3>procedure(<a href='../interface/integer_op_field.html'>integer_op_field</a>), public, deferred, pass(rhs) :: <strong>integer_div_field</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>integer /</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/integer_op_field.html'>integer_op_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>integer.op.field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong>(1:)</td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-integer_mul_field%7E3"></span><h3>procedure(<a href='../interface/integer_op_field.html'>integer_op_field</a>), public, deferred, pass(rhs) :: <strong>integer_mul_field</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>integer *</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/integer_op_field.html'>integer_op_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>integer.op.field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong>(1:)</td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-integer_scalar_div_field%7E3"></span><h3>procedure(<a href='../interface/integer_scalar_op_field.html'>integer_scalar_op_field</a>), public, deferred, pass(rhs) :: <strong>integer_scalar_div_field</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>integer_scalar /</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/integer_scalar_op_field.html'>integer_scalar_op_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>integer_scalar.op.field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-integer_scalar_mul_field%7E3"></span><h3>procedure(<a href='../interface/integer_scalar_op_field.html'>integer_scalar_op_field</a>), public, deferred, pass(rhs) :: <strong>integer_scalar_mul_field</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>integer_scalar *</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/integer_scalar_op_field.html'>integer_scalar_op_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>integer_scalar.op.field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -2117,7 +3327,7 @@ pure function <a href='../interface/field_op_real_interface.html'>field_op_real_
             
     
     <h3>
-function <a href='../interface/unary_operator.html'>unary_operator</a>(self) result(opr)
+pure function <a href='../interface/unary_operator.html'>unary_operator</a>(self) result(opr)
     
     
 	 
@@ -2171,8 +3381,8 @@ function <a href='../interface/unary_operator.html'>unary_operator</a>(self) res
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -2194,7 +3404,7 @@ function <a href='../interface/unary_operator.html'>unary_operator</a>(self) res
     
 
 
-    <p>Operator `/='.</p>
+    <p>`/=' operator.</p>
   </div>
   
   <ul class="list-group">
@@ -2289,7 +3499,7 @@ elemental function <a href='../interface/compare_interface.html'>compare_interfa
     
 	   
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-operator%28%2A%29%7E3"></span><h3>generic, public :: <strong>operator(*)</strong>  => <a href='../type/primitive_compressible_multispecie.html#boundprocedure-mul%7E2'>mul</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-mul_integer%7E2'>mul_integer</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-integer_mul%7E2'>integer_mul</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-real_mul%7E2'>real_mul</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-mul_real%7E2'>mul_real</a> 
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-operator%28%2A%29%7E3"></span><h3>generic, public :: <strong>operator(*)</strong>  => <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_mul_field%7E2'>field_mul_field</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_mul_integer%7E2'>field_mul_integer</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-integer_mul_field%7E2'>integer_mul_field</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_mul_integer_scalar%7E2'>field_mul_integer_scalar</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-integer_scalar_mul_field%7E2'>integer_scalar_mul_field</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_mul_real%7E2'>field_mul_real</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-real_mul_field%7E2'>real_mul_field</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_mul_real_scalar%7E2'>field_mul_real_scalar</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-real_scalar_mul_field%7E2'>real_scalar_mul_field</a> 
     
   </h3></div>
   
@@ -2297,7 +3507,7 @@ elemental function <a href='../interface/compare_interface.html'>compare_interfa
     
 
 
-    <p>Operator <code>*</code> overloading.</p>
+    <p>Overloading <code>*</code> operator.</p>
   </div>
   
   <ul class="list-group">
@@ -2308,7 +3518,7 @@ elemental function <a href='../interface/compare_interface.html'>compare_interfa
             
     
     <h3>
-private pure function <a href='../proc/mul%7E3.html'>mul</a>(lhs, rhs) result(opr)
+private pure function <a href='../proc/field_mul_field%7E3.html'>field_mul_field</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -2321,7 +3531,7 @@ private pure function <a href='../proc/mul%7E3.html'>mul</a>(lhs, rhs) result(op
 
 
 
-<p>Operator <code>*</code>.</p>
+<p><code>*</code> operator.</p>
     
     <h4>Arguments</h4>
     
@@ -2377,8 +3587,8 @@ private pure function <a href='../proc/mul%7E3.html'>mul</a>(lhs, rhs) result(op
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -2392,7 +3602,7 @@ private pure function <a href='../proc/mul%7E3.html'>mul</a>(lhs, rhs) result(op
             
     
     <h3>
-private pure function <a href='../proc/mul_integer%7E3.html'>mul_integer</a>(lhs, rhs) result(opr)
+private pure function <a href='../proc/field_mul_integer%7E3.html'>field_mul_integer</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -2405,7 +3615,175 @@ private pure function <a href='../proc/mul_integer%7E3.html'>mul_integer</a>(lhs
 
 
 
-<p>Operator <code>field * integer</code>.</p>
+<p><code>* integer</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong>(1:)</td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/integer_mul_field%7E3.html'>integer_mul_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>integer *</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong>(1:)</td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/field_mul_integer_scalar%7E3.html'>field_mul_integer_scalar</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>* integer_scalar</code> operator.</p>
     
     <h4>Arguments</h4>
     
@@ -2461,8 +3839,8 @@ private pure function <a href='../proc/mul_integer%7E3.html'>mul_integer</a>(lhs
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -2476,7 +3854,7 @@ private pure function <a href='../proc/mul_integer%7E3.html'>mul_integer</a>(lhs
             
     
     <h3>
-private pure function <a href='../proc/integer_mul%7E3.html'>integer_mul</a>(lhs, rhs) result(opr)
+private pure function <a href='../proc/integer_scalar_mul_field%7E3.html'>integer_scalar_mul_field</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -2489,7 +3867,7 @@ private pure function <a href='../proc/integer_mul%7E3.html'>integer_mul</a>(lhs
 
 
 
-<p>Operator <code>integer * field</code>.</p>
+<p><code>integer_scalar *</code> operator.</p>
     
     <h4>Arguments</h4>
     
@@ -2545,8 +3923,8 @@ private pure function <a href='../proc/integer_mul%7E3.html'>integer_mul</a>(lhs
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -2560,7 +3938,7 @@ private pure function <a href='../proc/integer_mul%7E3.html'>integer_mul</a>(lhs
             
     
     <h3>
-private pure function <a href='../proc/real_mul%7E3.html'>real_mul</a>(lhs, rhs) result(opr)
+private pure function <a href='../proc/field_mul_real%7E3.html'>field_mul_real</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -2573,7 +3951,259 @@ private pure function <a href='../proc/real_mul%7E3.html'>real_mul</a>(lhs, rhs)
 
 
 
-<p>Operator <code>real * field</code>.</p>
+<p><code>* real</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong>(1:)</td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/real_mul_field%7E3.html'>real_mul_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>real *</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong>(1:)</td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/field_mul_real_scalar%7E3.html'>field_mul_real_scalar</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>* real_scalar</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/real_scalar_mul_field%7E3.html'>real_scalar_mul_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>real_scalar *</code> operator.</p>
     
     <h4>Arguments</h4>
     
@@ -2629,92 +4259,8 @@ private pure function <a href='../proc/real_mul%7E3.html'>real_mul</a>(lhs, rhs)
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
-  <p>Operator result.</p>
-    
-
-         
-      
-      </li>
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-private pure function <a href='../proc/mul_real%7E3.html'>mul_real</a>(lhs, rhs) result(opr)
-    
-    
-	 
-</h3>
-    
-
-
-
-
-
-
-
-<p>Operator <code>field * real</code>.</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=R_P),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -2728,7 +4274,7 @@ private pure function <a href='../proc/mul_real%7E3.html'>mul_real</a>(lhs, rhs)
     
 	   
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-operator%28%2A%2A%29%7E3"></span><h3>generic, public :: <strong>operator(**)</strong>  => <a href='../type/primitive_compressible_multispecie.html#boundprocedure-pow_integer%7E2'>pow_integer</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-pow_real%7E2'>pow_real</a> 
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-operator%28%2A%2A%29%7E3"></span><h3>generic, public :: <strong>operator(**)</strong>  => <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_pow_integer%7E2'>field_pow_integer</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_pow_real%7E2'>field_pow_real</a> 
     
   </h3></div>
   
@@ -2736,7 +4282,7 @@ private pure function <a href='../proc/mul_real%7E3.html'>mul_real</a>(lhs, rhs)
     
 
 
-    <p>Operator <code>**</code> overloading.</p>
+    <p>Overloading <code>**</code> operator.</p>
   </div>
   
   <ul class="list-group">
@@ -2747,7 +4293,7 @@ private pure function <a href='../proc/mul_real%7E3.html'>mul_real</a>(lhs, rhs)
             
     
     <h3>
-private pure function <a href='../proc/pow_integer%7E3.html'>pow_integer</a>(lhs, rhs) result(opr)
+private pure function <a href='../proc/field_pow_integer%7E3.html'>field_pow_integer</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -2760,7 +4306,7 @@ private pure function <a href='../proc/pow_integer%7E3.html'>pow_integer</a>(lhs
 
 
 
-<p>Operator <code>field ** integer</code>.</p>
+<p><code>** integer</code> operator.</p>
     
     <h4>Arguments</h4>
     
@@ -2816,8 +4362,8 @@ private pure function <a href='../proc/pow_integer%7E3.html'>pow_integer</a>(lhs
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -2831,7 +4377,7 @@ private pure function <a href='../proc/pow_integer%7E3.html'>pow_integer</a>(lhs
             
     
     <h3>
-private pure function <a href='../proc/pow_real%7E3.html'>pow_real</a>(lhs, rhs) result(opr)
+private pure function <a href='../proc/field_pow_real%7E3.html'>field_pow_real</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -2844,7 +4390,7 @@ private pure function <a href='../proc/pow_real%7E3.html'>pow_real</a>(lhs, rhs)
 
 
 
-<p>Operator <code>field ** real</code>.</p>
+<p><code>** real</code> operator.</p>
     
     <h4>Arguments</h4>
     
@@ -2900,8 +4446,8 @@ private pure function <a href='../proc/pow_real%7E3.html'>pow_real</a>(lhs, rhs)
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -2915,7 +4461,7 @@ private pure function <a href='../proc/pow_real%7E3.html'>pow_real</a>(lhs, rhs)
     
 	   
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-operator%28%2B%29%7E3"></span><h3>generic, public :: <strong>operator(+)</strong>  => <a href='../type/primitive_compressible_multispecie.html#boundprocedure-add%7E2'>add</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-positive%7E2'>positive</a> 
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-operator%28%2B%29%7E3"></span><h3>generic, public :: <strong>operator(+)</strong>  => <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_add_field%7E2'>field_add_field</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_add_real%7E2'>field_add_real</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-real_add_field%7E2'>real_add_field</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-positive%7E2'>positive</a> 
     
   </h3></div>
   
@@ -2923,7 +4469,7 @@ private pure function <a href='../proc/pow_real%7E3.html'>pow_real</a>(lhs, rhs)
     
 
 
-    <p>Operator <code>+</code> overloading.</p>
+    <p>Overloading <code>+</code> operator.</p>
   </div>
   
   <ul class="list-group">
@@ -2934,7 +4480,7 @@ private pure function <a href='../proc/pow_real%7E3.html'>pow_real</a>(lhs, rhs)
             
     
     <h3>
-private pure function <a href='../proc/add%7E3.html'>add</a>(lhs, rhs) result(opr)
+private pure function <a href='../proc/field_add_field%7E3.html'>field_add_field</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -2947,7 +4493,7 @@ private pure function <a href='../proc/add%7E3.html'>add</a>(lhs, rhs) result(op
 
 
 
-<p>Operator <code>+</code>.</p>
+<p><code>+</code> operator.</p>
     
     <h4>Arguments</h4>
     
@@ -3003,8 +4549,8 @@ private pure function <a href='../proc/add%7E3.html'>add</a>(lhs, rhs) result(op
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -3018,7 +4564,175 @@ private pure function <a href='../proc/add%7E3.html'>add</a>(lhs, rhs) result(op
             
     
     <h3>
-private function <a href='../proc/positive%7E3.html'>positive</a>(self) result(opr)
+private pure function <a href='../proc/field_add_real%7E3.html'>field_add_real</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>+ real</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong>(1:)</td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/real_add_field%7E3.html'>real_add_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>real +</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong>(1:)</td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/positive%7E3.html'>positive</a>(self) result(opr)
     
     
 	 
@@ -3072,8 +4786,8 @@ private function <a href='../proc/positive%7E3.html'>positive</a>(self) result(o
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -3087,7 +4801,7 @@ private function <a href='../proc/positive%7E3.html'>positive</a>(self) result(o
     
 	   
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-operator%28-%29%7E3"></span><h3>generic, public :: <strong>operator(-)</strong>  => <a href='../type/primitive_compressible_multispecie.html#boundprocedure-sub%7E2'>sub</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-negative%7E2'>negative</a> 
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-operator%28-%29%7E3"></span><h3>generic, public :: <strong>operator(-)</strong>  => <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_sub_field%7E2'>field_sub_field</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_sub_real%7E2'>field_sub_real</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-real_sub_field%7E2'>real_sub_field</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-negative%7E2'>negative</a> 
     
   </h3></div>
   
@@ -3095,7 +4809,7 @@ private function <a href='../proc/positive%7E3.html'>positive</a>(self) result(o
     
 
 
-    <p>Operator <code>-</code> overloading.</p>
+    <p>Overloading <code>-</code> operator.</p>
   </div>
   
   <ul class="list-group">
@@ -3106,7 +4820,7 @@ private function <a href='../proc/positive%7E3.html'>positive</a>(self) result(o
             
     
     <h3>
-private pure function <a href='../proc/sub%7E3.html'>sub</a>(lhs, rhs) result(opr)
+private pure function <a href='../proc/field_sub_field%7E3.html'>field_sub_field</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -3119,7 +4833,7 @@ private pure function <a href='../proc/sub%7E3.html'>sub</a>(lhs, rhs) result(op
 
 
 
-<p>Operator <code>-</code>.</p>
+<p><code>-</code> operator.</p>
     
     <h4>Arguments</h4>
     
@@ -3175,8 +4889,8 @@ private pure function <a href='../proc/sub%7E3.html'>sub</a>(lhs, rhs) result(op
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -3190,7 +4904,175 @@ private pure function <a href='../proc/sub%7E3.html'>sub</a>(lhs, rhs) result(op
             
     
     <h3>
-private function <a href='../proc/negative%7E3.html'>negative</a>(self) result(operator_result)
+private pure function <a href='../proc/field_sub_real%7E3.html'>field_sub_real</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>- real</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong>(1:)</td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/real_sub_field%7E3.html'>real_sub_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>real -</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong>(1:)</td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/negative%7E3.html'>negative</a>(self) result(opr)
     
     
 	 
@@ -3244,8 +5126,8 @@ private function <a href='../proc/negative%7E3.html'>negative</a>(self) result(o
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -3259,7 +5141,7 @@ private function <a href='../proc/negative%7E3.html'>negative</a>(self) result(o
     
 	   
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-operator%28SLASH%29%7E3"></span><h3>generic, public :: <strong>operator(/)</strong>  => <a href='../type/primitive_compressible_multispecie.html#boundprocedure-div%7E2'>div</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-div_integer%7E2'>div_integer</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-div_real%7E2'>div_real</a> 
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-operator%28SLASH%29%7E3"></span><h3>generic, public :: <strong>operator(/)</strong>  => <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_div_field%7E2'>field_div_field</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_div_integer%7E2'>field_div_integer</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-integer_div_field%7E2'>integer_div_field</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_div_integer_scalar%7E2'>field_div_integer_scalar</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-integer_scalar_div_field%7E2'>integer_scalar_div_field</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_div_real%7E2'>field_div_real</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-real_div_field%7E2'>real_div_field</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-field_div_real_scalar%7E2'>field_div_real_scalar</a>, <a href='../type/primitive_compressible_multispecie.html#boundprocedure-real_scalar_div_field%7E2'>real_scalar_div_field</a> 
     
   </h3></div>
   
@@ -3267,7 +5149,7 @@ private function <a href='../proc/negative%7E3.html'>negative</a>(self) result(o
     
 
 
-    <p>Operator <code>/</code> overloading.</p>
+    <p>Overloading <code>/</code> operator.</p>
   </div>
   
   <ul class="list-group">
@@ -3278,7 +5160,7 @@ private function <a href='../proc/negative%7E3.html'>negative</a>(self) result(o
             
     
     <h3>
-private pure function <a href='../proc/div%7E3.html'>div</a>(lhs, rhs) result(opr)
+private pure function <a href='../proc/field_div_field%7E3.html'>field_div_field</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -3291,7 +5173,7 @@ private pure function <a href='../proc/div%7E3.html'>div</a>(lhs, rhs) result(op
 
 
 
-<p>Operator <code>/</code>.</p>
+<p><code>/</code> operator.</p>
     
     <h4>Arguments</h4>
     
@@ -3347,8 +5229,8 @@ private pure function <a href='../proc/div%7E3.html'>div</a>(lhs, rhs) result(op
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -3362,7 +5244,7 @@ private pure function <a href='../proc/div%7E3.html'>div</a>(lhs, rhs) result(op
             
     
     <h3>
-private pure function <a href='../proc/div_integer%7E3.html'>div_integer</a>(lhs, rhs) result(opr)
+private pure function <a href='../proc/field_div_integer%7E3.html'>field_div_integer</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -3375,7 +5257,175 @@ private pure function <a href='../proc/div_integer%7E3.html'>div_integer</a>(lhs
 
 
 
-<p>Operator <code>field / integer</code>.</p>
+<p><code>/ integer</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong>(1:)</td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/integer_div_field%7E3.html'>integer_div_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>integer /</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong>(1:)</td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/field_div_integer_scalar%7E3.html'>field_div_integer_scalar</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>/ integer_scalar</code> operator.</p>
     
     <h4>Arguments</h4>
     
@@ -3431,8 +5481,8 @@ private pure function <a href='../proc/div_integer%7E3.html'>div_integer</a>(lhs
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -3446,7 +5496,7 @@ private pure function <a href='../proc/div_integer%7E3.html'>div_integer</a>(lhs
             
     
     <h3>
-private pure function <a href='../proc/div_real%7E3.html'>div_real</a>(lhs, rhs) result(opr)
+private pure function <a href='../proc/integer_scalar_div_field%7E3.html'>integer_scalar_div_field</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -3459,7 +5509,259 @@ private pure function <a href='../proc/div_real%7E3.html'>div_real</a>(lhs, rhs)
 
 
 
-<p>Operator <code>field / real</code>.</p>
+<p><code>integer_scalar /</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=I_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/field_div_real%7E3.html'>field_div_real</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>/ real</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong>(1:)</td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/real_div_field%7E3.html'>real_div_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>real /</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong>(1:)</td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/field_div_real_scalar%7E3.html'>field_div_real_scalar</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>/ real_scalar</code> operator.</p>
     
     <h4>Arguments</h4>
     
@@ -3515,8 +5817,92 @@ private pure function <a href='../proc/div_real%7E3.html'>div_real</a>(lhs, rhs)
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private pure function <a href='../proc/real_scalar_div_field%7E3.html'>real_scalar_div_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+</h3>
+    
+
+
+
+
+
+
+
+<p><code>real_scalar /</code> operator.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/primitive_compressible_multispecie.html'>primitive_compressible_multispecie</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -3538,7 +5924,7 @@ private pure function <a href='../proc/div_real%7E3.html'>div_real</a>(lhs, rhs)
     
 
 
-    <p>Operator <code>/=</code> overloading.</p>
+    <p>Overloading <code>/=</code> operator.</p>
   </div>
   
   <ul class="list-group">
@@ -3641,7 +6027,7 @@ private elemental function <a href='../proc/not_eq%7E3.html'>not_eq</a>(lhs, rhs
     
 
 
-    <p>Operator <code>/=</code> overloading.</p>
+    <p>Overloading <code>==</code> operator.</p>
   </div>
   
   <ul class="list-group">
@@ -3755,7 +6141,7 @@ private elemental function <a href='../proc/eq%7E3.html'>eq</a>(lhs, rhs) result
             
     
     <h3>
-function <a href='../interface/unary_operator.html'>unary_operator</a>(self) result(opr)
+pure function <a href='../interface/unary_operator.html'>unary_operator</a>(self) result(opr)
     
     
 	 
@@ -3809,8 +6195,8 @@ function <a href='../interface/unary_operator.html'>unary_operator</a>(self) res
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -3824,7 +6210,7 @@ function <a href='../interface/unary_operator.html'>unary_operator</a>(self) res
     
 	   
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-pow_integer%7E3"></span><h3>procedure(<a href='../interface/field_op_integer_interface.html'>field_op_integer_interface</a>), public, deferred, pass(lhs) :: <strong>pow_integer</strong>  
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-real_add_field%7E3"></span><h3>procedure(<a href='../interface/real_op_field.html'>real_op_field</a>), public, deferred, pass(rhs) :: <strong>real_add_field</strong>  
     
   </h3></div>
   
@@ -3832,7 +6218,7 @@ function <a href='../interface/unary_operator.html'>unary_operator</a>(self) res
     
 
 
-    <p>Operator <code>field ** integer</code>.</p>
+    <p><code>real +</code> operator.</p>
   </div>
   
   <ul class="list-group">
@@ -3843,213 +6229,7 @@ function <a href='../interface/unary_operator.html'>unary_operator</a>(self) res
             
     
     <h3>
-pure function <a href='../interface/field_op_integer_interface.html'>field_op_integer_interface</a>(lhs, rhs) result(opr)
-    
-    
-	 
-<small>Prototype</small></h3>
-    
-
-
-
-
-
-
-
-<p>Operator <code>field.op.integer</code>.</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer(kind=I_P),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
-  <p>Operator result.</p>
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-	   
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-pow_real%7E3"></span><h3>procedure(<a href='../interface/field_op_real_interface.html'>field_op_real_interface</a>), public, deferred, pass(lhs) :: <strong>pow_real</strong>  
-    
-  </h3></div>
-  
-  <div class="panel-body">
-    
-
-
-    <p>Operator <code>field ** real</code>.</p>
-  </div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-pure function <a href='../interface/field_op_real_interface.html'>field_op_real_interface</a>(lhs, rhs) result(opr)
-    
-    
-	 
-<small>Prototype</small></h3>
-    
-
-
-
-
-
-
-
-<p>Operator <code>field.op.real</code>.</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=R_P),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
-  <p>Operator result.</p>
-    
-
-         
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-	   
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-real_mul%7E3"></span><h3>procedure(<a href='../interface/real_op_field_interface.html'>real_op_field_interface</a>), public, deferred, pass(rhs) :: <strong>real_mul</strong>  
-    
-  </h3></div>
-  
-  <div class="panel-body">
-    
-
-
-    <p>Operator <code>real * field</code>.</p>
-  </div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-         
-            
-    
-    <h3>
-pure function <a href='../interface/real_op_field_interface.html'>real_op_field_interface</a>(lhs, rhs) result(opr)
+pure function <a href='../interface/real_op_field.html'>real_op_field</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -4088,7 +6268,7 @@ pure function <a href='../interface/real_op_field_interface.html'>real_op_field_
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  <td><strong>lhs</strong>(1:)</td><td><p>Left hand side.</p></td>
   
 </tr>
 
@@ -4118,8 +6298,8 @@ pure function <a href='../interface/real_op_field_interface.html'>real_op_field_
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -4133,7 +6313,7 @@ pure function <a href='../interface/real_op_field_interface.html'>real_op_field_
     
 	   
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-sub%7E3"></span><h3>procedure(<a href='../interface/symmetric_op_interface.html'>symmetric_op_interface</a>), public, deferred, pass(lhs) :: <strong>sub</strong>  
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-real_div_field%7E3"></span><h3>procedure(<a href='../interface/real_op_field.html'>real_op_field</a>), public, deferred, pass(rhs) :: <strong>real_div_field</strong>  
     
   </h3></div>
   
@@ -4141,7 +6321,7 @@ pure function <a href='../interface/real_op_field_interface.html'>real_op_field_
     
 
 
-    <p>Operator <code>-</code>.</p>
+    <p><code>real /</code> operator.</p>
   </div>
   
   <ul class="list-group">
@@ -4152,7 +6332,7 @@ pure function <a href='../interface/real_op_field_interface.html'>real_op_field_
             
     
     <h3>
-pure function <a href='../interface/symmetric_op_interface.html'>symmetric_op_interface</a>(lhs, rhs) result(opr)
+pure function <a href='../interface/real_op_field.html'>real_op_field</a>(lhs, rhs) result(opr)
     
     
 	 
@@ -4165,7 +6345,7 @@ pure function <a href='../interface/symmetric_op_interface.html'>symmetric_op_in
 
 
 
-<p>Operator <code>field.op.field</code>.</p>
+<p>Operator <code>real.op.field</code>.</p>
     
     <h4>Arguments</h4>
     
@@ -4186,7 +6366,213 @@ pure function <a href='../interface/symmetric_op_interface.html'>symmetric_op_in
   
 <tr>
   
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong>(1:)</td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
   <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-real_mul_field%7E3"></span><h3>procedure(<a href='../interface/real_op_field.html'>real_op_field</a>), public, deferred, pass(rhs) :: <strong>real_mul_field</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>real *</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/real_op_field.html'>real_op_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>real.op.field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong>(1:)</td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-real_scalar_div_field%7E3"></span><h3>procedure(<a href='../interface/real_scalar_op_field.html'>real_scalar_op_field</a>), public, deferred, pass(rhs) :: <strong>real_scalar_div_field</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>real_scalar /</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/real_scalar_op_field.html'>real_scalar_op_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>real_scalar.op.field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -4221,8 +6607,214 @@ pure function <a href='../interface/symmetric_op_interface.html'>symmetric_op_in
   
   
   
-     <h4>Return Value <small>class(<a href='../type/field_object.html'>field_object</a>),
-  allocatable</small></h4>
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-real_scalar_mul_field%7E3"></span><h3>procedure(<a href='../interface/real_scalar_op_field.html'>real_scalar_op_field</a>), public, deferred, pass(rhs) :: <strong>real_scalar_mul_field</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>real_scalar *</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/real_scalar_op_field.html'>real_scalar_op_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>real_scalar.op.field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong></td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
+  <p>Operator result.</p>
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+	   
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-real_sub_field%7E3"></span><h3>procedure(<a href='../interface/real_op_field.html'>real_op_field</a>), public, deferred, pass(rhs) :: <strong>real_sub_field</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p><code>real -</code> operator.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+pure function <a href='../interface/real_op_field.html'>real_op_field</a>(lhs, rhs) result(opr)
+    
+    
+	 
+<small>Prototype</small></h3>
+    
+
+
+
+
+
+
+
+<p>Operator <code>real.op.field</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=R_P),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lhs</strong>(1:)</td><td><p>Left hand side.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/field_object.html'>field_object</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs</strong></td><td><p>Right hand side.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=R_P),
+  allocatable, (:)</small></h4>
   <p>Operator result.</p>
     
 
@@ -4242,39 +6834,81 @@ pure function <a href='../interface/symmetric_op_interface.html'>symmetric_op_in
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre><span></span><span class="k">type</span><span class="p">,</span> <span class="k">abstract</span> <span class="kd">::</span> <span class="n">field_object</span>
    <span class="c">!&lt; **Field** abstract object.</span>
-   <span class="kt">integer</span><span class="p">(</span><span class="n">I1P</span><span class="p">),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">memory_leaks</span> <span class="c">!&lt; Workaround for GNU memory leaks bug.</span>
    <span class="k">contains</span>
       <span class="c">! deferred methods</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">array_interface</span><span class="p">),</span>            <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="k">array</span>        <span class="c">!&lt; Return serialized array of field.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">description_interface</span><span class="p">),</span>      <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">description</span>  <span class="c">!&lt; Return pretty-printed object description.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">array_interface</span><span class="p">),</span>       <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="k">array</span>        <span class="c">!&lt; Return serialized array of field.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">description_interface</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">description</span>  <span class="c">!&lt; Return pretty-printed object description.</span>
       <span class="c">! deferred operators</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">assign_interface</span><span class="p">),</span>           <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">assign_field</span> <span class="c">!&lt; Operator `=`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">assign_real_interface</span><span class="p">),</span>      <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">assign_real</span>  <span class="c">!&lt; Operator `field = real`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">unary_operator</span><span class="p">),</span>             <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">positive</span>     <span class="c">!&lt; Unary operator `+ field`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">symmetric_op_interface</span><span class="p">),</span>     <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">add</span>          <span class="c">!&lt; Operator `+`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">symmetric_op_interface</span><span class="p">),</span>     <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">div</span>          <span class="c">!&lt; Operator `/`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_integer_interface</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">div_integer</span>  <span class="c">!&lt; Operator `field / integer`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_real_interface</span><span class="p">),</span>    <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">div_real</span>     <span class="c">!&lt; Operator `field / real`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">symmetric_op_interface</span><span class="p">),</span>     <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">mul</span>          <span class="c">!&lt; Operator `*`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_integer_interface</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">mul_integer</span>  <span class="c">!&lt; Operator `field * integer`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">integer_op_field_interface</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">integer_mul</span>  <span class="c">!&lt; Operator `integer * field`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_real_interface</span><span class="p">),</span>    <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">mul_real</span>     <span class="c">!&lt; Operator `field * real`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">real_op_field_interface</span><span class="p">),</span>    <span class="k">pass</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">real_mul</span>     <span class="c">!&lt; Operator `real * field`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">unary_operator</span><span class="p">),</span>             <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span> <span class="kd">::</span> <span class="n">negative</span>     <span class="c">!&lt; Unary operator `- field`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">symmetric_op_interface</span><span class="p">),</span>     <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">sub</span>          <span class="c">!&lt; Operator `-`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_integer_interface</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">pow_integer</span>  <span class="c">!&lt; Operator `field ** integer`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_real_interface</span><span class="p">),</span>    <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">pow_real</span>     <span class="c">!&lt; Operator `field ** real`.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">compare_interface</span><span class="p">),</span>          <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">eq</span>           <span class="c">!&lt; Operator `==&#39;.</span>
-      <span class="k">procedure</span><span class="p">(</span><span class="n">compare_interface</span><span class="p">),</span>          <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span> <span class="kd">::</span> <span class="n">not_eq</span>       <span class="c">!&lt; Operator `/=&#39;.</span>
-      <span class="c">! public operators</span>
-      <span class="k">generic</span> <span class="kd">::</span> <span class="n">assignment</span><span class="p">(</span><span class="o">=</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">assign_field</span><span class="p">,</span> <span class="n">assign_real</span>                       <span class="c">!&lt; Assignment overloading.</span>
-      <span class="k">generic</span> <span class="kd">::</span> <span class="n">operator</span><span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">add</span><span class="p">,</span> <span class="n">positive</span>                                     <span class="c">!&lt; Operator `+` overloading.</span>
-      <span class="k">generic</span> <span class="kd">::</span> <span class="n">operator</span><span class="p">(</span><span class="o">/</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">div</span><span class="p">,</span> <span class="n">div_integer</span><span class="p">,</span> <span class="n">div_real</span>                        <span class="c">!&lt; Operator `/` overloading.</span>
-      <span class="k">generic</span> <span class="kd">::</span> <span class="n">operator</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">mul</span><span class="p">,</span> <span class="n">mul_integer</span><span class="p">,</span> <span class="n">integer_mul</span><span class="p">,</span> <span class="n">real_mul</span><span class="p">,</span> <span class="n">mul_real</span> <span class="c">!&lt; Operator `*` overloading.</span>
-      <span class="k">generic</span> <span class="kd">::</span> <span class="n">operator</span><span class="p">(</span><span class="o">-</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">sub</span><span class="p">,</span> <span class="n">negative</span>                                     <span class="c">!&lt; Operator `-` overloading.</span>
-      <span class="k">generic</span> <span class="kd">::</span> <span class="n">operator</span><span class="p">(</span><span class="o">**</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">pow_integer</span><span class="p">,</span> <span class="n">pow_real</span>                            <span class="c">!&lt; Operator `**` overloading.</span>
-      <span class="k">generic</span> <span class="kd">::</span> <span class="n">operator</span><span class="p">(</span><span class="o">==</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">eq</span>                                               <span class="c">!&lt; Operator `/=` overloading.</span>
-      <span class="k">generic</span> <span class="kd">::</span> <span class="n">operator</span><span class="p">(</span><span class="o">/=</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">not_eq</span>                                           <span class="c">!&lt; Operator `/=` overloading.</span>
+      <span class="c">! +</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">symmetric_operator</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_add_field</span> <span class="c">!&lt; `+` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_real</span><span class="p">),</span>      <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_add_real</span>  <span class="c">!&lt; `+ real` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">real_op_field</span><span class="p">),</span>      <span class="k">pass</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span>  <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">real_add_field</span>  <span class="c">!&lt; `real +` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">unary_operator</span><span class="p">),</span>     <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">positive</span>        <span class="c">!&lt; Unary operator `+ field`.</span>
+      <span class="k">generic</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">operator</span><span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">field_add_field</span><span class="p">,</span> <span class="p">&amp;</span>
+                                        <span class="n">field_add_real</span><span class="p">,</span>  <span class="p">&amp;</span>
+                                        <span class="n">real_add_field</span><span class="p">,</span>  <span class="p">&amp;</span>
+                                        <span class="n">positive</span> <span class="c">!&lt; Overloading `+` operator.</span>
+      <span class="c">! /</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">symmetric_operator</span><span class="p">),</span>      <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_div_field</span>          <span class="c">!&lt; `/` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_integer</span><span class="p">),</span>        <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_div_integer</span>        <span class="c">!&lt; `/ integer` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">integer_op_field</span><span class="p">),</span>        <span class="k">pass</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">integer_div_field</span>        <span class="c">!&lt; `integer /` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_integer_scalar</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_div_integer_scalar</span> <span class="c">!&lt; `/ integer_scalar` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">integer_scalar_op_field</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">integer_scalar_div_field</span> <span class="c">!&lt; `integer_scalar /` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_real</span><span class="p">),</span>           <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_div_real</span>           <span class="c">!&lt; `/ real` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">real_op_field</span><span class="p">),</span>           <span class="k">pass</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">real_div_field</span>           <span class="c">!&lt; `real /` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_real_scalar</span><span class="p">),</span>    <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_div_real_scalar</span>    <span class="c">!&lt; `/ real_scalar` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">real_scalar_op_field</span><span class="p">),</span>    <span class="k">pass</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">real_scalar_div_field</span>    <span class="c">!&lt; `real_scalar /` operator.</span>
+      <span class="k">generic</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">operator</span><span class="p">(</span><span class="o">/</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">field_div_field</span><span class="p">,</span>          <span class="p">&amp;</span>
+                                        <span class="n">field_div_integer</span><span class="p">,</span>        <span class="p">&amp;</span>
+                                        <span class="n">integer_div_field</span><span class="p">,</span>        <span class="p">&amp;</span>
+                                        <span class="n">field_div_integer_scalar</span><span class="p">,</span> <span class="p">&amp;</span>
+                                        <span class="n">integer_scalar_div_field</span><span class="p">,</span> <span class="p">&amp;</span>
+                                        <span class="n">field_div_real</span><span class="p">,</span>           <span class="p">&amp;</span>
+                                        <span class="n">real_div_field</span><span class="p">,</span>           <span class="p">&amp;</span>
+                                        <span class="n">field_div_real_scalar</span><span class="p">,</span>    <span class="p">&amp;</span>
+                                        <span class="n">real_scalar_div_field</span> <span class="c">!&lt; Overloading `/` operator.</span>
+      <span class="c">! *</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">symmetric_operator</span><span class="p">),</span>      <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_mul_field</span>          <span class="c">!&lt; `*` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_integer</span><span class="p">),</span>        <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_mul_integer</span>        <span class="c">!&lt; `* integer` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">integer_op_field</span><span class="p">),</span>        <span class="k">pass</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">integer_mul_field</span>        <span class="c">!&lt; `integer *` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_integer_scalar</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_mul_integer_scalar</span> <span class="c">!&lt; `* integer_scalar` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">integer_scalar_op_field</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">integer_scalar_mul_field</span> <span class="c">!&lt; `integer_scalar *` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_real</span><span class="p">),</span>           <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_mul_real</span>           <span class="c">!&lt; `* real` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">real_op_field</span><span class="p">),</span>           <span class="k">pass</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">real_mul_field</span>           <span class="c">!&lt; `real *` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_real_scalar</span><span class="p">),</span>    <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_mul_real_scalar</span>    <span class="c">!&lt; `* real_scalar` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">real_scalar_op_field</span><span class="p">),</span>    <span class="k">pass</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">real_scalar_mul_field</span>    <span class="c">!&lt; `real_scalar *` operator.</span>
+      <span class="k">generic</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">operator</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">field_mul_field</span><span class="p">,</span>          <span class="p">&amp;</span>
+                                        <span class="n">field_mul_integer</span><span class="p">,</span>        <span class="p">&amp;</span>
+                                        <span class="n">integer_mul_field</span><span class="p">,</span>        <span class="p">&amp;</span>
+                                        <span class="n">field_mul_integer_scalar</span><span class="p">,</span> <span class="p">&amp;</span>
+                                        <span class="n">integer_scalar_mul_field</span><span class="p">,</span> <span class="p">&amp;</span>
+                                        <span class="n">field_mul_real</span><span class="p">,</span>           <span class="p">&amp;</span>
+                                        <span class="n">real_mul_field</span><span class="p">,</span>           <span class="p">&amp;</span>
+                                        <span class="n">field_mul_real_scalar</span><span class="p">,</span>    <span class="p">&amp;</span>
+                                        <span class="n">real_scalar_mul_field</span> <span class="c">!&lt; Overloading `*` operator.</span>
+      <span class="c">! -</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">symmetric_operator</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_sub_field</span> <span class="c">!&lt; `-` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_real</span><span class="p">),</span>      <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>  <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_sub_real</span>  <span class="c">!&lt; `- real` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">real_op_field</span><span class="p">),</span>      <span class="k">pass</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span>  <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">real_sub_field</span>  <span class="c">!&lt; `real -` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">unary_operator</span><span class="p">),</span>     <span class="k">pass</span><span class="p">(</span><span class="n">self</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">negative</span>        <span class="c">!&lt; Unary operator `- field`.</span>
+      <span class="k">generic</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">operator</span><span class="p">(</span><span class="o">-</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">field_sub_field</span><span class="p">,</span> <span class="p">&amp;</span>
+                                        <span class="n">field_sub_real</span><span class="p">,</span>  <span class="p">&amp;</span>
+                                        <span class="n">real_sub_field</span><span class="p">,</span>  <span class="p">&amp;</span>
+                                        <span class="n">negative</span> <span class="c">!&lt; Overloading `-` operator.</span>
+      <span class="c">! **</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_integer_scalar</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_pow_integer</span> <span class="c">!&lt; `** integer` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">field_op_real_scalar</span><span class="p">),</span>    <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">field_pow_real</span>    <span class="c">!&lt; `** real` operator.</span>
+      <span class="k">generic</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">operator</span><span class="p">(</span><span class="o">**</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">field_pow_integer</span><span class="p">,</span> <span class="n">field_pow_real</span> <span class="c">!&lt; Overloading `**` operator.</span>
+      <span class="c">! =</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">assign_field_interface</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">assign_field</span> <span class="c">!&lt; `=` operator.</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">assign_real_interface</span><span class="p">),</span>  <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">assign_real</span>  <span class="c">!&lt; `= real` operator.</span>
+      <span class="k">generic</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">assignment</span><span class="p">(</span><span class="o">=</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">assign_field</span><span class="p">,</span> <span class="n">assign_real</span> <span class="c">!&lt; Overloading `=` assignament.</span>
+      <span class="c">! ==</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">compare_interface</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">eq</span> <span class="c">!&lt; `==&#39; operator.</span>
+      <span class="k">generic</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">operator</span><span class="p">(</span><span class="o">==</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">eq</span> <span class="c">!&lt; Overloading `==` operator.</span>
+      <span class="c">! /=</span>
+      <span class="k">procedure</span><span class="p">(</span><span class="n">compare_interface</span><span class="p">),</span> <span class="k">pass</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="k">deferred</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">not_eq</span> <span class="c">!&lt; `/=&#39; operator.</span>
+      <span class="k">generic</span> <span class="kd">::</span> <span class="n">operator</span><span class="p">(</span><span class="o">/=</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">not_eq</span> <span class="c">!&lt; Overloading `/=` operator.</span>
 <span class="n">endtype</span> <span class="n">field_object</span>
 </pre></div>
 
@@ -4303,10 +6937,6 @@ pure function <a href='../interface/symmetric_op_interface.html'>symmetric_op_in
       
       <a class="list-group-item" href="../type/field_object.html">field_object</a>
       
-      <a class="list-group-item" href="../type/field_scalar.html">field_scalar</a>
-      
-      <a class="list-group-item" href="../type/field_vectorial.html">field_vectorial</a>
-      
       <a class="list-group-item" href="../type/primitive_compressible.html">primitive_compressible</a>
       
       <a class="list-group-item" href="../type/primitive_compressible_multispecie.html">primitive_compressible_multispecie</a>
@@ -4334,7 +6964,7 @@ pure function <a href='../interface/symmetric_op_interface.html'>symmetric_op_in
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2017-04-26 09:46  
+             on 2017-05-02 13:47  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FLOw was developed by Stefano Zaghi</p></div>

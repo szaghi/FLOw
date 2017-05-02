@@ -11,46 +11,57 @@ implicit none
 type(primitive_compressible_multispecie) :: primitive1     !< A primitive object.
 type(primitive_compressible_multispecie) :: primitive2     !< A primitive object.
 type(primitive_compressible_multispecie) :: primitive3     !< A primitive object.
+type(primitive_compressible_multispecie) :: primitive4     !< A primitive object.
 type(vector)                             :: velocity       !< A vector object.
 logical                                  :: test_passed(3) !< List of passed tests.
 
 test_passed = .false.
 
 velocity = 1._R_P
-primitive1 = primitive_compressible_multispecie(density=0.125_R_P,  &
-                                                velocity=velocity,  &
-                                                pressure=1._R_P,    &
-                                                partial_densities=[0.125_R_P / 2,  0.125_R_P / 2])
+primitive1 = primitive_compressible_multispecie(density=0.125_R_P, &
+                                                velocity=velocity, &
+                                                pressure=1._R_P,   &
+                                                partial_densities=[0.125_R_P / 2, 0.125_R_P / 2])
 velocity = 2._R_P
-primitive2 = primitive_compressible_multispecie(density=1._R_P,  &
-                                                velocity=velocity,  &
-                                                pressure=1._R_P,    &
-                                                partial_densities=[1._R_P / 2,  1._R_P / 2])
+primitive2 = primitive_compressible_multispecie(density=1._R_P,    &
+                                                velocity=velocity, &
+                                                pressure=1._R_P,   &
+                                                partial_densities=[1._R_P / 2, 1._R_P / 2])
 
-primitive3 = primitive1 / primitive2
-test_passed(1) = primitive3 == (primitive1 / primitive2)
-print "(A,F6.3)",       'density   => 0.125  / 1   = ', primitive3%density
-print "(A,3(F6.3,1X))", 'velocity  => 1      / 2   = ', primitive3%velocity
-print "(A,F6.3)",       'pressure  => 1      / 1   = ', primitive3%pressure
-print "(A,2(F7.4,1X))", 'densities => 0.0625 / 0.5 = ', primitive3%partial_densities(1), primitive3%partial_densities(2)
+velocity = 0.5_R_P
+primitive3 = primitive_compressible_multispecie(density=0.125_R_P, &
+                                                velocity=velocity, &
+                                                pressure=1._R_P,   &
+                                                partial_densities=[0.125, 0.125])
+primitive4 = primitive1 / primitive2
+test_passed(1) = primitive3 == primitive4
+print "(A,F6.3)",       'density   => 0.125  / 1   = ', primitive4%density
+print "(A,3(F6.3,1X))", 'velocity  => 1      / 2   = ', primitive4%velocity
+print "(A,F6.3)",       'pressure  => 1      / 1   = ', primitive4%pressure
+print "(A,2(F7.4,1X))", 'densities => 0.0625 / 0.5 = ', primitive4%partial_densities(1), primitive4%partial_densities(2)
 call print_error(test='primitive3 = primitive1 / primitive2', is_test_passed=test_passed(1))
 
-primitive3 = primitive1 / 2._R_P
-test_passed(2) = primitive3 == (primitive1 / 2._R_P)
+velocity = 0.5_R_P
+primitive3 = primitive_compressible_multispecie(density=0.0625_R_P, &
+                                                velocity=velocity, &
+                                                pressure=0.5_R_P,   &
+                                                partial_densities=[0.03125, 0.03125])
+primitive4 = primitive1 / 2._R_P
+test_passed(2) = primitive3 == primitive4
 print "(A)", ''
-print "(A,F6.3)",       'density   => 0.125  / 2.0 = ', primitive3%density
-print "(A,3(F6.3,1X))", 'velocity  => 1      / 2.0 = ', primitive3%velocity
-print "(A,F6.3)",       'pressure  => 1      / 2.0 = ', primitive3%pressure
-print "(A,2(F7.4,1X))", 'densities => 0.0625 / 2.0 = ', primitive3%partial_densities(1), primitive3%partial_densities(2)
+print "(A,F6.3)",       'density   => 0.125  / 2.0 = ', primitive4%density
+print "(A,3(F6.3,1X))", 'velocity  => 1      / 2.0 = ', primitive4%velocity
+print "(A,F6.3)",       'pressure  => 1      / 2.0 = ', primitive4%pressure
+print "(A,2(F7.4,1X))", 'densities => 0.0625 / 2.0 = ', primitive4%partial_densities(1), primitive4%partial_densities(2)
 call print_error(test='primitive3 = primitive1 / 2.0', is_test_passed=test_passed(2))
 
-primitive3 = primitive1 / 2_I_P
-test_passed(3) = primitive3 == (primitive1 / 2_I_P)
+primitive4 = primitive1 / 2_I_P
+test_passed(3) = primitive3 == primitive4
 print "(A)", ''
-print "(A,F6.3)",       'density   => 0.125  / 2 = ', primitive3%density
-print "(A,3(F6.3,1X))", 'velocity  => 1      / 2 = ', primitive3%velocity
-print "(A,F6.3)",       'pressure  => 1      / 2 = ', primitive3%pressure
-print "(A,2(F7.4,1X))", 'densities => 0.0625 / 2 = ', primitive3%partial_densities(1), primitive3%partial_densities(2)
+print "(A,F6.3)",       'density   => 0.125  / 2 = ', primitive4%density
+print "(A,3(F6.3,1X))", 'velocity  => 1      / 2 = ', primitive4%velocity
+print "(A,F6.3)",       'pressure  => 1      / 2 = ', primitive4%pressure
+print "(A,2(F7.4,1X))", 'densities => 0.0625 / 2 = ', primitive4%partial_densities(1), primitive4%partial_densities(2)
 call print_error(test='primitive3 = primitive1 / 2', is_test_passed=test_passed(3))
 
 print "(A,L1)", new_line('a')//'Are all tests passed? ', all(test_passed)

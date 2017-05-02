@@ -4,18 +4,19 @@ program flow_test_primitive_compressible_assign
 !< FLOw test.
 
 use flow, only : primitive_compressible
-use penf, only : R_P
+use penf, only : I_P, R_P
 use vecfor, only : vector
 
 implicit none
 type(primitive_compressible) :: primitive1     !< A primitive object.
 type(primitive_compressible) :: primitive2     !< A primitive object.
 type(vector)                 :: velocity       !< A vector object.
+integer(I_P)                 :: p              !< Counter.
 logical                      :: test_passed(2) !< List of passed tests.
 
 test_passed = .false.
 
-primitive1 = 0.125_R_P
+primitive1 = [(0.125_R_P, p=1,5)]
 test_passed(1) = (primitive1%density    == 0.125_R_P).and. &
                  (primitive1%velocity%x == 0.125_R_P).and. &
                  (primitive1%velocity%y == 0.125_R_P).and. &

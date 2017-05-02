@@ -4,18 +4,19 @@ program flow_test_conservative_compressible_assign
 !< FLOw test.
 
 use flow, only : conservative_compressible
-use penf, only : R_P
+use penf, only : I_P, R_P
 use vecfor, only : vector
 
 implicit none
 type(conservative_compressible) :: conservative1  !< A conservative object.
 type(conservative_compressible) :: conservative2  !< A conservative object.
 type(vector)                    :: momentum       !< A vector object.
+integer(I_P)                    :: c              !< Counter.
 logical                         :: test_passed(2) !< List of passed tests.
 
 test_passed = .false.
 
-conservative1 = 0.125_R_P
+conservative1 = [(0.125_R_P, c=1,5)]
 test_passed(1) = (conservative1%density    == 0.125_R_P).and. &
                  (conservative1%momentum%x == 0.125_R_P).and. &
                  (conservative1%momentum%y == 0.125_R_P).and. &
