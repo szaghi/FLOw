@@ -11,6 +11,7 @@ implicit none
 type(primitive_compressible) :: primitive1     !< A primitive object.
 type(primitive_compressible) :: primitive2     !< A primitive object.
 type(primitive_compressible) :: primitive3     !< A primitive object.
+type(primitive_compressible) :: primitive4     !< A primitive object.
 type(vector)                 :: velocity       !< A vector object.
 logical                      :: test_passed(2) !< List of passed tests.
 
@@ -20,11 +21,13 @@ velocity = 1._R_P
 primitive1 = primitive_compressible(density=0.125_R_P, velocity=velocity, pressure=1._R_P)
 velocity = 2._R_P
 primitive2 = primitive_compressible(density=1._R_P, velocity=velocity, pressure=1._R_P)
-primitive3 = primitive1 + primitive2
-test_passed(1) = primitive3 == (primitive1 + primitive2)
-print "(A,F6.3)",       'density   => 0.125  + 1   = ', primitive3%density
-print "(A,3(F6.3,1X))", 'velocity  => 1      + 2   = ', primitive3%velocity
-print "(A,F6.3)",       'pressure  => 1      + 1   = ', primitive3%pressure
+velocity = 3._R_P
+primitive3 = primitive_compressible(density=1.125_R_P, velocity=velocity, pressure=2._R_P)
+primitive4 = primitive1 + primitive2
+test_passed(1) = primitive3 == primitive4
+print "(A,F6.3)",       'density   => 0.125  + 1   = ', primitive4%density
+print "(A,3(F6.3,1X))", 'velocity  => 1      + 2   = ', primitive4%velocity
+print "(A,F6.3)",       'pressure  => 1      + 1   = ', primitive4%pressure
 
 velocity = -1._R_P
 primitive1 = primitive_compressible(density=0.125_R_P, velocity=velocity, pressure=1._R_P)
