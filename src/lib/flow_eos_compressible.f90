@@ -4,11 +4,14 @@ module flow_eos_compressible
 !< FLOw **EOS** (Equation of State) of ideal compressible fluid object.
 
 use flow_eos_object, only : eos_object
-use penf, only : R_P, str
+use finer, only : file_ini
+use penf, only : I4P, R_P, str
 
 implicit none
 private
 public :: eos_compressible
+
+character(len=3), parameter :: INI_SECTION_NAME='eos' !< INI (config) file section name containing equation of state conditions.
 
 type, extends(eos_object) :: eos_compressible
    !< Equation of state (EOS) of ideal compressible object class.
@@ -41,6 +44,11 @@ type, extends(eos_object) :: eos_compressible
       procedure, pass(self) :: speed_of_sound  !< Return speed of sound.
       procedure, pass(self) :: temperature     !< Return temperature.
       procedure, pass(self) :: total_entalpy   !< Return total specific entalpy.
+      ! auxiliary methods
+      procedure, pass(self) :: destroy        !< Destroy eos.
+      procedure, pass(self) :: initialize     !< initialize eos.
+      procedure, pass(self) :: load_from_file !< Load from file.
+      procedure, pass(self) :: save_into_file !< Save into file.
 endtype eos_compressible
 
 interface eos_compressible
@@ -238,6 +246,58 @@ contains
       lhs%gp1_   = rhs%gp1_
    endselect
    endsubroutine eos_assign_eos
+
+   ! auxiliary methods
+   elemental subroutine destroy(self)
+   !< Destroy eos.
+   class(eos_compressible), intent(inout) :: self  !< Equation of state.
+   type(eos_compressible)                 :: fresh !< Fresh eos.
+
+   self = fresh
+   endsubroutine destroy
+
+   elemental subroutine initialize(self, eos, cp, cv, gam, R)
+   !< Initialize equation of state.
+   class(eos_compressible), intent(inout)        :: self !< Equation of state.
+   type(eos_compressible),  intent(in), optional :: eos  !< Equation of state.
+   real(R_P),               intent(in), optional :: cp   !< Specific heat at constant pressure `cp` value.
+   real(R_P),               intent(in), optional :: cv   !< Specific heat at constant volume `cv` value.
+   real(R_P),               intent(in), optional :: gam  !< Specific heats ratio `gamma=cp/cv` value.
+   real(R_P),               intent(in), optional :: R    !< Fluid constant `R=cp-cv` value.
+
+   if (present(eos)) then
+      self = eos
+   else
+      self = eos_compressible(cp=cp, cv=cv, gam=gam, R=R)
+   endif
+   endsubroutine initialize
+
+   subroutine load_from_file(self, fini, go_on_fail)
+   !< Load from file.
+   class(eos_compressible), intent(inout)        :: self        !< Equation of state.
+   type(file_ini),          intent(in)           :: fini        !< Simulation parameters ini file handler.
+   logical,                 intent(in), optional :: go_on_fail  !< Go on if load fails.
+   logical                                       :: go_on_fail_ !< Go on if load fails.
+   integer(I4P)                                  :: error       !< Error status.
+
+   go_on_fail_ = .false. ; if (present(go_on_fail)) go_on_fail_ = go_on_fail
+
+   call self%destroy
+   call fini%get(section_name=INI_SECTION_NAME, option_name='cp', val=self%cp_, error=error)
+   if (.not.go_on_fail_.and.error>0) error stop 'error: failed to load ['//INI_SECTION_NAME//'].(cp)'
+   call fini%get(section_name=INI_SECTION_NAME, option_name='cv', val=self%cv_, error=error)
+   if (.not.go_on_fail_.and.error>0) error stop 'error: failed to load ['//INI_SECTION_NAME//'].(cv)'
+   call self%compute_derivate
+   endsubroutine load_from_file
+
+   subroutine save_into_file(self, fini)
+   !< Save into file.
+   class(eos_compressible), intent(inout) :: self !< Free conditions.
+   type(file_ini),          intent(inout) :: fini !< Simulation parameters ini file handler.
+
+   call fini%add(section_name=INI_SECTION_NAME, option_name='cp', val=self%cp_)
+   call fini%add(section_name=INI_SECTION_NAME, option_name='cv', val=self%cv_)
+   endsubroutine save_into_file
 
    ! private non TBP
    elemental function eos_compressible_instance(cp, cv, gam, R) result(instance)
