@@ -9,3 +9,9 @@
 [submodule "src/third_party/FiNeR"]
 	path = src/third_party/FiNeR
 	url = https://github.com/szaghi/FiNeR
+[submodule "src/third_party/StringiFor"]
+	path = src/third_party/StringiFor
+	url = https://github.com/szaghi/StringiFor
+[submodule "src/third_party/BeFoR64"]
+	path = src/third_party/BeFoR64
+	url = https://github.com/szaghi/BeFoR64
