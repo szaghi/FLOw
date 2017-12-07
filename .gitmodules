@@ -6,3 +6,6 @@
   path = src/third_party/VecFor
   url = https://github.com/szaghi/VecFor
   branch = master
+[submodule "src/third_party/FiNeR"]
+	path = src/third_party/FiNeR
+	url = https://github.com/szaghi/FiNeR
