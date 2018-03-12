@@ -75,6 +75,11 @@ type, extends(primitive_object) :: primitive_compressible
       procedure, pass(lhs), public :: eq !< `==' operator.
       ! /=
       procedure, pass(lhs), public :: not_eq !< `/=' operator.
+      ! fast operators override
+      procedure, pass(opr), public :: field_add_field_fast            !< `+` fast operator.
+      procedure, pass(opr), public :: field_multiply_field_fast       !< `*` fast operator.
+      procedure, pass(opr), public :: field_multiply_real_scalar_fast !< `* real` fast operator.
+      procedure, pass(opr), public :: field_subtract_field_fast       !< `-` fast operator.
 endtype primitive_compressible
 
 interface primitive_compressible
@@ -114,9 +119,10 @@ contains
 
    gp = eos%g() * self%pressure
    gp_a = gp / eos%speed_of_sound(density=self%density, pressure=self%pressure)
-   eig(1, 1) = 0._R_P            ; eig(1, 2) = -gp_a  ; eig(1, 3) =  1._R_P
-   eig(2, 1) = gp / self%density ; eig(2, 2) = 0._R_P ; eig(2, 3) = -1._R_P
-   eig(3, 1) = 0._R_P            ; eig(3, 2) =  gp_a  ; eig(3, 3) =  1._R_P
+   eig = 0._R_P
+                       eig(1, 1) = 0._R_P            ; eig(1, 2) = -gp_a  ; eig(1, 3) =  1._R_P
+   if (self%density>0) eig(2, 1) = gp / self%density ; eig(2, 2) = 0._R_P ; eig(2, 3) = -1._R_P
+                       eig(3, 1) = 0._R_P            ; eig(3, 2) =  gp_a  ; eig(3, 3) =  1._R_P
    endfunction left_eigenvectors
 
    pure function right_eigenvectors(self, eos) result(eig)
@@ -660,6 +666,75 @@ contains
 
    opr = .not.(lhs%eq(rhs=rhs))
    endfunction not_eq
+
+   ! fast operators
+   ! +
+   pure subroutine field_add_field_fast(opr, lhs, rhs)
+   !< `+` fast operator.
+   class(primitive_compressible), intent(inout) :: opr !< Operator result.
+   class(field_object),           intent(in)    :: lhs !< Left hand side.
+   class(field_object),           intent(in)    :: rhs !< Right hand side.
+
+   select type(lhs)
+   type is(primitive_compressible)
+      select type(rhs)
+      type is(primitive_compressible)
+         opr%density  = lhs%density  + rhs%density
+         opr%velocity = lhs%velocity + rhs%velocity
+         opr%pressure = lhs%pressure + rhs%pressure
+      endselect
+   endselect
+   endsubroutine field_add_field_fast
+
+   ! *
+   pure subroutine field_multiply_field_fast(opr, lhs, rhs)
+   !< `*` fast operator.
+   class(primitive_compressible), intent(inout) :: opr !< Operator result.
+   class(field_object),           intent(in)    :: lhs !< Left hand side.
+   class(field_object),           intent(in)    :: rhs !< Right hand side.
+
+   select type(lhs)
+   type is(primitive_compressible)
+      select type(rhs)
+      type is(primitive_compressible)
+         opr%density  = lhs%density  * rhs%density
+         opr%velocity = lhs%velocity * rhs%velocity
+         opr%pressure = lhs%pressure * rhs%pressure
+      endselect
+   endselect
+   endsubroutine field_multiply_field_fast
+
+   pure subroutine field_multiply_real_scalar_fast(opr, lhs, rhs)
+   !< `* real_scalar` fast operator.
+   class(primitive_compressible), intent(inout) :: opr !< Operator result.
+   class(field_object),           intent(in)    :: lhs !< Left hand side.
+   real(R_P),                     intent(in)    :: rhs !< Right hand side.
+
+   select type(lhs)
+   type is(primitive_compressible)
+      opr%density  = lhs%density  * rhs
+      opr%velocity = lhs%velocity * rhs
+      opr%pressure = lhs%pressure * rhs
+   endselect
+   endsubroutine field_multiply_real_scalar_fast
+
+   ! -
+   pure subroutine field_subtract_field_fast(opr, lhs, rhs)
+   !< `-` fast operator.
+   class(primitive_compressible), intent(inout) :: opr !< Operator result.
+   class(field_object),           intent(in)    :: lhs !< Left hand side.
+   class(field_object),           intent(in)    :: rhs !< Right hand side.
+
+   select type(lhs)
+   type is(primitive_compressible)
+      select type(rhs)
+      type is(primitive_compressible)
+         opr%density  = lhs%density  - rhs%density
+         opr%velocity = lhs%velocity - rhs%velocity
+         opr%pressure = lhs%pressure - rhs%pressure
+      endselect
+   endselect
+   endsubroutine field_subtract_field_fast
 
    ! private non TBP
    pure function primitive_compressible_instance(density, velocity, pressure) result(instance)

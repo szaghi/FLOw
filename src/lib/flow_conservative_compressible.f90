@@ -75,6 +75,11 @@ type, extends(conservative_object) :: conservative_compressible
       procedure, pass(lhs), public :: eq !< `==' operator.
       ! /=
       procedure, pass(lhs), public :: not_eq !< `/=' operator.
+      ! fast operators override
+      procedure, pass(opr), public :: field_add_field_fast            !< `+` fast operator.
+      procedure, pass(opr), public :: field_multiply_field_fast       !< `*` fast operator.
+      procedure, pass(opr), public :: field_multiply_real_scalar_fast !< `* real` fast operator.
+      procedure, pass(opr), public :: field_subtract_field_fast       !< `-` fast operator.
 endtype conservative_compressible
 
 interface conservative_compressible
@@ -671,6 +676,75 @@ contains
 
    opr = .not.(lhs%eq(rhs=rhs))
    endfunction not_eq
+
+   ! fast operators
+   ! +
+   pure subroutine field_add_field_fast(opr, lhs, rhs)
+   !< `+` fast operator.
+   class(conservative_compressible), intent(inout) :: opr !< Operator result.
+   class(field_object),              intent(in)    :: lhs !< Left hand side.
+   class(field_object),              intent(in)    :: rhs !< Right hand side.
+
+   select type(lhs)
+   type is(conservative_compressible)
+      select type(rhs)
+      type is(conservative_compressible)
+         opr%density  = lhs%density  + rhs%density
+         opr%momentum = lhs%momentum + rhs%momentum
+         opr%energy   = lhs%energy   + rhs%energy
+      endselect
+   endselect
+   endsubroutine field_add_field_fast
+
+   ! *
+   pure subroutine field_multiply_field_fast(opr, lhs, rhs)
+   !< `*` fast operator.
+   class(conservative_compressible), intent(inout) :: opr !< Operator result.
+   class(field_object),              intent(in)    :: lhs !< Left hand side.
+   class(field_object),              intent(in)    :: rhs !< Right hand side.
+
+   select type(lhs)
+   type is(conservative_compressible)
+      select type(rhs)
+      type is(conservative_compressible)
+         opr%density  = lhs%density  * rhs%density
+         opr%momentum = lhs%momentum * rhs%momentum
+         opr%energy   = lhs%energy   * rhs%energy
+      endselect
+   endselect
+   endsubroutine field_multiply_field_fast
+
+   pure subroutine field_multiply_real_scalar_fast(opr, lhs, rhs)
+   !< `* real_scalar` fast operator.
+   class(conservative_compressible), intent(inout) :: opr !< Operator result.
+   class(field_object),              intent(in)    :: lhs !< Left hand side.
+   real(R_P),                        intent(in)    :: rhs !< Right hand side.
+
+   select type(lhs)
+   type is(conservative_compressible)
+      opr%density  = lhs%density  * rhs
+      opr%momentum = lhs%momentum * rhs
+      opr%energy   = lhs%energy   * rhs
+   endselect
+   endsubroutine field_multiply_real_scalar_fast
+
+   ! -
+   pure subroutine field_subtract_field_fast(opr, lhs, rhs)
+   !< `-` fast operator.
+   class(conservative_compressible), intent(inout) :: opr !< Operator result.
+   class(field_object),              intent(in)    :: lhs !< Left hand side.
+   class(field_object),              intent(in)    :: rhs !< Right hand side.
+
+   select type(lhs)
+   type is(conservative_compressible)
+      select type(rhs)
+      type is(conservative_compressible)
+         opr%density  = lhs%density  - rhs%density
+         opr%momentum = lhs%momentum - rhs%momentum
+         opr%energy   = lhs%energy   - rhs%energy
+      endselect
+   endselect
+   endsubroutine field_subtract_field_fast
 
    ! private non TBP
    pure function conservative_compressible_instance(density, velocity, pressure) result(instance)

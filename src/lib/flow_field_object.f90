@@ -86,6 +86,12 @@ type, abstract :: field_object
       ! /=
       procedure(compare_interface), pass(lhs), deferred, public :: not_eq !< `/=' operator.
       generic :: operator(/=) => not_eq !< Overloading `/=` operator.
+
+      ! fast operators, must be overridden
+      procedure, pass(opr), public :: field_add_field_fast            !< `+` fast operator.
+      procedure, pass(opr), public :: field_multiply_field_fast       !< `*` fast operator.
+      procedure, pass(opr), public :: field_multiply_real_scalar_fast !< `* real` fast operator.
+      procedure, pass(opr), public :: field_subtract_field_fast       !< `-` fast operator.
 endtype field_object
 
 abstract interface
@@ -208,4 +214,37 @@ abstract interface
    logical                         :: opr !< Operator result.
    endfunction compare_interface
 endinterface
+
+contains
+   ! fast operators
+   ! +
+   pure subroutine field_add_field_fast(opr, lhs, rhs)
+   !< `+` fast operator.
+   class(field_object), intent(inout) :: opr !< Operator result.
+   class(field_object), intent(in)    :: lhs !< Left hand side.
+   class(field_object), intent(in)    :: rhs !< Right hand side.
+   endsubroutine field_add_field_fast
+
+   ! *
+   pure subroutine field_multiply_field_fast(opr, lhs, rhs)
+   !< `*` fast operator.
+   class(field_object), intent(inout) :: opr !< Operator result.
+   class(field_object), intent(in)    :: lhs !< Left hand side.
+   class(field_object), intent(in)    :: rhs !< Right hand side.
+   endsubroutine field_multiply_field_fast
+
+   pure subroutine field_multiply_real_scalar_fast(opr, lhs, rhs)
+   !< `* real_scalar` fast operator.
+   class(field_object), intent(inout) :: opr !< Operator result.
+   class(field_object), intent(in)    :: lhs !< Left hand side.
+   real(R_P),           intent(in)    :: rhs !< Right hand side.
+   endsubroutine field_multiply_real_scalar_fast
+
+   ! -
+   pure subroutine field_subtract_field_fast(opr, lhs, rhs)
+   !< `-` fast operator.
+   class(field_object), intent(inout) :: opr !< Operator result.
+   class(field_object), intent(in)    :: lhs !< Left hand side.
+   class(field_object), intent(in)    :: rhs !< Right hand side.
+   endsubroutine field_subtract_field_fast
 endmodule flow_field_object
