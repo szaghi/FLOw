@@ -19,7 +19,7 @@ $EXDIRS      = PENF/src/tests/ PENF/src/third_party/
                FACE/src/tests/ FACE/src/third_party/
                FiNeR/src/tests/ FiNeR/src/third_party/
                FLAP/src/tests/ FLAP/src/third_party/
-               fortran_tester/src/tests/ fortran_tester/src/third_party/
+               fortran_tester/test/
                StringiFor/src/tests/ StringiFor/src/third_party/
 
 # main modes
